@@ -60,24 +60,32 @@
 - 🟢 [6.2 — Sales & Bán hàng tư vấn](../TAP-06-FUNNEL-CRM/02-sales-consultative-selling.md)
 - 🟢 [6.3 — CRM & Quản trị Quan hệ Khách hàng](../TAP-06-FUNNEL-CRM/03-crm-quan-tri-quan-he.md)
 - 🟢 [6.4 — Marketing Automation & Lead Nurturing](../TAP-06-FUNNEL-CRM/04-marketing-automation.md)
-- ⚪ 6.5 Service Marketing · 6.6 Retention & Loyalty
+- 🟢 [6.5 — Service Marketing & Chăm sóc sau bán](../TAP-06-FUNNEL-CRM/05-service-marketing.md)
+- 🟢 [6.6 — Retention, Loyalty & Tăng CLV](../TAP-06-FUNNEL-CRM/06-retention-loyalty.md)
 
 ## Tập 7 — Growth, Performance & Data
 - 🟢 [7.1 — Growth Marketing & Performance Marketing](../TAP-07-GROWTH-PERFORMANCE/01-growth-performance-marketing.md)
+- 🟢 [7.2 — Data Analytics cho Marketing & Đo lường](../TAP-07-GROWTH-PERFORMANCE/02-data-analytics.md)
+- 🟢 [7.3 — A/B Testing & Văn hóa thử nghiệm](../TAP-07-GROWTH-PERFORMANCE/03-ab-testing.md)
+- 🟢 [7.4 — Attribution & Đo lường thời hậu-cookie](../TAP-07-GROWTH-PERFORMANCE/04-attribution.md)
 - 🟢 [7.5 — Quảng cáo trả phí: Google, Meta & TikTok Ads](../TAP-07-GROWTH-PERFORMANCE/05-quang-cao-tra-phi.md)
-- ⚪ 7.2 Data Analytics · 7.3 A/B Testing · 7.4 Attribution · 7.6 Tài chính Marketing
+- 🟢 [7.6 — Tài chính Marketing: Ngân sách, ROI & CAC/CLV](../TAP-07-GROWTH-PERFORMANCE/06-tai-chinh-marketing.md)
 
 ## Tập 8 — AI Marketing & Chuyển đổi số
 - 🟢 [8.1 — AI Marketing, AI Agent & MCP](../TAP-08-AI-MARKETING/01-ai-agent-mcp-automation.md)
 - 🟢 [8.2 — Prompt Engineering cho Marketer](../TAP-08-AI-MARKETING/02-prompt-engineering-marketer.md)
 - 🟢 [8.3 — Sản xuất nội dung bằng AI (văn bản, ảnh, video, giọng nói)](../TAP-08-AI-MARKETING/03-san-xuat-noi-dung-ai.md)
-- ⚪ 8.4 Personalization · 8.5 RAG/Knowledge Base · 8.6 Quản trị rủi ro AI
+- 🟢 [8.4 — Personalization at scale & AI trong CRM](../TAP-08-AI-MARKETING/04-personalization.md)
+- 🟢 [8.5 — Xây dựng Knowledge Base & RAG cho doanh nghiệp](../TAP-08-AI-MARKETING/05-rag-knowledge-base.md)
+- 🟢 [8.6 — Quản trị rủi ro AI trong Marketing](../TAP-08-AI-MARKETING/06-quan-tri-rui-ro-ai.md)
 
 ## Tập 9 — Mô hình kinh doanh & Kênh
 - 🟢 [9.1 — D2C, E-commerce, Marketplace & Livestream](../TAP-09-MO-HINH-KENH/01-d2c-ecommerce-livestream.md)
 - 🟢 [9.2 — B2B Marketing & Account-Based Marketing](../TAP-09-MO-HINH-KENH/02-b2b-abm.md)
+- 🟢 [9.3 — Retail & Omnichannel/O2O](../TAP-09-MO-HINH-KENH/03-retail-omnichannel.md)
+- 🟢 [9.4 — Affiliate & Partnership Marketing](../TAP-09-MO-HINH-KENH/04-affiliate-partnership.md)
 - 🟢 [9.5 — International Marketing & Xuất khẩu cho OEM](../TAP-09-MO-HINH-KENH/05-international-marketing-xuat-khau.md)
-- ⚪ 9.3 Retail & Omnichannel · 9.4 Affiliate · 9.6 Amazon/Alibaba
+- 🟢 [9.6 — Bán trên Amazon, Alibaba & sàn quốc tế](../TAP-09-MO-HINH-KENH/06-amazon-alibaba.md)
 
 ## Tập 10 — Case Study & Thư viện thực chiến
 - 🟢 [10.1 — Apple · Vinamilk · Thế Giới Di Động](../TAP-10-CASE-STUDY/01-apple-vinamilk-thegioididong.md)

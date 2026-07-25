@@ -4,7 +4,7 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoàn chỉnh** (cả 10 tập đều có nhiều chương dùng được ngay). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **58 chương hoàn chỉnh** (chỉ còn Tập 10 vài case study; các tập khác đã đủ). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
 
 > 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
@@ -81,8 +81,8 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoà
 | 6.2 | Sales & bán hàng tư vấn (Consultative Selling) | 🟢 |
 | 6.3 | CRM & quản trị quan hệ khách hàng | 🟢 |
 | 6.4 | Marketing Automation & Lead Nurturing | 🟢 |
-| 6.5 | Service Marketing & chăm sóc sau bán | ⚪ |
-| 6.6 | Retention, Loyalty & tăng CLV | ⚪ |
+| 6.5 | Service Marketing & chăm sóc sau bán | 🟢 |
+| 6.6 | Retention, Loyalty & tăng CLV | 🟢 |
 
 ## TẬP 7 — Growth, Performance & Data
 *Mục tiêu: tăng trưởng dựa trên dữ liệu và thử nghiệm.*
@@ -90,11 +90,11 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoà
 | # | Chương | Trạng thái |
 |---|---|---|
 | 7.1 | Growth Marketing & Performance Marketing | 🟢 |
-| 7.2 | Data Analytics cho Marketing & đo lường | ⚪ |
-| 7.3 | A/B Testing & văn hóa thử nghiệm | ⚪ |
-| 7.4 | Attribution & đo lường thời hậu-cookie | ⚪ |
+| 7.2 | Data Analytics cho Marketing & đo lường | 🟢 |
+| 7.3 | A/B Testing & văn hóa thử nghiệm | 🟢 |
+| 7.4 | Attribution & đo lường thời hậu-cookie | 🟢 |
 | 7.5 | Quảng cáo trả phí: Google, Meta, TikTok Ads | 🟢 |
-| 7.6 | Tài chính Marketing: ngân sách, ROI, CAC/CLV | ⚪ |
+| 7.6 | Tài chính Marketing: ngân sách, ROI, CAC/CLV | 🟢 |
 
 ## TẬP 8 — AI Marketing & Chuyển đổi số
 *Mục tiêu: dùng AI làm đòn bẩy năng suất & sáng tạo — trọng tâm 2026–2035.*
@@ -104,9 +104,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoà
 | 8.1 | AI Marketing, AI Agent & MCP — Tự động hóa bằng AI | 🟢 |
 | 8.2 | Prompt Engineering cho Marketer | 🟢 |
 | 8.3 | Sản xuất nội dung bằng AI (văn bản, hình ảnh, video, giọng nói) | 🟢 |
-| 8.4 | Personalization at scale & AI trong CRM | ⚪ |
-| 8.5 | Xây dựng Knowledge Base & RAG cho doanh nghiệp | ⚪ |
-| 8.6 | Quản trị rủi ro AI: hallucination, bản quyền, đạo đức, dữ liệu | ⚪ |
+| 8.4 | Personalization at scale & AI trong CRM | 🟢 |
+| 8.5 | Xây dựng Knowledge Base & RAG cho doanh nghiệp | 🟢 |
+| 8.6 | Quản trị rủi ro AI: hallucination, bản quyền, đạo đức, dữ liệu | 🟢 |
 
 ## TẬP 9 — Mô hình kinh doanh & Kênh
 *Mục tiêu: áp dụng marketing theo từng mô hình và kênh.*
@@ -115,10 +115,10 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoà
 |---|---|---|
 | 9.1 | D2C, E-commerce, Marketplace & Livestream | 🟢 |
 | 9.2 | B2B Marketing & Account-Based Marketing | 🟢 |
-| 9.3 | Retail & Omnichannel/O2O | ⚪ |
-| 9.4 | Affiliate & Partnership Marketing | ⚪ |
+| 9.3 | Retail & Omnichannel/O2O | 🟢 |
+| 9.4 | Affiliate & Partnership Marketing | 🟢 |
 | 9.5 | International Marketing & Xuất khẩu (cho nhà máy OEM/nhà sản xuất) | 🟢 |
-| 9.6 | Bán trên Amazon, Alibaba & sàn quốc tế | ⚪ |
+| 9.6 | Bán trên Amazon, Alibaba & sàn quốc tế | 🟢 |
 
 ## TẬP 10 — Case Study & Thư viện thực chiến
 *Mục tiêu: học từ thành công và thất bại thực tế.*
