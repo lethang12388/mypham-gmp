@@ -62,7 +62,7 @@
 
 ## Tập 10 — Case Study & Thư viện thực chiến
 - 🟢 [10.1 — Apple · Vinamilk · Thế Giới Di Động](../TAP-10-CASE-STUDY/01-apple-vinamilk-thegioididong.md)
-- 🟡 10.5 — Việt Nam: Trung Nguyên · Highlands · Biti's · FPT *(đang biên soạn)*
+- 🟢 [10.5 — Việt Nam: Trung Nguyên · Highlands · Biti's · FPT](../TAP-10-CASE-STUDY/05-case-study-viet-nam.md)
 - ⚪ 10.2 Amazon/Netflix/Tesla · 10.3 Nike/Coca-Cola/Starbucks · 10.4 P&G/Unilever/Toyota · 10.6 SME & thất bại
 
 ---

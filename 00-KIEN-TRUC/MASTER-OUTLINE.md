@@ -4,7 +4,7 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **21 chương hoàn chỉnh** (cả 10 tập đều đã có nội dung dùng được; chương 10.5 đang biên soạn). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoàn chỉnh** (mỗi tập ≥2 chương, cả 10 tập đều đã có nội dung dùng được). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
 
 > 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
@@ -129,7 +129,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **21 chương hoà
 | 10.2 | Case Study: Amazon · Netflix · Tesla | ⚪ |
 | 10.3 | Case Study: Nike · Coca-Cola · Starbucks | ⚪ |
 | 10.4 | Case Study: P&G · Unilever · Toyota | ⚪ |
-| 10.5 | Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT | 🟡 |
+| 10.5 | Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT | 🟢 |
 | 10.6 | Case Study SME & thất bại kinh điển (bài học sống còn) | ⚪ |
 
 ---
