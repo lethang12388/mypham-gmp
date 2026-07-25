@@ -49,7 +49,7 @@ Tư duy → Nguyên lý → Khung lý thuyết → Quy trình → Ví dụ → C
 
 ## 5. Trạng thái phát hành
 
-Đây là bộ tri thức **phát hành theo phiên bản (versioned)**, không phải tài liệu tĩnh. Bản phát hành đầu tiên (**v1.0 — 2026**) gồm kiến trúc đầy đủ + **34 chương hoàn chỉnh** trải đều cả 10 tập (mỗi tập nhiều chương dùng được ngay), cùng bộ công cụ điều hướng: [Mục lục](00-KIEN-TRUC/MUC-LUC.md), [Lộ trình học theo vai trò](00-KIEN-TRUC/LO-TRINH-HOC.md) và [Sổ tay thực hành nhanh](00-KIEN-TRUC/SO-TAY-THUC-HANH.md). Các chương còn lại trong master outline sẽ được bổ sung dần theo cùng chuẩn.
+Đây là bộ tri thức **phát hành theo phiên bản (versioned)**, không phải tài liệu tĩnh. Bản phát hành đầu tiên (**v1.0 — 2026**) gồm kiến trúc đầy đủ + **46 chương hoàn chỉnh** trải đều cả 10 tập (mỗi tập nhiều chương dùng được ngay), cùng bộ công cụ điều hướng: [Mục lục](00-KIEN-TRUC/MUC-LUC.md), [Lộ trình học theo vai trò](00-KIEN-TRUC/LO-TRINH-HOC.md) và [Sổ tay thực hành nhanh](00-KIEN-TRUC/SO-TAY-THUC-HANH.md). Các chương còn lại trong master outline sẽ được bổ sung dần theo cùng chuẩn.
 
 Trạng thái mỗi chương: 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch (xem master outline).
 

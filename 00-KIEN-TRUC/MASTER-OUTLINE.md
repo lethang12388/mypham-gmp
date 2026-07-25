@@ -4,7 +4,7 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoàn chỉnh** (cả 10 tập đều có nhiều chương dùng được ngay). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **46 chương hoàn chỉnh** (cả 10 tập đều có nhiều chương dùng được ngay). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
 
 > 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
@@ -18,11 +18,11 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 | 1.1 | Tư duy Marketing 2026–2035: từ "bán hàng" đến "tạo & truyền tải giá trị" | 🟢 |
 | 1.2 | STP — Phân khúc, Chọn thị trường mục tiêu & Định vị | 🟢 |
 | 1.3 | Marketing Mix: 4P → 7P → 4C → 4E | 🟢 |
-| 1.4 | Marketing là gì: bản chất, lịch sử & các trường phái | ⚪ |
+| 1.4 | Marketing là gì: bản chất, lịch sử & các trường phái | 🟢 |
 | 1.5 | Value Proposition & Jobs To Be Done (Christensen) | 🟢 |
 | 1.6 | Chiến lược cạnh tranh (Porter) & lợi thế bền vững | 🟢 |
-| 1.7 | Marketing cho doanh nghiệp nhỏ & nguồn lực hạn chế | ⚪ |
-| 1.8 | Đạo đức Marketing & phát triển bền vững | ⚪ |
+| 1.7 | Marketing cho doanh nghiệp nhỏ & nguồn lực hạn chế | 🟢 |
+| 1.8 | Đạo đức Marketing & phát triển bền vững | 🟢 |
 
 ## TẬP 2 — Nghiên cứu thị trường & Tâm lý khách hàng
 *Mục tiêu: hiểu thị trường và con người trước khi tác động.*
@@ -32,9 +32,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 | 2.1 | Tâm lý học hành vi & Kinh tế học hành vi trong Marketing | 🟢 |
 | 2.2 | Nghiên cứu thị trường: định tính & định lượng | 🟢 |
 | 2.3 | Insight khách hàng & xây dựng Persona/Avatar | 🟢 |
-| 2.4 | Customer Jobs, Pains, Gains & bản đồ giá trị | ⚪ |
-| 2.5 | Phân tích đối thủ & bối cảnh cạnh tranh | ⚪ |
-| 2.6 | Xu hướng, dự báo & quét môi trường (PESTEL) | ⚪ |
+| 2.4 | Customer Jobs, Pains, Gains & bản đồ giá trị | 🟢 |
+| 2.5 | Phân tích đối thủ & bối cảnh cạnh tranh | 🟢 |
+| 2.6 | Xu hướng, dự báo & quét môi trường (PESTEL) | 🟢 |
 
 ## TẬP 3 — Thương hiệu & Định vị
 *Mục tiêu: xây tài sản thương hiệu dài hạn.*
@@ -44,9 +44,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 | 3.1 | Xây dựng Thương hiệu: Brand Identity, Equity & Định vị | 🟢 |
 | 3.2 | Storytelling & Narrative thương hiệu | 🟢 |
 | 3.3 | Kiến trúc thương hiệu & mở rộng thương hiệu | 🟢 |
-| 3.4 | Nhận diện hình ảnh, Brand Voice & hệ thống thiết kế | ⚪ |
+| 3.4 | Nhận diện hình ảnh, Brand Voice & hệ thống thiết kế | 🟢 |
 | 3.5 | Thương hiệu cá nhân (Personal Branding) | 🟢 |
-| 3.6 | Đo lường sức khỏe thương hiệu | ⚪ |
+| 3.6 | Đo lường sức khỏe thương hiệu | 🟢 |
 
 ## TẬP 4 — Sản phẩm, Giá & Phân phối
 *Mục tiêu: làm chủ 3P còn lại của marketing mix cổ điển.*
@@ -55,9 +55,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 |---|---|---|
 | 4.1 | Chiến lược Giá (Pricing): từ chi phí đến giá trị & tâm lý giá | 🟢 |
 | 4.2 | Phát triển sản phẩm & đổi mới (Product & Innovation) | 🟢 |
-| 4.3 | Vòng đời sản phẩm & danh mục sản phẩm | ⚪ |
+| 4.3 | Vòng đời sản phẩm & danh mục sản phẩm | 🟢 |
 | 4.4 | Chiến lược phân phối & quản trị kênh | 🟢 |
-| 4.5 | Bao bì, trải nghiệm sản phẩm & điểm chạm vật lý | ⚪ |
+| 4.5 | Bao bì, trải nghiệm sản phẩm & điểm chạm vật lý | 🟢 |
 
 ## TẬP 5 — Digital Marketing & Nội dung
 *Mục tiêu: hiện diện và thu hút trên môi trường số.*
@@ -69,7 +69,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 | 5.3 | Video ngắn & TikTok/Reels/Shorts | 🟢 |
 | 5.4 | YouTube & video dài (YouTube Creator Academy) | 🟢 |
 | 5.5 | Email Marketing & Automation | 🟢 |
-| 5.6 | Community Building & Marketing cộng đồng | ⚪ |
+| 5.6 | Community Building & Marketing cộng đồng | 🟢 |
 | 5.7 | Influencer, KOL & KOC Marketing | 🟢 |
 
 ## TẬP 6 — Bán hàng, Funnel & CRM
@@ -80,7 +80,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoà
 | 6.1 | Marketing Funnel, Customer Journey & Trải nghiệm khách hàng (CX) | 🟢 |
 | 6.2 | Sales & bán hàng tư vấn (Consultative Selling) | 🟢 |
 | 6.3 | CRM & quản trị quan hệ khách hàng | 🟢 |
-| 6.4 | Marketing Automation & Lead Nurturing | ⚪ |
+| 6.4 | Marketing Automation & Lead Nurturing | 🟢 |
 | 6.5 | Service Marketing & chăm sóc sau bán | ⚪ |
 | 6.6 | Retention, Loyalty & tăng CLV | ⚪ |
 
