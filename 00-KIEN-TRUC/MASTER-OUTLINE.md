@@ -4,7 +4,9 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xương sống** (mỗi tập ≥1 chương hoàn chỉnh làm chuẩn mực). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **21 chương hoàn chỉnh** (cả 10 tập đều đã có nội dung dùng được; chương 10.5 đang biên soạn). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+
+> 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
 ---
 
@@ -15,9 +17,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 |---|---|---|
 | 1.1 | Tư duy Marketing 2026–2035: từ "bán hàng" đến "tạo & truyền tải giá trị" | 🟢 |
 | 1.2 | STP — Phân khúc, Chọn thị trường mục tiêu & Định vị | 🟢 |
-| 1.3 | Marketing Mix: 4P → 7P → 4C → 4E | ⚪ |
+| 1.3 | Marketing Mix: 4P → 7P → 4C → 4E | 🟢 |
 | 1.4 | Marketing là gì: bản chất, lịch sử & các trường phái | ⚪ |
-| 1.5 | Value Proposition & Jobs To Be Done (Christensen) | ⚪ |
+| 1.5 | Value Proposition & Jobs To Be Done (Christensen) | 🟢 |
 | 1.6 | Chiến lược cạnh tranh (Porter) & lợi thế bền vững | ⚪ |
 | 1.7 | Marketing cho doanh nghiệp nhỏ & nguồn lực hạn chế | ⚪ |
 | 1.8 | Đạo đức Marketing & phát triển bền vững | ⚪ |
@@ -29,7 +31,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 |---|---|---|
 | 2.1 | Tâm lý học hành vi & Kinh tế học hành vi trong Marketing | 🟢 |
 | 2.2 | Nghiên cứu thị trường: định tính & định lượng | ⚪ |
-| 2.3 | Insight khách hàng & xây dựng Persona/Avatar | ⚪ |
+| 2.3 | Insight khách hàng & xây dựng Persona/Avatar | 🟢 |
 | 2.4 | Customer Jobs, Pains, Gains & bản đồ giá trị | ⚪ |
 | 2.5 | Phân tích đối thủ & bối cảnh cạnh tranh | ⚪ |
 | 2.6 | Xu hướng, dự báo & quét môi trường (PESTEL) | ⚪ |
@@ -40,7 +42,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | # | Chương | Trạng thái |
 |---|---|---|
 | 3.1 | Xây dựng Thương hiệu: Brand Identity, Equity & Định vị | 🟢 |
-| 3.2 | Storytelling & Narrative thương hiệu | ⚪ |
+| 3.2 | Storytelling & Narrative thương hiệu | 🟢 |
 | 3.3 | Kiến trúc thương hiệu & mở rộng thương hiệu | ⚪ |
 | 3.4 | Nhận diện hình ảnh, Brand Voice & hệ thống thiết kế | ⚪ |
 | 3.5 | Thương hiệu cá nhân (Personal Branding) | ⚪ |
@@ -63,10 +65,10 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | # | Chương | Trạng thái |
 |---|---|---|
 | 5.1 | Content Marketing & SEO thời AI Search (GEO/AEO) | 🟢 |
-| 5.2 | Social Media & nền tảng: Facebook, Instagram, LinkedIn, Threads | ⚪ |
-| 5.3 | Video ngắn & TikTok/Reels/Shorts | ⚪ |
+| 5.2 | Social Media & nền tảng: Facebook, Instagram, LinkedIn, Threads | 🟢 |
+| 5.3 | Video ngắn & TikTok/Reels/Shorts | 🟢 |
 | 5.4 | YouTube & video dài (YouTube Creator Academy) | ⚪ |
-| 5.5 | Email Marketing & Automation | ⚪ |
+| 5.5 | Email Marketing & Automation | 🟢 |
 | 5.6 | Community Building & Marketing cộng đồng | ⚪ |
 | 5.7 | Influencer, KOL & KOC Marketing | ⚪ |
 
@@ -76,7 +78,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | # | Chương | Trạng thái |
 |---|---|---|
 | 6.1 | Marketing Funnel, Customer Journey & Trải nghiệm khách hàng (CX) | 🟢 |
-| 6.2 | Sales & bán hàng tư vấn (Consultative Selling) | ⚪ |
+| 6.2 | Sales & bán hàng tư vấn (Consultative Selling) | 🟢 |
 | 6.3 | CRM & quản trị quan hệ khách hàng | ⚪ |
 | 6.4 | Marketing Automation & Lead Nurturing | ⚪ |
 | 6.5 | Service Marketing & chăm sóc sau bán | ⚪ |
@@ -100,7 +102,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | # | Chương | Trạng thái |
 |---|---|---|
 | 8.1 | AI Marketing, AI Agent & MCP — Tự động hóa bằng AI | 🟢 |
-| 8.2 | Prompt Engineering cho Marketer | ⚪ |
+| 8.2 | Prompt Engineering cho Marketer | 🟢 |
 | 8.3 | Sản xuất nội dung bằng AI (văn bản, hình ảnh, video, giọng nói) | ⚪ |
 | 8.4 | Personalization at scale & AI trong CRM | ⚪ |
 | 8.5 | Xây dựng Knowledge Base & RAG cho doanh nghiệp | ⚪ |
@@ -115,7 +117,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | 9.2 | B2B Marketing & Account-Based Marketing | ⚪ |
 | 9.3 | Retail & Omnichannel/O2O | ⚪ |
 | 9.4 | Affiliate & Partnership Marketing | ⚪ |
-| 9.5 | International Marketing & Xuất khẩu (cho nhà máy OEM/nhà sản xuất) | ⚪ |
+| 9.5 | International Marketing & Xuất khẩu (cho nhà máy OEM/nhà sản xuất) | 🟢 |
 | 9.6 | Bán trên Amazon, Alibaba & sàn quốc tế | ⚪ |
 
 ## TẬP 10 — Case Study & Thư viện thực chiến
@@ -127,7 +129,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **10 chương xư�
 | 10.2 | Case Study: Amazon · Netflix · Tesla | ⚪ |
 | 10.3 | Case Study: Nike · Coca-Cola · Starbucks | ⚪ |
 | 10.4 | Case Study: P&G · Unilever · Toyota | ⚪ |
-| 10.5 | Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT | ⚪ |
+| 10.5 | Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT | 🟡 |
 | 10.6 | Case Study SME & thất bại kinh điển (bài học sống còn) | ⚪ |
 
 ---
