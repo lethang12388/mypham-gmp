@@ -4,7 +4,7 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoàn chỉnh** (mỗi tập ≥2 chương, cả 10 tập đều đã có nội dung dùng được). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **34 chương hoàn chỉnh** (cả 10 tập đều có nhiều chương dùng được ngay). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
 
 > 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
@@ -20,7 +20,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | 1.3 | Marketing Mix: 4P → 7P → 4C → 4E | 🟢 |
 | 1.4 | Marketing là gì: bản chất, lịch sử & các trường phái | ⚪ |
 | 1.5 | Value Proposition & Jobs To Be Done (Christensen) | 🟢 |
-| 1.6 | Chiến lược cạnh tranh (Porter) & lợi thế bền vững | ⚪ |
+| 1.6 | Chiến lược cạnh tranh (Porter) & lợi thế bền vững | 🟢 |
 | 1.7 | Marketing cho doanh nghiệp nhỏ & nguồn lực hạn chế | ⚪ |
 | 1.8 | Đạo đức Marketing & phát triển bền vững | ⚪ |
 
@@ -30,7 +30,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | # | Chương | Trạng thái |
 |---|---|---|
 | 2.1 | Tâm lý học hành vi & Kinh tế học hành vi trong Marketing | 🟢 |
-| 2.2 | Nghiên cứu thị trường: định tính & định lượng | ⚪ |
+| 2.2 | Nghiên cứu thị trường: định tính & định lượng | 🟢 |
 | 2.3 | Insight khách hàng & xây dựng Persona/Avatar | 🟢 |
 | 2.4 | Customer Jobs, Pains, Gains & bản đồ giá trị | ⚪ |
 | 2.5 | Phân tích đối thủ & bối cảnh cạnh tranh | ⚪ |
@@ -43,9 +43,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 |---|---|---|
 | 3.1 | Xây dựng Thương hiệu: Brand Identity, Equity & Định vị | 🟢 |
 | 3.2 | Storytelling & Narrative thương hiệu | 🟢 |
-| 3.3 | Kiến trúc thương hiệu & mở rộng thương hiệu | ⚪ |
+| 3.3 | Kiến trúc thương hiệu & mở rộng thương hiệu | 🟢 |
 | 3.4 | Nhận diện hình ảnh, Brand Voice & hệ thống thiết kế | ⚪ |
-| 3.5 | Thương hiệu cá nhân (Personal Branding) | ⚪ |
+| 3.5 | Thương hiệu cá nhân (Personal Branding) | 🟢 |
 | 3.6 | Đo lường sức khỏe thương hiệu | ⚪ |
 
 ## TẬP 4 — Sản phẩm, Giá & Phân phối
@@ -54,9 +54,9 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | # | Chương | Trạng thái |
 |---|---|---|
 | 4.1 | Chiến lược Giá (Pricing): từ chi phí đến giá trị & tâm lý giá | 🟢 |
-| 4.2 | Phát triển sản phẩm & đổi mới (Product & Innovation) | ⚪ |
+| 4.2 | Phát triển sản phẩm & đổi mới (Product & Innovation) | 🟢 |
 | 4.3 | Vòng đời sản phẩm & danh mục sản phẩm | ⚪ |
-| 4.4 | Chiến lược phân phối & quản trị kênh | ⚪ |
+| 4.4 | Chiến lược phân phối & quản trị kênh | 🟢 |
 | 4.5 | Bao bì, trải nghiệm sản phẩm & điểm chạm vật lý | ⚪ |
 
 ## TẬP 5 — Digital Marketing & Nội dung
@@ -67,10 +67,10 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | 5.1 | Content Marketing & SEO thời AI Search (GEO/AEO) | 🟢 |
 | 5.2 | Social Media & nền tảng: Facebook, Instagram, LinkedIn, Threads | 🟢 |
 | 5.3 | Video ngắn & TikTok/Reels/Shorts | 🟢 |
-| 5.4 | YouTube & video dài (YouTube Creator Academy) | ⚪ |
+| 5.4 | YouTube & video dài (YouTube Creator Academy) | 🟢 |
 | 5.5 | Email Marketing & Automation | 🟢 |
 | 5.6 | Community Building & Marketing cộng đồng | ⚪ |
-| 5.7 | Influencer, KOL & KOC Marketing | ⚪ |
+| 5.7 | Influencer, KOL & KOC Marketing | 🟢 |
 
 ## TẬP 6 — Bán hàng, Funnel & CRM
 *Mục tiêu: biến sự chú ý thành doanh thu và lòng trung thành.*
@@ -79,7 +79,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 |---|---|---|
 | 6.1 | Marketing Funnel, Customer Journey & Trải nghiệm khách hàng (CX) | 🟢 |
 | 6.2 | Sales & bán hàng tư vấn (Consultative Selling) | 🟢 |
-| 6.3 | CRM & quản trị quan hệ khách hàng | ⚪ |
+| 6.3 | CRM & quản trị quan hệ khách hàng | 🟢 |
 | 6.4 | Marketing Automation & Lead Nurturing | ⚪ |
 | 6.5 | Service Marketing & chăm sóc sau bán | ⚪ |
 | 6.6 | Retention, Loyalty & tăng CLV | ⚪ |
@@ -93,7 +93,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | 7.2 | Data Analytics cho Marketing & đo lường | ⚪ |
 | 7.3 | A/B Testing & văn hóa thử nghiệm | ⚪ |
 | 7.4 | Attribution & đo lường thời hậu-cookie | ⚪ |
-| 7.5 | Quảng cáo trả phí: Google, Meta, TikTok Ads | ⚪ |
+| 7.5 | Quảng cáo trả phí: Google, Meta, TikTok Ads | 🟢 |
 | 7.6 | Tài chính Marketing: ngân sách, ROI, CAC/CLV | ⚪ |
 
 ## TẬP 8 — AI Marketing & Chuyển đổi số
@@ -103,7 +103,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 |---|---|---|
 | 8.1 | AI Marketing, AI Agent & MCP — Tự động hóa bằng AI | 🟢 |
 | 8.2 | Prompt Engineering cho Marketer | 🟢 |
-| 8.3 | Sản xuất nội dung bằng AI (văn bản, hình ảnh, video, giọng nói) | ⚪ |
+| 8.3 | Sản xuất nội dung bằng AI (văn bản, hình ảnh, video, giọng nói) | 🟢 |
 | 8.4 | Personalization at scale & AI trong CRM | ⚪ |
 | 8.5 | Xây dựng Knowledge Base & RAG cho doanh nghiệp | ⚪ |
 | 8.6 | Quản trị rủi ro AI: hallucination, bản quyền, đạo đức, dữ liệu | ⚪ |
@@ -114,7 +114,7 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **22 chương hoà
 | # | Chương | Trạng thái |
 |---|---|---|
 | 9.1 | D2C, E-commerce, Marketplace & Livestream | 🟢 |
-| 9.2 | B2B Marketing & Account-Based Marketing | ⚪ |
+| 9.2 | B2B Marketing & Account-Based Marketing | 🟢 |
 | 9.3 | Retail & Omnichannel/O2O | ⚪ |
 | 9.4 | Affiliate & Partnership Marketing | ⚪ |
 | 9.5 | International Marketing & Xuất khẩu (cho nhà máy OEM/nhà sản xuất) | 🟢 |
