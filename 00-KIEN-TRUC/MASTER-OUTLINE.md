@@ -4,7 +4,7 @@
 
 **Chú thích trạng thái:** 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch
 
-Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **58 chương hoàn chỉnh** (chỉ còn Tập 10 vài case study; các tập khác đã đủ). Các chương ⚪ là lộ trình mở để con người/AI bổ sung theo đúng chuẩn.
+Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **62/62 chương hoàn chỉnh (100%)** — cả 10 tập đã đầy đủ theo lộ trình. Từ đây, việc mở rộng là thêm tập/chương mới hoặc cập nhật nội dung theo thời gian (mục "Cần cập nhật trong tương lai" của mỗi chương).
 
 > 🧭 Điều hướng nhanh: [Mục lục có liên kết](MUC-LUC.md) · [Lộ trình học theo vai trò](LO-TRINH-HOC.md) · [Sổ tay thực hành](SO-TAY-THUC-HANH.md)
 
@@ -126,11 +126,11 @@ Bản phát hành **v1.0 (2026)** hoàn thành kiến trúc + **58 chương hoà
 | # | Chương | Trạng thái |
 |---|---|---|
 | 10.1 | Case Study: Apple · Vinamilk · Thế Giới Di Động | 🟢 |
-| 10.2 | Case Study: Amazon · Netflix · Tesla | ⚪ |
-| 10.3 | Case Study: Nike · Coca-Cola · Starbucks | ⚪ |
-| 10.4 | Case Study: P&G · Unilever · Toyota | ⚪ |
+| 10.2 | Case Study: Amazon · Netflix · Tesla | 🟢 |
+| 10.3 | Case Study: Nike · Coca-Cola · Starbucks | 🟢 |
+| 10.4 | Case Study: P&G · Unilever · Toyota | 🟢 |
 | 10.5 | Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT | 🟢 |
-| 10.6 | Case Study SME & thất bại kinh điển (bài học sống còn) | ⚪ |
+| 10.6 | Case Study SME & thất bại kinh điển (bài học sống còn) | 🟢 |
 
 ---
 

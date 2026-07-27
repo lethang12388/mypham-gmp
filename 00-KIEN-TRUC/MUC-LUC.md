@@ -1,6 +1,6 @@
 # MỤC LỤC CÓ LIÊN KẾT
 
-> Danh mục toàn bộ tài liệu, có đường dẫn bấm được. Trạng thái: 🟢 Hoàn chỉnh · ⚪ Đã lên kế hoạch (xem [Master Outline](MASTER-OUTLINE.md)).
+> Danh mục toàn bộ tài liệu, có đường dẫn bấm được. **Bản v1.0 (2026): 62/62 chương hoàn chỉnh (100%).** Trạng thái: 🟢 Hoàn chỉnh.
 
 ## Bắt đầu ở đây
 - [README — Tổng quan bộ sách](../README.md)
@@ -17,10 +17,10 @@
 - 🟢 [1.1 — Tư duy Marketing 2026–2035](../TAP-01-NEN-TANG-TU-DUY/01-tu-duy-marketing.md)
 - 🟢 [1.2 — STP: Phân khúc, Mục tiêu & Định vị](../TAP-01-NEN-TANG-TU-DUY/02-stp-phan-khuc-dinh-vi.md)
 - 🟢 [1.3 — Marketing Mix: 4P → 7P → 4C → 4E](../TAP-01-NEN-TANG-TU-DUY/03-marketing-mix.md)
+- 🟢 [1.4 — Marketing là gì: Bản chất, lịch sử & trường phái](../TAP-01-NEN-TANG-TU-DUY/04-marketing-la-gi.md)
 - 🟢 [1.5 — Tuyên bố Giá trị & Jobs To Be Done](../TAP-01-NEN-TANG-TU-DUY/05-value-proposition-jtbd.md)
-- 🟢 [1.4 — Marketing là gì: Bản chất, lịch sử & các trường phái](../TAP-01-NEN-TANG-TU-DUY/04-marketing-la-gi.md)
 - 🟢 [1.6 — Chiến lược cạnh tranh (Porter) & lợi thế bền vững](../TAP-01-NEN-TANG-TU-DUY/06-chien-luoc-canh-tranh-porter.md)
-- 🟢 [1.7 — Marketing cho DN nhỏ & nguồn lực hạn chế](../TAP-01-NEN-TANG-TU-DUY/07-marketing-nguon-luc-han-che.md)
+- 🟢 [1.7 — Marketing cho doanh nghiệp nhỏ & nguồn lực hạn chế](../TAP-01-NEN-TANG-TU-DUY/07-marketing-nguon-luc-han-che.md)
 - 🟢 [1.8 — Đạo đức Marketing & Phát triển bền vững](../TAP-01-NEN-TANG-TU-DUY/08-dao-duc-marketing.md)
 
 ## Tập 2 — Nghiên cứu thị trường & Tâm lý khách hàng
@@ -61,7 +61,7 @@
 - 🟢 [6.3 — CRM & Quản trị Quan hệ Khách hàng](../TAP-06-FUNNEL-CRM/03-crm-quan-tri-quan-he.md)
 - 🟢 [6.4 — Marketing Automation & Lead Nurturing](../TAP-06-FUNNEL-CRM/04-marketing-automation.md)
 - 🟢 [6.5 — Service Marketing & Chăm sóc sau bán](../TAP-06-FUNNEL-CRM/05-service-marketing.md)
-- 🟢 [6.6 — Retention, Loyalty & Tăng CLV](../TAP-06-FUNNEL-CRM/06-retention-loyalty.md)
+- 🟢 [6.6 — Retention, Loyalty & tăng CLV](../TAP-06-FUNNEL-CRM/06-retention-loyalty.md)
 
 ## Tập 7 — Growth, Performance & Data
 - 🟢 [7.1 — Growth Marketing & Performance Marketing](../TAP-07-GROWTH-PERFORMANCE/01-growth-performance-marketing.md)
@@ -69,7 +69,7 @@
 - 🟢 [7.3 — A/B Testing & Văn hóa thử nghiệm](../TAP-07-GROWTH-PERFORMANCE/03-ab-testing.md)
 - 🟢 [7.4 — Attribution & Đo lường thời hậu-cookie](../TAP-07-GROWTH-PERFORMANCE/04-attribution.md)
 - 🟢 [7.5 — Quảng cáo trả phí: Google, Meta & TikTok Ads](../TAP-07-GROWTH-PERFORMANCE/05-quang-cao-tra-phi.md)
-- 🟢 [7.6 — Tài chính Marketing: Ngân sách, ROI & CAC/CLV](../TAP-07-GROWTH-PERFORMANCE/06-tai-chinh-marketing.md)
+- 🟢 [7.6 — Tài chính Marketing: Ngân sách, ROI, CAC/CLV](../TAP-07-GROWTH-PERFORMANCE/06-tai-chinh-marketing.md)
 
 ## Tập 8 — AI Marketing & Chuyển đổi số
 - 🟢 [8.1 — AI Marketing, AI Agent & MCP](../TAP-08-AI-MARKETING/01-ai-agent-mcp-automation.md)
@@ -77,7 +77,7 @@
 - 🟢 [8.3 — Sản xuất nội dung bằng AI (văn bản, ảnh, video, giọng nói)](../TAP-08-AI-MARKETING/03-san-xuat-noi-dung-ai.md)
 - 🟢 [8.4 — Personalization at scale & AI trong CRM](../TAP-08-AI-MARKETING/04-personalization.md)
 - 🟢 [8.5 — Xây dựng Knowledge Base & RAG cho doanh nghiệp](../TAP-08-AI-MARKETING/05-rag-knowledge-base.md)
-- 🟢 [8.6 — Quản trị rủi ro AI trong Marketing](../TAP-08-AI-MARKETING/06-quan-tri-rui-ro-ai.md)
+- 🟢 [8.6 — Quản trị rủi ro AI: hallucination, bản quyền, đạo đức, dữ liệu](../TAP-08-AI-MARKETING/06-quan-tri-rui-ro-ai.md)
 
 ## Tập 9 — Mô hình kinh doanh & Kênh
 - 🟢 [9.1 — D2C, E-commerce, Marketplace & Livestream](../TAP-09-MO-HINH-KENH/01-d2c-ecommerce-livestream.md)
@@ -89,9 +89,12 @@
 
 ## Tập 10 — Case Study & Thư viện thực chiến
 - 🟢 [10.1 — Apple · Vinamilk · Thế Giới Di Động](../TAP-10-CASE-STUDY/01-apple-vinamilk-thegioididong.md)
+- 🟢 [10.2 — Amazon · Netflix · Tesla](../TAP-10-CASE-STUDY/02-amazon-netflix-tesla.md)
+- 🟢 [10.3 — Nike · Coca-Cola · Starbucks](../TAP-10-CASE-STUDY/03-nike-cocacola-starbucks.md)
+- 🟢 [10.4 — P&G · Unilever · Toyota](../TAP-10-CASE-STUDY/04-pg-unilever-toyota.md)
 - 🟢 [10.5 — Việt Nam: Trung Nguyên · Highlands · Biti's · FPT](../TAP-10-CASE-STUDY/05-case-study-viet-nam.md)
-- ⚪ 10.2 Amazon/Netflix/Tesla · 10.3 Nike/Coca-Cola/Starbucks · 10.4 P&G/Unilever/Toyota · 10.6 SME & thất bại
+- 🟢 [10.6 — SME & thất bại kinh điển (bài học sống còn)](../TAP-10-CASE-STUDY/06-sme-that-bai-kinh-dien.md)
 
 ---
 
-*Phiên bản mục lục: v1.0 · 2026. Cập nhật liên kết mỗi khi thêm chương.*
+*Phiên bản mục lục: v1.0 · 2026 · 62/62 chương (100%).*
