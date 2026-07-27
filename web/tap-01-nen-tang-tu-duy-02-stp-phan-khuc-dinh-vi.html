@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 1 · Chương 2 — STP: Phân khúc, Chọn thị trường mục tiêu &amp; Định vị</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 1 · Chương 2 — STP: Phân khúc, Chọn thị trường mục tiêu &amp; Định vị</h1>
+<blockquote>
+<p><strong>Đối tượng:</strong> Nhà sáng lập, CMO, marketer, sinh viên Marketing · <strong>Thời lượng đọc ước tính:</strong> 35–45 phút · <strong>Phiên bản:</strong> v1.0 (2026)</p>
+</blockquote>
+<hr />
+<h2>Giới thiệu</h2>
+<p>Không một thương hiệu nào đủ nguồn lực để phục vụ tất cả mọi người theo cách tốt nhất. Đây là chân lý nền tảng của Marketing hiện đại: khi bạn cố gắng làm hài lòng tất cả, bạn thường chẳng làm hài lòng ai một cách trọn vẹn. STP — <strong>Segmentation (Phân khúc) – Targeting (Chọn thị trường mục tiêu) – Positioning (Định vị)</strong> — chính là bộ ba tư duy giúp doanh nghiệp trả lời ba câu hỏi sống còn: <em>Thị trường có những nhóm khách hàng nào? Ta nên tập trung vào nhóm nào? Và trong tâm trí nhóm đó, ta muốn được ghi nhớ là gì?</em></p>
+<p>Chương này sẽ dẫn bạn đi từ khái niệm gốc rễ đến quy trình triển khai thực chiến. Bạn sẽ gặp cả tư duy kinh điển của Al Ries, Jack Trout, Philip Kotler lẫn góc phản biện sắc bén của Byron Sharp — để không rơi vào cái bẫy "học thuộc lý thuyết" mà mất khả năng nghi ngờ. Mục tiêu cuối cùng: bạn có thể mở một file trắng và tự xây một chiến lược STP hoàn chỉnh cho sản phẩm của mình ngay sau khi đọc xong.</p>
+<h2>Khái niệm</h2>
+<p><strong>STP</strong> là một quy trình chiến lược gồm ba bước liên tiếp:</p>
+<ul>
+<li><strong>Segmentation (Phân khúc thị trường):</strong> Chia một thị trường lớn, không đồng nhất thành các nhóm nhỏ (phân khúc) có đặc điểm, nhu cầu hoặc hành vi tương đồng.</li>
+<li><strong>Targeting (Chọn thị trường mục tiêu):</strong> Đánh giá độ hấp dẫn của từng phân khúc và quyết định tập trung nguồn lực vào một hoặc một số phân khúc.</li>
+<li><strong>Positioning (Định vị):</strong> Thiết kế hình ảnh và giá trị của thương hiệu sao cho chiếm được một vị trí khác biệt, đáng giá trong tâm trí khách hàng mục tiêu.</li>
+</ul>
+<p>Ba khái niệm này gắn chặt với nhau như một chuỗi nhân quả: <em>phân khúc sai → chọn nhầm mục tiêu → định vị lệch</em>. Ngược lại, một phân khúc sắc bén tạo tiền đề cho việc chọn mục tiêu đúng và định vị mạnh.</p>
+<p>Cần phân biệt: <strong>phân khúc</strong> là hoạt động phân tích thị trường (khách quan, dựa trên dữ liệu); <strong>định vị</strong> là hoạt động chiến lược truyền thông và thiết kế giá trị (chủ quan, mang tính sáng tạo và cạnh tranh).</p>
+<h2>Lịch sử hình thành</h2>
+<ul>
+<li><strong>1956:</strong> Wendell R. Smith công bố bài báo <em>"Product Differentiation and Market Segmentation as Alternative Marketing Strategies"</em> trên <em>Journal of Marketing</em>, thường được xem là điểm khởi đầu học thuật của khái niệm phân khúc.</li>
+<li><strong>Thập niên 1960–1970:</strong> Philip Kotler hệ thống hóa STP trong bộ giáo trình <em>Marketing Management</em>, biến nó thành khung chuẩn giảng dạy toàn cầu.</li>
+<li><strong>1969–1972:</strong> Al Ries và Jack Trout giới thiệu khái niệm <em>"Positioning"</em> qua loạt bài trên tạp chí <em>Advertising Age</em>, sau đó tập hợp thành cuốn <em>Positioning: The Battle for Your Mind</em> (1981). Luận điểm cốt lõi: định vị không phải là điều bạn làm với sản phẩm, mà là điều bạn làm với <em>tâm trí khách hàng tiềm năng</em>.</li>
+<li><strong>2010:</strong> Byron Sharp xuất bản <em>How Brands Grow</em> (Ehrenberg-Bass Institute), đưa ra góc nhìn thực nghiệm phản biện một phần lý thuyết định vị và phân khúc truyền thống (trình bày chi tiết ở mục "Sai lầm thường gặp" và "Mô hình").</li>
+</ul>
+<p><em>(Các mốc trên là dữ kiện lịch sử về tác giả và ấn phẩm; xem mục Nguồn tham khảo.)</em></p>
+<h2>Tại sao quan trọng</h2>
+<p>STP quan trọng vì nó là <em>cầu nối giữa nghiên cứu thị trường và marketing hỗn hợp (4P/7P)</em>. Không có STP, mọi quyết định về sản phẩm, giá, kênh phân phối và truyền thông đều thiếu điểm neo.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nếu KHÔNG làm STP</th>
+<th>Nếu làm STP tốt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thông điệp chung chung, "nói với tất cả"</td>
+<td>Thông điệp sắc, chạm đúng nhóm</td>
+</tr>
+<tr>
+<td>Ngân sách phân tán, ROI thấp</td>
+<td>Nguồn lực tập trung, hiệu suất cao</td>
+</tr>
+<tr>
+<td>Cạnh tranh bằng giá</td>
+<td>Cạnh tranh bằng giá trị &amp; sự khác biệt</td>
+</tr>
+<tr>
+<td>Dễ bị "vô hình" trên thị trường</td>
+<td>Có chỗ đứng rõ trong tâm trí</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phân tích:</strong> Với doanh nghiệp nhỏ và startup, STP còn quan trọng hơn với tập đoàn — vì nguồn lực hạn chế buộc bạn phải chọn một trận địa để thắng, thay vì dàn quân trên toàn mặt trận và thua ở mọi nơi.</p>
+<h2>Nguyên lý hoạt động</h2>
+<p>STP vận hành theo nguyên lý <strong>"tập trung để khác biệt"</strong>. Sơ đồ luồng:</p>
+<pre><code>THỊ TRƯỜNG TỔNG      →   PHÂN KHÚC        →   CHỌN MỤC TIÊU     →   ĐỊNH VỊ
+(không đồng nhất)        (nhóm tương đồng)     (nhóm hấp dẫn)        (vị trí trong tâm trí)
+
+   ▢▢▢▢▢▢▢▢▢▢          ▢▢▢ | ▣▣▣ | ▢▢▢       →  [ ▣▣▣ ]          &quot;Thương hiệu X = ______&quot;
+   trộn lẫn              chia thành nhóm       chọn nhóm thắng      1 ý niệm sở hữu được
+</code></pre>
+<p>Ba nguyên lý con:</p>
+<ol>
+<li><strong>Nguyên lý đồng nhất bên trong – khác biệt bên ngoài:</strong> Người trong cùng một phân khúc phải giống nhau về nhu cầu; các phân khúc phải khác nhau đủ để đối xử khác nhau.</li>
+<li><strong>Nguyên lý đánh đổi:</strong> Chọn mục tiêu này nghĩa là chấp nhận buông mục tiêu kia. Không có đánh đổi thì không có chiến lược.</li>
+<li><strong>Nguyên lý sở hữu tâm trí:</strong> Theo Ries &amp; Trout, tâm trí con người có hạn; thương hiệu thắng là thương hiệu chiếm được <em>một từ khóa</em> trước đối thủ (ví dụ Volvo = "an toàn").</li>
+</ol>
+<h2>Mô hình</h2>
+<p><strong>Mô hình 1 — Tháp STP cổ điển (Kotler):</strong> ba tầng Segmentation → Targeting → Positioning như đã mô tả.</p>
+<p><strong>Mô hình 2 — Ba chiến lược chọn mục tiêu:</strong></p>
+<pre><code>[ Undifferentiated ]  → 1 thông điệp cho toàn thị trường (marketing đại chúng)
+[ Differentiated ]    → nhiều thông điệp cho nhiều phân khúc (đa phân khúc)
+[ Concentrated/Niche ]→ dồn toàn lực vào 1 phân khúc ngách
+</code></pre>
+<p><strong>Mô hình 3 — Góc phản biện của Byron Sharp (đối chiếu):</strong> Dựa trên dữ liệu thực nghiệm của Ehrenberg-Bass Institute, Sharp lập luận rằng:
+- Các thương hiệu cạnh tranh thường có tập khách hàng <em>chồng lấn</em> nhiều hơn ta tưởng; phân khúc "sạch, tách biệt" phần lớn là ảo tưởng.
+- Tăng trưởng đến chủ yếu từ <em>mở rộng độ phủ (penetration)</em> — thu hút nhiều người mua nhẹ (light buyers) — hơn là từ việc "khóa chặt" một phân khúc trung thành.
+- Ông đề cao <strong>mental availability</strong> (dễ được nhớ đến) và <strong>physical availability</strong> (dễ mua được) hơn là định vị khác biệt tinh vi.</p>
+<p><strong>Cách dung hòa (phân tích của Hội đồng biên soạn):</strong> STP không sai, nhưng đừng tuyệt đối hóa "sự khác biệt". Một chiến lược khỏe cần <em>vừa</em> có định vị rõ ràng (để dễ nhớ) <em>vừa</em> theo đuổi độ phủ rộng và độ sẵn có (để dễ mua). Hai trường phái bổ sung nhau nhiều hơn là loại trừ.</p>
+<h2>Framework</h2>
+<p>Ba framework thực chiến nên nắm:</p>
+<p><strong>A. Cơ sở phân khúc (4 nhóm biến số):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm biến</th>
+<th>Ví dụ tiêu chí</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Địa lý (Geographic)</td>
+<td>Vùng miền, thành thị/nông thôn, khí hậu</td>
+</tr>
+<tr>
+<td>Nhân khẩu (Demographic)</td>
+<td>Tuổi, giới, thu nhập, nghề, học vấn</td>
+</tr>
+<tr>
+<td>Tâm lý (Psychographic)</td>
+<td>Lối sống, giá trị, tính cách</td>
+</tr>
+<tr>
+<td>Hành vi (Behavioral)</td>
+<td>Dịp mua, lợi ích tìm kiếm, mức độ trung thành, tần suất</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>B. Kiểm định phân khúc — tiêu chí DAMAS (mở rộng từ Kotler):</strong> một phân khúc tốt phải:
+- <strong>D</strong>istinguishable — phân biệt được với nhóm khác
+- <strong>A</strong>ccessible — tiếp cận được qua kênh truyền thông/phân phối
+- <strong>M</strong>easurable — đo lường được quy mô và sức mua
+- <strong>A</strong>ctionable — đủ khả năng để doanh nghiệp phục vụ
+- <strong>S</strong>ubstantial — đủ lớn để sinh lời</p>
+<p><strong>C. Positioning Statement (Kotler) — khung câu định vị:</strong></p>
+<blockquote>
+<p><em>"Đối với [khách hàng mục tiêu], thương hiệu [X] là [khung tham chiếu/ngành hàng] mang lại [lợi ích khác biệt] bởi vì [lý do tin tưởng]."</em></p>
+</blockquote>
+<h2>Công thức</h2>
+<p><strong>Công thức câu định vị (điền vào chỗ trống):</strong></p>
+<pre><code>Với ______________ (đối tượng mục tiêu)
+đang cần _________ (nhu cầu/pain point)
+[Thương hiệu] là __ (khung tham chiếu)
+mang lại _________ (điểm khác biệt / lợi ích cốt lõi)
+khác với _________ (đối thủ chính)
+nhờ ______________ (Reason To Believe – lý do tin tưởng).
+</code></pre>
+<p><strong>Công thức đánh giá độ hấp dẫn phân khúc (định tính, dùng để chấm điểm nội bộ):</strong></p>
+<pre><code>Điểm hấp dẫn = f(Quy mô × Tốc độ tăng trưởng × Biên lợi nhuận)
+                ────────────────────────────────────────────────
+                (Cường độ cạnh tranh × Rào cản gia nhập của ta)
+</code></pre>
+<blockquote>
+<p>Lưu ý: đây là công thức <em>khái niệm</em> để tư duy có hệ thống, không phải công thức toán học có hằng số cố định. Hãy tự gán trọng số theo ngành của bạn.</p>
+</blockquote>
+<h2>Quy trình</h2>
+<p>Quy trình 7 bước triển khai STP:</p>
+<ol>
+<li><strong>Xác định thị trường tổng</strong> cần phân tích (định nghĩa ngành hàng và ranh giới).</li>
+<li><strong>Chọn cơ sở phân khúc</strong> phù hợp (địa lý/nhân khẩu/tâm lý/hành vi hoặc kết hợp).</li>
+<li><strong>Chia phân khúc và mô tả chân dung</strong> từng nhóm (persona).</li>
+<li><strong>Kiểm định phân khúc</strong> bằng tiêu chí DAMAS, loại bỏ nhóm không đạt.</li>
+<li><strong>Chấm điểm &amp; chọn mục tiêu</strong> theo độ hấp dẫn và độ phù hợp với năng lực.</li>
+<li><strong>Xây câu định vị</strong> cho phân khúc mục tiêu (Positioning Statement).</li>
+<li><strong>Triển khai xuống 4P/7P</strong> và bản đồ định vị, rồi đo lường – điều chỉnh.</li>
+</ol>
+<pre class="mermaid">flowchart LR
+    A[Thị trường tổng] --> B[Chọn cơ sở phân khúc]
+    B --> C[Chia & mô tả persona]
+    C --> D[Kiểm định DAMAS]
+    D --> E[Chấm điểm & chọn mục tiêu]
+    E --> F[Xây câu định vị]
+    F --> G[Triển khai 4P/7P & đo lường]
+    G --> B
+</pre>
+<h2>Ví dụ đơn giản</h2>
+<p><strong>Một quán cà phê mới mở ở khu văn phòng.</strong></p>
+<ul>
+<li><strong>Phân khúc:</strong> thị trường "người uống cà phê" chia thành: (1) dân văn phòng cần mua nhanh buổi sáng, (2) freelancer cần chỗ ngồi làm việc lâu, (3) nhóm bạn tụ tập cuối tuần.</li>
+<li><strong>Chọn mục tiêu:</strong> với quán nhỏ 20 chỗ gần tòa nhà văn phòng, chọn nhóm (1) — dân văn phòng mua mang đi buổi sáng.</li>
+<li><strong>Định vị:</strong> <em>"Ly cà phê ngon, lấy nhanh dưới 3 phút cho buổi sáng bận rộn."</em> Từ đó suy ra 4P: menu gọn, quầy pickup riêng, app đặt trước, khuyến mãi khung 7–9h.</li>
+</ul>
+<p>Bài học: cùng một cái quán, ba lựa chọn phân khúc dẫn tới ba mô hình vận hành hoàn toàn khác nhau.</p>
+<h2>Ví dụ doanh nghiệp</h2>
+<p><strong>Marriott International</strong> vận hành đa thương hiệu theo chiến lược <em>differentiated targeting</em>: mỗi thương hiệu con phục vụ một phân khúc khác nhau — Ritz-Carlton (siêu cao cấp), Marriott (cao cấp công tác), Courtyard (khách công tác tầm trung), Fairfield (tiết kiệm). Cùng một tập đoàn nhưng mỗi nhãn có định vị, mức giá và trải nghiệm riêng, tránh việc một thương hiệu phải "gánh" mọi phân khúc. <em>(Dữ kiện về danh mục thương hiệu; chi tiết cơ cấu có thể thay đổi theo thời gian — cần kiểm chứng khi trích số liệu.)</em></p>
+<p><strong>Phân tích:</strong> đây là minh họa kinh điển cho việc dùng <em>kiến trúc thương hiệu</em> (house of brands) để phủ nhiều phân khúc mà không làm loãng định vị của từng nhãn.</p>
+<h2>Ví dụ Việt Nam</h2>
+<p><strong>Vinamilk</strong> áp dụng <em>differentiated targeting</em> trong danh mục sữa: dòng cho trẻ em, dòng Organic cho nhóm quan tâm sức khỏe/thu nhập cao, dòng sữa cho người lớn tuổi (canxi/ít đường), sữa hạt cho nhóm ăn thực vật. Mỗi dòng có bao bì, thông điệp và điểm giá riêng.</p>
+<p><strong>Biti's Hunter (chiến dịch "Đi để trở về", ~2016–2017):</strong> tái định vị Biti's từ hình ảnh "bền, cho người lớn tuổi" sang thương hiệu sneaker cho giới trẻ Việt yêu xê dịch. Đây là ví dụ <em>repositioning</em> thành công nhờ chọn đúng phân khúc (Gen Z, người trẻ) và gắn thương hiệu với một cảm xúc (hành trình – trở về). <em>(Diễn giải định tính; con số doanh thu cụ thể cần kiểm chứng.)</em></p>
+<p><strong>Thế Giới Di Động → Điện Máy Xanh → Bách Hóa Xanh:</strong> một tập đoàn tách thành ba chuỗi, mỗi chuỗi nhắm một nhu cầu và tần suất mua khác nhau (điện thoại – điện máy – thực phẩm tươi hằng ngày), thay vì nhồi mọi thứ vào một cửa hàng.</p>
+<h2>Ví dụ quốc tế</h2>
+<p><strong>Volvo = "An toàn":</strong> ví dụ định vị được Ries &amp; Trout dẫn nhiều lần. Trong nhiều thập niên, Volvo sở hữu từ khóa "safety" trong tâm trí người mua xe — minh chứng cho nguyên lý "chiếm một từ".</p>
+<p><strong>Tesla:</strong> định vị ban đầu không phải "xe điện giá rẻ cho tất cả" mà là <em>xe thể thao điện cao cấp, hiệu năng cao</em> nhắm nhóm khách công nghệ – thu nhập cao (Roadster, Model S), rồi mới mở rộng xuống phân khúc phổ thông hơn (Model 3). Đây là chiến lược <em>concentrated → mở rộng</em> điển hình.</p>
+<p><strong>Dove — "Real Beauty":</strong> định vị dựa trên <em>tâm lý và giá trị</em> (vẻ đẹp thật, tự tin) thay vì thuộc tính sản phẩm thuần túy, nhắm nhóm phụ nữ mệt mỏi với chuẩn đẹp phi thực tế.</p>
+<h2>Sai lầm thường gặp</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Sai lầm</th>
+<th>Hệ quả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Phân khúc quá nhỏ, không đủ lớn để sinh lời</td>
+<td>"Ngách chết", không đủ doanh thu</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Phân khúc chỉ dựa trên nhân khẩu, bỏ qua hành vi &amp; nhu cầu</td>
+<td>Nhóm không đồng nhất về nhu cầu thật</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chọn mục tiêu nhưng không dám buông nhóm khác</td>
+<td>Định vị nhòe, thông điệp chung chung</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Định vị dựa trên điều <em>ta thích</em>, không phải điều khách hàng <em>quan tâm</em></td>
+<td>Không ai nhớ, không tạo khác biệt</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Định vị "khác biệt" nhưng không có Reason To Believe</td>
+<td>Bị xem là nói suông</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Đổi định vị liên tục theo mốt</td>
+<td>Xóa sạch trí nhớ thương hiệu đã tích lũy</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Tuyệt đối hóa định vị mà quên độ phủ &amp; độ sẵn có (bẫy mà Byron Sharp cảnh báo)</td>
+<td>Thương hiệu "khác biệt" nhưng khó nhớ, khó mua → không tăng trưởng</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ghi chú đối chiếu:</strong> Sai lầm #7 chính là điểm mấu chốt trong tranh luận Ries/Trout vs. Sharp. Bài học thực chiến: hãy định vị rõ <em>và</em> đầu tư cho việc dễ nhớ – dễ mua.</p>
+<h2>Checklist</h2>
+<ul>
+<li>[ ] Đã định nghĩa rõ ranh giới thị trường/ngành hàng?</li>
+<li>[ ] Đã chọn cơ sở phân khúc phù hợp (không chỉ nhân khẩu)?</li>
+<li>[ ] Mỗi phân khúc có persona rõ ràng và tên gọi dễ nhớ?</li>
+<li>[ ] Từng phân khúc đạt đủ tiêu chí DAMAS?</li>
+<li>[ ] Đã chấm điểm độ hấp dẫn và chọn mục tiêu có căn cứ?</li>
+<li>[ ] Đã dám <em>buông</em> các nhóm ngoài mục tiêu?</li>
+<li>[ ] Câu định vị có đủ: đối tượng – khung tham chiếu – khác biệt – RTB?</li>
+<li>[ ] Điểm khác biệt có <em>quan trọng với khách hàng</em> và <em>ta làm tốt hơn đối thủ</em>?</li>
+<li>[ ] Có bản đồ định vị so với đối thủ chính?</li>
+<li>[ ] Định vị đã được triển khai nhất quán xuống 4P/7P?</li>
+<li>[ ] Đã cân nhắc cả độ phủ và độ sẵn có (không chỉ khác biệt)?</li>
+</ul>
+<h2>SOP</h2>
+<p><strong>SOP — Xây dựng chiến lược STP (chu kỳ rà soát: 6–12 tháng/lần)</strong></p>
+<ol>
+<li><strong>Chuẩn bị dữ liệu</strong> (Tuần 1): thu thập dữ liệu bán hàng, khảo sát khách hàng, social listening, phỏng vấn định tính 8–12 khách.</li>
+<li><strong>Workshop phân khúc</strong> (Tuần 2): dùng framework 4 nhóm biến số, chia phân khúc, dựng persona.</li>
+<li><strong>Kiểm định DAMAS</strong> (Tuần 2): loại phân khúc không đạt, giữ 3–5 nhóm khả thi.</li>
+<li><strong>Chấm điểm &amp; chọn mục tiêu</strong> (Tuần 3): dùng công thức độ hấp dẫn, ban lãnh đạo quyết định.</li>
+<li><strong>Xây định vị</strong> (Tuần 3): viết Positioning Statement, vẽ bản đồ định vị.</li>
+<li><strong>Chuyển giao 4P/7P</strong> (Tuần 4): brief cho các phòng sản phẩm, giá, kênh, truyền thông.</li>
+<li><strong>Đo lường</strong> (liên tục): theo dõi KPI ở mục dưới; rà soát định kỳ.</li>
+</ol>
+<p><em>Người chịu trách nhiệm:</em> CMO/Head of Marketing chủ trì; có sự tham gia của Sales, R&amp;D, Tài chính.</p>
+<h2>KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bước STP</th>
+<th>KPI gợi ý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phân khúc</td>
+<td>Số phân khúc đạt DAMAS; độ rõ của persona</td>
+</tr>
+<tr>
+<td>Targeting</td>
+<td>Quy mô phân khúc mục tiêu; tốc độ tăng trưởng; biên lợi nhuận dự phóng</td>
+</tr>
+<tr>
+<td>Định vị – nhận biết</td>
+<td>Brand awareness (aided/unaided); mental availability</td>
+</tr>
+<tr>
+<td>Định vị – liên tưởng</td>
+<td>Tỷ lệ khách gắn thương hiệu với từ khóa mục tiêu; NPS</td>
+</tr>
+<tr>
+<td>Hiệu quả kinh doanh</td>
+<td>Thị phần trong phân khúc; market penetration; CAC; CLV; tỷ lệ chuyển đổi</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Nguyên tắc: mỗi KPI phải gắn với <em>một</em> mục tiêu của STP, tránh đo dàn trải. Nên đo cả chỉ số <em>nhận thức</em> (awareness, liên tưởng) lẫn <em>kết quả</em> (thị phần, doanh thu).</p>
+</blockquote>
+<h2>Biểu mẫu</h2>
+<p><strong>Biểu mẫu 1 — Bảng mô tả phân khúc</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Phân khúc A</th>
+<th>Phân khúc B</th>
+<th>Phân khúc C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tên gọi / persona</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cơ sở phân khúc chính</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Nhu cầu / pain point</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Quy mô ước tính</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sức mua</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Kênh tiếp cận</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Đạt DAMAS? (Đ/K)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Điểm hấp dẫn (1–10)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 2 — Câu định vị (Positioning Statement)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Nội dung điền</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Đối tượng mục tiêu</td>
+<td></td>
+</tr>
+<tr>
+<td>Nhu cầu / bối cảnh</td>
+<td></td>
+</tr>
+<tr>
+<td>Khung tham chiếu (ngành hàng)</td>
+<td></td>
+</tr>
+<tr>
+<td>Điểm khác biệt cốt lõi</td>
+<td></td>
+</tr>
+<tr>
+<td>Đối thủ chính</td>
+<td></td>
+</tr>
+<tr>
+<td>Reason To Believe (RTB)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Câu định vị hoàn chỉnh</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Prompt AI</h2>
+<blockquote>
+<p>Thay các phần trong [ ] bằng thông tin thật của bạn trước khi chạy.</p>
+</blockquote>
+<p><strong>ChatGPT (GPT-4/5 – brainstorm &amp; cấu trúc):</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia chiến lược Marketing. Sản phẩm của tôi là [mô tả]. Thị trường: [mô tả]. Hãy đề xuất 4–5 cách phân khúc theo địa lý, nhân khẩu, tâm lý, hành vi; với mỗi phân khúc, mô tả persona và pain point; rồi chấm điểm độ hấp dẫn theo quy mô–tăng trưởng–cạnh tranh và đề xuất phân khúc nên chọn, giải thích lý do."</p>
+</blockquote>
+<p><strong>Claude (lập luận sâu &amp; phản biện):</strong></p>
+<blockquote>
+<p>"Đóng vai Hội đồng phản biện chiến lược. Đây là chiến lược STP hiện tại của tôi: [dán]. Hãy: (1) chỉ ra các giả định ngầm chưa được kiểm chứng; (2) đối chiếu với góc nhìn Byron Sharp về penetration và mental/physical availability; (3) nêu 3 rủi ro lớn nhất và cách kiểm chứng bằng dữ liệu."</p>
+</blockquote>
+<p><strong>Gemini (tổng hợp thị trường &amp; đa nguồn):</strong></p>
+<blockquote>
+<p>"Tổng hợp thông tin công khai về hành vi tiêu dùng của [nhóm khách hàng] tại [thị trường/Việt Nam]. Phân nhóm theo nhu cầu và trích dẫn nguồn cho từng nhận định. Nếu không chắc chắn, hãy ghi rõ mức độ tin cậy."</p>
+</blockquote>
+<p><strong>Perplexity (tra cứu có nguồn):</strong></p>
+<blockquote>
+<p>"Tìm các báo cáo, khảo sát và số liệu về quy mô và xu hướng của [ngành hàng] tại [thị trường], kèm nguồn và năm xuất bản. Chỉ trả về thông tin có nguồn kiểm chứng được, ghi rõ năm."</p>
+</blockquote>
+<p><strong>NotebookLM (phân tích tài liệu nội bộ):</strong></p>
+<blockquote>
+<p>"Dựa trên các tài liệu tôi tải lên (khảo sát khách hàng, báo cáo bán hàng), hãy trích xuất các phân khúc khách hàng nổi bật, dẫn chứng bằng trích đoạn từ tài liệu gốc, và tổng hợp thành bảng persona."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa quy trình):</strong></p>
+<blockquote>
+<p>"Mục tiêu: xây dựng draft chiến lược STP cho [sản phẩm]. Bước 1: thu thập dữ liệu thị trường từ nguồn công khai (ghi nguồn). Bước 2: đề xuất phân khúc và kiểm định DAMAS. Bước 3: chấm điểm và chọn mục tiêu. Bước 4: viết Positioning Statement. Bước 5: xuất bảng biểu mẫu đã điền. Dừng lại xin xác nhận của tôi sau mỗi bước quan trọng."</p>
+</blockquote>
+<h2>Bài tập</h2>
+<ol>
+<li><strong>Cơ bản:</strong> Chọn một sản phẩm bạn đang dùng hằng ngày. Viết 3 phân khúc thị trường của nó và mô tả persona cho từng nhóm.</li>
+<li><strong>Trung cấp:</strong> Với một quán ăn/thương hiệu địa phương bạn biết, hãy dựng bảng Biểu mẫu 1 (mô tả phân khúc) đầy đủ và chấm điểm DAMAS.</li>
+<li><strong>Nâng cao:</strong> Viết câu định vị hoàn chỉnh cho startup giả định của bạn theo Biểu mẫu 2, rồi tự phản biện: điểm khác biệt này có <em>quan trọng với khách</em> và <em>bền vững trước đối thủ</em> không?</li>
+<li><strong>Phản biện:</strong> Đọc lập luận của Byron Sharp ở mục "Mô hình". Viết một đoạn 200 từ tranh luận: với sản phẩm của bạn, nên nghiêng về "định vị khác biệt" hay "độ phủ rộng"? Vì sao?</li>
+</ol>
+<h2>Câu hỏi ôn tập</h2>
+<ol>
+<li>STP là viết tắt của những từ nào và mối quan hệ nhân quả giữa chúng ra sao?</li>
+<li>Nêu 4 nhóm cơ sở phân khúc và cho một ví dụ mỗi nhóm.</li>
+<li>Tiêu chí DAMAS gồm những gì? Vì sao "Substantial" quan trọng với startup?</li>
+<li>Phân biệt ba chiến lược targeting: undifferentiated, differentiated, concentrated.</li>
+<li>Theo Ries &amp; Trout, "định vị" thực chất diễn ra ở đâu và tại sao "chiếm một từ" lại quan trọng?</li>
+<li>Byron Sharp phản biện lý thuyết định vị ở những điểm nào? Ta nên dung hòa ra sao?</li>
+<li>Một câu định vị (Positioning Statement) đầy đủ gồm những thành phần nào?</li>
+</ol>
+<h2>Case Study</h2>
+<p><strong>Thành công — Biti's Hunter (Việt Nam):</strong> Trước 2016, Biti's bị nhận diện là thương hiệu giày "bền, cho thế hệ trước". Bằng việc <em>chọn lại phân khúc</em> (giới trẻ, Gen Z yêu du lịch) và <em>định vị lại</em> quanh cảm xúc "Đi để trở về" (hợp tác cùng MV nhạc trẻ đang viral), Biti's Hunter tạo được liên tưởng mới, tươi trẻ. <strong>Vì sao thành công:</strong> phân khúc rõ, định vị gắn với cảm xúc mạnh và đúng nền tảng (mạng xã hội, âm nhạc), lại đúng thời điểm văn hóa. <em>(Phân tích định tính; số liệu doanh thu cụ thể cần kiểm chứng.)</em></p>
+<p><strong>Thất bại — bài học từ New Coke (Coca-Cola, 1985):</strong> Coca-Cola thay đổi công thức và định vị sản phẩm cốt lõi để "hợp khẩu vị" theo kết quả thử mù, nhưng bỏ qua <em>mối liên hệ cảm xúc và bản sắc</em> mà khách hàng đã gắn với thương hiệu gốc. Phản ứng dữ dội buộc hãng khôi phục "Coca-Cola Classic" chỉ sau khoảng ba tháng. <strong>Vì sao thất bại:</strong> đọc sai nhu cầu thật của phân khúc trung thành (họ mua <em>bản sắc</em>, không chỉ <em>vị</em>), và thay đổi định vị đã ăn sâu trong tâm trí — đúng cảnh báo của Ries &amp; Trout về việc đừng phá vỡ vị trí đã sở hữu. <em>(Đây là sự kiện lịch sử được ghi chép rộng rãi.)</em></p>
+<h2>Tổng kết</h2>
+<ul>
+<li>STP là quy trình <em>phân khúc → chọn mục tiêu → định vị</em>, cầu nối giữa nghiên cứu thị trường và 4P/7P.</li>
+<li>Phân khúc tốt phải đồng nhất bên trong, khác biệt bên ngoài, và đạt tiêu chí DAMAS.</li>
+<li>Chọn mục tiêu là một <em>quyết định đánh đổi</em>: dám buông để tập trung.</li>
+<li>Định vị là cuộc chiến trong <em>tâm trí khách hàng</em> (Ries &amp; Trout): hãy sở hữu một ý niệm rõ ràng, đúng điều khách hàng quan tâm, có Reason To Believe.</li>
+<li><strong>Đừng tuyệt đối hóa "khác biệt":</strong> góc nhìn Byron Sharp nhắc ta rằng độ phủ (penetration), mental availability và physical availability cũng quyết định tăng trưởng. Chiến lược khỏe là <em>vừa dễ nhớ, vừa dễ mua</em>.</li>
+<li>Công cụ mang về nhà: quy trình 7 bước, biểu mẫu điền được, câu định vị theo công thức, và bộ KPI đo cả nhận thức lẫn kết quả.</li>
+</ul>
+<h2>Nguồn tham khảo</h2>
+<ul>
+<li>Ries, A. &amp; Trout, J. <em>Positioning: The Battle for Your Mind</em>. McGraw-Hill, 1981.</li>
+<li>Kotler, P. &amp; Keller, K. L. <em>Marketing Management</em> (các phiên bản). Pearson.</li>
+<li>Kotler, P. &amp; Armstrong, G. <em>Principles of Marketing</em>. Pearson.</li>
+<li>Sharp, B. <em>How Brands Grow: What Marketers Don't Know</em>. Oxford University Press (Ehrenberg-Bass Institute), 2010.</li>
+<li>Smith, W. R. "Product Differentiation and Market Segmentation as Alternative Marketing Strategies". <em>Journal of Marketing</em>, 1956.</li>
+<li>Trout, J. &amp; Rivkin, S. <em>Differentiate or Die</em>. Wiley.</li>
+</ul>
+<blockquote>
+<p>Ghi chú trích dẫn: Các mốc lịch sử và khung lý thuyết ở trên dựa trên các ấn phẩm có thật liệt kê trong mục này. Các ví dụ doanh nghiệp mang tính minh họa; mọi số liệu định lượng cụ thể cần được kiểm chứng từ báo cáo chính thức trước khi sử dụng trong tài liệu học thuật hay thương mại.</p>
+</blockquote>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Phân khúc bằng AI &amp; dữ liệu lớn:</strong> cập nhật kỹ thuật clustering, phân khúc theo hành vi thời gian thực, và "segment of one" (cá nhân hóa đến từng người) khi công nghệ dữ liệu tiến hóa.</li>
+<li><strong>Hậu-cookie &amp; quyền riêng tư:</strong> khi định danh người dùng bị siết (privacy-first), cập nhật cách phân khúc dựa trên dữ liệu first-party và contextual targeting.</li>
+<li><strong>Định vị trong kỷ nguyên AI search &amp; trợ lý ảo:</strong> khi khách hàng hỏi AI thay vì tự tìm, "mental availability" có thể chuyển thành "AI availability" — thương hiệu được AI gợi ý. Cần bổ sung khung định vị cho ngữ cảnh này.</li>
+<li><strong>Cập nhật tranh luận học thuật:</strong> theo dõi các nghiên cứu mới của Ehrenberg-Bass và trường phái định vị để cập nhật sự dung hòa hai góc nhìn.</li>
+<li><strong>Ví dụ Việt Nam mới:</strong> bổ sung case gần thời điểm cập nhật (VinFast tại thị trường quốc tế, các thương hiệu D2C nội địa) kèm số liệu đã kiểm chứng.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-01-nen-tang-tu-duy-01-tu-duy-marketing.html"><span>← Trước</span>Tập 1 · Chương 1 — Tư duy Marketing 2026–2035: từ &quot;bán hàng&quot; đến &quot;tạo &amp; truyền tải giá trị&quot;</a><a class="next" href="tap-01-nen-tang-tu-duy-03-marketing-mix.html"><span>Sau →</span>Tập 1 · Chương 3 — Marketing Mix: 4P → 7P → 4C → 4E</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

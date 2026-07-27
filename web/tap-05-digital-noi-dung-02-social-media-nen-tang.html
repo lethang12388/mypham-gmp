@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 5 · Chương 2 — Social Media Marketing &amp; Đa nền tảng</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 5 · Chương 2 — Social Media Marketing &amp; Đa nền tảng</h1>
+<blockquote>
+<p><strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+<strong>Tập:</strong> 5 — Digital Marketing &amp; Nội dung
+<strong>Chương:</strong> 2 — Social Media Marketing &amp; Đa nền tảng: Facebook, Instagram, LinkedIn, Threads
+<strong>Phiên bản:</strong> 1.0 · <strong>Cập nhật:</strong> 2026-07 · <strong>Đối tượng:</strong> Marketer, chủ doanh nghiệp SME, content creator, sinh viên marketing
+<strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành)</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này trang bị tư duy và quy trình vận hành social media marketing bền vững trên bốn nền tảng chủ lực (Facebook, Instagram, LinkedIn, Threads), lấy giá trị nội dung và cộng đồng làm gốc thay vì chạy theo mẹo "hack" thuật toán ngắn hạn.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Social media không còn là "kênh phụ" mà đã trở thành hạ tầng giao tiếp mặc định giữa thương hiệu và con người. Một người tiêu dùng Việt Nam trung bình dành nhiều giờ mỗi ngày trên các nền tảng mạng xã hội (con số cụ thể thay đổi theo từng báo cáo — cần kiểm chứng theo năm), và đó là nơi họ khám phá sản phẩm, so sánh, ra quyết định và chia sẻ trải nghiệm.</p>
+<p>Vấn đề của phần lớn doanh nghiệp không phải "thiếu nền tảng" mà là <strong>thiếu hệ thống</strong>. Họ đăng bài ngẫu hứng, chạy theo trend, đầu tư vào những "mẹo tăng reach" hôm nay hết hiệu lực ngày mai. Chương này đi ngược lại: xây dựng nền tảng tư duy bền vững — hiểu bản chất từng nền tảng, thiết kế content pillar, vận hành theo SOP và đo lường bằng KPI thật.</p>
+<p>Nguyên tắc xuyên suốt: <strong>thuật toán thay đổi, nhu cầu con người thì không</strong>. Mọi nền tảng đều thưởng cho nội dung giữ chân người dùng ở lại lâu hơn và khiến họ quay lại. Ai phục vụ mục tiêu đó tốt nhất sẽ thắng dài hạn.</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Social Media Marketing (SMM)</strong> là hoạt động sử dụng các nền tảng mạng xã hội để xây dựng thương hiệu, tương tác với khách hàng, phân phối nội dung và thúc đẩy hành động kinh doanh (nhận biết, cân nhắc, chuyển đổi, trung thành).</p>
+<p>Một số khái niệm cốt lõi cần phân biệt:</p>
+<ul>
+<li><strong>Organic (tự nhiên):</strong> nội dung tiếp cận người dùng mà không trả phí quảng cáo, phụ thuộc thuật toán phân phối.</li>
+<li><strong>Paid (trả phí):</strong> nội dung được đẩy đến đối tượng mục tiêu thông qua ngân sách quảng cáo.</li>
+<li><strong>Reach:</strong> số người dùng duy nhất nhìn thấy nội dung.</li>
+<li><strong>Impression:</strong> tổng số lần nội dung hiển thị (một người có thể tạo nhiều impression).</li>
+<li><strong>Engagement:</strong> các hành động tương tác (thích, bình luận, chia sẻ, lưu, nhấp, xem).</li>
+<li><strong>UGC (User-Generated Content):</strong> nội dung do chính người dùng/khách hàng tạo ra về thương hiệu.</li>
+<li><strong>Social Listening:</strong> lắng nghe, thu thập và phân tích những gì người dùng nói về thương hiệu/ngành hàng trên mạng xã hội.</li>
+<li><strong>Content Pillar:</strong> các trụ nội dung chính, định hình chủ đề nhất quán cho một kênh.</li>
+</ul>
+<h2>3. Lịch sử hình thành</h2>
+<p>Social media marketing tiến hóa qua nhiều giai đoạn:</p>
+<ul>
+<li><strong>Giai đoạn sơ khai (giữa những năm 2000):</strong> các mạng xã hội đầu tiên như MySpace, sau đó Facebook mở rộng ra công chúng. Thương hiệu bắt đầu lập "trang" (fanpage).</li>
+<li><strong>Kỷ nguyên organic reach cao (khoảng cuối 2000s – đầu 2010s):</strong> đăng bài trên fanpage tiếp cận phần lớn người theo dõi mà gần như miễn phí. Đây là "thời hoàng kim" mà nhiều người vẫn hoài niệm.</li>
+<li><strong>Sự trỗi dậy của thuật toán và pay-to-play (giữa 2010s):</strong> khi lượng nội dung bùng nổ, các nền tảng chuyển sang bảng tin (feed) do thuật toán quyết định, organic reach của fanpage giảm mạnh, quảng cáo trả phí trở thành bắt buộc để mở rộng quy mô.</li>
+<li><strong>Kỷ nguyên hình ảnh và video ngắn (cuối 2010s – đầu 2020s):</strong> Instagram, rồi làn sóng video ngắn (Reels, Stories) định hình lại cách tiêu thụ nội dung.</li>
+<li><strong>Kỷ nguyên phân mảnh &amp; creator (2020s):</strong> sự xuất hiện của Threads (ra mắt năm 2023) như một mạng xã hội dạng văn bản; LinkedIn tăng vai trò trong B2B; nội dung do creator dẫn dắt thay vì thương hiệu tự nói về mình. AI bắt đầu tham gia sản xuất và cá nhân hóa nội dung.</li>
+</ul>
+<p>Bài học lịch sử: <strong>organic reach luôn có xu hướng giảm dần khi nền tảng trưởng thành và thương mại hóa.</strong> Doanh nghiệp không nên xây "nhà trên đất thuê" mà phải chuyển dần người theo dõi thành tài sản sở hữu (email, cộng đồng riêng, khách hàng thật).</p>
+<h2>4. Tại sao quan trọng</h2>
+<ul>
+<li><strong>Nơi khách hàng thực sự ở:</strong> không kênh nào tập trung sự chú ý của người tiêu dùng bằng mạng xã hội.</li>
+<li><strong>Chi phí gia nhập thấp:</strong> một SME có thể bắt đầu với chi phí gần như bằng 0 về mặt tài khoản, khác với quảng cáo truyền hình trước đây.</li>
+<li><strong>Đo lường được:</strong> mọi hành động đều để lại dữ liệu, cho phép tối ưu liên tục.</li>
+<li><strong>Hai chiều:</strong> thương hiệu không chỉ phát đi mà còn lắng nghe, đối thoại, xây quan hệ.</li>
+<li><strong>Đòn bẩy lan truyền:</strong> một nội dung chạm cảm xúc có thể được người dùng khuếch đại miễn phí (earned media).</li>
+<li><strong>Tài sản thương hiệu dài hạn:</strong> cộng đồng trung thành là "hào nước" bảo vệ doanh nghiệp trước biến động thị trường và chi phí quảng cáo tăng.</li>
+</ul>
+<p>Ngược lại, làm sai social media cũng đắt giá: khủng hoảng truyền thông lan nhanh, đốt tiền quảng cáo vào nội dung yếu, hoặc xây một lượng follower ảo không tạo ra doanh thu.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Mọi thuật toán feed hiện đại, dù khác nhau về chi tiết, đều vận hành theo một logic chung:</p>
+<ol>
+<li><strong>Thu thập tín hiệu (signals):</strong> ai đăng, nội dung dạng gì, chủ đề gì, người xem từng tương tác với nội dung tương tự chưa.</li>
+<li><strong>Dự đoán (prediction):</strong> thuật toán ước tính xác suất người dùng sẽ thực hiện các hành động giá trị — dừng xem, nhấp, bình luận, chia sẻ, lưu, xem hết.</li>
+<li><strong>Chấm điểm &amp; xếp hạng (ranking):</strong> mỗi nội dung nhận một "điểm phù hợp" cho từng người dùng.</li>
+<li><strong>Phân phối thử &amp; mở rộng:</strong> nội dung được phát cho một nhóm nhỏ; nếu tín hiệu tốt, phạm vi mở rộng dần.</li>
+</ol>
+<p><strong>Nguyên lý cốt lõi cần thuộc lòng:</strong> nền tảng kiếm tiền từ thời gian và sự chú ý của người dùng. Vì vậy nó thưởng cho nội dung <strong>giữ chân</strong> (retention) và <strong>kéo người dùng quay lại</strong> (return). Ba đòn bẩy bền vững:</p>
+<ul>
+<li><strong>Hook (3 giây đầu):</strong> giữ người xem không lướt qua.</li>
+<li><strong>Giá trị (value):</strong> dạy, giải trí, truyền cảm hứng hoặc kết nối cảm xúc — lý do người ta lưu và chia sẻ.</li>
+<li><strong>Tương tác thật (meaningful engagement):</strong> bình luận có chiều sâu, chia sẻ, lưu — trọng số cao hơn "thích" đơn thuần.</li>
+</ul>
+<p>Đây là lý do việc "hack" thuật toán (mua tương tác, engagement bait, đăng spam) thất bại dài hạn: nó tạo tín hiệu giả, và các nền tảng ngày càng giỏi phát hiện, thậm chí phạt (giảm reach — shadow ban).</p>
+<h2>6. Mô hình</h2>
+<p><strong>Mô hình PESO</strong> giúp định vị vai trò social media trong tổng thể truyền thông:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Loại media</th>
+<th>Ý nghĩa</th>
+<th>Ví dụ trên social</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Paid</strong></td>
+<td>Trả tiền để hiển thị</td>
+<td>Facebook/Instagram Ads, LinkedIn Ads</td>
+</tr>
+<tr>
+<td><strong>Earned</strong></td>
+<td>Được lan truyền tự nhiên</td>
+<td>Chia sẻ của người dùng, UGC, báo chí nhắc đến</td>
+</tr>
+<tr>
+<td><strong>Shared</strong></td>
+<td>Kênh cộng đồng, đối thoại</td>
+<td>Group Facebook, phần bình luận, Threads</td>
+</tr>
+<tr>
+<td><strong>Owned</strong></td>
+<td>Tài sản mình sở hữu</td>
+<td>Fanpage, tài khoản, danh sách email thu về</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Mô hình phễu social (Social Funnel):</strong></p>
+<ul>
+<li><strong>TOFU (Top - Nhận biết):</strong> nội dung reach rộng, chạm vấn đề/insight → video ngắn, bài viral, trend.</li>
+<li><strong>MOFU (Middle - Cân nhắc):</strong> nội dung xây niềm tin → case study, review, so sánh, hướng dẫn.</li>
+<li><strong>BOFU (Bottom - Chuyển đổi):</strong> nội dung thúc đẩy hành động → ưu đãi, chứng thực (testimonial), CTA rõ ràng.</li>
+<li><strong>Sau bán (Trung thành &amp; lan truyền):</strong> cộng đồng, UGC, chăm sóc khách hàng cũ.</li>
+</ul>
+<h2>7. Framework</h2>
+<p>Giáo trình đề xuất framework <strong>CONNECT</strong> để vận hành social media đa nền tảng:</p>
+<ul>
+<li><strong>C — Clarify (Xác định mục tiêu &amp; đối tượng):</strong> mục tiêu kinh doanh, chân dung khách hàng, chỉ số thành công.</li>
+<li><strong>O — Optimize per platform (Tối ưu theo từng nền tảng):</strong> tôn trọng đặc tính riêng, không bê nguyên nội dung.</li>
+<li><strong>N — Narrative &amp; Pillars (Câu chuyện &amp; trụ nội dung):</strong> 3–5 content pillar nhất quán.</li>
+<li><strong>N — Nurture community (Nuôi cộng đồng):</strong> trả lời bình luận, khuyến khích UGC, xây group.</li>
+<li><strong>E — Engage &amp; Listen (Tương tác &amp; lắng nghe):</strong> social listening, phản hồi, thu insight.</li>
+<li><strong>C — Convert &amp; Amplify (Chuyển đổi &amp; khuếch đại):</strong> phối hợp organic + paid, CTA, retargeting.</li>
+<li><strong>T — Track &amp; Iterate (Đo lường &amp; lặp lại):</strong> KPI, phân tích, cải tiến hàng tháng.</li>
+</ul>
+<h2>8. Công thức</h2>
+<p>Một số công thức định lượng nền tảng (tất cả số dưới đây là <strong>số minh họa</strong>, không phải dữ liệu thật):</p>
+<p><strong>Engagement Rate theo reach:</strong></p>
+<pre><code>Engagement Rate (%) = (Tổng tương tác / Reach) × 100
+Ví dụ (số minh họa): (450 tương tác / 9.000 reach) × 100 = 5%
+</code></pre>
+<p><strong>Engagement Rate theo follower:</strong></p>
+<pre><code>ER = (Tổng tương tác của bài / Số follower) × 100
+</code></pre>
+<p><strong>CTR (Click-Through Rate):</strong></p>
+<pre><code>CTR (%) = (Số lượt nhấp / Số lượt hiển thị) × 100
+Ví dụ (số minh họa): (120 nhấp / 6.000 impression) × 100 = 2%
+</code></pre>
+<p><strong>Conversion Rate:</strong></p>
+<pre><code>CR (%) = (Số chuyển đổi / Số lượt nhấp vào link) × 100
+Ví dụ (số minh họa): (18 đơn / 120 nhấp) × 100 = 15%
+</code></pre>
+<p><strong>CPM &amp; CPC (cho paid):</strong></p>
+<pre><code>CPM = (Chi phí / Số impression) × 1.000
+CPC = Chi phí / Số lượt nhấp
+</code></pre>
+<p><strong>Chi phí trên mỗi kết quả kinh doanh (bền vững hơn để ra quyết định):</strong></p>
+<pre><code>CAC từ social = Tổng chi phí (ads + nội dung + nhân sự) / Số khách hàng thu được
+</code></pre>
+<p>Lưu ý sư phạm: đừng tôn thờ một chỉ số đơn lẻ. ER cao mà không ra doanh thu chỉ là "phù phiếm". Luôn nối chỉ số social về mục tiêu kinh doanh cuối cùng.</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình vận hành social media theo tháng (chu kỳ 30 ngày):</p>
+<ol>
+<li><strong>Nghiên cứu &amp; lắng nghe:</strong> social listening, phân tích đối thủ, thu insight khách hàng.</li>
+<li><strong>Đặt mục tiêu tháng:</strong> gắn với KPI (ví dụ: tăng reach nhóm khách mục tiêu, X lead).</li>
+<li><strong>Xác định content pillar &amp; tỉ lệ:</strong> ví dụ 40% giáo dục, 30% giải trí/kết nối, 20% chứng thực, 10% bán hàng.</li>
+<li><strong>Lên lịch nội dung (content calendar):</strong> phân bổ theo nền tảng, định dạng, thời điểm.</li>
+<li><strong>Sản xuất:</strong> viết, thiết kế, quay dựng; tạo bản gốc rồi repurpose sang các nền tảng.</li>
+<li><strong>Duyệt &amp; đăng:</strong> kiểm tra pháp lý, thương hiệu, chính tả; đăng theo lịch.</li>
+<li><strong>Tương tác chủ động:</strong> trả lời bình luận trong "giờ vàng" đầu tiên sau khi đăng.</li>
+<li><strong>Khuếch đại:</strong> đẩy paid cho bài organic tốt, phối hợp KOL/KOC, kích UGC.</li>
+<li><strong>Đo lường:</strong> thu số liệu cuối tuần/cuối tháng.</li>
+<li><strong>Rút kinh nghiệm &amp; lặp:</strong> giữ cái hiệu quả, bỏ cái yếu, thử nghiệm mới.</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Bối cảnh:</strong> một tiệm bánh nhỏ tự làm tại nhà, chủ tiệm một mình vận hành.</p>
+<ul>
+<li><strong>Content pillar:</strong> (1) hậu trường làm bánh, (2) mẹo bảo quản/thưởng thức, (3) phản hồi khách hàng.</li>
+<li><strong>Facebook:</strong> đăng ảnh mẻ bánh mới + câu chuyện ngắn, kêu gọi đặt trước qua tin nhắn.</li>
+<li><strong>Instagram Reels:</strong> clip 15 giây quay cận cảnh cắt bánh (hook thị giác giữ mắt).</li>
+<li><strong>Threads:</strong> đăng một câu hỏi nhẹ "Bạn thích bánh ngọt vừa hay ngọt đậm?" để tạo hội thoại.</li>
+<li><strong>Kết quả kỳ vọng (định tính):</strong> vài đơn đặt trước mỗi tuần, một nhóm khách quen bình luận đều. Không cần viral — cần <strong>nhất quán và quan hệ</strong>.</li>
+</ul>
+<p>Bài học: người mới nên chọn 1–2 nền tảng làm chủ lực, không dàn trải cả bốn.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Bối cảnh:</strong> một thương hiệu mỹ phẩm SME (giả định) muốn xây kênh đa nền tảng.</p>
+<ul>
+<li><strong>Facebook:</strong> trung tâm cộng đồng — lập Group "Chăm sóc da cùng chuyên gia", đăng bài dài chia sẻ kiến thức, dùng để chăm sóc khách và retargeting quảng cáo.</li>
+<li><strong>Instagram:</strong> kênh hình ảnh thương hiệu — feed đẹp, Reels hướng dẫn skincare, Stories flash sale, hợp tác KOC review.</li>
+<li><strong>LinkedIn:</strong> kể câu chuyện thương hiệu, tiêu chuẩn sản xuất GMP, tuyển dụng, xây uy tín B2B với nhà phân phối.</li>
+<li><strong>Threads:</strong> giọng nói "người thật" của thương hiệu — bắt trend nhẹ nhàng, trả lời nhanh, xây thiện cảm.</li>
+</ul>
+<p><strong>Cách phối hợp:</strong> một buổi quay sản phẩm tạo ra bộ tài sản gốc → cắt Reels cho Instagram, ảnh tĩnh cho Facebook, bài học rút ra cho LinkedIn, câu chuyện ngắn cho Threads. Đây là nguyên lý <strong>produce once, distribute everywhere</strong> (sản xuất một lần, phân phối khắp nơi) — tiết kiệm nguồn lực cho SME.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Biti's Hunter — chiến dịch "Đi để trở về" (thật):</strong> Biti's Hunter tái định vị thương hiệu giày Việt qua chuỗi chiến dịch Tết "Đi để trở về", kết hợp âm nhạc (MV với nghệ sĩ như Soobin Hoàng Sơn, Đen Vâu ở các mùa khác nhau) và lan truyền mạnh trên Facebook/YouTube. Điểm đáng học: nội dung chạm <strong>insight cảm xúc dịp Tết</strong> (khát khao trải nghiệm nhưng vẫn muốn về nhà), khiến cộng đồng chủ động chia sẻ — earned media thay vì chỉ chạy quảng cáo.</p>
+<p><strong>Highlands Coffee, The Coffee House (thật):</strong> các chuỗi F&amp;B Việt vận hành fanpage Facebook và Instagram rất đều đặn, dùng hình ảnh sản phẩm nhất quán và tương tác nhanh trong bình luận. Điểm học: sức mạnh của <strong>tính nhất quán và tần suất</strong> thay vì phụ thuộc vào một bài viral duy nhất.</p>
+<p><strong>Cộng đồng review trên Facebook Group (thật):</strong> các group như "Nghiện Nhà", "Đồng nghiệp"... cho thấy hành vi người Việt rất mạnh ở kênh <strong>shared/cộng đồng</strong> — nơi UGC và truyền miệng có sức nặng hơn quảng cáo trực tiếp. Thương hiệu khôn ngoan tham gia đối thoại thay vì spam bán hàng.</p>
+<p><em>(Chi tiết số liệu từng chiến dịch thay đổi theo thời gian — cần kiểm chứng từ nguồn chính thức khi trích dẫn cụ thể.)</em></p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Duolingo trên TikTok/Instagram (thật):</strong> linh vật cú xanh Duo với giọng điệu hài hước, bắt trend nhanh, tạo nhân cách thương hiệu gần gũi và gây sốt. Bài học: <strong>brand personality</strong> rõ ràng biến một app học ngôn ngữ khô khan thành hiện tượng văn hóa mạng, kéo về lượng nhận biết khổng lồ mà quảng cáo truyền thống khó đạt.</p>
+<p><strong>Nike (thật):</strong> sử dụng social media để kể câu chuyện truyền cảm hứng và giá trị thương hiệu ("Just Do It"), tận dụng vận động viên và cộng đồng thay vì chỉ đăng sản phẩm. Bài học: nội dung xoay quanh <strong>giá trị và con người</strong>, sản phẩm chỉ là phần cuối.</p>
+<p><strong>LinkedIn thought leadership (thật, dạng chung):</strong> nhiều nhà sáng lập và chuyên gia quốc tế xây dựng ảnh hưởng B2B bằng cách đăng bài chia sẻ bài học nghề nghiệp đều đặn trên LinkedIn, biến trang cá nhân thành kênh tạo lead chất lượng cao. Bài học: LinkedIn thưởng cho <strong>nội dung chuyên môn chân thực và nhất quán</strong>.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Bê nguyên một nội dung sang mọi nền tảng</strong> mà không điều chỉnh định dạng/giọng điệu.</li>
+<li><strong>Chạy theo mọi trend</strong> làm loãng bản sắc thương hiệu.</li>
+<li><strong>Tôn thờ vanity metrics</strong> (follower, like) thay vì chỉ số kinh doanh.</li>
+<li><strong>Mua follower/tương tác ảo</strong> — phá tín hiệu thuật toán, hủy hoại niềm tin.</li>
+<li><strong>Bán hàng lộ liễu 100%</strong> thay vì cho giá trị trước.</li>
+<li><strong>Bỏ bê bình luận và tin nhắn</strong> — bỏ lỡ cả tương tác lẫn khách hàng.</li>
+<li><strong>Không có content pillar</strong> — đăng ngẫu hứng, khán giả không biết theo dõi vì điều gì.</li>
+<li><strong>Dàn trải cả bốn nền tảng khi thiếu nguồn lực</strong> thay vì làm sâu 1–2 kênh.</li>
+<li><strong>Phụ thuộc hoàn toàn organic</strong> hoặc ngược lại <strong>chỉ đốt tiền paid</strong> — bỏ qua sự bổ trợ giữa hai.</li>
+<li><strong>"Hack" thuật toán ngắn hạn</strong> (engagement bait, spam hashtag) thay vì đầu tư nội dung giá trị.</li>
+<li><strong>Không sở hữu tệp khách:</strong> chỉ nuôi follower trên đất thuê, không chuyển thành email/cộng đồng riêng.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p><strong>Trước khi đăng mỗi bài:</strong>
+- [ ] Nội dung thuộc content pillar nào? Có phục vụ đối tượng mục tiêu không?
+- [ ] Hook 3 giây đầu đủ mạnh?
+- [ ] Định dạng đã tối ưu cho nền tảng cụ thể chưa?
+- [ ] Có CTA rõ ràng (dù chỉ là "lưu lại", "bình luận") không?
+- [ ] Hình ảnh/video đạt chuẩn thương hiệu, đúng tỉ lệ khung hình?
+- [ ] Caption đã kiểm tra chính tả, pháp lý (nếu ngành nhạy cảm như mỹ phẩm/thực phẩm)?
+- [ ] Đúng giờ đăng theo dữ liệu khán giả?</p>
+<p><strong>Hàng tháng:</strong>
+- [ ] Xem lại KPI so với mục tiêu.
+- [ ] Bài nào tốt nhất/kém nhất — vì sao?
+- [ ] Cập nhật content pillar nếu insight thay đổi.
+- [ ] Rà soát thay đổi thuật toán/tính năng mới của nền tảng.</p>
+<h2>16. SOP</h2>
+<p><strong>SOP đăng một bài Reels/Video ngắn (chuẩn hóa cho team):</strong></p>
+<ol>
+<li><strong>Ý tưởng (D-3):</strong> chọn chủ đề từ ngân hàng ý tưởng, gắn với pillar.</li>
+<li><strong>Kịch bản (D-3):</strong> viết hook, thân, CTA; giữ dưới thời lượng tối ưu của nền tảng.</li>
+<li><strong>Sản xuất (D-2):</strong> quay/dựng theo brand guideline; thêm phụ đề.</li>
+<li><strong>Duyệt (D-1):</strong> trưởng nhóm kiểm tra nội dung + pháp lý; ký duyệt.</li>
+<li><strong>Lên lịch (D-1):</strong> đặt giờ đăng theo dữ liệu; chuẩn bị caption + hashtag.</li>
+<li><strong>Đăng (D-0):</strong> đăng đúng giờ vàng.</li>
+<li><strong>Tương tác (D-0, 60 phút đầu):</strong> trả lời mọi bình luận nhanh nhất có thể.</li>
+<li><strong>Repurpose (D-0 → D+2):</strong> cắt/biến thể sang các nền tảng khác.</li>
+<li><strong>Đo lường (D+3, D+7):</strong> ghi số liệu vào bảng theo dõi.</li>
+<li><strong>Rút kinh nghiệm (cuối tuần):</strong> cập nhật ngân hàng ý tưởng dựa trên kết quả.</li>
+</ol>
+<p><strong>Phân vai:</strong> Content lead (duyệt) · Creator (sản xuất) · Community manager (tương tác) · Data analyst (đo lường).</p>
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tầng phễu</th>
+<th>Mục tiêu</th>
+<th>KPI chính</th>
+<th>KPI phụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nhận biết (TOFU)</td>
+<td>Mở rộng tiếp cận</td>
+<td>Reach, Impression, Video views</td>
+<td>Follower growth, Share</td>
+</tr>
+<tr>
+<td>Cân nhắc (MOFU)</td>
+<td>Xây niềm tin</td>
+<td>Engagement Rate, Save, Comment chất lượng</td>
+<td>Profile visit, Link click</td>
+</tr>
+<tr>
+<td>Chuyển đổi (BOFU)</td>
+<td>Ra kết quả</td>
+<td>Lead, Conversion Rate, CAC</td>
+<td>CTR, Cost/lead</td>
+</tr>
+<tr>
+<td>Trung thành</td>
+<td>Giữ &amp; lan truyền</td>
+<td>UGC count, Retention, Repeat rate</td>
+<td>Sentiment, NPS</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Nguyên tắc chọn KPI:</strong> mỗi chiến dịch chọn <strong>một KPI chủ đạo (North Star)</strong> gắn mục tiêu kinh doanh, tránh tối ưu dàn trải. Engagement Rate và Reach là chỉ số chẩn đoán, không phải mục tiêu cuối cùng.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu Lịch nội dung tuần (Content Calendar):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thứ</th>
+<th>Nền tảng</th>
+<th>Pillar</th>
+<th>Định dạng</th>
+<th>Chủ đề/Hook</th>
+<th>Caption tóm tắt</th>
+<th>CTA</th>
+<th>Giờ đăng</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T2</td>
+<td>Instagram</td>
+<td>Giáo dục</td>
+<td>Reels</td>
+<td>"3 sai lầm skincare"</td>
+<td>...</td>
+<td>Lưu lại</td>
+<td>12:00</td>
+<td>Đã lên lịch</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Facebook</td>
+<td>Chứng thực</td>
+<td>Ảnh + text</td>
+<td>Review khách A</td>
+<td>...</td>
+<td>Nhắn tin</td>
+<td>20:00</td>
+<td>Đang viết</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>LinkedIn</td>
+<td>Thương hiệu</td>
+<td>Bài dài</td>
+<td>Chuẩn GMP là gì</td>
+<td>...</td>
+<td>Bình luận</td>
+<td>08:00</td>
+<td>Ý tưởng</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Threads</td>
+<td>Kết nối</td>
+<td>Text</td>
+<td>Câu hỏi mở</td>
+<td>...</td>
+<td>Trả lời</td>
+<td>21:00</td>
+<td>Ý tưởng</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>Instagram</td>
+<td>Giải trí</td>
+<td>Reels/trend</td>
+<td>Bắt trend nhẹ</td>
+<td>...</td>
+<td>Tag bạn bè</td>
+<td>19:00</td>
+<td>Chưa quay</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu Báo cáo hiệu quả tháng:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nền tảng</th>
+<th>Số bài</th>
+<th>Reach</th>
+<th>ER (%)</th>
+<th>CTR (%)</th>
+<th>Lead</th>
+<th>Ghi chú/bài học</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Facebook</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Threads</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>19. Prompt AI</h2>
+<p>Sử dụng AI như trợ lý sản xuất, không thay thế tư duy chiến lược và giọng nói thương hiệu. Luôn kiểm chứng lại sự thật, số liệu.</p>
+<p><strong>ChatGPT / Claude (ý tưởng &amp; viết caption):</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia social media cho thương hiệu [ngành]. Đối tượng: [chân dung khách hàng]. Content pillar: [liệt kê]. Hãy đề xuất 15 ý tưởng nội dung cho tháng tới, mỗi ý tưởng ghi rõ: nền tảng phù hợp nhất, định dạng, hook 3 giây, và CTA. Giọng điệu: [mô tả brand voice]."</p>
+</blockquote>
+<p><strong>Claude (repurpose đa nền tảng):</strong></p>
+<blockquote>
+<p>"Đây là bài gốc dạng video dài: [dán nội dung]. Hãy tái sử dụng thành: (1) kịch bản Reels 20 giây cho Instagram, (2) bài dài kể chuyện cho Facebook, (3) bài chuyên môn cho LinkedIn, (4) 3 post ngắn dạng hội thoại cho Threads. Giữ nguyên thông điệp cốt lõi, điều chỉnh giọng điệu theo từng nền tảng."</p>
+</blockquote>
+<p><strong>Gemini (nghiên cứu trend &amp; bối cảnh):</strong></p>
+<blockquote>
+<p>"Tổng hợp các xu hướng nội dung đang nổi trong ngành [X] trên mạng xã hội gần đây. Với mỗi xu hướng, nêu: bản chất, vì sao hiệu quả, và cách [thương hiệu của tôi] có thể áp dụng mà không đánh mất bản sắc. Ghi rõ điều nào cần kiểm chứng thêm."</p>
+</blockquote>
+<p><strong>Perplexity (kiểm chứng &amp; nguồn):</strong></p>
+<blockquote>
+<p>"Cập nhật những thay đổi thuật toán/tính năng mới nhất của [Instagram Reels / LinkedIn feed] và trích dẫn nguồn chính thức. Nêu rõ ngày cập nhật và mức độ tin cậy của từng nguồn."</p>
+</blockquote>
+<p><strong>NotebookLM (học từ tài liệu nội bộ):</strong></p>
+<blockquote>
+<p>"Dựa trên bộ tài liệu brand guideline và báo cáo hiệu quả 6 tháng đã tải lên, tóm tắt: đâu là định dạng nội dung hiệu quả nhất, pillar nào yếu, và 5 khuyến nghị cải thiện cho quý tới."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa quy trình):</strong></p>
+<blockquote>
+<p>"Thiết lập quy trình: mỗi sáng thu thập bình luận/tin nhắn mới trên các kênh, phân loại theo (câu hỏi sản phẩm / khiếu nại / khen ngợi / cơ hội bán), gợi ý câu trả lời theo brand voice, và đánh dấu case cần người thật xử lý. Không tự gửi câu trả lời với case nhạy cảm — chuyển cho community manager duyệt."</p>
+</blockquote>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Phân tích nền tảng:</strong> chọn một thương hiệu bạn thích, mô tả cách họ dùng khác nhau giữa Facebook, Instagram, LinkedIn, Threads. Điểm nào tốt, điểm nào cải thiện được?</li>
+<li><strong>Xây content pillar:</strong> thiết kế 4 content pillar cho một doanh nghiệp giả định, kèm tỉ lệ phân bổ và lý do.</li>
+<li><strong>Lịch nội dung:</strong> điền biểu mẫu Content Calendar cho 1 tuần (mục 18) với nội dung thật của mình.</li>
+<li><strong>Repurpose:</strong> lấy một video/bài viết bạn có, dùng prompt AI ở mục 19 để tạo 4 phiên bản cho 4 nền tảng; tự đánh giá bản nào cần chỉnh tay.</li>
+<li><strong>Đo lường:</strong> tính Engagement Rate và CTR cho 3 bài đăng gần nhất của bạn (hoặc số minh họa), rút ra một nhận định.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt reach, impression và engagement. Vì sao không nên dùng follower làm KPI chính?</li>
+<li>Vì sao organic reach có xu hướng giảm khi một nền tảng trưởng thành?</li>
+<li>Nêu 3 đòn bẩy bền vững mà mọi thuật toán feed đều thưởng.</li>
+<li>Giải thích nguyên lý "produce once, distribute everywhere" và vì sao nó quan trọng với SME.</li>
+<li>Khi nào nên dùng LinkedIn thay vì Instagram? Cho ví dụ ngành hàng.</li>
+<li>Vì sao "hack" thuật toán thất bại dài hạn? Cho một ví dụ hành vi cụ thể.</li>
+<li>Organic và paid bổ trợ nhau như thế nào trong một phễu chuyển đổi?</li>
+<li>Social listening giúp ích gì ngoài việc theo dõi khủng hoảng?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công — Biti's Hunter "Đi để trở về" (thật, phân tích định tính):</strong>
+Thay vì quảng cáo sản phẩm trực diện, Biti's Hunter gắn thương hiệu vào một insight cảm xúc mạnh dịp Tết và một sản phẩm âm nhạc lan truyền. Cộng đồng chủ động chia sẻ, tranh luận, tạo earned media quy mô lớn. <strong>Bài học:</strong> nội dung chạm cảm xúc + đúng thời điểm văn hóa + để cộng đồng khuếch đại &gt; tự thương hiệu hô hào. Đây là minh chứng cho nguyên lý "phục vụ con người, thuật toán sẽ thưởng."</p>
+<p><strong>Case thất bại — mẫu hình khủng hoảng "tự đánh bóng" (mô tả dạng chung để rút bài học):</strong>
+Một dạng thất bại phổ biến: thương hiệu chạy chiến dịch social đề cao mình quá mức, hoặc phản hồi khiếu nại của khách một cách phòng thủ/thiếu chân thành trong phần bình luận công khai. Người dùng phát hiện sự thiếu nhất quán giữa lời nói và trải nghiệm thật, ảnh chụp màn hình lan truyền, biến một sự cố nhỏ thành khủng hoảng. <strong>Bài học:</strong> trên mạng xã hội, <strong>tính xác thực (authenticity) và cách xử lý bình luận</strong> quan trọng ngang nội dung. Đừng đăng những gì không sống được; đừng để chế độ tự động/quảng cáo vô cảm xử lý cảm xúc con người.</p>
+<p><em>(Với case study cụ thể có tên thương hiệu và số liệu, cần kiểm chứng nguồn chính thức trước khi trích dẫn — tránh dẫn lại tin đồn.)</em></p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li>Social media marketing là <strong>hệ thống</strong>, không phải chuỗi hành động ngẫu hứng.</li>
+<li>Mỗi nền tảng có bản chất riêng — tối ưu theo nền tảng, nhưng giữ <strong>một câu chuyện thương hiệu nhất quán</strong>.</li>
+<li>Thuật toán thay đổi liên tục; điều bền vững là <strong>giá trị nội dung, hook, tương tác thật và cộng đồng</strong>.</li>
+<li>Đừng tôn thờ vanity metrics — nối mọi chỉ số về <strong>kết quả kinh doanh</strong>.</li>
+<li>Organic và paid bổ trợ nhau; UGC và cộng đồng là <strong>hào nước dài hạn</strong>.</li>
+<li>Sản xuất một lần, phân phối khắp nơi — đòn bẩy sống còn cho nguồn lực hữu hạn.</li>
+<li><strong>Không "hack" thuật toán.</strong> Xây tài sản thật: nội dung tốt, quan hệ thật, tệp khách hàng sở hữu được.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<p><em>(Do số liệu và tính năng nền tảng thay đổi nhanh, ưu tiên tra cứu trực tiếp nguồn chính thức tại thời điểm sử dụng. Không trích dẫn link cụ thể để tránh dẫn nguồn lỗi thời.)</em></p>
+<ul>
+<li>Trung tâm trợ giúp/tài liệu chính thức của từng nền tảng: Meta (Facebook, Instagram, Threads) Business Help Center; LinkedIn Marketing Solutions.</li>
+<li>Báo cáo ngành thường niên (cần kiểm chứng theo năm): các báo cáo về hành vi người dùng internet/mạng xã hội (ví dụ dạng "Digital Report" toàn cầu và Việt Nam).</li>
+<li>Sách nền tảng về marketing và thương hiệu: các tác phẩm kinh điển về định vị, xây dựng thương hiệu và nội dung (Kotler; Byron Sharp — "How Brands Grow"; các tài liệu về content marketing).</li>
+<li>Blog chính thức và tài liệu creator của các nền tảng về cập nhật thuật toán.</li>
+<li>Tài liệu nội bộ của bộ giáo trình: Tập 5 — các chương liên quan (chiến lược nội dung, quảng cáo trả phí, đo lường digital).</li>
+</ul>
+<blockquote>
+<p><strong>Lưu ý học thuật:</strong> mọi số liệu cụ thể (số người dùng, chi phí quảng cáo trung bình, benchmark engagement) trong chương này hoặc bị lược bỏ hoặc ghi "số minh họa"/"cần kiểm chứng" vì thay đổi nhanh. Khi áp dụng thực tế, người học phải tự cập nhật từ nguồn chính thức.</p>
+</blockquote>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<p>Đây là chương có tốc độ lỗi thời cao nhất trong tập. Cần rà soát và cập nhật định kỳ (đề xuất tối thiểu mỗi 6 tháng):</p>
+<ol>
+<li><strong>Thay đổi thuật toán:</strong> cơ chế xếp hạng feed của Facebook, Instagram (Reels/Explore), LinkedIn và Threads thay đổi thường xuyên — cập nhật lại phần "Nguyên lý hoạt động" theo thông báo chính thức mới nhất.</li>
+<li><strong>Tính năng &amp; định dạng mới:</strong> các định dạng nội dung mới (ví dụ dạng video, tính năng thương mại điện tử tích hợp, live shopping) xuất hiện liên tục; bổ sung vào bảng so sánh và SOP.</li>
+<li><strong>Threads đang tiến hóa nhanh:</strong> nền tảng ra mắt 2023, chính sách phân phối, tích hợp Fediverse/ActivityPub, và vai trò trong hệ sinh thái Meta có thể thay đổi lớn — theo dõi sát.</li>
+<li><strong>Số liệu người dùng &amp; benchmark:</strong> cập nhật số người dùng từng nền tảng tại Việt Nam và toàn cầu, benchmark engagement rate theo ngành — luôn từ báo cáo mới, ghi rõ năm.</li>
+<li><strong>Vai trò của AI:</strong> AI trong sản xuất nội dung, cá nhân hóa phân phối, quảng cáo tự động và AI Agent chăm sóc cộng đồng đang phát triển rất nhanh — mở rộng mục Prompt AI và bổ sung cảnh báo về nội dung do AI tạo (ghi nhãn, đạo đức, chính sách nền tảng).</li>
+<li><strong>Quy định pháp lý &amp; chính sách quảng cáo:</strong> luật quảng cáo, bảo vệ dữ liệu cá nhân (Việt Nam và quốc tế), quy định về influencer/quảng cáo trá hình — cập nhật để phần checklist pháp lý còn hiệu lực, đặc biệt ngành nhạy cảm (mỹ phẩm, thực phẩm chức năng, tài chính, y tế).</li>
+<li><strong>Sự dịch chuyển nền tảng:</strong> nếu xuất hiện nền tảng mới nổi bật hoặc một nền tảng trong bốn kênh suy giảm mạnh, cần cân nhắc thay đổi danh sách nền tảng chủ lực của chương.</li>
+<li><strong>Case study:</strong> thay/bổ sung case study Việt Nam và quốc tế mới, kiểm chứng lại số liệu các case đã nêu.</li>
+<li><strong>Chi phí quảng cáo:</strong> CPM/CPC trung bình biến động theo thị trường và mùa vụ — không cố định số, chỉ hướng dẫn cách tự đo.</li>
+</ol></article><div class="nav"><a class="prev" href="tap-05-digital-noi-dung-01-content-marketing-seo.html"><span>← Trước</span>Tập 5 · Chương 1 — Content Marketing &amp; SEO thời AI Search</a><a class="next" href="tap-05-digital-noi-dung-03-video-ngan-tiktok-reels.html"><span>Sau →</span>Tập 5 · Chương 3 — Video ngắn: TikTok, Reels, Shorts</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

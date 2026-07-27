@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 2 · Chương 2 — Nghiên cứu thị trường: Định tính &amp; Định lượng</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 2 · Chương 2 — Nghiên cứu thị trường: Định tính &amp; Định lượng</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> Marketing Thực Chiến 2026–2035
+- <strong>Tập:</strong> 2 — Nghiên cứu thị trường &amp; Tâm lý khách hàng
+- <strong>Chương:</strong> 2 — Nghiên cứu thị trường: Định tính &amp; Định lượng
+- <strong>Cấp độ:</strong> Nền tảng → Nâng cao
+- <strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành)
+- <strong>Tiền đề:</strong> Đã đọc Tập 1 (Tư duy Marketing) và Tập 2 · Chương 1 (Tổng quan hành vi khách hàng)
+- <strong>Cập nhật:</strong> 2026-07</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Nghiên cứu thị trường là quá trình thu thập và diễn giải dữ liệu về khách hàng, đối thủ và bối cảnh một cách có hệ thống — kết hợp định tính (hiểu <em>tại sao</em>) và định lượng (đo lường <em>bao nhiêu</em>) — để ra quyết định marketing dựa trên bằng chứng thay vì cảm tính.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Hầu hết thất bại trong marketing không đến từ việc "làm sai" mà từ việc "làm đúng thứ sai" — tức là dồn ngân sách vào một sản phẩm, thông điệp hay phân khúc mà thị trường không thực sự cần. Nghiên cứu thị trường tồn tại để giảm rủi ro đó: nó biến những giả định trong đầu người làm marketing thành các giả thuyết có thể kiểm chứng.</p>
+<p>Chương này không dạy bạn trở thành nhà thống kê. Nó dạy bạn tư duy như một người điều tra: biết đặt câu hỏi đúng, chọn phương pháp phù hợp với ngân sách, đọc dữ liệu mà không tự lừa dối mình, và quan trọng nhất — biết khi nào dữ liệu <em>đủ tốt</em> để hành động.</p>
+<p>Trong bối cảnh 2026–2035, nghiên cứu thị trường đã thay đổi căn bản: chi phí thu thập dữ liệu số gần như bằng không, AI có thể tổng hợp hàng nghìn phản hồi trong vài phút, và ranh giới giữa "nghiên cứu" với "lắng nghe mạng xã hội theo thời gian thực" ngày càng mờ. Nhưng nguyên lý cốt lõi không đổi: <strong>rác vào thì rác ra</strong> (garbage in, garbage out). Công cụ càng mạnh, sai lầm về phương pháp càng đắt.</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Nghiên cứu thị trường (market research)</strong> là hoạt động thu thập, xử lý và phân tích thông tin về thị trường một cách có hệ thống nhằm hỗ trợ ra quyết định. Cần phân biệt bốn cặp khái niệm nền tảng:</p>
+<ul>
+<li><strong>Nghiên cứu sơ cấp (primary)</strong> vs <strong>thứ cấp (secondary):</strong> Sơ cấp là dữ liệu bạn tự thu thập lần đầu cho đúng câu hỏi của mình (khảo sát, phỏng vấn). Thứ cấp là dữ liệu đã có sẵn do người khác tạo ra (báo cáo ngành, số liệu Tổng cục Thống kê, dữ liệu bán hàng nội bộ).</li>
+<li><strong>Định tính (qualitative)</strong> vs <strong>định lượng (quantitative):</strong> Định tính khám phá chiều sâu, ý nghĩa, động cơ — trả lời "tại sao" và "như thế nào". Định lượng đo lường quy mô, tần suất, tương quan — trả lời "bao nhiêu" và "bao nhiêu phần trăm".</li>
+<li><strong>Khám phá (exploratory)</strong> vs <strong>kết luận (conclusive):</strong> Nghiên cứu khám phá dùng khi bạn chưa hiểu vấn đề, cần định hình giả thuyết. Nghiên cứu kết luận dùng để kiểm định giả thuyết đã rõ.</li>
+<li><strong>Mô tả (descriptive)</strong> vs <strong>nhân quả (causal):</strong> Mô tả vẽ bức tranh "cái gì đang diễn ra". Nhân quả xác lập "A gây ra B" — thường cần thí nghiệm có kiểm soát.</li>
+</ul>
+<p>Một dự án nghiên cứu tốt thường <strong>kết hợp</strong> các loại này theo trình tự: định tính để hiểu và hình thành giả thuyết, rồi định lượng để kiểm chứng ở quy mô lớn.</p>
+<h2>3. Lịch sử hình thành</h2>
+<p>Nghiên cứu thị trường hiện đại hình thành từ đầu thế kỷ 20. Một số mốc thường được nhắc đến (cần kiểm chứng chi tiết niên đại tùy nguồn):</p>
+<ul>
+<li><strong>Thập niên 1920–1930:</strong> Daniel Starch, George Gallup và Arthur Nielsen tiên phong đo lường hiệu quả quảng cáo và thói quen tiêu dùng. Nielsen sau này nổi tiếng với đo lường phát thanh - truyền hình.</li>
+<li><strong>1935:</strong> George Gallup thành lập Viện Gallup, phổ biến phương pháp lấy mẫu đại diện trong thăm dò dư luận.</li>
+<li><strong>1936:</strong> Bài học kinh điển về sai lệch mẫu — tạp chí <em>Literary Digest</em> dự đoán sai kết quả bầu cử Tổng thống Mỹ vì mẫu thiên lệch (lấy từ danh bạ điện thoại và người sở hữu ô tô, vốn giàu hơn dân số chung), trong khi Gallup dự đoán đúng với mẫu nhỏ hơn nhưng đại diện hơn.</li>
+<li><strong>Thập niên 1950–1960:</strong> Ernest Dichter đưa phân tâm học vào "nghiên cứu động cơ" (motivation research), khai sinh phỏng vấn sâu và focus group hiện đại.</li>
+<li><strong>Thập niên 1980–2000:</strong> Phần mềm thống kê (SPSS, SAS) và panel dữ liệu quét mã vạch giúp định lượng bùng nổ.</li>
+<li><strong>Từ 2010:</strong> Mạng xã hội, dữ liệu lớn (big data), social listening và gần đây là AI tạo sinh làm thay đổi tốc độ và chi phí nghiên cứu.</li>
+</ul>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Giảm rủi ro đầu tư:</strong> Ra mắt sản phẩm mới, mở kênh phân phối, đổi bao bì đều tốn kém. Nghiên cứu là "bảo hiểm" rẻ hơn nhiều so với chi phí thất bại.</li>
+<li><strong>Phát hiện cơ hội ẩn:</strong> Nhu cầu chưa được đáp ứng (unmet needs) thường không hiện ra trong doanh số hiện tại — chỉ nghiên cứu chủ động mới thấy.</li>
+<li><strong>Định vị và thông điệp chính xác:</strong> Ngôn ngữ khách hàng dùng để mô tả vấn đề của họ chính là ngôn ngữ copywriting hiệu quả nhất.</li>
+<li><strong>Phân bổ ngân sách theo bằng chứng:</strong> Biết kênh nào, phân khúc nào có ROI cao để dồn lực.</li>
+<li><strong>Ngôn ngữ chung nội bộ:</strong> Dữ liệu giúp đội ngũ tranh luận dựa trên sự thật thay vì quyền lực chức danh (chống lại "HiPPO" — Highest Paid Person's Opinion).</li>
+</ol>
+<p>Điểm mấu chốt: nghiên cứu không loại bỏ trực giác, nó <em>kỷ luật hóa</em> trực giác.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Nghiên cứu thị trường vận hành trên bốn nguyên lý:</p>
+<ul>
+<li><strong>Suy luận từ mẫu (inference):</strong> Ta không thể hỏi toàn bộ dân số, nên đo một mẫu và suy ra tổng thể. Chất lượng suy luận phụ thuộc vào việc mẫu có <em>đại diện</em> hay không.</li>
+<li><strong>Giá trị (validity) và độ tin cậy (reliability):</strong> Validity = đo đúng thứ cần đo. Reliability = đo lại nhiều lần cho kết quả ổn định. Một câu hỏi có thể tin cậy (luôn cho cùng đáp án) nhưng không giá trị (đo nhầm khái niệm).</li>
+<li><strong>Tam giác đạc dữ liệu (triangulation):</strong> Kết luận vững hơn khi nhiều nguồn/phương pháp độc lập cùng chỉ về một hướng.</li>
+<li><strong>Tách biệt quan sát và diễn giải:</strong> Dữ liệu là dữ kiện; ý nghĩa là do người phân tích gán. Sai lầm phổ biến là nhầm giả thuyết của mình thành "điều dữ liệu nói".</li>
+</ul>
+<p>Định tính và định lượng bổ trợ theo nguyên lý "phễu": định tính mở rộng không gian hiểu biết (bao nhiêu điều ta chưa biết mình chưa biết), định lượng thu hẹp lại thành con số ra quyết định được.</p>
+<h2>6. Mô hình</h2>
+<p><strong>Mô hình phễu nghiên cứu (Research Funnel):</strong></p>
+<pre><code>    KHÁM PHÁ (định tính)
+   Phỏng vấn sâu, focus group, quan sát
+            ↓  hình thành giả thuyết
+    MÔ TẢ (định lượng)
+   Khảo sát diện rộng, social listening
+            ↓  đo lường quy mô
+    KIỂM ĐỊNH NHÂN QUẢ (thí nghiệm)
+   A/B test, thử nghiệm có kiểm soát
+            ↓  xác lập quan hệ nhân quả
+        QUYẾT ĐỊNH
+</code></pre>
+<p><strong>Mô hình phương pháp hỗn hợp (Mixed Methods)</strong> có ba biến thể phổ biến:
+- <strong>Tuần tự khám phá:</strong> Định tính trước → Định lượng sau (dùng khi chưa hiểu vấn đề).
+- <strong>Tuần tự giải thích:</strong> Định lượng trước → Định tính sau (dùng khi có số lạ cần giải thích "tại sao").
+- <strong>Song song đồng thời:</strong> Chạy cùng lúc rồi hợp nhất để tam giác đạc.</p>
+<h2>7. Framework</h2>
+<p><strong>Framework 5W1H cho thiết kế nghiên cứu</strong> — trả lời trước khi thu thập bất kỳ dữ liệu nào:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Yếu tố</th>
+<th>Câu hỏi cần trả lời</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Why</strong></td>
+<td>Quyết định kinh doanh nào phụ thuộc vào kết quả này?</td>
+</tr>
+<tr>
+<td><strong>Who</strong></td>
+<td>Ai là đối tượng nghiên cứu? Tiêu chí sàng lọc (screener)?</td>
+</tr>
+<tr>
+<td><strong>What</strong></td>
+<td>Cần đo/hiểu biến số hay khái niệm nào?</td>
+</tr>
+<tr>
+<td><strong>When</strong></td>
+<td>Mốc thời gian, tính mùa vụ có ảnh hưởng không?</td>
+</tr>
+<tr>
+<td><strong>Where</strong></td>
+<td>Kênh/địa bàn thu thập? Online, offline, hay tại điểm bán?</td>
+</tr>
+<tr>
+<td><strong>How</strong></td>
+<td>Phương pháp, cỡ mẫu, ngân sách, timeline?</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Bảng so sánh Định tính vs Định lượng</strong> (khung xương của cả chương):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Định tính (Qualitative)</th>
+<th>Định lượng (Quantitative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Câu hỏi cốt lõi</td>
+<td>Tại sao? Như thế nào?</td>
+<td>Bao nhiêu? Bao nhiêu %?</td>
+</tr>
+<tr>
+<td>Mục tiêu</td>
+<td>Khám phá, hiểu chiều sâu</td>
+<td>Đo lường, khái quát hóa</td>
+</tr>
+<tr>
+<td>Cỡ mẫu</td>
+<td>Nhỏ (5–30), chọn có chủ đích</td>
+<td>Lớn (hàng trăm–nghìn), ngẫu nhiên</td>
+</tr>
+<tr>
+<td>Dữ liệu</td>
+<td>Chữ, hình ảnh, hành vi</td>
+<td>Con số, thống kê</td>
+</tr>
+<tr>
+<td>Công cụ</td>
+<td>Phỏng vấn sâu, focus group, quan sát, ethnography</td>
+<td>Khảo sát, thí nghiệm, dữ liệu số</td>
+</tr>
+<tr>
+<td>Tính đại diện</td>
+<td>Thấp (không suy ra tổng thể)</td>
+<td>Cao (nếu mẫu đúng)</td>
+</tr>
+<tr>
+<td>Phân tích</td>
+<td>Mã hóa chủ đề (thematic coding)</td>
+<td>Thống kê mô tả &amp; suy luận</td>
+</tr>
+<tr>
+<td>Vai trò người NC</td>
+<td>Chủ động diễn giải</td>
+<td>Trung lập, chuẩn hóa</td>
+</tr>
+<tr>
+<td>Điểm mạnh</td>
+<td>Sâu, phát hiện điều bất ngờ</td>
+<td>Khách quan, có thể lặp lại</td>
+</tr>
+<tr>
+<td>Điểm yếu</td>
+<td>Khó khái quát, dễ thiên lệch chủ quan</td>
+<td>Không giải thích được "tại sao"</td>
+</tr>
+<tr>
+<td>Khi nào dùng</td>
+<td>Giai đoạn đầu, vấn đề mơ hồ</td>
+<td>Giai đoạn kiểm chứng, cần con số</td>
+</tr>
+</tbody>
+</table></div>
+<h2>8. Công thức</h2>
+<blockquote>
+<p>⚠️ <strong>Các con số dưới đây là "số minh họa" cho phương pháp tính, không phải chuẩn ngành cố định. Luôn điều chỉnh theo bối cảnh và tham vấn nguồn thống kê chính thống.</strong></p>
+</blockquote>
+<p><strong>8.1. Cỡ mẫu cho tổng thể lớn (ước lượng tỷ lệ):</strong></p>
+<pre><code>n = (Z² × p × (1 − p)) / e²
+</code></pre>
+<ul>
+<li><code>Z</code> = trị số phân phối chuẩn theo độ tin cậy (95% → Z ≈ 1,96; 90% → Z ≈ 1,645)</li>
+<li><code>p</code> = tỷ lệ ước lượng của đặc tính (không biết thì lấy p = 0,5 để có cỡ mẫu lớn nhất/an toàn nhất)</li>
+<li><code>e</code> = sai số cho phép (margin of error, ví dụ 0,05 = ±5%)</li>
+</ul>
+<p><em>Ví dụ minh họa:</em> Z = 1,96; p = 0,5; e = 0,05
+→ n = (1,96² × 0,5 × 0,5) / 0,05² = (3,8416 × 0,25) / 0,0025 ≈ <strong>385</strong> người.</p>
+<p><strong>8.2. Hiệu chỉnh cho tổng thể hữu hạn (N nhỏ):</strong></p>
+<pre><code>n_hiệu_chỉnh = n / (1 + (n − 1)/N)
+</code></pre>
+<p><em>Ví dụ:</em> n = 385, tổng thể N = 2.000 → n ≈ 385 / (1 + 384/2000) ≈ <strong>323</strong> người.</p>
+<p><strong>8.3. Sai số biên (khi đã có cỡ mẫu):</strong></p>
+<pre><code>e = Z × √( p(1 − p) / n )
+</code></pre>
+<p><strong>8.4. Tỷ lệ phản hồi (response rate):</strong></p>
+<pre><code>Response rate = (Số phản hồi hợp lệ / Số lượt mời tham gia) × 100%
+</code></pre>
+<p><em>Số minh họa:</em> gửi 1.000 email khảo sát, thu 120 phản hồi hợp lệ → 12%. (Khảo sát online thường có tỷ lệ phản hồi thấp — cần dự phòng cỡ mời lớn hơn nhiều lần cỡ mẫu mục tiêu.)</p>
+<p><strong>8.5. NPS (Net Promoter Score):</strong></p>
+<pre><code>NPS = % Người ủng hộ (điểm 9–10) − % Người phản đối (điểm 0–6)
+</code></pre>
+<p>Thang từ −100 đến +100. Nhóm 7–8 là "trung lập" (passive), không tính vào công thức.</p>
+<h2>9. Quy trình</h2>
+<p><strong>Quy trình nghiên cứu thị trường 8 bước:</strong></p>
+<ol>
+<li><strong>Xác định vấn đề &amp; mục tiêu quyết định.</strong> Viết ra: "Kết quả nghiên cứu sẽ giúp tôi quyết định điều gì?" Nếu không có quyết định gắn liền — đừng nghiên cứu.</li>
+<li><strong>Chuyển vấn đề thành câu hỏi nghiên cứu &amp; giả thuyết.</strong> Cụ thể, đo lường được.</li>
+<li><strong>Chọn thiết kế &amp; phương pháp.</strong> Định tính/định lượng/hỗn hợp; sơ cấp/thứ cấp. Rà soát dữ liệu thứ cấp trước (rẻ, nhanh) rồi mới quyết định thu thập sơ cấp.</li>
+<li><strong>Thiết kế công cụ thu thập.</strong> Bảng hỏi, guideline phỏng vấn, khung quan sát. Pilot test với 5–10 người để bắt lỗi.</li>
+<li><strong>Xác định mẫu &amp; cỡ mẫu.</strong> Khung mẫu (sampling frame), phương pháp chọn, cỡ mẫu theo công thức mục 8.</li>
+<li><strong>Thu thập dữ liệu.</strong> Kiểm soát chất lượng theo thời gian thực; ghi nhật ký thực địa.</li>
+<li><strong>Xử lý &amp; phân tích.</strong> Làm sạch dữ liệu, mã hóa (định tính), chạy thống kê (định lượng), tam giác đạc.</li>
+<li><strong>Diễn giải, báo cáo &amp; hành động.</strong> Chuyển "insight" thành khuyến nghị cụ thể; lưu trữ để tái sử dụng.</li>
+</ol>
+<p>Lưu ý: quy trình lặp — kết quả bước 8 thường sinh ra câu hỏi mới, quay lại bước 1.</p>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Bối cảnh:</strong> Một quán cà phê nhỏ muốn biết nên thêm món trà sữa hay không.</p>
+<ul>
+<li><strong>Định tính (bước khám phá):</strong> Chủ quán trò chuyện sâu với 8 khách quen: "Anh/chị thường uống gì buổi chiều? Vì sao chọn quán khác khi muốn trà sữa?" → Phát hiện: khách muốn đồ ngọt ít đường buổi chiều, ngại quán không có lựa chọn "healthy".</li>
+<li><strong>Định lượng (bước kiểm chứng):</strong> Đặt bảng hỏi 5 câu tại quầy trong 2 tuần, thu 150 phản hồi. Kết quả (số minh họa): 62% sẵn sàng thử trà sữa ít đường, mức giá chấp nhận trung bình 35.000đ.</li>
+<li><strong>Quyết định:</strong> Thử nghiệm 1 tháng với 2 vị, đo doanh số thực tế trước khi mở rộng.</li>
+</ul>
+<p>Bài học: định tính cho <em>ý tưởng và ngôn ngữ</em>, định lượng cho <em>tự tin về quy mô</em>.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Bối cảnh:</strong> Một thương hiệu mỹ phẩm nội địa chuẩn bị ra dòng serum mới, ngân sách nghiên cứu hạn chế.</p>
+<ul>
+<li><strong>Thứ cấp:</strong> Rà báo cáo ngành làm đẹp (Nielsen, Kantar, Q&amp;Me — <em>cần kiểm chứng số liệu cụ thể theo báo cáo mới nhất</em>) để nắm xu hướng thành phần (niacinamide, tránh cồn khô).</li>
+<li><strong>Định tính:</strong> 3 nhóm focus group (mỗi nhóm 6 người) theo độ tuổi 22–28, 29–35, 36–45 để hiểu lo ngại về "kích ứng" và kỳ vọng về bao bì.</li>
+<li><strong>Định lượng:</strong> Khảo sát online 500 người trong tập khách hàng hiện có; dùng thang Likert đo mức độ hấp dẫn của 3 concept; đo giá qua phương pháp Van Westendorp (<em>mô hình định giá theo cảm nhận</em>).</li>
+<li><strong>Thí nghiệm:</strong> A/B test 2 phiên bản landing page với 2 thông điệp chính ("phục hồi hàng rào da" vs "sáng mịn tức thì").</li>
+</ul>
+<p>Kết quả tổng hợp giúp chọn concept, khung giá và thông điệp trước khi sản xuất hàng loạt.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Vinamilk và nghiên cứu người tiêu dùng nội địa.</strong> Vinamilk là ví dụ thực tế về doanh nghiệp Việt đầu tư dài hạn vào hiểu thị hiếu người tiêu dùng nội địa, phát triển đa dạng dòng sản phẩm (sữa tươi, sữa chua, sữa hạt, sản phẩm organic) theo các phân khúc và nhu cầu dinh dưỡng khác nhau. Việc liên tục ra mắt biến thể sản phẩm phù hợp khẩu vị và mối quan tâm sức khỏe của người Việt phản ánh năng lực nghiên cứu thị trường được duy trì bền bỉ. <em>(Các số liệu thị phần, chi tiết dự án nghiên cứu cụ thể cần kiểm chứng từ báo cáo chính thức của công ty và bên thứ ba như Kantar/Nielsen.)</em></p>
+<p><strong>Các nền tảng nghiên cứu Việt Nam đáng tham khảo:</strong> Q&amp;Me, Kantar Việt Nam, Nielsen Việt Nam, Decision Lab thường công bố báo cáo hành vi tiêu dùng, thanh toán số, thói quen mua sắm online — nguồn dữ liệu thứ cấp hữu ích cho doanh nghiệp vừa và nhỏ. <em>(Luôn trích dẫn tên báo cáo và năm cụ thể khi sử dụng.)</em></p>
+<p><strong>Bài học địa phương hóa:</strong> Ở Việt Nam, kênh phân phối truyền thống (chợ, tạp hóa) vẫn quan trọng, nên nghiên cứu tại điểm bán (in-store observation) và phỏng vấn tiểu thương thường cho insight mà khảo sát online bỏ sót.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>LEGO — nghiên cứu ethnography cứu thương hiệu.</strong> Đầu thập niên 2000, LEGO gặp khó khăn tài chính và từng tin rằng trẻ em thời hiện đại thiếu kiên nhẫn, muốn sản phẩm cho kết quả nhanh. Một nghiên cứu nhân học (ethnography) quan sát trẻ chơi trong đời thực đã đảo ngược giả định này: có những đứa trẻ vẫn coi trọng sự thành thạo và nỗ lực dài hạn. Insight đó góp phần định hình lại chiến lược sản phẩm của LEGO. Đây là ví dụ kinh điển về sức mạnh của quan sát định tính so với giả định của ban lãnh đạo. <em>(Chi tiết niên đại và quy mô dự án cần kiểm chứng từ các nghiên cứu tình huống đã xuất bản.)</em></p>
+<p><strong>Netflix — nghiên cứu bằng dữ liệu số.</strong> Netflix kết hợp dữ liệu hành vi xem quy mô lớn với A/B testing liên tục (hình thu nhỏ, sắp xếp nội dung) để tối ưu trải nghiệm — minh họa cho nghiên cứu định lượng dựa trên dữ liệu số ở quy mô toàn cầu.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Câu hỏi dẫn dắt (leading questions):</strong> "Bạn thích tính năng tuyệt vời này đến mức nào?" đã gợi ý câu trả lời. Thay bằng câu trung lập.</li>
+<li><strong>Thiên lệch xác nhận (confirmation bias):</strong> Chỉ tìm và tin dữ liệu ủng hộ điều mình muốn.</li>
+<li><strong>Mẫu thiên lệch (sampling bias):</strong> Chỉ hỏi khách hàng hiện có (survivorship bias) hoặc chỉ người dễ tiếp cận (convenience sample) rồi khái quát cho cả thị trường — chính là lỗi <em>Literary Digest 1936</em>.</li>
+<li><strong>Thiên lệch mong muốn xã hội (social desirability):</strong> Người trả lời nói điều "nghe hay" thay vì sự thật (ví dụ khai ăn uống lành mạnh hơn thực tế).</li>
+<li><strong>Nhầm tương quan với nhân quả:</strong> Hai biến cùng tăng không có nghĩa cái này gây ra cái kia.</li>
+<li><strong>Hỏi người ta <em>sẽ</em> làm gì thay vì <em>đã</em> làm gì:</strong> Ý định mua ≠ hành vi mua. Ưu tiên hỏi hành vi quá khứ hoặc đo hành vi thật.</li>
+<li><strong>Bỏ qua pilot test:</strong> Không thử bảng hỏi trước khiến lỗi diễn đạt nhân rộng trên toàn mẫu.</li>
+<li><strong>Câu hỏi hai ý (double-barreled):</strong> "Sản phẩm có rẻ và bền không?" — người trả lời không biết trả lời về vế nào.</li>
+<li><strong>Nghiên cứu không gắn quyết định:</strong> Thu thập dữ liệu "cho biết" rồi để đó — lãng phí.</li>
+<li><strong>Thang đo không cân bằng:</strong> Số lựa chọn tích cực nhiều hơn tiêu cực làm lệch kết quả.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p><strong>Trước khi thu thập:</strong>
+- [ ] Đã viết rõ quyết định kinh doanh mà nghiên cứu phục vụ?
+- [ ] Đã rà dữ liệu thứ cấp có sẵn (nội bộ + bên ngoài)?
+- [ ] Câu hỏi nghiên cứu cụ thể, đo lường được?
+- [ ] Chọn đúng phương pháp (định tính/định lượng/hỗn hợp)?
+- [ ] Khung mẫu và tiêu chí sàng lọc rõ ràng?
+- [ ] Cỡ mẫu tính theo công thức, phù hợp ngân sách?
+- [ ] Bảng hỏi/guideline đã pilot test với 5–10 người?
+- [ ] Câu hỏi trung lập, không dẫn dắt, không hai ý?
+- [ ] Có quy trình xin đồng ý (consent) và bảo vệ dữ liệu cá nhân?</p>
+<p><strong>Trong khi thu thập:</strong>
+- [ ] Theo dõi tỷ lệ phản hồi và chất lượng theo thời gian thực?
+- [ ] Ghi nhật ký thực địa và các bất thường?</p>
+<p><strong>Sau khi thu thập:</strong>
+- [ ] Làm sạch dữ liệu, loại phản hồi rác?
+- [ ] Phân tích tam giác đạc từ nhiều nguồn?
+- [ ] Tách rõ dữ kiện và diễn giải?
+- [ ] Khuyến nghị gắn với hành động cụ thể?</p>
+<h2>16. SOP</h2>
+<p><strong>SOP — Chạy một dự án khảo sát định lượng (rút gọn):</strong></p>
+<ol>
+<li><strong>Ngày 1–2 · Khởi tạo:</strong> Họp với bên yêu cầu (stakeholder) chốt câu hỏi quyết định và tiêu chí thành công. Ghi thành bản brief 1 trang.</li>
+<li><strong>Ngày 3–5 · Thiết kế:</strong> Soạn bảng hỏi ≤ 15 phút hoàn thành; đồng nghiệp rà soát chống câu dẫn dắt; pilot 8 người.</li>
+<li><strong>Ngày 6 · Chuẩn bị mẫu:</strong> Xác định khung mẫu, tính cỡ mẫu, dự phòng tỷ lệ phản hồi (ví dụ mời gấp 6–10 lần cỡ mẫu mục tiêu — số minh họa).</li>
+<li><strong>Ngày 7–14 · Thu thập:</strong> Phát khảo sát; theo dõi dashboard phản hồi hằng ngày; gửi nhắc nhở đợt 2.</li>
+<li><strong>Ngày 15–17 · Xử lý:</strong> Làm sạch, mã hóa câu mở, chạy thống kê mô tả + kiểm định cần thiết.</li>
+<li><strong>Ngày 18–20 · Báo cáo:</strong> Viết báo cáo theo cấu trúc: Câu hỏi → Phát hiện → Bằng chứng → Khuyến nghị. Trình bày ≤ 10 slide.</li>
+<li><strong>Ngày 21 · Bàn giao &amp; lưu trữ:</strong> Lưu dữ liệu thô + tài liệu vào kho tri thức; ghi bài học phương pháp.</li>
+</ol>
+<p><em>(Timeline là minh họa; điều chỉnh theo quy mô dự án.)</em></p>
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+<th>Ngưỡng tham chiếu (số minh họa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response rate</td>
+<td>% phản hồi trên số mời</td>
+<td>Càng cao càng tốt; online thường thấp</td>
+</tr>
+<tr>
+<td>Completion rate</td>
+<td>% hoàn thành trên số bắt đầu</td>
+<td>≥ 80% là tốt</td>
+</tr>
+<tr>
+<td>Margin of error</td>
+<td>Sai số biên ở độ tin cậy 95%</td>
+<td>Mục tiêu ≤ ±5%</td>
+</tr>
+<tr>
+<td>Cronbach's Alpha</td>
+<td>Độ tin cậy nội tại của thang đo</td>
+<td>≥ 0,7 chấp nhận được</td>
+</tr>
+<tr>
+<td>Drop-off rate theo câu</td>
+<td>% bỏ ngang tại từng câu</td>
+<td>Câu nào rớt cao → cần sửa</td>
+</tr>
+<tr>
+<td>Time-to-insight</td>
+<td>Thời gian từ câu hỏi đến khuyến nghị</td>
+<td>Càng ngắn càng tốt</td>
+</tr>
+<tr>
+<td>Cost per complete</td>
+<td>Chi phí trên mỗi phản hồi hợp lệ</td>
+<td>Theo dõi để tối ưu ngân sách</td>
+</tr>
+<tr>
+<td>Tỷ lệ khuyến nghị được áp dụng</td>
+<td>% insight biến thành hành động</td>
+<td>Thước đo giá trị thực của NC</td>
+</tr>
+</tbody>
+</table></div>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Mẫu bảng hỏi định lượng (rút gọn):</strong></p>
+<pre><code>PHẦN A — SÀNG LỌC
+A1. Trong 3 tháng qua, bạn có mua [danh mục sản phẩm] không?
+    ( ) Có   ( ) Không → KẾT THÚC
+
+PHẦN B — HÀNH VI
+B1. Bạn thường mua ở đâu? (chọn 1)
+    ( ) Cửa hàng  ( ) Sàn TMĐT  ( ) Mạng xã hội  ( ) Khác: ___
+B2. Tần suất mua: ( ) Hàng tuần ( ) Hàng tháng ( ) Vài tháng/lần
+
+PHẦN C — THÁI ĐỘ (Thang Likert 1–5:
+1=Rất không đồng ý ... 5=Rất đồng ý)
+C1. Sản phẩm này đáng giá tiền.            1  2  3  4  5
+C2. Tôi tin tưởng thương hiệu này.         1  2  3  4  5
+
+PHẦN D — NPS
+D1. Khả năng bạn giới thiệu cho bạn bè (0–10): ___
+
+PHẦN E — NHÂN KHẨU HỌC (đặt ở CUỐI)
+E1. Nhóm tuổi   E2. Giới tính   E3. Khu vực
+
+[ ] Tôi đồng ý cho sử dụng câu trả lời ẩn danh cho mục đích nghiên cứu.
+</code></pre>
+<p><strong>Mẫu guideline phỏng vấn sâu (khung):</strong> Mở đầu (giới thiệu, xin phép ghi âm, cam kết ẩn danh) → Làm nóng (bối cảnh, thói quen) → Đào sâu (dùng "Vì sao?" nhiều lần — kỹ thuật laddering) → Tình huống cụ thể (kể lần gần nhất bạn...) → Kết thúc (điều gì tôi chưa hỏi mà bạn muốn chia sẻ?).</p>
+<h2>19. Prompt AI</h2>
+<blockquote>
+<p>Dùng AI để <em>tăng tốc</em>, không thay thế phán đoán. Luôn kiểm chứng đầu ra và bảo vệ dữ liệu cá nhân (không dán thông tin định danh vào công cụ công cộng).</p>
+</blockquote>
+<ul>
+<li><strong>ChatGPT — thiết kế bảng hỏi:</strong> "Đóng vai chuyên gia nghiên cứu thị trường. Tôi cần khảo sát ý định mua [sản phẩm] của [phân khúc]. Soạn bảng hỏi 12 câu gồm sàng lọc, hành vi, thái độ (Likert 5 điểm) và NPS. Chỉ ra các câu có nguy cơ dẫn dắt và đề xuất bản trung lập."</li>
+<li><strong>Claude — phân tích định tính:</strong> "Đây là 10 bản ghi phỏng vấn (dán/đính kèm). Mã hóa theo chủ đề (thematic analysis), liệt kê 5–7 chủ đề chính kèm trích dẫn tiêu biểu và tần suất xuất hiện. Nêu rõ đâu là bằng chứng, đâu là suy diễn."</li>
+<li><strong>Gemini — nghiên cứu thứ cấp &amp; tổng hợp thị trường:</strong> "Tổng hợp các xu hướng tiêu dùng [ngành] tại Việt Nam giai đoạn gần đây. Với mỗi luận điểm, nêu nguồn và năm; đánh dấu rõ điều nào chưa có nguồn đáng tin để tôi tự kiểm chứng."</li>
+<li><strong>Perplexity — tìm nguồn có trích dẫn:</strong> "Tìm báo cáo và số liệu về [chủ đề] kèm link nguồn gốc và năm xuất bản. Ưu tiên nguồn sơ cấp (cơ quan thống kê, công ty nghiên cứu uy tín)."</li>
+<li><strong>NotebookLM — hỏi đáp trên tài liệu của bạn:</strong> Nạp toàn bộ báo cáo và bản ghi phỏng vấn → "Những mâu thuẫn nào giữa kết quả định tính và định lượng? Trích dẫn nguồn cụ thể trong tài liệu."</li>
+<li><strong>AI Agent — tự động hóa quy trình:</strong> Thiết lập agent theo dõi social listening: thu thập bình luận về thương hiệu hằng ngày → phân loại cảm xúc → gắn cờ khủng hoảng tiềm ẩn → tổng hợp báo cáo tuần. Luôn có bước con người rà soát trước khi hành động.</li>
+</ul>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Phân loại phương pháp:</strong> Cho 5 câu hỏi kinh doanh, xác định nên dùng định tính, định lượng hay hỗn hợp và giải thích.</li>
+<li><strong>Tính cỡ mẫu:</strong> Tổng thể 5.000 khách hàng, độ tin cậy 95%, sai số ±5%, p = 0,5. Tính cỡ mẫu (có hiệu chỉnh hữu hạn).</li>
+<li><strong>Sửa câu dẫn dắt:</strong> Viết lại 5 câu hỏi dẫn dắt thành câu trung lập.</li>
+<li><strong>Thiết kế guideline:</strong> Soạn guideline phỏng vấn sâu 8 câu cho một sản phẩm bạn chọn.</li>
+<li><strong>Đọc số:</strong> Cho một bảng kết quả khảo sát, viết 3 khuyến nghị hành động — và chỉ ra 1 giới hạn của dữ liệu.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt nghiên cứu sơ cấp và thứ cấp. Vì sao nên rà thứ cấp trước?</li>
+<li>Khi nào nên ưu tiên định tính hơn định lượng, và ngược lại?</li>
+<li>Validity và reliability khác nhau thế nào? Cho ví dụ một công cụ đo tin cậy nhưng không giá trị.</li>
+<li>Nêu 3 loại thiên lệch (bias) và cách phòng tránh từng loại.</li>
+<li>Công thức cỡ mẫu cơ bản gồm những tham số nào? Vì sao chọn p = 0,5 khi chưa biết?</li>
+<li>NPS được tính thế nào? Nhóm passive có vào công thức không?</li>
+<li>Vì sao "ý định mua" không đáng tin bằng "hành vi mua"?</li>
+<li>Bài học từ vụ <em>Literary Digest 1936</em> là gì?</li>
+<li>Ba biến thể của thiết kế phương pháp hỗn hợp là gì?</li>
+<li>Kể ba nguyên tắc đạo đức khi thu thập dữ liệu cá nhân.</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>✅ Thành công — LEGO (ethnography đảo ngược giả định):</strong> Khi đối mặt khủng hoảng, LEGO không dựa vào giả định của ban lãnh đạo mà đầu tư quan sát trẻ em chơi trong đời thực. Nghiên cứu định tính chiều sâu này phát hiện rằng nhiều trẻ vẫn coi trọng sự thành thạo và nỗ lực — trái ngược niềm tin "trẻ muốn kết quả nhanh". Insight góp phần định hình lại chiến lược sản phẩm và đóng vai trò trong quá trình phục hồi của công ty. <strong>Bài học:</strong> quan sát hành vi thực &gt; phỏng đoán trong phòng họp. <em>(Chi tiết cần kiểm chứng từ nghiên cứu tình huống đã xuất bản.)</em></p>
+<p><strong>❌ Thất bại — New Coke (1985):</strong> Coca-Cola tiến hành khoảng 200.000 lượt thử vị mù (blind taste test) và thấy công thức mới ngọt hơn được ưa thích hơn Pepsi lẫn Coke cũ. Dựa vào đó, họ thay thế công thức truyền thống. Kết quả: làn sóng phản đối dữ dội của khách hàng trung thành, buộc công ty đưa "Coca-Cola Classic" trở lại chỉ sau ít tuần. <strong>Sai lầm nghiên cứu:</strong> thử vị chỉ đo <em>khẩu vị trong một ngụm</em>, bỏ qua <strong>giá trị cảm xúc, bản sắc và ý nghĩa biểu tượng</strong> gắn với thương hiệu — thứ mà định lượng thuần túy không nắm bắt được. Nghiên cứu đúng về mặt kỹ thuật nhưng hỏi <em>sai câu hỏi</em>. <strong>Bài học kép:</strong> (1) dữ liệu định lượng lớn vẫn có thể dẫn tới quyết định sai nếu đóng khung vấn đề sai; (2) luôn bổ sung chiều định tính về cảm xúc và bản sắc thương hiệu. <em>(Con số ~200.000 lượt thử theo tường thuật phổ biến — nên đối chiếu nguồn chính thức của Coca-Cola.)</em></p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li>Nghiên cứu thị trường biến giả định thành giả thuyết kiểm chứng được, giảm rủi ro và tìm cơ hội.</li>
+<li><strong>Định tính trả lời "tại sao"; định lượng trả lời "bao nhiêu"</strong> — kết hợp theo phễu cho quyết định vững nhất.</li>
+<li>Luôn rà <strong>dữ liệu thứ cấp</strong> trước khi thu thập <strong>sơ cấp</strong> (rẻ, nhanh).</li>
+<li>Chất lượng suy luận phụ thuộc <strong>mẫu đại diện</strong>, không chỉ cỡ mẫu lớn.</li>
+<li>Câu hỏi phải <strong>trung lập</strong> — câu dẫn dắt và mẫu thiên lệch làm hỏng cả dự án tốn kém.</li>
+<li>Thang đo (Likert, NPS) và công thức cỡ mẫu là công cụ, nhưng <strong>đóng khung đúng vấn đề</strong> quan trọng hơn (bài học New Coke).</li>
+<li>AI và social listening tăng tốc mạnh mẽ, nhưng nguyên lý <em>rác vào — rác ra</em> và <strong>đạo đức dữ liệu cá nhân</strong> không thay đổi.</li>
+<li>Nghiên cứu chỉ có giá trị khi <strong>gắn với một quyết định</strong> và <strong>biến thành hành động</strong>.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<blockquote>
+<p>Danh mục định hướng; người học nên tra cứu ấn bản/năm mới nhất và kiểm chứng số liệu trước khi trích dẫn. Không sử dụng link bịa.</p>
+</blockquote>
+<ul>
+<li>Malhotra, N. K. — <em>Marketing Research: An Applied Orientation</em> (giáo trình nền tảng về phương pháp nghiên cứu).</li>
+<li>Kotler, P. &amp; Keller, K. L. — <em>Marketing Management</em> (chương về nghiên cứu marketing).</li>
+<li>Churchill, G. A. &amp; Iacobucci, D. — <em>Marketing Research: Methodological Foundations</em>.</li>
+<li>Reichheld, F. — bài viết gốc về Net Promoter Score (<em>Harvard Business Review</em>, 2003 — cần kiểm chứng).</li>
+<li>Tài liệu tình huống về New Coke (1985) và LEGO ethnography — đối chiếu nguồn học thuật/báo chí uy tín.</li>
+<li>Báo cáo ngành tại Việt Nam: Nielsen Việt Nam, Kantar Việt Nam, Q&amp;Me, Decision Lab (trích tên báo cáo + năm).</li>
+<li>Số liệu vĩ mô &amp; nhân khẩu: Tổng cục Thống kê Việt Nam (GSO).</li>
+<li>Nguyên tắc đạo đức &amp; bảo vệ dữ liệu cá nhân: pháp luật Việt Nam về bảo vệ dữ liệu cá nhân và các bộ quy tắc đạo đức nghiên cứu quốc tế (ESOMAR) — cần kiểm chứng điều khoản áp dụng.</li>
+</ul>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li>Cập nhật số liệu thị phần/ngành và tên báo cáo Việt Nam mới nhất (Nielsen, Kantar, Q&amp;Me, Decision Lab) theo năm.</li>
+<li>Bổ sung quy định pháp lý cụ thể về bảo vệ dữ liệu cá nhân tại Việt Nam khi có hiệu lực/hướng dẫn mới.</li>
+<li>Cập nhật thực hành nghiên cứu bằng AI tạo sinh (synthetic respondents, AI moderator) khi phương pháp trưởng thành và có bằng chứng độ tin cậy.</li>
+<li>Đối chiếu và bổ sung nguồn chính thống cho các case (New Coke ~200.000 lượt thử; niên đại LEGO).</li>
+<li>Thêm ví dụ mới về social listening và nghiên cứu dữ liệu số thời gian thực tại thị trường Việt.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-02-nghien-cuu-tam-ly-01-tam-ly-hanh-vi-kinh-te-hanh-vi.html"><span>← Trước</span>Tập 2 · Chương 1 — Tâm lý học hành vi &amp; Kinh tế học hành vi trong Marketing</a><a class="next" href="tap-02-nghien-cuu-tam-ly-03-persona-avatar-insight.html"><span>Sau →</span>Tập 2 · Chương 3 — Insight khách hàng &amp; Xây dựng Persona/Avatar</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

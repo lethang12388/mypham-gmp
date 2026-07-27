@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 7 · Chương 6 — Tài chính Marketing: Ngân sách, ROI &amp; CAC/CLV</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 7 · Chương 6 — Tài chính Marketing: Ngân sách, ROI &amp; CAC/CLV</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+- <strong>Tập:</strong> 7 — Growth &amp; Performance
+- <strong>Chương:</strong> 6
+- <strong>Chủ đề:</strong> Tài chính Marketing — Ngân sách, ROI &amp; CAC/CLV
+- <strong>Đối tượng:</strong> Trưởng phòng Marketing, Growth Lead, Founder, CFO/CEO cần đọc hiểu báo cáo marketing
+- <strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + bài tập tính toán)
+- <strong>Yêu cầu tiên quyết:</strong> Đã nắm cơ bản về phễu bán hàng, kênh performance và khái niệm doanh thu/lợi nhuận
+- <strong>Phiên bản:</strong> 1.0 · Cập nhật 2026</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này trang bị cho người làm marketing tư duy và bộ công cụ tài chính — từ cách lập ngân sách, phân bổ brand/performance, đến đo lường ROI, CAC, CLV và payback period — để chứng minh marketing là một khoản đầu tư sinh lời chứ không phải chi phí.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Trong hầu hết doanh nghiệp Việt Nam, câu hỏi khó nhất mà một Marketing Manager phải trả lời trước Ban Giám đốc không phải là "chiến dịch có sáng tạo không?" mà là "một đồng bỏ vào marketing thu về được bao nhiêu?". Khi CEO hoặc CFO nhìn vào bảng chi phí, marketing thường bị xếp cùng nhóm với điện nước, thuê văn phòng — tức là <strong>chi phí cần cắt giảm khi khó khăn</strong>. Đây là gốc rễ của mọi mâu thuẫn giữa phòng Marketing và phòng Tài chính.</p>
+<p>Chương này thay đổi cách nhìn đó. Chúng ta sẽ học cách nói ngôn ngữ của tài chính: ngân sách, tỷ suất hoàn vốn, chi phí thu hút khách hàng, giá trị vòng đời khách hàng, và thời gian hoàn vốn. Khi bạn trình bày marketing bằng những con số này, cuộc trò chuyện chuyển từ "xin thêm tiền" sang "đề xuất một cơ hội đầu tư".</p>
+<p>Mục tiêu cuối chương: bạn có thể <strong>tự lập một bảng ngân sách marketing</strong>, <strong>tính ROI/ROMI cho từng kênh</strong>, <strong>đo CAC và CLV</strong>, và <strong>soạn một báo cáo tài chính marketing</strong> đủ thuyết phục để CEO ký duyệt tăng ngân sách.</p>
+<h2>2. Khái niệm</h2>
+<p>Một số thuật ngữ nền tảng sẽ xuất hiện xuyên suốt chương:</p>
+<ul>
+<li><strong>Ngân sách marketing (Marketing Budget):</strong> tổng số tiền phân bổ cho toàn bộ hoạt động marketing trong một kỳ (tháng/quý/năm).</li>
+<li><strong>ROI (Return on Investment):</strong> tỷ suất lợi nhuận trên vốn đầu tư nói chung.</li>
+<li><strong>ROMI (Return on Marketing Investment):</strong> ROI áp riêng cho khoản chi marketing, thường tính trên lợi nhuận gộp (gross margin) tạo ra bởi marketing.</li>
+<li><strong>CAC (Customer Acquisition Cost):</strong> chi phí trung bình để thu hút <strong>một khách hàng mới</strong>.</li>
+<li><strong>CLV / LTV (Customer Lifetime Value):</strong> tổng lợi nhuận gộp kỳ vọng một khách hàng mang lại trong suốt vòng đời quan hệ.</li>
+<li><strong>Payback Period:</strong> thời gian (thường tính bằng tháng) để doanh thu/margin từ một khách hàng bù lại đúng khoản CAC đã bỏ ra.</li>
+<li><strong>Contribution Margin (biên đóng góp):</strong> phần còn lại của doanh thu sau khi trừ chi phí biến đổi, dùng để bù chi phí cố định và tạo lợi nhuận.</li>
+<li><strong>Brand vs Performance:</strong> hai nhóm đầu tư — xây thương hiệu dài hạn (brand) và kích hoạt bán hàng ngắn hạn (performance/activation).</li>
+</ul>
+<h2>3. Lịch sử hình thành</h2>
+<p>Tư duy đo lường hiệu quả marketing bằng tiền không mới, nhưng đã tiến hóa qua nhiều giai đoạn:</p>
+<ul>
+<li><strong>Trước 1960:</strong> marketing chủ yếu là quảng cáo, được xem là chi phí "cần thiết nhưng khó đo". Câu nói nổi tiếng gán cho John Wanamaker (thế kỷ 19): <em>"Một nửa tiền quảng cáo của tôi bị lãng phí; vấn đề là tôi không biết nửa nào"</em> (cần kiểm chứng về nguồn gốc chính xác).</li>
+<li><strong>1980s–1990s:</strong> khái niệm <strong>Customer Lifetime Value</strong> được hệ thống hóa trong marketing quan hệ (relationship marketing) và database marketing.</li>
+<li><strong>2004:</strong> Peter Doyle với "Value-Based Marketing" và các tác giả như Rust, Lemon, Zeithaml thúc đẩy tư duy marketing tạo ra giá trị cổ đông.</li>
+<li><strong>2013:</strong> <strong>Les Binet &amp; Peter Field</strong> công bố nghiên cứu <em>"The Long and the Short of It"</em> (IPA, Anh) — đặt nền cho quy tắc phân bổ <strong>60% brand / 40% activation</strong>.</li>
+<li><strong>2010s–nay:</strong> sự bùng nổ digital giúp đo lường CAC, ROAS, payback theo thời gian thực; các startup SaaS đưa <strong>LTV:CAC</strong> thành chỉ số sống còn.</li>
+</ul>
+<h2>4. Tại sao quan trọng</h2>
+<p>Quản trị tài chính marketing tốt mang lại bốn lợi ích cốt lõi:</p>
+<ol>
+<li><strong>Bảo vệ ngân sách khi khủng hoảng.</strong> Doanh nghiệp đo được ROI sẽ không cắt mù quáng những kênh đang sinh lời.</li>
+<li><strong>Phân bổ vốn hiệu quả.</strong> Thay vì chia đều, tiền dồn về nơi có payback nhanh và LTV:CAC cao.</li>
+<li><strong>Định giá tăng trưởng.</strong> Startup và doanh nghiệp muốn gọi vốn phải chứng minh CAC ổn định và CLV tăng.</li>
+<li><strong>Nâng vị thế của marketing.</strong> Khi Marketing nói bằng ngôn ngữ P&amp;L (báo cáo lãi lỗ), nó có ghế trong phòng họp chiến lược.</li>
+</ol>
+<p>Ngược lại, thiếu kỷ luật tài chính dẫn tới "đốt tiền theo cảm tính": chạy quảng cáo vì đối thủ chạy, tăng ngân sách vì cuối quý còn dư, đo thành công bằng lượt thích thay vì lợi nhuận.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Nền tảng của toàn chương gói gọn trong một tư duy: <strong>Marketing là đầu tư, không phải chi phí.</strong> Một khoản đầu tư có ba đặc điểm — bỏ vốn hôm nay, thu dòng tiền trong tương lai, và có rủi ro đo lường được.</p>
+<p>Cơ chế vận hành theo chuỗi nhân quả:</p>
+<blockquote>
+<p>Ngân sách → Kênh &amp; chiến dịch → Khách hàng mới (đo bằng CAC) → Doanh thu &amp; margin theo thời gian (đo bằng CLV) → So sánh CLV với CAC → Tái đầu tư vào kênh sinh lời nhất.</p>
+</blockquote>
+<p>Hai "van điều tiết" quan trọng:</p>
+<ul>
+<li><strong>Van hiệu quả (efficiency):</strong> giảm CAC, tăng tỷ lệ chuyển đổi — thuộc về performance marketing.</li>
+<li><strong>Van giá trị (value):</strong> tăng CLV qua giữ chân, upsell, tăng tần suất mua — thuộc về brand, sản phẩm và CRM.</li>
+</ul>
+<p>Doanh nghiệp bền vững cần cả hai van, không thể chỉ tối ưu CAC mà bỏ quên CLV.</p>
+<h2>6. Mô hình</h2>
+<p><strong>Mô hình "Ba tầng ngân sách marketing":</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tầng</th>
+<th>Tên gọi</th>
+<th>Mục tiêu</th>
+<th>Đo bằng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tầng 1</td>
+<td><strong>Always-on Performance</strong></td>
+<td>Thu khách ngay, có thể tắt/mở</td>
+<td>ROAS, CAC, payback</td>
+</tr>
+<tr>
+<td>Tầng 2</td>
+<td><strong>Brand Building</strong></td>
+<td>Xây nhận biết, ưa thích dài hạn</td>
+<td>Brand lift, market share, CLV theo thời gian</td>
+</tr>
+<tr>
+<td>Tầng 3</td>
+<td><strong>Innovation/Test</strong></td>
+<td>Thử kênh &amp; thị trường mới</td>
+<td>Learning, CAC thử nghiệm</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Mô hình phễu tài chính (Financial Funnel):</strong> mỗi tầng phễu gắn một chỉ số tiền:
+Nhận biết (CPM/Reach) → Cân nhắc (CPC/CPL) → Chuyển đổi (CAC/CPA) → Giữ chân &amp; mở rộng (CLV, Net Revenue Retention).</p>
+<h2>7. Framework</h2>
+<p><strong>Framework 60/40 (Binet &amp; Field, IPA 2013 — nêu định tính):</strong>
+Nghiên cứu tổng hợp các case đoạt giải hiệu quả tại Anh gợi ý tỷ lệ phân bổ trung bình tối ưu khoảng <strong>60% ngân sách cho xây thương hiệu (brand) và 40% cho kích hoạt bán hàng (activation)</strong>. Đây là <strong>hướng dẫn định tính, không phải công thức cứng</strong>: tỷ lệ thay đổi theo ngành, giai đoạn vòng đời thương hiệu và độ dài chu kỳ mua. Thương hiệu mới, chu kỳ ngắn (ví dụ thương mại điện tử flash sale) có thể nghiêng nhiều hơn về activation; thương hiệu trưởng thành cần bảo vệ share of voice sẽ nghiêng về brand.</p>
+<p><strong>Framework LTV:CAC để ra quyết định:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tỷ lệ LTV:CAC</th>
+<th>Diễn giải</th>
+<th>Hành động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 1:1</td>
+<td>Lỗ trên mỗi khách</td>
+<td>Dừng/sửa gấp mô hình</td>
+</tr>
+<tr>
+<td>~1:1 đến 2:1</td>
+<td>Hòa vốn mong manh</td>
+<td>Tối ưu CAC hoặc CLV</td>
+</tr>
+<tr>
+<td>~3:1</td>
+<td>Vùng lành mạnh (benchmark SaaS phổ biến, cần kiểm chứng theo ngành)</td>
+<td>Duy trì &amp; scale</td>
+</tr>
+<tr>
+<td>&gt; 5:1</td>
+<td>Có thể đang <strong>đầu tư dưới mức</strong></td>
+<td>Cân nhắc tăng ngân sách để chiếm thị phần</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Framework ba cách lập ngân sách</strong> (chi tiết ở mục 9): theo % doanh thu, theo mục tiêu (objective-and-task), theo đối thủ (competitive parity).</p>
+<h2>8. Công thức</h2>
+<p>Dưới đây là bộ công thức lõi. Mọi con số ví dụ đều là <strong>số minh họa</strong>.</p>
+<p><strong>8.1 ROI marketing</strong></p>
+<pre><code>ROI (%) = (Lợi nhuận thu được từ MKT − Chi phí MKT) / Chi phí MKT × 100%
+</code></pre>
+<p>Ví dụ (số minh họa): Lợi nhuận gộp tạo ra = 500 triệu; chi phí MKT = 200 triệu.
+ROI = (500 − 200) / 200 × 100% = <strong>150%</strong>.</p>
+<p><strong>8.2 ROMI (trên margin)</strong></p>
+<pre><code>ROMI = (Doanh thu tăng thêm × Biên lợi nhuận gộp − Chi phí MKT) / Chi phí MKT
+</code></pre>
+<p>Ví dụ (số minh họa): Doanh thu tăng thêm 1 tỷ, biên gộp 40%, chi phí MKT 250 triệu.
+ROMI = (1.000 × 0,4 − 250) / 250 = (400 − 250)/250 = <strong>0,6 = 60%</strong>.</p>
+<p><strong>8.3 ROAS (Return on Ad Spend)</strong></p>
+<pre><code>ROAS = Doanh thu từ quảng cáo / Chi phí quảng cáo
+</code></pre>
+<p>Ví dụ (số minh họa): Doanh thu 600 triệu / chi phí ads 150 triệu = <strong>ROAS 4,0 (4:1)</strong>.
+Lưu ý: ROAS tính trên <strong>doanh thu</strong>, không phải lợi nhuận — dễ gây ảo tưởng nếu biên gộp thấp.</p>
+<p><strong>8.4 CAC</strong></p>
+<pre><code>CAC = Tổng chi phí Sales &amp; Marketing / Số khách hàng mới thu được
+</code></pre>
+<p>Ví dụ (số minh họa): Chi 300 triệu, thu 600 khách mới → CAC = <strong>500.000đ/khách</strong>.</p>
+<p><strong>8.5 CLV (mô hình đơn giản)</strong></p>
+<pre><code>CLV = ARPU × Biên gộp × Tuổi thọ khách hàng (số kỳ)
+   = (Doanh thu TB mỗi kỳ × Biên gộp %) × (1 / Tỷ lệ rời bỏ)
+</code></pre>
+<p>Ví dụ (số minh họa): ARPU 200.000đ/tháng, biên gộp 60%, churn 5%/tháng → tuổi thọ = 1/0,05 = 20 tháng.
+CLV = 200.000 × 0,6 × 20 = <strong>2.400.000đ</strong>.</p>
+<p><strong>8.6 LTV:CAC</strong></p>
+<pre><code>Tỷ lệ = CLV / CAC
+</code></pre>
+<p>Với ví dụ trên: 2.400.000 / 500.000 = <strong>4,8:1</strong> → lành mạnh, có thể cân nhắc scale.</p>
+<p><strong>8.7 Payback Period</strong></p>
+<pre><code>Payback (tháng) = CAC / (ARPU × Biên gộp mỗi tháng)
+</code></pre>
+<p>Ví dụ (số minh họa): 500.000 / (200.000 × 0,6) = 500.000 / 120.000 = <strong>~4,2 tháng</strong>.</p>
+<p><strong>8.8 Ngân sách theo % doanh thu</strong></p>
+<pre><code>Ngân sách MKT = Doanh thu dự kiến × % ấn định
+</code></pre>
+<p>Ví dụ (số minh họa): Doanh thu 50 tỷ × 8% = <strong>4 tỷ ngân sách MKT</strong>.</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình lập và quản trị ngân sách marketing 7 bước:</p>
+<ol>
+<li><strong>Xác định mục tiêu kinh doanh</strong> (doanh thu, số khách mới, thị phần) và quy chúng ra chỉ số marketing.</li>
+<li><strong>Chọn phương pháp lập ngân sách:</strong>
+   - <em>Theo % doanh thu:</em> đơn giản, dễ thuyết phục CFO, nhưng thụ động (doanh thu giảm → cắt MKT đúng lúc cần nhất).
+   - <em>Theo mục tiêu (objective-and-task):</em> xác định mục tiêu → liệt kê việc cần làm → tính chi phí từng việc → cộng lại. Chính xác nhất nhưng tốn công.
+   - <em>Theo đối thủ (competitive parity):</em> bám share of voice của đối thủ. Hữu ích để không bị "nuốt chửng" nhưng dễ chạy theo mù quáng.</li>
+<li><strong>Phân bổ brand vs performance</strong> theo tinh thần 60/40 (điều chỉnh theo ngành).</li>
+<li><strong>Chia ngân sách xuống kênh</strong> dựa trên CAC &amp; payback lịch sử.</li>
+<li><strong>Chừa quỹ dự phòng &amp; test</strong> (thường 10–15%, số minh họa).</li>
+<li><strong>Đo lường &amp; báo cáo</strong> hàng tuần/tháng: CAC, ROAS, payback, CLV.</li>
+<li><strong>Tái phân bổ (reallocation):</strong> dồn tiền về kênh hiệu quả, cắt kênh lỗ.</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Bối cảnh (số minh họa):</strong> Một quán cà phê muốn thử chạy quảng cáo Facebook trong 1 tháng.</p>
+<ul>
+<li>Chi quảng cáo: 5.000.000đ</li>
+<li>Số khách mới đến nhờ quảng cáo: 200 khách → <strong>CAC = 25.000đ/khách</strong></li>
+<li>Mỗi khách chi trung bình 50.000đ/lần, biên gộp 60% → margin/lần = 30.000đ</li>
+<li>Khách mới quay lại trung bình 4 lần trong 6 tháng → <strong>CLV = 30.000 × 4 = 120.000đ</strong></li>
+<li><strong>LTV:CAC = 120.000 / 25.000 = 4,8:1</strong> → đáng để tiếp tục.</li>
+<li><strong>Payback:</strong> ngay lần mua đầu (30.000đ) chưa bù được 25.000đ? Thực ra bù được ngay lần đầu vì margin 30.000 &gt; CAC 25.000 → <strong>payback &lt; 1 lần mua</strong>.</li>
+</ul>
+<p>Kết luận: quảng cáo này sinh lời, nên duy trì và tăng nhẹ ngân sách để test trần hiệu quả.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Bối cảnh (số minh họa):</strong> Một công ty SaaS B2B bán phần mềm quản lý bán hàng, gói 500.000đ/tháng.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Giá trị (số minh họa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chi Sales &amp; Marketing/tháng</td>
+<td>900 triệu</td>
+</tr>
+<tr>
+<td>Khách mới/tháng</td>
+<td>300</td>
+</tr>
+<tr>
+<td>CAC</td>
+<td>3.000.000đ</td>
+</tr>
+<tr>
+<td>ARPU</td>
+<td>500.000đ/tháng</td>
+</tr>
+<tr>
+<td>Biên gộp</td>
+<td>80% (điển hình SaaS)</td>
+</tr>
+<tr>
+<td>Churn</td>
+<td>4%/tháng → tuổi thọ 25 tháng</td>
+</tr>
+<tr>
+<td>CLV</td>
+<td>500.000 × 0,8 × 25 = <strong>10.000.000đ</strong></td>
+</tr>
+<tr>
+<td>LTV:CAC</td>
+<td>10.000.000 / 3.000.000 = <strong>3,3:1</strong></td>
+</tr>
+<tr>
+<td>Payback</td>
+<td>3.000.000 / (500.000 × 0,8) = <strong>7,5 tháng</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Diễn giải: LTV:CAC 3,3:1 là lành mạnh, nhưng payback 7,5 tháng nghĩa là công ty cần đủ vốn lưu động để "gánh" khách trong hơn nửa năm trước khi có lãi ròng. Đây là lý do các SaaS tăng trưởng nhanh thường cần gọi vốn.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>The Coffee House / Highlands Coffee — cuộc đua thị phần (định tính, cần kiểm chứng số liệu cụ thể):</strong>
+Các chuỗi F&amp;B Việt Nam như Highlands Coffee đầu tư mạnh vào <strong>brand</strong> (điểm bán đẹp, vị trí đắc địa, nhận diện thống nhất) song song với <strong>performance</strong> (app đặt hàng, khuyến mãi qua ví điện tử). Điều này minh họa cân bằng brand/performance: brand giúp khách chọn Highlands theo phản xạ, performance qua app giúp đo CAC và tăng tần suất mua (tăng CLV).</p>
+<p><strong>Thế Giới Di Động (MWG) — kỷ luật tài chính bán lẻ:</strong>
+MWG nổi tiếng quản trị chi phí trên từng cửa hàng và từng đồng doanh thu. Việc mở rộng chuỗi được ra quyết định dựa trên doanh thu/điểm bán và điểm hòa vốn — tư duy tài chính marketing áp cho hệ thống phân phối. (Chi tiết số liệu cần tham chiếu báo cáo thường niên MWG — cần kiểm chứng.)</p>
+<p><strong>Bài học Việt Nam:</strong> nhiều startup Việt (đặc biệt giai đoạn 2018–2022) "đốt tiền" khuyến mãi để mua khách với CAC cao mà CLV thấp do khách chỉ đến vì mã giảm giá rồi rời đi (churn cao). Đây là ví dụ điển hình LTV:CAC &lt; 1, mô hình không bền.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Netflix — CLV và payback dài hạn:</strong> Netflix chấp nhận CAC cao và payback nhiều tháng vì churn thấp và CLV lớn nhờ nội dung giữ chân. Chiến lược của họ là tối ưu <strong>giá trị vòng đời</strong> hơn là CAC ngắn hạn (định tính, cần kiểm chứng số cụ thể).</p>
+<p><strong>Airbnb — dịch chuyển từ performance sang brand:</strong> Airbnb công khai (khoảng 2019–2021) rằng họ <strong>cắt giảm chi performance marketing</strong> và dồn về brand/PR, phát hiện rằng lưu lượng truy cập vẫn phục hồi mạnh — cho thấy phần lớn giá trị đến từ thương hiệu chứ không chỉ quảng cáo trả tiền (định tính, cần kiểm chứng qua công bố của Airbnb).</p>
+<p><strong>Dollar Shave Club — CAC thấp nhờ nội dung viral:</strong> video ra mắt 2012 giúp thu hàng chục nghìn khách với chi phí thấp bất thường, minh họa việc sáng tạo có thể kéo CAC xuống mạnh (định tính, cần kiểm chứng số đăng ký cụ thể).</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Nhầm ROAS với ROI/lợi nhuận.</strong> ROAS 4:1 nghe hay nhưng nếu biên gộp chỉ 20% thì thực chất có thể đang lỗ sau khi trừ giá vốn.</li>
+<li><strong>Đo CAC quên chi phí nhân sự &amp; công cụ.</strong> CAC "thật" phải gồm cả lương team, phí phần mềm, phí sáng tạo — không chỉ tiền ads.</li>
+<li><strong>Tính CLV trên doanh thu thay vì margin.</strong> CLV phải dựa trên lợi nhuận gộp, nếu không sẽ phóng đại giá trị khách.</li>
+<li><strong>Bỏ quên payback period.</strong> LTV:CAC tốt nhưng payback 18 tháng có thể giết chết dòng tiền.</li>
+<li><strong>Cắt brand khi khó khăn.</strong> Cắt toàn bộ brand để dồn performance làm tăng CAC dài hạn (mất "phễu" nhận biết).</li>
+<li><strong>Phân bổ đều thay vì theo hiệu quả.</strong> Chia ngân sách bằng nhau cho các kênh là lười biếng, không tối ưu.</li>
+<li><strong>Ngân sách theo % doanh thu một cách máy móc.</strong> Cắt MKT khi doanh thu giảm chính là cắt đúng lúc cần đầu tư nhất.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p>Trước khi trình ngân sách marketing, hãy tự kiểm:</p>
+<ul>
+<li>[ ] Đã gắn ngân sách với mục tiêu kinh doanh cụ thể (doanh thu/khách mới)?</li>
+<li>[ ] Đã chọn rõ phương pháp lập ngân sách và giải thích được lý do?</li>
+<li>[ ] Đã phân bổ brand vs performance có chủ đích (tham chiếu 60/40)?</li>
+<li>[ ] CAC đã bao gồm <strong>toàn bộ</strong> chi phí (ads + người + tool + sáng tạo)?</li>
+<li>[ ] CLV tính trên <strong>margin</strong>, có giả định churn rõ ràng?</li>
+<li>[ ] Đã kiểm tra LTV:CAC và payback period?</li>
+<li>[ ] Có quỹ dự phòng/test (10–15%)?</li>
+<li>[ ] Có kế hoạch đo lường &amp; tái phân bổ định kỳ?</li>
+<li>[ ] Báo cáo diễn đạt được bằng ngôn ngữ P&amp;L cho CFO/CEO?</li>
+</ul>
+<h2>16. SOP</h2>
+<p><strong>SOP: Rà soát tài chính marketing hàng tháng</strong></p>
+<ol>
+<li><strong>Ngày 1–2:</strong> Thu thập số liệu tháng trước từ các kênh (chi phí, khách mới, doanh thu).</li>
+<li><strong>Ngày 2–3:</strong> Tính CAC, ROAS, ROMI theo từng kênh; cập nhật CLV &amp; churn.</li>
+<li><strong>Ngày 3:</strong> So sánh với mục tiêu và với tháng trước; đánh dấu kênh vượt/dưới chuẩn.</li>
+<li><strong>Ngày 4:</strong> Ra quyết định tái phân bổ: cắt kênh LTV:CAC &lt; 2, tăng kênh &gt; 4.</li>
+<li><strong>Ngày 4–5:</strong> Soạn báo cáo 1 trang cho ban lãnh đạo (xem mục 18).</li>
+<li><strong>Ngày 5:</strong> Họp review, chốt ngân sách tháng tới.</li>
+<li><strong>Lưu trữ:</strong> cập nhật vào bảng theo dõi tích lũy để quan sát xu hướng CAC/CLV theo thời gian.</li>
+</ol>
+<h2>17. KPI</h2>
+<p>Bộ KPI tài chính marketing cần theo dõi:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hiệu quả chi tiêu</td>
+<td>ROAS, ROMI, ROI</td>
+<td>Sinh lời trên mỗi đồng chi</td>
+</tr>
+<tr>
+<td>Thu hút</td>
+<td>CAC, CPL, CPA</td>
+<td>Chi phí mua khách</td>
+</tr>
+<tr>
+<td>Giá trị</td>
+<td>CLV, ARPU, biên gộp/khách</td>
+<td>Giá trị khách tạo ra</td>
+</tr>
+<tr>
+<td>Cân đối</td>
+<td>LTV:CAC</td>
+<td>Sức khỏe mô hình</td>
+</tr>
+<tr>
+<td>Dòng tiền</td>
+<td>Payback period</td>
+<td>Tốc độ hoàn vốn</td>
+</tr>
+<tr>
+<td>Giữ chân</td>
+<td>Churn rate, NRR</td>
+<td>Bền vững của CLV</td>
+</tr>
+<tr>
+<td>Ngân sách</td>
+<td>% doanh thu chi cho MKT, Share of Voice</td>
+<td>Mức độ đầu tư</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nguyên tắc: không nhìn một KPI đơn lẻ. ROAS cao + payback dài + churn cao vẫn là mô hình xấu.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu 1 — Bảng ngân sách marketing (số minh họa):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Kênh</th>
+<th>Ngân sách (triệu)</th>
+<th>% tổng</th>
+<th>Loại (Brand/Perf)</th>
+<th>CAC mục tiêu</th>
+<th>KH mới dự kiến</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Facebook/Instagram Ads</td>
+<td>400</td>
+<td>25%</td>
+<td>Performance</td>
+<td>400.000đ</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>Google Search</td>
+<td>320</td>
+<td>20%</td>
+<td>Performance</td>
+<td>350.000đ</td>
+<td>914</td>
+</tr>
+<tr>
+<td>TikTok/Content</td>
+<td>240</td>
+<td>15%</td>
+<td>Brand</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>KOL/PR</td>
+<td>320</td>
+<td>20%</td>
+<td>Brand</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Email/CRM</td>
+<td>80</td>
+<td>5%</td>
+<td>Perf (retention)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Test kênh mới</td>
+<td>160</td>
+<td>10%</td>
+<td>Test</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Dự phòng</td>
+<td>80</td>
+<td>5%</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Tổng</strong></td>
+<td><strong>1.600</strong></td>
+<td><strong>100%</strong></td>
+<td>40% Perf / 45% Brand / 15% khác</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 2 — Bảng theo dõi ROI theo kênh (số minh họa):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Kênh</th>
+<th>Chi phí</th>
+<th>Doanh thu</th>
+<th>Biên gộp</th>
+<th>Margin</th>
+<th>ROMI</th>
+<th>CAC</th>
+<th>LTV:CAC</th>
+<th>Payback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FB Ads</td>
+<td>400tr</td>
+<td>1.600tr</td>
+<td>40%</td>
+<td>640tr</td>
+<td>60%</td>
+<td>400k</td>
+<td>4,0:1</td>
+<td>5 tháng</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>320tr</td>
+<td>1.100tr</td>
+<td>40%</td>
+<td>440tr</td>
+<td>37,5%</td>
+<td>350k</td>
+<td>3,5:1</td>
+<td>6 tháng</td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td>240tr</td>
+<td>500tr</td>
+<td>40%</td>
+<td>200tr</td>
+<td>−16,7%</td>
+<td>600k</td>
+<td>2,0:1</td>
+<td>9 tháng</td>
+</tr>
+</tbody>
+</table></div>
+<p>Diễn giải mẫu: TikTok đang ROMI âm — cần tối ưu hoặc chuyển vai trò sang mục tiêu brand (đo bằng chỉ số khác).</p>
+<h2>19. Prompt AI (6 công cụ)</h2>
+<p>Dưới đây là 6 prompt mẫu cho 6 công cụ AI phổ biến, phục vụ tài chính marketing. Luôn <strong>kiểm chứng lại số AI đưa ra</strong>.</p>
+<ol>
+<li>
+<p><strong>ChatGPT (GPT) — Lập ngân sách:</strong></p>
+<blockquote>
+<p>"Tôi có doanh thu dự kiến 50 tỷ năm 2026, ngành mỹ phẩm, biên gộp 55%. Hãy đề xuất ngân sách marketing theo 3 phương pháp (% doanh thu, theo mục tiêu, theo đối thủ), phân bổ brand/performance theo tinh thần 60/40, và giải thích ưu nhược điểm từng phương án dưới dạng bảng."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Claude — Phân tích CAC/CLV:</strong></p>
+<blockquote>
+<p>"Đóng vai CFO. Dữ liệu (số minh họa): CAC 500k, ARPU 200k/tháng, biên gộp 60%, churn 5%/tháng. Hãy tính CLV, LTV:CAC, payback period; đánh giá sức khỏe mô hình; và nêu 3 rủi ro dòng tiền cần lưu ý."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Gemini — Nghiên cứu benchmark:</strong></p>
+<blockquote>
+<p>"Tổng hợp các benchmark công khai về LTV:CAC và payback period theo ngành (SaaS, e-commerce, F&amp;B, D2C). Ghi rõ nguồn và năm, đánh dấu số nào cần kiểm chứng."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Perplexity — Kiểm chứng nguồn:</strong></p>
+<blockquote>
+<p>"Nghiên cứu 'The Long and the Short of It' của Binet &amp; Field về quy tắc 60/40 brand/activation là gì, do tổ chức nào công bố, năm nào? Trích dẫn nguồn gốc chính xác."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Microsoft Copilot (trong Excel) — Dựng mô hình:</strong></p>
+<blockquote>
+<p>"Tạo bảng tính tính CAC, CLV, LTV:CAC và payback cho 5 kênh, với các ô đầu vào: chi phí, khách mới, ARPU, biên gộp, churn. Thêm định dạng có điều kiện tô đỏ kênh LTV:CAC &lt; 2."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Napkin AI / Gamma — Trực quan hóa báo cáo:</strong></p>
+<blockquote>
+<p>"Chuyển bảng ROI theo kênh này thành một slide báo cáo cho CEO: biểu đồ cột ROMI theo kênh, thẻ KPI tổng (CAC trung bình, LTV:CAC, payback), và 3 khuyến nghị tái phân bổ ngân sách."</p>
+</blockquote>
+</li>
+</ol>
+<h2>20. Bài tập</h2>
+<p><strong>Bài 1 (cơ bản):</strong> Chi ads 200 triệu, thu 500 khách mới. Tính CAC.</p>
+<p><strong>Bài 2:</strong> ARPU 150.000đ/tháng, biên gộp 50%, churn 10%/tháng. Tính tuổi thọ khách và CLV.</p>
+<p><strong>Bài 3:</strong> Với CAC ở Bài 1 (giả sử 400.000đ) và CLV ở Bài 2, tính LTV:CAC và payback period. Mô hình có lành mạnh không?</p>
+<p><strong>Bài 4 (nâng cao):</strong> Doanh thu dự kiến 30 tỷ, ban giám đốc muốn chi 10% cho marketing. Hãy lập bảng ngân sách phân bổ brand/performance theo 60/40 và chia xuống ít nhất 4 kênh, giải thích lựa chọn.</p>
+<p><strong>Bài 5 (tình huống):</strong> Kênh A: ROAS 5:1 nhưng biên gộp sản phẩm 15%. Kênh B: ROAS 3:1, biên gộp 50%. Kênh nào thực sự sinh lời hơn? Tính và giải thích.</p>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt ROI, ROMI và ROAS. Vì sao ROAS dễ gây hiểu lầm?</li>
+<li>Nêu 3 phương pháp lập ngân sách marketing và một nhược điểm của mỗi phương pháp.</li>
+<li>Quy tắc 60/40 của Binet &amp; Field nói gì? Vì sao nó là hướng dẫn định tính chứ không phải công thức cứng?</li>
+<li>Công thức CLV đơn giản gồm những thành phần nào? Vì sao phải dùng biên gộp thay vì doanh thu?</li>
+<li>Payback period quan trọng thế nào với dòng tiền, kể cả khi LTV:CAC tốt?</li>
+<li>Vì sao nói "marketing là đầu tư, không phải chi phí"? Điều này thay đổi cách trình bày với CFO ra sao?</li>
+<li>Một mô hình có LTV:CAC = 6:1 — điều này luôn tốt? Vì sao có thể là dấu hiệu đầu tư dưới mức?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công — Airbnb chuyển dịch brand (định tính, cần kiểm chứng):</strong>
+Khoảng 2019–2021, Airbnb tái cân bằng ngân sách, <strong>giảm mạnh performance marketing</strong> và đầu tư vào thương hiệu, PR, nội dung. Kết quả họ công bố: lưu lượng truy cập và đặt phòng phục hồi phần lớn qua kênh trực tiếp/tự nhiên, chứng minh phần lớn giá trị nằm ở sức mạnh thương hiệu chứ không phụ thuộc chi ads. Bài học: đo lường không chỉ CAC ngắn hạn mà cả <strong>đóng góp dài hạn của brand vào CLV và CAC hệ thống</strong>.</p>
+<p><strong>Case thất bại — làn sóng startup "đốt tiền" giành thị phần (định tính, cần kiểm chứng theo từng công ty):</strong>
+Nhiều startup gọi xe/giao đồ ăn/thương mại điện tử giai đoạn 2015–2022 (cả quốc tế lẫn Việt Nam) mua khách bằng khuyến mãi sâu, đẩy CAC lên rất cao trong khi CLV thấp vì khách trung thành với mã giảm giá chứ không với thương hiệu (churn cao ngay khi ngừng ưu đãi). Hệ quả: LTV:CAC &lt; 1 kéo dài, phụ thuộc vốn rót liên tục; khi thị trường vốn siết lại, nhiều đơn vị buộc thu hẹp hoặc rời thị trường. Bài học: tăng trưởng mua bằng tiền mà không cải thiện CLV/churn là không bền — kỷ luật tài chính marketing phải đi trước quy mô.</p>
+<h2>23. Tổng kết</h2>
+<p>Những điểm cốt lõi cần nhớ:</p>
+<ul>
+<li><strong>Marketing là đầu tư.</strong> Trình bày bằng ngôn ngữ tài chính (P&amp;L, ROI, payback) để giành vị thế và ngân sách.</li>
+<li><strong>Ba cách lập ngân sách</strong> — % doanh thu (dễ nhưng thụ động), theo mục tiêu (chính xác nhất), theo đối thủ (phòng thủ share of voice) — nên phối hợp.</li>
+<li><strong>60/40 brand/performance</strong> là kim chỉ nam định tính, điều chỉnh theo ngành và vòng đời.</li>
+<li><strong>Bộ số sống còn:</strong> CAC, CLV, <strong>LTV:CAC</strong> (mục tiêu ~3:1 trở lên), và <strong>payback period</strong> (bảo vệ dòng tiền).</li>
+<li><strong>CLV luôn tính trên margin</strong>, có giả định churn minh bạch; <strong>ROAS tính trên doanh thu</strong> nên phải soi cùng biên gộp.</li>
+<li><strong>Kỷ luật tái phân bổ:</strong> dồn tiền vào kênh sinh lời, cắt kênh lỗ, chừa quỹ test.</li>
+<li><strong>Đừng cắt brand khi khủng hoảng</strong> — nó đẩy CAC dài hạn tăng.</li>
+</ul>
+<p>Khi bạn có thể ngồi cùng CFO và giải thích mỗi đồng marketing tạo ra bao nhiêu margin trong bao lâu, marketing không còn là chi phí bị nghi ngờ — mà là động cơ tăng trưởng được tin tưởng.</p>
+<h2>24. Nguồn tham khảo</h2>
+<blockquote>
+<p>Lưu ý: danh mục dưới đây liệt kê tác giả/công trình theo trí nhớ học thuật; người đọc cần <strong>tự tra cứu và kiểm chứng</strong> ấn bản, năm và số liệu cụ thể trước khi trích dẫn chính thức. Không sử dụng link để tránh dẫn nguồn sai.</p>
+</blockquote>
+<ol>
+<li>Binet, L. &amp; Field, P. — <em>The Long and the Short of It: Balancing Short and Long-Term Marketing Strategies</em> (IPA, 2013). Nền tảng quy tắc 60/40 (cần kiểm chứng chi tiết).</li>
+<li>Kotler, P. &amp; Keller, K. L. — <em>Marketing Management</em> (nhiều ấn bản). Chương về ngân sách và đo lường marketing.</li>
+<li>Farris, P., Bendle, N., Pfeifer, P., Reibstein, D. — <em>Marketing Metrics: The Definitive Guide to Measuring Marketing Performance</em>. Nguồn chuẩn cho CAC, CLV, ROMI.</li>
+<li>Gupta, S. &amp; Lehmann, D. — nghiên cứu về Customer Lifetime Value và giá trị khách hàng.</li>
+<li>Doyle, P. — <em>Value-Based Marketing</em> (2000/2008). Marketing tạo giá trị cổ đông.</li>
+<li>Blank, S. &amp; Ellis, S. — tài liệu growth/startup metrics về LTV:CAC và payback (bối cảnh SaaS).</li>
+<li>Báo cáo thường niên Thế Giới Di Động (MWG) và các doanh nghiệp niêm yết Việt Nam — dùng để tham chiếu số liệu thực (cần tra cứu bản chính thức).</li>
+<li>Công bố nhà đầu tư của Airbnb, Netflix — cho các case quốc tế (cần tra cứu bản chính thức).</li>
+</ol>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Đo lường trong kỷ nguyên hậu-cookie &amp; bảo mật dữ liệu:</strong> tác động của mất third-party cookie, iOS ATT, và mô hình attribution mới (MMM — Marketing Mix Modeling hồi sinh) tới cách tính CAC/ROI. Cần cập nhật khi có chuẩn đo lường ổn định.</li>
+<li><strong>AI trong phân bổ ngân sách:</strong> công cụ tối ưu ngân sách theo thời gian thực bằng AI/ML — cập nhật benchmark hiệu quả thực tế.</li>
+<li><strong>Số liệu benchmark Việt Nam:</strong> bổ sung dữ liệu CAC/CLV/LTV:CAC theo ngành tại Việt Nam khi có nghiên cứu công khai đáng tin cậy.</li>
+<li><strong>Chuẩn kế toán cho marketing như tài sản vô hình:</strong> theo dõi thay đổi chuẩn mực kế toán về việc ghi nhận đầu tư thương hiệu.</li>
+<li><strong>Cập nhật case study 2026–2035:</strong> thay/bổ sung case mới phản ánh bối cảnh kinh tế và công nghệ đương thời.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-07-growth-performance-05-quang-cao-tra-phi.html"><span>← Trước</span>Tập 7 · Chương 5 — Quảng cáo trả phí: Google, Meta &amp; TikTok Ads</a><a class="next" href="tap-08-ai-marketing-01-ai-agent-mcp-automation.html"><span>Sau →</span>Tập 8 · Chương 1 — AI Marketing, AI Agent &amp; MCP</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

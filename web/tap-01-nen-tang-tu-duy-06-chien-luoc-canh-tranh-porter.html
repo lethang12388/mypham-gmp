@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 1 · Chương 6 — Chiến lược cạnh tranh (Porter) &amp; Lợi thế bền vững</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 1 · Chương 6 — Chiến lược cạnh tranh (Porter) &amp; Lợi thế bền vững</h1>
+<blockquote>
+<p>Đối tượng: người mới học Marketing → CEO/founder · Thời lượng đọc: ~28–35 phút · Phiên bản v1.0 (2026)</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này trang bị bộ khung tư duy cạnh tranh kinh điển của Michael Porter (5 áp lực, 3 chiến lược chung, chuỗi giá trị) cùng khái niệm lợi thế bền vững/hào kinh tế, đồng thời phản biện bằng góc nhìn Đại dương xanh và lý thuyết "lợi thế tạm thời" để bạn không áp dụng một cách máy móc.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Mọi doanh nghiệp đều tồn tại trong một "sàn đấu". Trên sàn đấu đó, bạn không chỉ cạnh tranh với đối thủ trực diện, mà còn với nhà cung cấp muốn tăng giá, khách hàng muốn ép giá, sản phẩm thay thế đang rình rập, và những kẻ mới muốn nhảy vào cướp phần bánh. Câu hỏi trung tâm của chiến lược cạnh tranh không phải "làm sao bán được nhiều hơn?" mà là: <strong>"Vì sao lợi nhuận rơi vào túi tôi chứ không phải người khác trong chuỗi, và làm sao giữ được điều đó lâu dài?"</strong></p>
+<p>Michael E. Porter — giáo sư Trường Kinh doanh Harvard — là người đã hệ thống hóa câu hỏi này thành bộ công cụ phân tích chặt chẽ nhất mà giới quản trị từng có. Hai cuốn sách <em>Competitive Strategy</em> (1980) và <em>Competitive Advantage</em> (1985) của ông đã trở thành nền tảng của môn Chiến lược suốt hơn bốn thập kỷ (dữ kiện).</p>
+<p>Chương này viết cho hai loại người đọc cùng lúc: người mới cần hiểu "5 forces là gì" một cách đơn giản, và CEO cần biết khi nào bộ khung của Porter còn đúng, khi nào nó đã lỗi thời trong thời đại nền tảng số. Chúng ta sẽ đi từ nền tảng đến phản biện, để bạn dùng công cụ chứ không bị công cụ dùng.</p>
+<h2>2. Khái niệm</h2>
+<p>Ba khái niệm cốt lõi cần phân biệt rõ ngay từ đầu:</p>
+<ul>
+<li><strong>Chiến lược cạnh tranh (competitive strategy):</strong> cách một doanh nghiệp lựa chọn <em>vị thế</em> trong ngành để đạt lợi nhuận cao hơn mức trung bình một cách bền vững. Chiến lược là về sự <strong>khác biệt có chủ đích</strong> — chọn làm gì và, quan trọng không kém, chọn <em>không</em> làm gì.</li>
+<li><strong>Lợi thế cạnh tranh (competitive advantage):</strong> lý do khiến khách hàng chọn bạn thay vì đối thủ, thể hiện qua khả năng hoặc bán giá cao hơn (premium) hoặc có chi phí thấp hơn ở cùng mức giá.</li>
+<li><strong>Lợi thế cạnh tranh bền vững (sustainable competitive advantage) / hào kinh tế (moat):</strong> lợi thế mà đối thủ khó sao chép, khó thay thế và khó vô hiệu hóa trong thời gian dài.</li>
+</ul>
+<p>Một điểm phân biệt quan trọng (phân tích): <strong>hiệu quả vận hành (operational effectiveness) không phải là chiến lược.</strong> Làm cùng một việc tốt hơn đối thủ (nhanh hơn, rẻ hơn nhờ công nghệ) là điều tốt, nhưng nó dễ bị bắt kịp. Chiến lược thực sự là làm <em>những việc khác</em>, hoặc làm việc giống nhau theo <em>cách khác về bản chất</em> — Porter nhấn mạnh điều này trong bài "What Is Strategy?" (<em>Harvard Business Review</em>, 1996) (dữ kiện).</p>
+<h2>3. Lịch sử hình thành</h2>
+<p>Bối cảnh học thuật (dữ kiện):</p>
+<ul>
+<li><strong>Thập ni 1970 — trường phái tổ chức ngành (Industrial Organization economics):</strong> các nhà kinh tế như Joe S. Bain nghiên cứu mô hình "Cấu trúc – Hành vi – Hiệu quả" (Structure–Conduct–Performance), cho rằng cấu trúc ngành quyết định lợi nhuận. Porter đã "dịch" tư duy kinh tế học này thành công cụ cho nhà quản trị.</li>
+<li><strong>1979:</strong> Porter công bố bài "How Competitive Forces Shape Strategy" trên <em>Harvard Business Review</em> — phôi thai của mô hình 5 áp lực.</li>
+<li><strong>1980:</strong> Xuất bản <em>Competitive Strategy: Techniques for Analyzing Industries and Competitors</em> — giới thiệu 5 Forces và 3 chiến lược chung.</li>
+<li><strong>1985:</strong> Xuất bản <em>Competitive Advantage: Creating and Sustaining Superior Performance</em> — giới thiệu chuỗi giá trị (value chain) như công cụ tìm nguồn gốc lợi thế bên trong doanh nghiệp.</li>
+</ul>
+<p>Các dòng phản biện/bổ sung ra đời sau (dữ kiện):</p>
+<ul>
+<li><strong>1984–1991 — Quan điểm dựa trên nguồn lực (Resource-Based View):</strong> Wernerfelt, Barney lập luận lợi thế đến từ <em>nguồn lực bên trong</em> (VRIN: có giá trị, hiếm, khó bắt chước, không thay thế được), bổ khuyết cho góc nhìn "hướng ra ngoài" của Porter.</li>
+<li><strong>2005 — Chiến lược Đại dương xanh:</strong> W. Chan Kim &amp; Renée Mauborgne, <em>Blue Ocean Strategy</em>.</li>
+<li><strong>2013 — Lợi thế tạm thời:</strong> Rita Gunther McGrath, <em>The End of Competitive Advantage</em>.</li>
+</ul>
+<h2>4. Tại sao quan trọng</h2>
+<p><strong>Với người mới (phân tích):</strong> 5 Forces cho bạn một checklist để trả lời câu hỏi "Ngành này có đáng để nhảy vào không?" trước khi đốt tiền. Rất nhiều startup chết không phải vì sản phẩm tệ mà vì chọn một ngành mà toàn bộ lợi nhuận bị nhà cung cấp hoặc nền tảng phân phối "hút" mất.</p>
+<p><strong>Với CEO/founder (phân tích):</strong>
+1. <strong>Phân bổ vốn:</strong> Hiểu ngành nào có lợi nhuận cấu trúc cao giúp quyết định nên đầu tư mở rộng hay rút lui.
+2. <strong>Định vị:</strong> Bộ 3 chiến lược chung buộc bạn chọn — tránh "mắc kẹt ở giữa", trạng thái nguy hiểm nhất.
+3. <strong>Đàm phán:</strong> Value chain chỉ ra khâu nào tạo giá trị thật, khâu nào nên thuê ngoài.
+4. <strong>Phòng thủ:</strong> Tư duy moat giúp bạn biết đầu tư vào đâu để đối thủ khó sao chép.</p>
+<p>Ý kiến của người biên soạn: giá trị lớn nhất của Porter với người Việt làm marketing không phải là "công thức", mà là kỷ luật đặt câu hỏi <em>cấu trúc</em>. Chúng ta hay bị cuốn vào chiến thuật (chạy ads, giảm giá) mà quên hỏi: cấu trúc ngành có cho phép tôi kiếm lời bền vững không?</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Nguyên lý nền tảng của Porter (phân tích, dựa trên <em>Competitive Strategy</em> 1980):</p>
+<p><strong>Lợi nhuận trung bình của một ngành được quyết định bởi cấu trúc ngành đó, chứ không chỉ bởi việc doanh nghiệp giỏi hay dở.</strong> Ngành dược phẩm biệt dược có lợi nhuận cấu trúc cao; ngành hàng không giá rẻ có lợi nhuận cấu trúc thấp — bất kể ai điều hành.</p>
+<p>Từ đó suy ra hai tầng phân tích:</p>
+<ol>
+<li><strong>Tầng ngành (bên ngoài):</strong> Dùng 5 Forces để đo "mức hấp dẫn" và tìm ra ai đang chiếm lợi nhuận trong chuỗi.</li>
+<li><strong>Tầng doanh nghiệp (bên trong):</strong> Dùng Value Chain + 3 chiến lược chung để xác định bạn sẽ giành lợi thế bằng cách nào — chi phí thấp hay khác biệt.</li>
+</ol>
+<p>Cơ chế của lợi thế bền vững: một lợi thế chỉ "bền" khi có <strong>rào cản sao chép</strong> — quy mô kinh tế, chi phí chuyển đổi (switching cost), hiệu ứng mạng (network effect), tài sản vô hình (thương hiệu, bằng sáng chế), hoặc lợi thế chi phí độc quyền (nguồn nguyên liệu, vị trí).</p>
+<h2>6. Mô hình — 5 áp lực cạnh tranh (Five Forces)</h2>
+<p>Sơ đồ 5 áp lực (Porter, 1979/1980):</p>
+<pre><code>                    ┌─────────────────────────────┐
+                    │   ĐỐI THỦ TIỀM ẨN            │
+                    │   (Threat of New Entrants)   │
+                    │   → Rào cản gia nhập cao/thấp?│
+                    └──────────────┬──────────────┘
+                                   │ (áp lực từ trên xuống)
+                                   ▼
+ ┌──────────────────┐   ┌─────────────────────────┐   ┌──────────────────┐
+ │  QUYỀN LỰC        │   │   CẠNH TRANH NỘI BỘ     │   │  QUYỀN LỰC        │
+ │  NHÀ CUNG CẤP     │──▶│   NGÀNH                 │◀──│  KHÁCH HÀNG       │
+ │  (Suppliers)      │   │   (Rivalry among        │   │  (Buyers)         │
+ │  → ép giá đầu vào?│   │    existing firms)      │   │  → ép giá đầu ra? │
+ └──────────────────┘   └────────────┬────────────┘   └──────────────────┘
+                                   ▲
+                                   │ (áp lực từ dưới lên)
+                    ┌──────────────┴──────────────┐
+                    │   SẢN PHẨM THAY THẾ          │
+                    │   (Threat of Substitutes)    │
+                    │   → có cách khác đáp ứng nhu  │
+                    │     cầu không?               │
+                    └─────────────────────────────┘
+</code></pre>
+<p>Diễn giải nhanh 5 lực:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Áp lực</th>
+<th>Câu hỏi cốt lõi</th>
+<th>Yếu tố làm áp lực TĂNG (ngành kém hấp dẫn)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cạnh tranh nội bộ ngành</td>
+<td>Đối thủ hiện tại đánh nhau khốc liệt cỡ nào?</td>
+<td>Nhiều đối thủ ngang sức, tăng trưởng chậm, chi phí cố định cao, sản phẩm ít khác biệt</td>
+</tr>
+<tr>
+<td>Đối thủ tiềm ẩn</td>
+<td>Người mới nhảy vào có dễ không?</td>
+<td>Vốn ít, không cần giấy phép, không có lợi thế quy mô của người cũ</td>
+</tr>
+<tr>
+<td>Sản phẩm thay thế</td>
+<td>Có cách khác thỏa mãn cùng nhu cầu?</td>
+<td>Sản phẩm thay thế rẻ hơn/tốt hơn, chi phí chuyển đổi thấp</td>
+</tr>
+<tr>
+<td>Quyền lực khách hàng</td>
+<td>Người mua ép giá được không?</td>
+<td>Ít người mua nhưng mua lượng lớn, sản phẩm dễ thay thế, khách nhạy giá</td>
+</tr>
+<tr>
+<td>Quyền lực nhà cung cấp</td>
+<td>Nhà cung cấp ép giá được không?</td>
+<td>Ít nhà cung cấp, đầu vào độc quyền, chi phí chuyển nhà cung cấp cao</td>
+</tr>
+</tbody>
+</table></div>
+<h2>7. Framework — 3 chiến lược chung &amp; "mắc kẹt ở giữa"</h2>
+<p>Porter (1980) lập luận: có hai loại lợi thế cơ bản (chi phí thấp hoặc khác biệt) nhân với hai phạm vi (toàn thị trường hoặc ngách) → ra 3 chiến lược khả thi.</p>
+<pre><code>                     PHẠM VI RỘNG (toàn ngành)
+        ┌───────────────────────┬───────────────────────┐
+        │  DẪN ĐẦU CHI PHÍ       │  KHÁC BIỆT HÓA         │
+        │  (Cost Leadership)     │  (Differentiation)     │
+        │  &quot;Rẻ nhất thị trường&quot;  │  &quot;Độc đáo, đáng trả    │
+        │                        │   giá cao&quot;             │
+        ├───────────────────────┴───────────────────────┤
+        │              TẬP TRUNG (Focus)                  │
+        │   Focus-chi phí  |  Focus-khác biệt             │
+        │   &quot;Phục vụ 1 ngách thật giỏi&quot;                   │
+        └────────────────────────────────────────────────┘
+                     PHẠM VI HẸP (ngách)
+</code></pre>
+<ul>
+<li><strong>Dẫn đầu chi phí:</strong> trở thành nhà sản xuất chi phí thấp nhất ngành, nhờ quy mô, hiệu suất, kiểm soát chi phí. Ví dụ tư duy: Walmart, hàng không giá rẻ.</li>
+<li><strong>Khác biệt hóa:</strong> cung cấp thứ độc đáo mà khách sẵn sàng trả premium — thương hiệu, thiết kế, dịch vụ, công nghệ. Ví dụ tư duy: Apple, các thương hiệu xa xỉ.</li>
+<li><strong>Tập trung:</strong> dồn toàn lực vào một phân khúc hẹp, thắng bằng chi phí <em>hoặc</em> khác biệt trong ngách đó.</li>
+</ul>
+<p><strong>"Mắc kẹt ở giữa" (stuck in the middle):</strong> Porter cảnh báo doanh nghiệp cố làm cả hai mà không xuất sắc ở đâu — không đủ rẻ để cạnh tranh giá, không đủ khác biệt để bán premium — thường có lợi nhuận thấp nhất.</p>
+<p><em>Lưu ý phản biện (ý kiến):</em> Nhiều học giả sau này (và thực tế của Toyota, IKEA) cho thấy có thể <em>vừa</em> rẻ <em>vừa</em> khác biệt nếu tái thiết kế toàn bộ chuỗi giá trị. Vì vậy hãy coi "3 chiến lược" là điểm khởi đầu tư duy, không phải luật bất biến.</p>
+<h2>8. Công thức</h2>
+<p>Chiến lược không có "công thức" theo nghĩa toán học, nhưng có vài quan hệ định lượng giúp tư duy sắc hơn:</p>
+<p><strong>(1) Lợi nhuận kinh tế (nền tảng của mọi lợi thế):</strong></p>
+<pre><code>Lợi thế cạnh tranh tồn tại khi:  ROIC  &gt;  WACC
+(Tỷ suất lợi nhuận trên vốn đầu tư  &gt;  Chi phí vốn bình quân)
+</code></pre>
+<p>Nếu ROIC không vượt WACC bền vững, bạn không thực sự có lợi thế — chỉ đang bận rộn.</p>
+<p><strong>(2) Giá trị tạo ra cho khách (logic của khác biệt hóa):</strong></p>
+<pre><code>Giá trị khách nhận được (B) − Giá (P)  =  Thặng dư khách hàng
+Giá (P) − Chi phí (C)                  =  Lợi nhuận doanh nghiệp
+→ Khác biệt hóa: kéo B lên để tăng được P.
+→ Dẫn đầu chi phí: kéo C xuống để có biên rộng ở cùng P.
+</code></pre>
+<p><strong>(3) Chỉ số tập trung ngành (đo mức cạnh tranh nội bộ):</strong></p>
+<pre><code>HHI (Herfindahl-Hirschman Index) = Σ (thị phần %)²
+HHI thấp → ngành phân mảnh, cạnh tranh cao
+HHI cao  → ngành tập trung, ít đối thủ chi phối
+</code></pre>
+<p><em>Các công thức trên là công cụ tư duy chuẩn trong tài chính/kinh tế học; con số cụ thể tùy ngành và cần dữ liệu thật để tính.</em></p>
+<h2>9. Quy trình — Phân tích cạnh tranh 7 bước</h2>
+<ol>
+<li><strong>Định nghĩa ngành đúng phạm vi.</strong> Sai lầm phổ biến là vẽ ranh giới ngành quá rộng hoặc quá hẹp. (Ví dụ: Netflix cạnh tranh với rạp phim, TikTok, hay cả giấc ngủ của người dùng?)</li>
+<li><strong>Chấm điểm 5 Forces</strong> (thang 1–5: yếu → mạnh) để đánh giá mức hấp dẫn cấu trúc.</li>
+<li><strong>Xác định ai đang chiếm lợi nhuận</strong> trong chuỗi giá trị của ngành.</li>
+<li><strong>Vẽ chuỗi giá trị nội bộ</strong> của doanh nghiệp mình — tìm khâu tạo giá trị/chi phí then chốt.</li>
+<li><strong>Chọn chiến lược chung</strong> (chi phí / khác biệt / tập trung) phù hợp với năng lực và cấu trúc ngành.</li>
+<li><strong>Nhận diện &amp; xây moat:</strong> khâu nào tạo rào cản sao chép? Đầu tư vào đó.</li>
+<li><strong>Rà soát định kỳ</strong> — vì lợi thế có thể "tan" (xem mục 5.13 về transient advantage). Đặt lịch tái đánh giá 6–12 tháng.</li>
+</ol>
+<h2>10. Ví dụ đơn giản — Quán cà phê đầu ngõ</h2>
+<p>Hãy áp 5 Forces cho một quán cà phê nhỏ ở khu dân cư (số minh họa):</p>
+<ul>
+<li><strong>Cạnh tranh nội bộ:</strong> CAO — 5 quán khác trong bán kính 300m, đồ uống na ná nhau.</li>
+<li><strong>Đối thủ tiềm ẩn:</strong> CAO — mở quán cà phê cần vốn ít, ai cũng có thể vào.</li>
+<li><strong>Sản phẩm thay thế:</strong> CAO — trà sữa, cà phê lon, tự pha ở nhà.</li>
+<li><strong>Quyền lực khách:</strong> CAO — khách đi bộ 2 phút là sang quán khác.</li>
+<li><strong>Quyền lực nhà cung cấp:</strong> TRUNG BÌNH — nhiều nhà bán hạt cà phê.</li>
+</ul>
+<p>Kết luận: đây là ngành <em>kém hấp dẫn về cấu trúc</em> → biên lợi nhuận mỏng. Chiến lược khả thi cho quán nhỏ là <strong>tập trung + khác biệt hóa</strong>: chọn một ngách (ví dụ "quán làm việc yên tĩnh có ổ cắm mọi bàn") thay vì cố rẻ nhất phố. Bài học: đừng đánh nhau bằng giá trong ngành rào cản gia nhập thấp.</p>
+<h2>11. Ví dụ doanh nghiệp — IKEA (vượt "mắc kẹt ở giữa")</h2>
+<p>IKEA là ví dụ kinh điển cho việc phá thế lưỡng nan "rẻ hay khác biệt" (phân tích, dựa trên phân tích chiến lược phổ biến; chi tiết vận hành cần kiểm chứng theo báo cáo công ty):</p>
+<ul>
+<li><strong>Chi phí thấp</strong> nhờ: khách tự lấy hàng, tự lắp ráp, thiết kế phẳng (flat-pack) tối ưu vận chuyển, quy mô mua toàn cầu.</li>
+<li><strong>Khác biệt hóa</strong> nhờ: thiết kế Scandinavia nhận diện tức thì, trải nghiệm cửa hàng như "công viên nội thất", có nhà hàng, khu trẻ em.</li>
+</ul>
+<p>IKEA không "mắc kẹt ở giữa" vì họ <em>tái thiết kế toàn bộ chuỗi giá trị</em> để cả hai mục tiêu cùng phục vụ nhau (khách tự phục vụ vừa giảm chi phí vừa tạo trải nghiệm khác biệt). Đây là minh chứng cho phản biện ở mục 7.</p>
+<h2>12. Ví dụ Việt Nam — Thế Giới Di Động, Vinamilk, VietJet</h2>
+<p>Ba lát cắt (phân tích; số liệu cụ thể cần tra báo cáo thường niên của từng công ty):</p>
+<ul>
+<li><strong>Thế Giới Di Động (MWG):</strong> chọn hướng gần với <strong>dẫn đầu về quy mô + dịch vụ</strong> trong bán lẻ điện thoại/điện máy. Moat chính: mạng lưới cửa hàng dày đặc và hệ thống vận hành/logistics — rào cản mà đối thủ khó nhân bản nhanh. Đây là lợi thế quy mô + chi phí phân phối. (Thị phần và doanh thu: cần kiểm chứng theo báo cáo MWG.)</li>
+<li><strong>Vinamilk:</strong> thiên về <strong>khác biệt hóa thương hiệu + lợi thế chi phí nhờ quy mô</strong> trong ngành sữa. Moat: thương hiệu quốc dân lâu năm, mạng lưới phân phối rộng, vùng nguyên liệu bò sữa quy mô lớn. (Số liệu thị phần sữa nước cần kiểm chứng.)</li>
+<li><strong>VietJet Air:</strong> chiến lược <strong>dẫn đầu chi phí</strong> kiểu hàng không giá rẻ (LCC) — đội bay đồng nhất, tối ưu vòng quay máy bay, bán vé phụ trợ. Rủi ro đúng như Porter cảnh báo: ngành hàng không có 5 Forces rất khắc nghiệt (khách nhạy giá, chi phí cố định cao), nên biên lợi nhuận dễ mong manh. (Kết quả kinh doanh từng năm cần kiểm chứng.)</li>
+</ul>
+<p>Bài học Việt Nam (ý kiến): các doanh nghiệp thắng bền ở đây thường xây moat bằng <strong>mạng lưới phân phối + quy mô + thương hiệu</strong> — những rào cản phù hợp với thị trường đông dân, hạ tầng đang hoàn thiện.</p>
+<h2>13. Ví dụ quốc tế — Apple, Walmart, Southwest Airlines</h2>
+<ul>
+<li><strong>Apple — khác biệt hóa cực đoan + hệ sinh thái.</strong> Moat mạnh nhất không phải một sản phẩm mà là <strong>chi phí chuyển đổi</strong> trong hệ sinh thái (iCloud, iMessage, App Store) + sức mạnh thương hiệu. Đây là ví dụ moat "tài sản vô hình + switching cost".</li>
+<li><strong>Walmart — dẫn đầu chi phí kinh điển.</strong> Lợi thế đến từ quy mô mua khổng lồ, logistics và hệ thống thông tin. Moat: lợi thế chi phí nhờ quy mô mà đối thủ nhỏ không thể đạt.</li>
+<li><strong>Southwest Airlines — chiến lược "thuần" đúng nghĩa Porter.</strong> Porter dùng chính Southwest để minh họa "What Is Strategy?" (1996): họ chọn một chuỗi hoạt động ăn khớp (point-to-point, một loại máy bay Boeing 737, không suất ăn, quay đầu nhanh) khiến đối thủ full-service khó bắt chước vì phải từ bỏ mô hình cũ. Sức mạnh nằm ở <strong>sự ăn khớp giữa các hoạt động (activity fit)</strong>, không phải một chiêu lẻ (dữ kiện).</li>
+</ul>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Nhầm hiệu quả vận hành với chiến lược.</strong> "Chúng tôi làm nhanh hơn/rẻ hơn" dễ bị bắt kịp; đó không phải chiến lược bền.</li>
+<li><strong>Định nghĩa ngành sai</strong> → phân tích 5 Forces lệch (bỏ sót sản phẩm thay thế thật sự nguy hiểm).</li>
+<li><strong>Cố làm mọi thứ cho mọi người</strong> → mắc kẹt ở giữa.</li>
+<li><strong>Nhầm lợi thế nhất thời với moat.</strong> Một chiến dịch viral, một mức giá khuyến mãi không phải hào kinh tế.</li>
+<li><strong>Coi 5 Forces là ảnh chụp tĩnh.</strong> Ngành thay đổi; công nghệ có thể phá vỡ rào cản chỉ trong 1–2 năm.</li>
+<li><strong>Bỏ qua "lực thứ 6" — hệ sinh thái/bổ trợ (complementors)</strong> và vai trò của nền tảng, quy định pháp lý (phản biện hiện đại với Porter).</li>
+<li><strong>Xây moat rồi ngủ quên</strong> — đây chính là cảnh báo của Rita McGrath (mục 5.13).</li>
+</ol>
+<h2>15. Checklist — Đánh giá vị thế cạnh tranh</h2>
+<ul>
+<li>[ ] Đã định nghĩa ranh giới ngành rõ ràng, kiểm tra cả sản phẩm thay thế "ngoài ngành"?</li>
+<li>[ ] Đã chấm điểm cả 5 Forces (không bỏ lực nào)?</li>
+<li>[ ] Đã xác định rõ ai đang chiếm phần lớn lợi nhuận trong chuỗi?</li>
+<li>[ ] Chiến lược chung của chúng ta là gì — chi phí, khác biệt, hay tập trung? (Chọn 1 chính)</li>
+<li>[ ] Chúng ta có đang "mắc kẹt ở giữa" không?</li>
+<li>[ ] Lợi thế của chúng ta có ít nhất 1 rào cản sao chép rõ ràng (quy mô/switching cost/network/thương hiệu/chi phí độc quyền)?</li>
+<li>[ ] ROIC có vượt WACC không? (Kiểm chứng bằng số thật)</li>
+<li>[ ] Đã đánh giá nguy cơ lợi thế "tan" trong 2–3 năm tới?</li>
+<li>[ ] Có kịch bản Đại dương xanh (tạo thị trường mới) như phương án thay thế cho việc "đánh nhau máu"?</li>
+</ul>
+<h2>16. SOP — Quy trình chuẩn phân tích cạnh tranh (dùng lặp lại hằng quý)</h2>
+<p><strong>Mục tiêu:</strong> Cập nhật bức tranh cạnh tranh và điều chỉnh chiến lược.
+<strong>Tần suất:</strong> Hằng quý (rà nhanh) + hằng năm (rà sâu).
+<strong>Người chịu trách nhiệm:</strong> Trưởng phòng Chiến lược/Marketing; nghiệm thu: CEO.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bước</th>
+<th>Hoạt động</th>
+<th>Đầu ra</th>
+<th>Công cụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Thu thập dữ liệu ngành (quy mô, tăng trưởng, đối thủ mới)</td>
+<td>Bảng dữ liệu ngành</td>
+<td>Báo cáo ngành, tin tức</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cập nhật bản đồ 5 Forces, chấm điểm 1–5</td>
+<td>Radar 5 Forces</td>
+<td>Biểu mẫu mục 18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cập nhật ma trận đối thủ (giá, định vị, moat)</td>
+<td>Bảng so đối thủ</td>
+<td>Competitor matrix</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rà chuỗi giá trị nội bộ, tìm điểm rò rỉ chi phí/giá trị</td>
+<td>Sơ đồ value chain có ghi chú</td>
+<td>Mục 6 (value chain)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kiểm tra moat: còn nguyên, đang mòn, hay đã mất?</td>
+<td>Đánh giá moat</td>
+<td>Checklist mục 15</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Đề xuất điều chỉnh chiến lược + KPI</td>
+<td>Bản khuyến nghị</td>
+<td>Mục 17</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Trình CEO duyệt, giao việc</td>
+<td>Biên bản + kế hoạch hành động</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h2>17. KPI — Đo lường lợi thế cạnh tranh</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lợi thế tài chính</td>
+<td>ROIC vs WACC</td>
+<td>Có tạo giá trị kinh tế thật không</td>
+</tr>
+<tr>
+<td></td>
+<td>Biên lợi nhuận gộp so với trung bình ngành</td>
+<td>Sức mạnh định giá / chi phí</td>
+</tr>
+<tr>
+<td>Vị thế thị trường</td>
+<td>Thị phần &amp; xu hướng</td>
+<td>Vị thế tương đối</td>
+</tr>
+<tr>
+<td></td>
+<td>Chỉ số giá tương đối (price index vs đối thủ)</td>
+<td>Premium hay discount</td>
+</tr>
+<tr>
+<td>Sức mạnh khác biệt</td>
+<td>NPS / mức độ nhận biết thương hiệu</td>
+<td>Chiều sâu khác biệt hóa</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ khách quay lại / churn</td>
+<td>Sức mạnh switching cost</td>
+</tr>
+<tr>
+<td>Sức mạnh chi phí</td>
+<td>Chi phí trên đơn vị vs đối thủ</td>
+<td>Lợi thế chi phí thực</td>
+</tr>
+<tr>
+<td>Độ bền moat</td>
+<td>Thời gian đối thủ mất để bắt kịp tính năng</td>
+<td>"Độ sâu" hào</td>
+</tr>
+<tr>
+<td>Cảnh báo sớm</td>
+<td>Số đối thủ mới gia nhập/quý</td>
+<td>Rào cản đang mòn?</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Lưu ý: đây là bộ KPI gợi ý; ngưỡng cụ thể phải chuẩn hóa theo ngành và dữ liệu thật.</em></p>
+<h2>18. Biểu mẫu — Bảng chấm điểm 5 Forces + Chọn chiến lược</h2>
+<p><strong>Phần A — Chấm điểm 5 Forces</strong> (1 = áp lực rất yếu/ngành hấp dẫn, 5 = áp lực rất mạnh/ngành khắc nghiệt):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Áp lực</th>
+<th>Điểm (1–5)</th>
+<th>Bằng chứng chính</th>
+<th>Hàm ý cho ta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cạnh tranh nội bộ</td>
+<td>___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Đối thủ tiềm ẩn</td>
+<td>___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sản phẩm thay thế</td>
+<td>___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Quyền lực khách hàng</td>
+<td>___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Quyền lực nhà cung cấp</td>
+<td>___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tổng / Trung bình</strong></td>
+<td>___</td>
+<td>Mức hấp dẫn ngành</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phần B — Chọn chiến lược chung:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Câu hỏi</th>
+<th>Trả lời</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lợi thế cốt lõi của ta: chi phí hay khác biệt?</td>
+<td>______</td>
+</tr>
+<tr>
+<td>Phạm vi: toàn ngành hay ngách?</td>
+<td>______</td>
+</tr>
+<tr>
+<td>→ Chiến lược chọn</td>
+<td>______</td>
+</tr>
+<tr>
+<td>Rào cản sao chép chính (moat)</td>
+<td>______</td>
+</tr>
+<tr>
+<td>Bằng chứng ROIC &gt; WACC</td>
+<td>______</td>
+</tr>
+<tr>
+<td>Rủi ro "mắc kẹt ở giữa"</td>
+<td>______</td>
+</tr>
+</tbody>
+</table></div>
+<h2>19. Prompt AI</h2>
+<p>Sao chép và thay <code>[...]</code> bằng thông tin của bạn.</p>
+<p><strong>ChatGPT / Claude (phân tích 5 Forces):</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia chiến lược theo khung Michael Porter. Hãy phân tích 5 áp lực cạnh tranh cho doanh nghiệp <code>[tên]</code> trong ngành <code>[ngành]</code> tại thị trường <code>[Việt Nam/...]</code>. Với mỗi lực: chấm điểm 1–5, nêu 2–3 bằng chứng, và 1 hàm ý hành động. Kết luận mức hấp dẫn cấu trúc của ngành và cảnh báo nếu tôi có nguy cơ mắc kẹt ở giữa. Ghi rõ chỗ nào là suy đoán cần tôi kiểm chứng bằng số liệu."</p>
+</blockquote>
+<p><strong>Claude (chọn chiến lược chung):</strong></p>
+<blockquote>
+<p>"Dựa trên mô tả doanh nghiệp sau: <code>[dán mô tả]</code>. Hãy đề xuất doanh nghiệp nên theo chiến lược nào trong 3 chiến lược chung của Porter (dẫn đầu chi phí / khác biệt hóa / tập trung), giải thích lý do, và liệt kê 3 rào cản sao chép (moat) khả thi nhất để xây. Phản biện: nêu 1 rủi ro khiến lựa chọn này thất bại."</p>
+</blockquote>
+<p><strong>Gemini (đối chiếu Đại dương xanh):</strong></p>
+<blockquote>
+<p>"Với ngành <code>[ngành]</code>, hãy dựng khung ERRC của Blue Ocean (Loại bỏ – Giảm – Tăng – Tạo mới) để tìm không gian thị trường mới thay vì cạnh tranh trực diện. Đưa 3 ý tưởng 'đại dương xanh' và đánh giá tính khả thi tại thị trường Việt Nam."</p>
+</blockquote>
+<p><strong>Perplexity (thu thập dữ kiện có nguồn):</strong></p>
+<blockquote>
+<p>"Tìm dữ liệu công khai có trích nguồn và năm về: quy mô ngành <code>[ngành]</code> tại Việt Nam, tốc độ tăng trưởng, và 5 doanh nghiệp dẫn đầu cùng thị phần ước tính. Ghi rõ nguồn cho từng số liệu. Nếu số liệu mâu thuẫn giữa các nguồn, nêu rõ."</p>
+</blockquote>
+<p><strong>NotebookLM (học từ tài liệu gốc):</strong></p>
+<blockquote>
+<p>"Tôi tải lên các chương của <em>Competitive Strategy</em> (1980) và <em>Competitive Advantage</em> (1985). Hãy tạo bản tóm tắt so sánh: 5 Forces vs Value Chain, và một danh sách câu hỏi ôn tập giúp tôi phân biệt lợi thế bền vững và lợi thế tạm thời."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa rà soát định kỳ):</strong></p>
+<blockquote>
+<p>"Vai trò: trợ lý chiến lược. Nhiệm vụ định kỳ hằng quý: (1) thu thập tin tức về đối thủ mới và sản phẩm thay thế trong ngành <code>[ngành]</code>; (2) cập nhật bảng chấm 5 Forces; (3) gắn cờ nếu bất kỳ lực nào tăng ≥1 điểm; (4) xuất báo cáo 1 trang kèm khuyến nghị. Luôn ghi nguồn và đánh dấu suy đoán."</p>
+</blockquote>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Cơ bản:</strong> Chọn một doanh nghiệp bạn biết rõ. Vẽ sơ đồ 5 Forces và chấm điểm 1–5 cho từng lực, kèm 1 bằng chứng.</li>
+<li><strong>Trung cấp:</strong> Xác định doanh nghiệp đó đang theo chiến lược chung nào. Nó có dấu hiệu "mắc kẹt ở giữa" không? Vì sao?</li>
+<li><strong>Nâng cao:</strong> Vẽ chuỗi giá trị của doanh nghiệp đó, chỉ ra 1 khâu tạo lợi thế chi phí và 1 khâu tạo khác biệt. Đề xuất 1 moat cần đầu tư.</li>
+<li><strong>Phản biện:</strong> Áp khung ERRC (Blue Ocean) để đề xuất một "đại dương xanh" cho doanh nghiệp đó. So sánh với việc tiếp tục cạnh tranh trong "đại dương đỏ".</li>
+<li><strong>Tư duy CEO:</strong> Giả định lợi thế hiện tại của doanh nghiệp sẽ "tan" trong 24 tháng (giả thuyết McGrath). Viết kế hoạch xây lợi thế kế tiếp.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt "hiệu quả vận hành" và "chiến lược" theo Porter. Vì sao nhầm lẫn này nguy hiểm?</li>
+<li>Liệt kê 5 áp lực và nêu 1 yếu tố làm mỗi áp lực tăng lên.</li>
+<li>"Mắc kẹt ở giữa" là gì? Cho một ví dụ giả định.</li>
+<li>Chuỗi giá trị phân biệt hoạt động nào là "chính" (primary) và "hỗ trợ" (support)?</li>
+<li>Kể tên 4 loại rào cản tạo moat.</li>
+<li>Điều kiện tài chính tối thiểu để nói một doanh nghiệp "có lợi thế cạnh tranh" là gì?</li>
+<li>Blue Ocean khác Porter ở điểm cốt lõi nào?</li>
+<li>Luận điểm trung tâm của Rita McGrath về "transient advantage" là gì, và nó thách thức Porter ở đâu?</li>
+</ol>
+<h2>22. Case Study</h2>
+<h3>22.1 — Thành công: Southwest Airlines (Mỹ)</h3>
+<p><strong>Bối cảnh (dữ kiện, theo phân tích của Porter 1996):</strong> Trong ngành hàng không nổi tiếng lợi nhuận thấp, Southwest chọn mô hình point-to-point, chỉ dùng Boeing 737, bỏ suất ăn và ghế phân hạng, quay đầu máy bay nhanh, giá thấp.</p>
+<p><strong>Vì sao bền:</strong> Sức mạnh không nằm ở một chiêu, mà ở <strong>sự ăn khớp của cả chuỗi hoạt động (activity system)</strong>. Đối thủ full-service muốn bắt chước phải phá bỏ mô hình cũ của họ — cái giá quá lớn. Đây là moat kiểu "trade-off + fit": chính việc <em>từ chối</em> làm nhiều thứ đã tạo lợi thế.</p>
+<p><strong>Bài học:</strong> Chiến lược mạnh là những đánh đổi có kỷ luật, khiến việc sao chép trở nên tốn kém với đối thủ.</p>
+<h3>22.2 — Thất bại: Kodak (Mỹ)</h3>
+<p><strong>Bối cảnh (dữ kiện phổ biến; chi tiết mốc thời gian cần kiểm chứng):</strong> Kodak từng thống trị ngành phim ảnh với moat khổng lồ — thương hiệu, mạng phân phối, kinh tế quy mô. Trớ trêu, Kodak <em>phát minh</em> ra máy ảnh số từ sớm nhưng chần chừ vì sợ ăn thịt mảng phim đang siêu lợi nhuận. Cuối cùng công nghệ số phá vỡ toàn bộ cấu trúc ngành; Kodak nộp đơn phá sản năm 2012 (dữ kiện).</p>
+<p><strong>Vì sao thất bại (phân tích):</strong> Đây là minh chứng sống cho phản biện của McGrath — <strong>moat mạnh trong khung Porter tĩnh vẫn có thể tan khi công nghệ tái định nghĩa ngành.</strong> Lợi thế của Kodak dựa trên "sản phẩm thay thế" mà chính nó xem nhẹ. Bài học kép: (1) đừng để lợi thế hiện tại làm mù mắt trước sản phẩm thay thế; (2) rà soát 5 Forces phải <em>động</em>, không phải ảnh chụp.</p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li><strong>Cấu trúc quyết định lợi nhuận:</strong> dùng 5 Forces để đọc ngành trước khi đọc đối thủ.</li>
+<li><strong>Chọn một chiến lược chung</strong> — chi phí, khác biệt, hoặc tập trung — và tránh mắc kẹt ở giữa; nhưng biết rằng các doanh nghiệp xuất sắc (IKEA, Toyota) có thể phá thế lưỡng nan bằng cách tái thiết kế chuỗi giá trị.</li>
+<li><strong>Value chain</strong> giúp tìm nguồn gốc lợi thế bên trong; <strong>moat</strong> giúp giữ nó.</li>
+<li><strong>Lợi thế thật = ROIC bền vững &gt; WACC</strong>, được bảo vệ bằng rào cản sao chép.</li>
+<li><strong>Nhưng đừng thờ phụng Porter:</strong> Blue Ocean nhắc bạn có thể <em>tránh</em> cạnh tranh bằng cách tạo thị trường mới; McGrath cảnh báo mọi lợi thế đều có thể <em>tạm thời</em>, nên năng lực xây-rồi-bỏ-rồi-xây-lại lợi thế mới là kỹ năng tối thượng của thời đại số.</li>
+</ul>
+<p>Tư duy đúng (ý kiến biên soạn): Porter là <em>bản đồ nền</em>, Blue Ocean là <em>la bàn tìm đất mới</em>, McGrath là <em>đồng hồ nhắc bạn không được ngủ quên</em>. Dùng cả ba.</p>
+<h2>24. Nguồn tham khảo</h2>
+<p><strong>Tài liệu gốc (primary):</strong>
+- Michael E. Porter, <em>Competitive Strategy: Techniques for Analyzing Industries and Competitors</em>, Free Press, 1980.
+- Michael E. Porter, <em>Competitive Advantage: Creating and Sustaining Superior Performance</em>, Free Press, 1985.
+- Michael E. Porter, "How Competitive Forces Shape Strategy", <em>Harvard Business Review</em>, 1979.
+- Michael E. Porter, "What Is Strategy?", <em>Harvard Business Review</em>, 1996.</p>
+<p><strong>Phản biện &amp; bổ sung:</strong>
+- W. Chan Kim &amp; Renée Mauborgne, <em>Blue Ocean Strategy</em>, Harvard Business Review Press, 2005.
+- Rita Gunther McGrath, <em>The End of Competitive Advantage</em>, Harvard Business Review Press, 2013.
+- Jay B. Barney, "Firm Resources and Sustained Competitive Advantage", <em>Journal of Management</em>, 1991 (Resource-Based View).</p>
+<p><em>Ghi chú: Các số liệu doanh nghiệp cụ thể (thị phần, doanh thu của MWG, Vinamilk, VietJet, Kodak, v.v.) trong chương này cần được kiểm chứng bằng báo cáo thường niên hoặc nguồn chính thức trước khi trích dẫn ra ngoài. Chương ưu tiên dạy khung tư duy, không chốt con số.</em></p>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li>Bổ sung số liệu thị phần/ROIC thực tế của các ví dụ Việt Nam (MWG, Vinamilk, VietJet) theo báo cáo thường niên mới nhất, có trích nguồn + năm.</li>
+<li>Cập nhật "lực thứ 6" (complementors/nền tảng số) và phân tích ảnh hưởng của AI, hệ sinh thái nền tảng tới cấu trúc 5 Forces cổ điển.</li>
+<li>Thêm case study Việt Nam về "transient advantage" (một thương hiệu từng dẫn đầu rồi mất lợi thế nhanh).</li>
+<li>Bổ sung liên kết chéo tới các chương: Định vị (positioning), Phân tích SWOT, và chương về Chiến lược nền tảng (platform strategy) khi các chương đó hoàn thành.</li>
+<li>Rà soát lại các nhận định gắn nhãn "(cần kiểm chứng)" và thay bằng dữ kiện có nguồn.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-01-nen-tang-tu-duy-05-value-proposition-jtbd.html"><span>← Trước</span>Tập 1 · Chương 5 — Tuyên bố Giá trị &amp; Jobs To Be Done</a><a class="next" href="tap-01-nen-tang-tu-duy-07-marketing-nguon-luc-han-che.html"><span>Sau →</span>Tập 1 · Chương 7 — Marketing cho doanh nghiệp nhỏ &amp; nguồn lực hạn chế</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

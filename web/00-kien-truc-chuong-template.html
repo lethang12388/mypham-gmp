@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Template chương 24 mục</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>TEMPLATE CHƯƠNG CHUẨN</h1>
+<blockquote>
+<p>Sao chép file này khi viết chương mới. <strong>Mọi chương</strong> trong bộ sách phải có đủ 24 mục dưới đây theo đúng thứ tự, cộng mục cuối <em>"Cần cập nhật trong tương lai"</em>. Đây là cam kết chất lượng của bộ sách — không rút gọn, không bỏ mục.</p>
+</blockquote>
+<p>Cách dùng: <code>cp 00-KIEN-TRUC/CHUONG-TEMPLATE.md TAP-XX-.../NN-slug.md</code> rồi thay nội dung trong <code>&lt;...&gt;</code>.</p>
+<hr />
+<pre><code class="language-markdown"># Tập &lt;N&gt; · Chương &lt;N.M&gt; — &lt;Tên chương&gt;
+
+&gt; **Đối tượng:** &lt;ai&gt; · **Thời lượng đọc:** &lt;~X phút&gt; · **Phiên bản:** v1.0 (&lt;năm&gt;)
+&gt; **Tóm tắt 1 câu:** &lt;chương này giúp người đọc làm được gì&gt;
+
+## 1. Giới thiệu
+&lt;Vì sao chương này tồn tại; đặt vấn đề bằng một tình huống gần gũi.&gt;
+
+## 2. Khái niệm
+&lt;Định nghĩa rõ ràng, ngắn gọn; phân biệt với các khái niệm dễ nhầm.&gt;
+
+## 3. Lịch sử hình thành
+&lt;Nguồn gốc, người/tổ chức khởi xướng, các cột mốc tiến hóa.&gt;
+
+## 4. Tại sao quan trọng
+&lt;Giá trị với doanh nghiệp; hệ quả nếu làm sai/bỏ qua.&gt;
+
+## 5. Nguyên lý hoạt động
+&lt;Cơ chế bên dưới; vì sao nó hiệu quả.&gt;
+
+## 6. Mô hình
+&lt;Mô hình tư duy/lý thuyết chủ đạo, kèm sơ đồ.&gt;
+
+## 7. Framework
+&lt;Khung áp dụng từng bước, có thể tái sử dụng.&gt;
+
+## 8. Công thức
+&lt;Công thức định lượng nếu có; số minh họa phải ghi rõ &quot;số minh họa&quot;.&gt;
+
+## 9. Quy trình
+&lt;Các bước triển khai tuần tự, dạng flowchart/danh sách.&gt;
+
+## 10. Ví dụ đơn giản
+&lt;Một ví dụ nhỏ, đời thường, dễ hình dung.&gt;
+
+## 11. Ví dụ doanh nghiệp
+&lt;Ví dụ áp dụng ở cấp doanh nghiệp.&gt;
+
+## 12. Ví dụ Việt Nam
+&lt;Ví dụ doanh nghiệp/tình huống Việt Nam có thật.&gt;
+
+## 13. Ví dụ quốc tế
+&lt;Ví dụ doanh nghiệp/tình huống quốc tế có thật.&gt;
+
+## 14. Sai lầm thường gặp
+&lt;Danh sách lỗi phổ biến + cách tránh.&gt;
+
+## 15. Checklist
+&lt;Danh sách kiểm tra hành động, dạng ô tick.&gt;
+
+## 16. SOP
+&lt;Quy trình thao tác chuẩn để đội nhóm thực thi lặp lại được.&gt;
+
+## 17. KPI
+&lt;Chỉ số đo lường thành công + cách tính + benchmark định tính.&gt;
+
+## 18. Biểu mẫu
+&lt;Bảng template điền được (canvas, worksheet...).&gt;
+
+## 19. Prompt AI
+&lt;Prompt sẵn dùng cho: ChatGPT · Claude · Gemini · Perplexity · NotebookLM · AI Agent.&gt;
+
+## 20. Bài tập
+&lt;Bài tập thực hành áp dụng vào chính doanh nghiệp người học.&gt;
+
+## 21. Câu hỏi ôn tập
+&lt;5–10 câu hỏi củng cố kiến thức.&gt;
+
+## 22. Case Study
+&lt;Phân tích 1 thành công + 1 thất bại theo khung: Bối cảnh → Chiến lược → Thực thi → Kết quả → Bài học.&gt;
+
+## 23. Tổng kết
+&lt;Chốt lại 3–5 điểm cốt lõi.&gt;
+
+## 24. Nguồn tham khảo
+&lt;Sách/nghiên cứu/khung lý thuyết có thật, ghi tác giả + năm. Không bịa link.&gt;
+
+## Cần cập nhật trong tương lai
+&lt;Điều gì có thể thay đổi (công nghệ, nền tảng, quy định); điểm neo để AI/biên tập viên bổ sung ở phiên bản sau.&gt;
+</code></pre>
+<hr />
+<h2>Ghi chú biên tập</h2>
+<ul>
+<li><strong>Minh họa:</strong> khuyến khích mỗi chương có sơ đồ, bảng, flowchart, mindmap, biểu đồ, checklist, infographic (mô tả bằng Markdown/ASCII/mermaid nếu chưa có ảnh).</li>
+<li><strong>Độ dài mục tiêu:</strong> 2.800–5.000 từ/chương xương sống. Không cắt ngắn vì lý do kỹ thuật; nếu quá dài, tách thành nhiều chương và khai báo ở master outline.</li>
+<li><strong>Văn phong:</strong> dễ hiểu, có chiều sâu, "giống Harvard nhưng gần gũi" — đủ cho người mới, đủ sâu cho CEO, đủ thực chiến để áp dụng ngay.</li>
+<li><strong>Trích dẫn:</strong> tuân thủ tuyệt đối <code>HUONG-DAN-CAP-NHAT.md</code>.</li>
+</ul>
+<p><em>Phiên bản template: v1.0 · 2026</em></p></article><div class="nav"><a class="prev" href="00-kien-truc-huong-dan-cap-nhat.html"><span>← Trước</span>Hướng dẫn cập nhật &amp; trích dẫn</a><a class="next" href="../index.html"><span>→</span>Mục lục</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>
