@@ -12,6 +12,29 @@
 
 ---
 
+## 🧊 MỨC ĐỘ NHẬN BIẾT: KHÁCH MỚI HOÀN TOÀN (COLD)
+
+**Đây là điểm quyết định toàn bộ cách viết & bán.** Cả 2 tuyến đều là khách **mới
+hoàn toàn** — chưa biết thương hiệu Kim Gia Long, phần lớn chưa biết enzyme là gì hoặc
+chưa nghĩ nó liên quan tới mình (theo thang nhận biết Eugene Schwartz: **Chưa nhận biết →
+Nhận biết vấn đề**, CHƯA tới mức nhận biết giải pháp/sản phẩm).
+
+**Hệ quả bắt buộc:**
+- ❌ Không bán thẳng ("mua enzyme Kim Gia Long đi"). Người lạ chưa tin sẽ bỏ qua.
+- ✅ **Giáo dục trước — bán sau**: đi từ *vấn đề họ đang chịu* → *tại sao bị vậy* →
+  *enzyme là gì & vì sao giúp được* → *vì sao chọn Kim Gia Long*.
+- ✅ Cần **mồi nhử miễn phí (HVCO)** + nội dung dạng "tại sao bạn bị…", "sự thật về…"
+  để kéo người lạ vào và tạo niềm tin.
+- ✅ **Rào cản mua đầu tiên phải cực thấp**: liệu trình nhỏ / gói dùng thử / cam kết
+  hoàn tiền mạnh — vì họ chưa có lý do gì để tin.
+- ✅ Nỗi sợ đặc thù của khách mới: *"Thương hiệu lạ chưa ai dùng — có phải hàng dởm/lừa
+  không?"* → phải xử lý bằng bằng chứng, pháp lý, minh bạch NGAY từ điểm chạm đầu.
+
+> ⚠️ Vì là khách mới hoàn toàn → **chưa có dữ liệu khách thật** là điều đương nhiên.
+> Toàn bộ hồ sơ dưới đây là giả định để khởi động; validate ngay sau lứa khách đầu tiên.
+
+---
+
 ## ⚠️ NGUYÊN TẮC CỐT LÕI: TÁCH 2 NHÓM KHÁCH HÀNG
 
 Kim Gia Long bán qua mô hình **B2B2C** nên có **2 khách hàng hoàn toàn khác nhau**,
@@ -92,6 +115,8 @@ quote thật từ đại lý của Kim Gia Long.)*
 | "Tôi không biết bán thì sao?" | Sợ không đủ kỹ năng | Cung cấp bộ hình ảnh, content mẫu, đào tạo, group hỗ trợ CTV |
 | "Sản phẩm có giấy tờ đầy đủ không?" | Sợ hàng trôi nổi, phạt, mất uy tín | Công bố, kiểm nghiệm, GMP, mã vạch minh bạch |
 | "Chiết khấu bao nhiêu, lời thật là bao nhiêu?" | Cần thấy con số cụ thể | Bảng lợi nhuận theo cấp: giá sỉ – giá bán lẻ – % lời |
+| "Thương hiệu chưa ai biết thì tôi bán cho ai?" | Đây là khách mới → sợ thị trường chưa có nhu cầu | Cho xem nhu cầu category enzyme đang lên; nhãn lo phần kéo khách (ads/PR) — đại lý chỉ chốt; content giáo dục sẵn |
+| "Tôi chưa bán hàng bao giờ, làm được không?" | Đại lý mới hoàn toàn, chưa có kỹ năng | Đào tạo từ số 0, kịch bản mẫu, group hỗ trợ, cầm tay chỉ việc |
 
 > 🎯 **Objection nặng nhất: "Bán không được thì ôm hàng."** Giải quyết được cái này
 > (chính sách đổi trả + cho nhập nhỏ + hỗ trợ bán) là mở khóa được phần lớn đại lý.
@@ -177,8 +202,12 @@ quote thật từ comment khách hàng của Kim Gia Long.*
 | "Ngưng có bị tăng lại/táo lại không?" | Sợ phụ thuộc | Giải thích cơ chế hỗ trợ tự nhiên + tư vấn lối sống đi kèm |
 | "Giá này có đáng không?" | So sánh với sản phẩm rẻ hơn | So sánh chi phí/ngày, nhấn giá trị & độ an toàn, liệu trình |
 | "Có hợp với cơ địa/tình trạng của tôi không?" | Sợ mua sai | Tư vấn theo từng tình trạng (táo bón/giảm cân/đẹp da) |
+| "Enzyme là gì? Chưa nghe thương hiệu này bao giờ." | Khách mới → chưa biết sản phẩm lẫn nhãn | Nội dung giáo dục ("enzyme là gì, vì sao cần"), câu chuyện thương hiệu, minh bạch pháp lý ngay từ đầu |
+| "Thương hiệu lạ, có phải hàng dởm/lừa không?" | Không có niềm tin ban đầu với nhãn mới | Giấy kiểm nghiệm + GMP + mã vạch, feedback thật, cam kết hoàn tiền, mua thử gói nhỏ |
 
 > 🎯 **Objection nặng nhất: "Có thật sự hiệu quả không, hay lại phí tiền như lần trước."**
+> Với khách mới còn cộng thêm rào cản *"chưa biết nhãn này là ai"* — nên bằng chứng &
+> minh bạch phải xuất hiện NGAY ở điểm chạm đầu tiên, trước cả khi nói giá.
 > Đây là cửa ải quyết định — phải đánh bằng bằng chứng thật + cam kết + cảm giác được thấu hiểu.
 
 ## B7. Ngôn ngữ họ dùng
