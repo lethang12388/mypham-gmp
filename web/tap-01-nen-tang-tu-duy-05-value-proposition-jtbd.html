@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 1 · Chương 5 — Tuyên bố Giá trị &amp; Jobs To Be Done</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 1 · Chương 5 — Tuyên bố Giá trị &amp; Jobs To Be Done</h1>
+<p><em>Metadata: Bộ giáo trình "Marketing Thực Chiến 2026–2035" · Tập 1 — Nền tảng &amp; Tư duy · Chương 5 · Cập nhật: 2026-07-25 · Độ dài: ~3.500 từ · Cấp độ: Nền tảng → Vận dụng</em></p>
+<blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này dạy bạn cách xác định đúng "công việc" khách hàng cần hoàn thành (Jobs To Be Done) và đóng gói lời hứa giá trị của doanh nghiệp thành một Tuyên bố Giá trị sắc bén bằng Value Proposition Canvas cùng công thức viết chuẩn.</p>
+</blockquote>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Phần lớn sản phẩm thất bại không phải vì kém chất lượng, mà vì chúng giải quyết một vấn đề <strong>không ai thực sự quan tâm</strong>, hoặc mô tả giá trị theo ngôn ngữ mà khách hàng không hiểu. Doanh nghiệp thường say mê tính năng (feature) của chính mình mà quên hỏi câu hỏi cốt lõi: <em>"Khách hàng đang cố hoàn thành công việc gì trong cuộc sống của họ, và họ 'thuê' sản phẩm của tôi để làm gì?"</em></p>
+<p>Chương 5 kết nối hai khung tư duy bổ trợ nhau chặt chẽ. <strong>Jobs To Be Done (JTBD)</strong> — do Clayton Christensen phổ biến — giúp ta <em>nhìn thấy nhu cầu ẩn</em> đằng sau hành vi mua. <strong>Value Proposition Canvas (VPC)</strong> — của Alexander Osterwalder — giúp ta <em>chuyển nhu cầu đó thành lời chào giá trị</em> có thể kiểm chứng. Đây là bản lề nối liền tư duy khách hàng (Chương 3–4) với chiến lược định vị và thông điệp mà các tập sau sẽ khai thác.</p>
+<p><em>(Phân tích của nhóm biên soạn)</em> Nắm vững chương này, bạn sẽ ngừng bán "cái khoan" và bắt đầu bán "cái lỗ trên tường" — thậm chí bán "bức tranh treo lên bức tường đó".</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Tuyên bố Giá trị (Value Proposition):</strong> lời khẳng định ngắn gọn, rõ ràng về lợi ích mà khách hàng nhận được từ sản phẩm/dịch vụ, lý do sản phẩm đáng mua, và điều khiến nó khác biệt so với lựa chọn thay thế. Đây <em>không phải</em> slogan quảng cáo; nó là nền tảng chiến lược mà mọi thông điệp bắt nguồn từ đó.</p>
+<p><strong>Jobs To Be Done (Công việc cần hoàn thành):</strong> khung lý thuyết cho rằng khách hàng không "mua sản phẩm" — họ "thuê" sản phẩm để hoàn thành một công việc (job) phát sinh trong một hoàn cảnh cụ thể. Công việc có ba lớp:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Lớp job</th>
+<th>Ý nghĩa</th>
+<th>Ví dụ (mua cà phê sáng)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chức năng (functional)</td>
+<td>Nhiệm vụ thực dụng cần làm</td>
+<td>Tỉnh táo, chống buồn ngủ</td>
+</tr>
+<tr>
+<td>Cảm xúc (emotional)</td>
+<td>Cảm giác muốn có/tránh</td>
+<td>Cảm thấy được nuông chiều, giảm căng thẳng</td>
+</tr>
+<tr>
+<td>Xã hội (social)</td>
+<td>Cách muốn được người khác nhìn nhận</td>
+<td>Trông sành điệu, thuộc "dân văn phòng thành đạt"</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phân biệt Feature – Benefit – Value</strong> <em>(nền tảng cốt lõi của chương)</em>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cấp độ</th>
+<th>Định nghĩa</th>
+<th>Ví dụ (kem chống nắng SPF50+)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feature (tính năng)</td>
+<td>Sản phẩm <em>có gì</em></td>
+<td>Chỉ số SPF50+, PA++++, kết cấu không nhờn</td>
+</tr>
+<tr>
+<td>Benefit (lợi ích)</td>
+<td>Tính năng <em>làm được gì</em></td>
+<td>Bảo vệ da khỏi tia UVA/UVB, không bít lỗ chân lông</td>
+</tr>
+<tr>
+<td>Value (giá trị)</td>
+<td>Điều đó <em>có ý nghĩa gì</em> với đời sống khách hàng</td>
+<td>Tự tin ra nắng cả ngày mà không lo lão hóa/nám</td>
+</tr>
+</tbody>
+</table></div>
+<p>Khách hàng trả tiền cho <strong>value</strong>, không phải feature.</p>
+<h2>3. Lịch sử hình thành</h2>
+<p><em>(Dữ kiện, có nguồn)</em></p>
+<ul>
+<li><strong>Thập niên 1960:</strong> Theodore Levitt (Harvard) nêu câu nói kinh điển: <em>"Người ta không muốn mua cái khoan 6mm; họ muốn cái lỗ 6mm."</em> — hạt giống đầu tiên của tư duy JTBD (Levitt, <em>Marketing Myopia</em>, HBR 1960).</li>
+<li><strong>1990s–2000s:</strong> Clayton Christensen và cộng sự phát triển lý thuyết "Jobs To Be Done" qua nghiên cứu về đổi mới đột phá; câu chuyện "milkshake" nổi tiếng được kể trong nhiều bài giảng và bài viết (Christensen et al., HBS).</li>
+<li><strong>2005:</strong> Christensen, Anthony, Roth trình bày khung "purpose brand"/jobs trong <em>Seeing What's Next</em>.</li>
+<li><strong>2014:</strong> Alexander Osterwalder, Yves Pigneur và cộng sự xuất bản <em>Value Proposition Design</em>, giới thiệu <strong>Value Proposition Canvas</strong> như phần mở rộng của Business Model Canvas (2010).</li>
+<li><strong>2016:</strong> Christensen, Hall, Dillon, Duncan xuất bản <em>Competing Against Luck: The Story of Innovation and Customer Choice</em> — tài liệu JTBD hệ thống nhất, chính thức hóa câu chuyện milkshake.</li>
+</ul>
+<p>Hai dòng lý thuyết — JTBD (vì sao khách mua) và VPC (đóng gói giá trị) — hội tụ thành bộ công cụ chuẩn mực của marketing và thiết kế sản phẩm hiện đại.</p>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Tránh "cận thị marketing":</strong> Tập trung vào job giúp bạn nhìn đúng đối thủ cạnh tranh. <em>(Ví dụ phân tích)</em> Một quán cà phê không chỉ cạnh tranh với quán khác mà với trà sữa, nước tăng lực, thậm chí một giấc ngủ trưa — nếu job là "tỉnh táo".</li>
+<li><strong>Định hướng phát triển sản phẩm:</strong> Biết job giúp ưu tiên tính năng nào thật sự tạo giá trị, tránh lãng phí nguồn lực.</li>
+<li><strong>Sắc bén thông điệp &amp; định vị:</strong> Value proposition rõ ràng là "hạt nhân" để viết quảng cáo, landing page, kịch bản bán hàng.</li>
+<li><strong>Tăng tỷ lệ chuyển đổi:</strong> Thông điệp nói trúng job và nỗi đau khách hàng dễ cộng hưởng hơn thông điệp liệt kê tính năng.</li>
+<li><strong>Cơ sở cho fit sản phẩm – thị trường (product–market fit):</strong> VPC là công cụ trực quan để kiểm tra sản phẩm có "khớp" nhu cầu thật hay không.</li>
+</ol>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Cơ chế cốt lõi gồm ba bước liên hoàn:</p>
+<ol>
+<li><strong>Quan sát hoàn cảnh (context):</strong> Job luôn xuất hiện trong một tình huống cụ thể ("Tôi đang lái xe 20 phút, đói nhẹ, buồn chán, một tay rảnh"). Hoàn cảnh quyết định job, không phải đặc điểm nhân khẩu học.</li>
+<li><strong>Xác định job đa lớp:</strong> Bóc tách job chức năng, cảm xúc, xã hội. Đây là "công việc" khách hàng muốn tiến bộ (make progress) trong đời họ.</li>
+<li><strong>Ghép giá trị:</strong> Thiết kế sản phẩm sao cho <strong>pain relievers</strong> (thứ giảm nỗi đau) và <strong>gain creators</strong> (thứ tạo lợi ích mong muốn) khớp chính xác với <strong>pains</strong> và <strong>gains</strong> của khách quanh job đó. Khi hai bên khớp → đạt <strong>fit</strong>.</li>
+</ol>
+<blockquote>
+<p>Nguyên lý vàng: <em>Sản phẩm không tự có giá trị. Giá trị chỉ sinh ra khi nó giúp khách hàng hoàn thành một job quan trọng, tốt hơn/rẻ hơn/dễ hơn lựa chọn hiện tại.</em></p>
+</blockquote>
+<h2>6. Mô hình — Value Proposition Canvas</h2>
+<p>VPC gồm hai nửa: <strong>Hồ sơ khách hàng</strong> (hình tròn) và <strong>Bản đồ giá trị</strong> (hình vuông). Đạt "fit" khi hai nửa khớp nhau.</p>
+<pre><code>        HỒ SƠ KHÁCH HÀNG (Customer Profile)          BẢN ĐỒ GIÁ TRỊ (Value Map)
+        ┌───────────────────────────┐                ┌───────────────────────────┐
+        │        GAINS (Lợi ích      │  ◄── khớp ──►  │  GAIN CREATORS            │
+        │        mong muốn)          │                │  (Thứ tạo lợi ích)        │
+        │                            │                │                           │
+        │   ┌──────────────────┐     │                │   ┌───────────────────┐   │
+        │   │  CUSTOMER JOBS   │     │  ◄── khớp ──►  │   │  PRODUCTS &amp;       │   │
+        │   │ (Công việc cần    │     │                │   │  SERVICES         │   │
+        │   │  hoàn thành)     │     │                │   │  (Sản phẩm/DV)    │   │
+        │   └──────────────────┘     │                │   └───────────────────┘   │
+        │                            │                │                           │
+        │        PAINS (Nỗi đau,     │  ◄── khớp ──►  │  PAIN RELIEVERS           │
+        │        trở ngại, rủi ro)   │                │  (Thứ giảm nỗi đau)       │
+        └───────────────────────────┘                └───────────────────────────┘
+                  Ai họ là                                   Ta đề xuất gì
+</code></pre>
+<p><strong>Hồ sơ khách hàng:</strong>
+- <em>Customer Jobs:</em> việc chức năng/cảm xúc/xã hội cần làm.
+- <em>Pains:</em> kết quả xấu, rủi ro, trở ngại khi làm job (tốn tiền, mất thời gian, sợ sai...).
+- <em>Gains:</em> lợi ích mong muốn, kỳ vọng, điều làm khách vui.</p>
+<p><strong>Bản đồ giá trị:</strong>
+- <em>Products &amp; Services:</em> danh mục sản phẩm/dịch vụ ta cung cấp.
+- <em>Pain Relievers:</em> cách sản phẩm xóa/giảm nỗi đau.
+- <em>Gain Creators:</em> cách sản phẩm tạo ra lợi ích khách mong.</p>
+<h2>7. Framework — Tích hợp JTBD vào VPC</h2>
+<p>Sơ đồ quy trình tư duy tổng thể (mermaid):</p>
+<pre class="mermaid">flowchart TD
+    A[Quan sát hoàn cảnh khách hàng] --> B[Xác định Job chức năng/cảm xúc/xã hội]
+    B --> C[Liệt kê Pains & Gains quanh Job]
+    C --> D[Xếp hạng theo mức độ quan trọng]
+    D --> E[Thiết kế Pain Relievers & Gain Creators]
+    E --> F[Viết Value Proposition theo công thức]
+    F --> G[Kiểm chứng với khách hàng thật]
+    G -->|Chưa fit| B
+    G -->|Đã fit| H[Triển khai thông điệp & định vị]
+</pre>
+<p><strong>Nguyên tắc ưu tiên:</strong> không cần giải quyết <em>mọi</em> pain/gain. Hãy tập trung vào các job <strong>quan trọng, chưa được đáp ứng tốt, và khách sẵn sàng trả tiền</strong> — đây là "điểm ngọt" cho fit.</p>
+<h2>8. Công thức</h2>
+<p><strong>Công thức viết Value Proposition kinh điển (Geoffrey Moore, <em>Crossing the Chasm</em>):</strong></p>
+<pre><code>For [khách hàng mục tiêu]
+who [nhu cầu / vấn đề cần giải quyết],
+our [tên sản phẩm]
+is [danh mục sản phẩm]
+that [lợi ích cốt lõi / lý do mua].
+Unlike [đối thủ / lựa chọn thay thế],
+our product [điểm khác biệt chính].
+</code></pre>
+<p>Bản tiếng Việt:</p>
+<pre><code>Dành cho [khách hàng] đang [nhu cầu/vấn đề],
+[sản phẩm] của chúng tôi là [danh mục]
+giúp [lợi ích cốt lõi].
+Khác với [đối thủ], chúng tôi [điểm khác biệt].
+</code></pre>
+<p><strong>Công thức JTBD job statement (Tony Ulwick / dạng phổ biến):</strong></p>
+<pre><code>Khi [hoàn cảnh], tôi muốn [động từ + đối tượng của job],
+để tôi có thể [kết quả/tiến bộ mong muốn].
+</code></pre>
+<p>Ví dụ: <em>"Khi lái xe đi làm buổi sáng một mình, tôi muốn một thứ giúp bận rộn cái miệng và no lâu, để tôi không thấy chán và không đói tới trưa."</em></p>
+<p><strong>Công thức chuyển Feature → Value:</strong> <code>Tính năng + "điều đó có nghĩa là bạn..." → Lợi ích + "để bạn cuối cùng..." → Giá trị</code>.</p>
+<h2>9. Quy trình 7 bước</h2>
+<ol>
+<li><strong>Chọn phân khúc &amp; hoàn cảnh:</strong> xác định nhóm khách và tình huống job phát sinh.</li>
+<li><strong>Phỏng vấn JTBD:</strong> hỏi về lần mua gần nhất, điều gì thúc đẩy ("push"), điều gì hấp dẫn ("pull"), điều gì cản trở.</li>
+<li><strong>Lập Customer Profile:</strong> điền jobs, pains, gains; xếp hạng ưu tiên.</li>
+<li><strong>Lập Value Map:</strong> liệt kê sản phẩm/dịch vụ, pain relievers, gain creators.</li>
+<li><strong>Kiểm tra fit:</strong> nối từng gain creator/pain reliever với gain/pain tương ứng; loại thứ không khớp.</li>
+<li><strong>Viết Value Proposition:</strong> áp dụng công thức, tạo 2–3 biến thể.</li>
+<li><strong>Kiểm chứng thực địa:</strong> A/B test thông điệp, phỏng vấn, đo phản hồi; lặp lại.</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Sản phẩm:</strong> bình giữ nhiệt cho dân văn phòng.</p>
+<ul>
+<li><em>Job chức năng:</em> giữ nước nóng/lạnh suốt buổi làm việc.</li>
+<li><em>Job cảm xúc:</em> an tâm, không phải rời bàn nhiều lần.</li>
+<li><em>Job xã hội:</em> trông gọn gàng, "sống xanh", không dùng ly nhựa dùng một lần.</li>
+<li><em>Pain:</em> nước nguội nhanh, đổ tràn trong túi, cồng kềnh.</li>
+<li><em>Gain:</em> giữ nhiệt 12 giờ, nắp chống rò, vừa giá đỡ ly ô tô.</li>
+</ul>
+<p><strong>Value Proposition:</strong> <em>"Dành cho dân văn phòng bận rộn muốn uống đủ nước nóng/lạnh cả ngày mà không rời bàn, bình giữ nhiệt X giữ nhiệt tới 12 giờ và chống rò tuyệt đối — khác với bình thường mau nguội và dễ tràn."</em></p>
+<p>Chú ý: thông điệp bán <strong>value</strong> ("uống đủ nước cả ngày, không rời bàn"), không chỉ <strong>feature</strong> ("inox 304, hai lớp chân không").</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Slack (nền tảng giao tiếp nội bộ)</strong> <em>(dữ kiện định vị, quan sát công khai)</em>:</p>
+<ul>
+<li><em>Job chức năng:</em> trao đổi công việc nhóm nhanh, tìm lại thông tin dễ.</li>
+<li><em>Pain:</em> email chậm, hộp thư quá tải, thông tin phân tán.</li>
+<li><em>Gain:</em> giao tiếp tức thời, tích hợp công cụ, giảm số cuộc họp.</li>
+<li><em>Định vị nổi tiếng:</em> Slack từng truyền thông thông điệp gắn với ý tưởng <em>"be less busy"</em> / thay thế email nội bộ. <em>(cần kiểm chứng câu chữ chính xác theo từng giai đoạn)</em></li>
+</ul>
+<p><strong>VP tái dựng:</strong> <em>"Dành cho các đội nhóm ngập trong email và họp hành, Slack là không gian làm việc chung giúp trao đổi tức thời và tìm lại mọi thông tin — khác với email, mọi thứ ở đúng một nơi, theo ngữ cảnh."</em></p>
+<p>Bài học doanh nghiệp: Slack không bán "phần mềm chat"; nó bán <strong>job "giảm hỗn loạn giao tiếp, làm việc bớt bận rộn"</strong>.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Trường hợp A — Kem chống nắng nội địa (ngành mỹ phẩm, bối cảnh sát với dự án):</strong></p>
+<ul>
+<li><em>Hoàn cảnh:</em> phụ nữ Việt 25–35, đi làm bằng xe máy dưới nắng gắt, sợ nám/sạm.</li>
+<li><em>Job chức năng:</em> bảo vệ da khỏi tia UV suốt hành trình ngoài trời.</li>
+<li><em>Job cảm xúc:</em> an tâm không lo lão hóa; tự tin về làn da.</li>
+<li><em>Job xã hội:</em> làn da sáng khỏe được đồng nghiệp/khách hàng đánh giá tích cực.</li>
+<li><em>Pain:</em> kem nhờn rít gây bí da, đổ mồ hôi trôi kem, sợ bít mụn.</li>
+<li><em>Gain:</em> thấm nhanh, kiềm dầu, nâng tông nhẹ, an toàn cho da nhạy cảm.</li>
+</ul>
+<p><strong>Value Proposition:</strong> <em>"Dành cho phụ nữ Việt di chuyển ngoài trời hằng ngày và sợ nám sạm, kem chống nắng [thương hiệu] cho khả năng bảo vệ SPF50+ thấm nhanh, không nhờn rít và kiềm dầu — khác với kem chống nắng thông thường gây bí và trôi khi ra mồ hôi."</em></p>
+<p><strong>Trường hợp B — Grab / gọi xe &amp; giao đồ (thị trường Việt Nam):</strong> <em>(dữ kiện thị trường ai cũng quan sát được)</em></p>
+<ul>
+<li><em>Job:</em> di chuyển nhanh/an toàn khi không có phương tiện; hoặc "được ăn món yêu thích mà không phải ra khỏi nhà".</li>
+<li><em>Pain (trước đây):</em> khó bắt taxi, lo bị "chặt chém" giá, chờ lâu.</li>
+<li><em>Gain:</em> biết giá trước, theo dõi tài xế, thanh toán không tiền mặt.</li>
+<li><em>Value:</em> "chủ động, minh bạch, tiện lợi" — chính là điều thay đổi hành vi thị trường, chứ không chỉ "ứng dụng đặt xe".</li>
+</ul>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Câu chuyện Milkshake (Christensen, <em>Competing Against Luck</em>, 2016)</strong> — ví dụ JTBD kinh điển <em>(dữ kiện, có nguồn)</em>:</p>
+<p>Một chuỗi đồ ăn nhanh muốn tăng doanh số milkshake. Khảo sát cải tiến sản phẩm theo nhân khẩu học không hiệu quả. Nhóm nghiên cứu quan sát và phát hiện: gần một nửa milkshake được bán <strong>vào buổi sáng sớm</strong>, mua bởi người đi làm <strong>mua mang đi, uống một mình trên xe</strong>. Job họ "thuê" milkshake để làm: <strong>giết thời gian trên quãng đường lái xe dài &amp; buồn chán, giữ no tới trưa, làm bằng một tay</strong>.</p>
+<p>Đối thủ thật sự của milkshake buổi sáng không phải milkshake hãng khác — mà là <strong>chuối, bánh donut, thanh bagel</strong>. Milkshake thắng vì đặc, uống lâu hết (giữ bận rộn), không rơi vụn, không làm bẩn tay. Bài học: cùng một sản phẩm có thể được "thuê" cho các job khác nhau ở hoàn cảnh khác nhau (milkshake buổi chiều lại là job "làm bố chiều con") — và cách cải tiến phải theo job, không theo nhân khẩu học.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Sai lầm</th>
+<th>Hệ quả</th>
+<th>Cách sửa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bán feature thay vì value</td>
+<td>Khách không thấy liên quan</td>
+<td>Dịch mọi feature sang "điều đó có nghĩa gì với khách"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Nhồi nhét quá nhiều lợi ích</td>
+<td>Loãng, không nhớ được</td>
+<td>Chọn 1 giá trị cốt lõi nổi bật</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Định nghĩa job theo sản phẩm</td>
+<td>Bỏ lỡ đối thủ thật sự</td>
+<td>Định nghĩa job theo tiến bộ khách muốn đạt</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tự nghĩ pains/gains, không hỏi khách</td>
+<td>Canvas "tưởng tượng"</td>
+<td>Phỏng vấn JTBD với khách thật</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Lẫn nhân khẩu học với hoàn cảnh</td>
+<td>Nhắm sai thông điệp</td>
+<td>Bắt đầu từ "khi nào/ở đâu", không phải "ai"</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Value Proposition = slogan kêu</td>
+<td>Thiếu chiều sâu chiến lược</td>
+<td>Xây từ canvas trước, câu chữ sau</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Bỏ qua job cảm xúc &amp; xã hội</td>
+<td>Mất đòn bẩy cảm xúc</td>
+<td>Bóc tách đủ 3 lớp job</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Không kiểm chứng, không lặp</td>
+<td>Fit giả định</td>
+<td>A/B test và phỏng vấn liên tục</td>
+</tr>
+</tbody>
+</table></div>
+<h2>15. Checklist</h2>
+<ul>
+<li>[ ] Đã xác định hoàn cảnh (context) khách hàng cụ thể?</li>
+<li>[ ] Đã bóc tách job chức năng / cảm xúc / xã hội?</li>
+<li>[ ] Đã liệt kê và xếp hạng pains theo mức độ nghiêm trọng?</li>
+<li>[ ] Đã liệt kê và xếp hạng gains theo mức độ mong muốn?</li>
+<li>[ ] Mỗi pain reliever có nối được với một pain thật?</li>
+<li>[ ] Mỗi gain creator có nối được với một gain thật?</li>
+<li>[ ] Value Proposition có nêu rõ khách – nhu cầu – lợi ích – khác biệt?</li>
+<li>[ ] Đã dịch mọi feature quan trọng thành value?</li>
+<li>[ ] Đã kiểm chứng với ít nhất 5 khách hàng thật?</li>
+<li>[ ] Thông điệp đủ ngắn để nhớ trong 10 giây?</li>
+</ul>
+<h2>16. SOP — Quy trình chuẩn xây dựng Value Proposition</h2>
+<ol>
+<li><strong>Đầu vào:</strong> chọn phân khúc + hoàn cảnh mục tiêu. <em>(Phụ trách: Marketing lead)</em></li>
+<li><strong>Nghiên cứu:</strong> thực hiện 5–10 phỏng vấn JTBD; ghi âm, gỡ băng, trích "push/pull/anxiety/habit".</li>
+<li><strong>Tổng hợp Customer Profile:</strong> workshop 90 phút, dùng sticky note; xếp hạng jobs/pains/gains.</li>
+<li><strong>Dựng Value Map:</strong> đối chiếu danh mục sản phẩm; xác định pain relievers &amp; gain creators.</li>
+<li><strong>Đánh giá fit:</strong> đánh dấu mục khớp/không khớp; ghi nhận khoảng trống sản phẩm.</li>
+<li><strong>Soạn thảo:</strong> viết 3 biến thể Value Proposition theo công thức Moore.</li>
+<li><strong>Kiểm chứng:</strong> landing page A/B test hoặc phỏng vấn 5 khách; đo tỷ lệ hiểu &amp; quan tâm.</li>
+<li><strong>Chốt &amp; phổ biến:</strong> đưa VP vào brand book; đồng bộ mọi kênh.</li>
+<li><strong>Rà soát định kỳ:</strong> 6 tháng/lần hoặc khi thị trường đổi.</li>
+</ol>
+<h2>17. KPI</h2>
+<p><em>(Các con số dưới đây là "số minh họa" để làm ví dụ ngưỡng, không phải benchmark ngành.)</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+<th>Ngưỡng tham chiếu (số minh họa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message clarity score</td>
+<td>% người test hiểu đúng giá trị sau 10 giây</td>
+<td>≥ 80%</td>
+</tr>
+<tr>
+<td>Landing page conversion</td>
+<td>Tỷ lệ chuyển đổi trang đích</td>
+<td>Cải thiện ≥ 20% sau tối ưu VP</td>
+</tr>
+<tr>
+<td>Problem–resonance rate</td>
+<td>% khách xác nhận "đúng vấn đề của tôi"</td>
+<td>≥ 70%</td>
+</tr>
+<tr>
+<td>Willingness to pay</td>
+<td>% khách sẵn sàng trả giá đề xuất</td>
+<td>Theo mục tiêu định giá</td>
+</tr>
+<tr>
+<td>CAC/LTV</td>
+<td>Hiệu quả thu hút vs. giá trị vòng đời</td>
+<td>LTV/CAC ≥ 3 (tham chiếu phổ biến, cần kiểm chứng theo ngành)</td>
+</tr>
+<tr>
+<td>Feature adoption của gain creator chính</td>
+<td>Khách có thật sự dùng lợi ích cốt lõi?</td>
+<td>Theo dõi theo thời gian</td>
+</tr>
+</tbody>
+</table></div>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu Customer Profile &amp; Value Map (điền tay):</strong></p>
+<pre><code>[PHÂN KHÚC / HOÀN CẢNH]: ______________________________________
+
+CUSTOMER JOBS (xếp hạng 1-5 theo tầm quan trọng)
+  Chức năng: ____________________________  [ ][ ][ ][ ][ ]
+  Cảm xúc:   ____________________________  [ ][ ][ ][ ][ ]
+  Xã hội:    ____________________________  [ ][ ][ ][ ][ ]
+
+PAINS (xếp hạng theo mức nghiêm trọng)          GAINS (theo mức mong muốn)
+  1. _______________________                      1. _______________________
+  2. _______________________                      2. _______________________
+  3. _______________________                      3. _______________________
+
+PRODUCTS &amp; SERVICES: ___________________________________________
+
+PAIN RELIEVERS (nối tới pain #)                 GAIN CREATORS (nối tới gain #)
+  1. ______________ → pain __                     1. ______________ → gain __
+  2. ______________ → pain __                     2. ______________ → gain __
+
+VALUE PROPOSITION:
+  Dành cho ____________ đang ____________,
+  [sản phẩm] là ____________ giúp ____________.
+  Khác với ____________, chúng tôi ____________.
+</code></pre>
+<h2>19. Prompt AI</h2>
+<p>Dùng các prompt sau, thay <code>[...]</code> bằng thông tin thật.</p>
+<p><strong>ChatGPT (brainstorm JTBD):</strong></p>
+<blockquote>
+<p>"Đóng vai chuyên gia Jobs To Be Done. Sản phẩm: [mô tả]. Khách hàng &amp; hoàn cảnh: [context]. Hãy liệt kê job chức năng, cảm xúc, xã hội; kèm 5 pains và 5 gains, xếp hạng ưu tiên và giải thích lý do."</p>
+</blockquote>
+<p><strong>Claude (dựng Value Proposition Canvas + kiểm chứng logic):</strong></p>
+<blockquote>
+<p>"Dựa trên dữ liệu phỏng vấn khách hàng tôi dán dưới đây, hãy điền Value Proposition Canvas (jobs/pains/gains ↔ products/pain relievers/gain creators). Chỉ dùng thông tin có trong dữ liệu, đánh dấu chỗ nào là suy luận. Sau đó viết 3 biến thể Value Proposition theo công thức 'For...who...our...is...that...unlike...'."</p>
+</blockquote>
+<p><strong>Gemini (nghiên cứu bối cảnh &amp; đối thủ thay thế):</strong></p>
+<blockquote>
+<p>"Với job '[phát biểu job]' của khách hàng tại thị trường Việt Nam, hãy liệt kê tất cả 'lựa chọn thay thế' mà khách có thể 'thuê' để hoàn thành job này (kể cả giải pháp phi-sản-phẩm), và phân tích điểm mạnh/yếu từng lựa chọn."</p>
+</blockquote>
+<p><strong>Perplexity (tìm dữ kiện có nguồn):</strong></p>
+<blockquote>
+<p>"Tìm các số liệu và nghiên cứu có trích dẫn về hành vi mua [ngành/sản phẩm] tại Việt Nam giai đoạn gần đây. Nêu rõ nguồn và năm. Đánh dấu thông tin nào chưa được kiểm chứng."</p>
+</blockquote>
+<p><strong>NotebookLM (tổng hợp từ tài liệu nội bộ):</strong></p>
+<blockquote>
+<p>"Từ các bản ghi phỏng vấn khách hàng đã tải lên, hãy trích các câu trực tiếp thể hiện job, pain, gain. Nhóm theo chủ đề và trích dẫn nguyên văn kèm nguồn tài liệu."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa vòng lặp kiểm chứng):</strong></p>
+<blockquote>
+<p>"Mục tiêu: tối ưu Value Proposition cho [sản phẩm]. Quy trình: (1) sinh 3 biến thể VP; (2) tạo bản mô tả test cho từng biến thể; (3) đề xuất phương án A/B test trên landing page; (4) tổng hợp giả thuyết cần kiểm chứng và tiêu chí thành công. Xuất ra bảng kế hoạch."</p>
+</blockquote>
+<h2>20. Bài tập</h2>
+<ol>
+<li>Chọn một sản phẩm bạn dùng hằng ngày. Viết job statement theo mẫu "Khi... tôi muốn... để...".</li>
+<li>Lấy 3 tính năng bất kỳ của sản phẩm đó và dịch từng cái thành benefit rồi thành value.</li>
+<li>Điền đầy đủ một Value Proposition Canvas cho sản phẩm/dự án của bạn (dùng biểu mẫu Mục 18).</li>
+<li>Viết 2 biến thể Value Proposition theo công thức Moore, rồi rút gọn mỗi cái xuống ≤ 20 từ.</li>
+<li>Liệt kê 5 "lựa chọn thay thế" ngoài ngành mà khách có thể dùng để hoàn thành job của bạn.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt feature, benefit và value bằng ví dụ của riêng bạn.</li>
+<li>Ba lớp job là gì? Vì sao bỏ qua job cảm xúc/xã hội là sai lầm?</li>
+<li>Value Proposition Canvas gồm những thành phần nào? "Fit" nghĩa là gì?</li>
+<li>Câu chuyện milkshake dạy điều gì về việc xác định đối thủ cạnh tranh?</li>
+<li>Viết lại công thức Value Proposition của Moore bằng trí nhớ.</li>
+<li>Vì sao nên bắt đầu từ "hoàn cảnh" thay vì "nhân khẩu học"?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Thành công — Grab tại Đông Nam Á / Việt Nam</strong> <em>(dữ kiện thị trường công khai; phân tích của nhóm biên soạn)</em>:
+Grab thắng không phải vì "app đẹp hơn" mà vì nắm đúng job "di chuyển chủ động, minh bạch giá, an toàn" trong bối cảnh taxi truyền thống gây lo ngại về giá và độ tin cậy. Pain relievers (báo giá trước, định vị tài xế, đánh giá hai chiều) khớp trực tiếp pains của thị trường. Sau đó Grab mở rộng sang các job kề cận (giao đồ ăn, giao hàng, thanh toán) dựa trên cùng khung "tiện lợi – minh bạch". Bài học: fit job → mở rộng theo job kề cận.</p>
+<p><strong>Thất bại — Google Glass (2013–2015)</strong> <em>(dữ kiện công khai; phân tích)</em>:
+Google Glass là kỳ tích công nghệ nhưng thất bại thương mại ở thị trường tiêu dùng vì <strong>không gắn với một job đủ quan trọng</strong> mà khách sẵn sàng "thuê" nó, đồng thời tạo <strong>pain xã hội lớn</strong> (bị xem là kỳ quặc, lo ngại quyền riêng tư — biệt danh "Glasshole"). Feature ấn tượng nhưng value mơ hồ và job xã hội bị âm. Bài học: công nghệ mạnh không cứu được value proposition thiếu job rõ ràng; job xã hội có thể là "sát thủ" thầm lặng.</p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li>Khách hàng "thuê" sản phẩm để hoàn thành một <strong>job</strong> trong một <strong>hoàn cảnh</strong> cụ thể; job có ba lớp: chức năng, cảm xúc, xã hội.</li>
+<li><strong>Value Proposition Canvas</strong> khớp jobs/pains/gains (phía khách) với products/pain relievers/gain creators (phía ta); đạt <strong>fit</strong> là mục tiêu.</li>
+<li>Khách trả tiền cho <strong>value</strong>, không phải feature — luôn dịch feature → benefit → value.</li>
+<li>Dùng <strong>công thức Moore</strong> (For...who...our...is...that...unlike...) để đóng gói giá trị thành câu sắc bén.</li>
+<li>Xác định đối thủ theo <strong>job</strong>, không theo danh mục sản phẩm (bài học milkshake).</li>
+<li>Không bao giờ chốt value proposition mà chưa <strong>kiểm chứng với khách hàng thật</strong>; đây là vòng lặp, không phải việc một lần.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<p><em>(Không kèm link để tránh dẫn nguồn sai; vui lòng tra cứu theo tên tác giả/tựa/năm.)</em></p>
+<ol>
+<li>Osterwalder, A., Pigneur, Y., Bernarda, G., Smith, A. (2014). <em>Value Proposition Design</em>. Wiley.</li>
+<li>Osterwalder, A., Pigneur, Y. (2010). <em>Business Model Generation</em>. Wiley.</li>
+<li>Christensen, C. M., Hall, T., Dillon, K., Duncan, D. S. (2016). <em>Competing Against Luck: The Story of Innovation and Customer Choice</em>. HarperBusiness.</li>
+<li>Christensen, C. M. et al. "Know Your Customers' Jobs to Be Done." <em>Harvard Business Review</em> (2016).</li>
+<li>Levitt, T. (1960). "Marketing Myopia." <em>Harvard Business Review</em>.</li>
+<li>Moore, G. A. (1991/2014). <em>Crossing the Chasm</em>. HarperBusiness — nguồn công thức value positioning statement.</li>
+<li>Ulwick, A. (2016). <em>Jobs to Be Done: Theory to Practice</em>. Idea Bite Press — khung "outcome-driven innovation".</li>
+<li>Strategyzer — tài liệu và mẫu Value Proposition Canvas <em>(cần kiểm chứng phiên bản cập nhật)</em>.</li>
+</ol>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li>Cập nhật số liệu benchmark chuyển đổi và LTV/CAC theo ngành mỹ phẩm/tiêu dùng Việt Nam khi có dữ liệu kiểm chứng.</li>
+<li>Bổ sung tác động của AI cá nhân hóa tới việc phát hiện job "ẩn" theo thời gian thực (2026–2035).</li>
+<li>Cập nhật case study Việt Nam mới (thương hiệu nội địa vừa đạt product–market fit).</li>
+<li>Đối chiếu câu chữ định vị chính xác của Slack/các thương hiệu theo từng giai đoạn (mục cần kiểm chứng).</li>
+<li>Theo dõi biến thể mới của JTBD (Jobs-as-Progress, switch interviews) và công cụ canvas số hóa.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-01-nen-tang-tu-duy-04-marketing-la-gi.html"><span>← Trước</span>Tập 1 · Chương 4 — Marketing là gì: Bản chất, lịch sử &amp; các trường phái</a><a class="next" href="tap-01-nen-tang-tu-duy-06-chien-luoc-canh-tranh-porter.html"><span>Sau →</span>Tập 1 · Chương 6 — Chiến lược cạnh tranh (Porter) &amp; Lợi thế bền vững</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 10 · Chương 6 — Case Study: SME &amp; Thất bại kinh điển</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 10 · Chương 6 — Case Study: SME &amp; Thất bại kinh điển</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+- <strong>Tập:</strong> 10 — Case Study
+- <strong>Chương:</strong> 6
+- <strong>Chủ đề:</strong> Doanh nghiệp vừa &amp; nhỏ (SME) và những thất bại kinh điển — bài học sống còn
+- <strong>Đối tượng đọc:</strong> Chủ doanh nghiệp nhỏ, nhà sản xuất, người khởi nghiệp, marketer in-house
+- <strong>Cập nhật lần cuối:</strong> 2026
+- <strong>Trạng thái nguồn:</strong> Các thương hiệu quốc tế có nguồn công khai kiểm chứng được; các ví dụ SME Việt Nam phần lớn là <strong>mô hình điển hình/minh họa</strong>, được ghi chú rõ ở từng chỗ.</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này bóc tách cả hai mặt của tấm huy chương — vài SME thắng lớn nhờ marketing thông minh dù ít tiền, và những thất bại kinh điển khiến doanh nghiệp chết dù nhiều tiền — để rút ra danh mục "tử huyệt" và khung tự đánh giá rủi ro mà chủ DN nhỏ áp dụng được ngay tuần này.</p>
+<hr />
+<h2>Vì sao chương này quan trọng</h2>
+<p>Phần lớn sách marketing lấy ví dụ từ Apple, Nike, Coca-Cola — những công ty có ngân sách quảng cáo lớn hơn cả doanh thu cả đời của một SME. Học theo họ giống như tập bơi bằng cách xem vận động viên Olympic: đúng về nguyên lý, nhưng sai hoàn toàn về nguồn lực.</p>
+<p>Chương này đi ngược lại. Chúng ta xem hai loại doanh nghiệp mà bạn thực sự giống:</p>
+<ol>
+<li><strong>SME thắng nhờ đầu óc, không nhờ ngân sách</strong> — họ không có tiền đốt, nên buộc phải khôn.</li>
+<li><strong>Doanh nghiệp thất bại kinh điển</strong> — kể cả người khổng lồ, để thấy cái chết trong marketing hiếm khi vì thiếu tiền, mà vì <strong>sai tư duy nền tảng</strong>.</li>
+</ol>
+<p>Nguyên tắc xuyên suốt: <em>marketing không cứu được một sản phẩm dở, một offer yếu, hay một mô hình sai — nó chỉ khuếch đại thứ đã có.</em> Đốt tiền quảng cáo lên một cái phễu thủng là cách nhanh nhất để phá sản có tổ chức.</p>
+<hr />
+<h2>PHẦN A — SME thành công nhờ marketing thông minh</h2>
+<p>Khung phân tích: <strong>Bối cảnh → Nước đi khác biệt → Kết quả (định tính) → Bài học áp dụng ngay.</strong></p>
+<h3>Ví dụ A1 — Quán ăn nhỏ biến "món tủ" thành thương hiệu (ví dụ điển hình/minh họa, Việt Nam)</h3>
+<p><strong>Bối cảnh.</strong> Một quán bún/phở gia đình trong hẻm, vốn ít, không mặt tiền đẹp, cạnh tranh với hàng chục quán quanh khu. Ngân sách marketing gần như bằng 0.</p>
+<p><strong>Nước đi khác biệt.</strong> Thay vì làm menu 40 món "cái gì cũng có", quán rút xuống 1–2 món chủ lực và tối ưu đến mức người ta phải nhắc tên. Họ biến trải nghiệm ăn thành nội dung: khách quay clip nước lèo, tô đầy đặn, chủ quán chân chất. Quán chủ động khuyến khích khách chụp ảnh, đặt tên món dễ nhớ, dùng một chi tiết nhận diện (ví dụ: "quán chỉ bán tới khi hết nồi"). Khan hiếm thật tạo ra câu chuyện thật.</p>
+<p><strong>Kết quả (định tính).</strong> Truyền miệng và nội dung do khách tự tạo (user-generated content) kéo khách đều mà không tốn phí quảng cáo; hàng dài giờ cao điểm trở thành bằng chứng xã hội. (Đây là <strong>mô hình điển hình</strong> — có nhiều quán Việt Nam đi theo con đường này; con số cụ thể tùy quán, <em>cần kiểm chứng từng trường hợp</em>.)</p>
+<p><strong>Bài học áp dụng ngay.</strong>
+- Thu hẹp để nổi bật. Một món làm xuất sắc đánh bại mười món làm tàm tạm.
+- Thiết kế sản phẩm sao cho <strong>đáng để quay/chụp</strong> — đó là quảng cáo miễn phí.
+- Khan hiếm thật (bán hết là nghỉ) mạnh hơn khan hiếm giả.</p>
+<h3>Ví dụ A2 — Local brand thời trang/mỹ phẩm nội địa nhỏ xây cộng đồng trước, bán sau (ví dụ điển hình/minh họa, Việt Nam)</h3>
+<p><strong>Bối cảnh.</strong> Một thương hiệu mỹ phẩm hoặc thời trang nội địa quy mô nhỏ, không đủ tiền chạy TV hay booking KOL top. Thị trường đã đông và người tiêu dùng nghi ngờ hàng "nhà làm".</p>
+<p><strong>Nước đi khác biệt.</strong> Chọn một tệp khách hẹp và một "chính kiến" rõ (ví dụ: thành phần lành tính cho da nhạy cảm, hoặc thẩm mỹ thuần Việt). Thay vì hô "sản phẩm tốt", họ dạy khách hiểu về da/về chất liệu, minh bạch bảng thành phần và quy trình. Dùng <strong>micro-influencer</strong> và khách thật thay vì ngôi sao lớn — chi phí thấp, độ tin cao hơn. Xây cộng đồng (nhóm kín, kênh nội dung) trước khi ép bán.</p>
+<p><strong>Kết quả (định tính).</strong> Tỷ lệ khách quay lại và giới thiệu cao nhờ lòng tin; biên lợi nhuận giữ được vì không phải giảm giá liên tục để cạnh tranh. (<strong>Mô hình điển hình</strong>; nhiều local brand Việt đi đường này, mức độ thành công khác nhau, <em>cần kiểm chứng</em>.)</p>
+<p><strong>Bài học áp dụng ngay.</strong>
+- Với ngân sách nhỏ, <strong>niềm tin là kênh phân phối</strong>. Minh bạch thành phần/quy trình rẻ hơn quảng cáo và bền hơn.
+- Micro-influencer + khách thật thường cho ROI tốt hơn một KOL đắt tiền.
+- Xây cộng đồng là tài sản; chạy ads là chi phí. Ưu tiên tài sản.</p>
+<h3>Ví dụ A3 — Dollar Shave Club (SME quốc tế, có nguồn kiểm chứng)</h3>
+<p><strong>Bối cảnh.</strong> Thị trường dao cạo Mỹ bị thống trị bởi các ông lớn với ngân sách marketing khổng lồ. Dollar Shave Club là công ty khởi nghiệp nhỏ, ra mắt năm 2012.</p>
+<p><strong>Nước đi khác biệt.</strong> Một <strong>video hài</strong> duy nhất ("Our Blades Are F<strong><em>ing Great") chi phí sản xuất thấp, thông điệp sắc và mô hình </em>*đăng ký định kỳ</strong> (subscription) giao dao cạo tận nhà giá rẻ. Họ không thắng bằng ngân sách; họ thắng bằng thông điệp và mô hình kinh doanh khác biệt.</p>
+<p><strong>Kết quả.</strong> Video lan truyền mạnh, tạo cú hích tăng trưởng người đăng ký; công ty được <strong>Unilever mua lại năm 2016</strong> (thương vụ được đưa tin rộng rãi, giá trị công bố khoảng 1 tỷ USD — <em>theo báo chí thời điểm đó, nên đối chiếu nguồn gốc</em>).</p>
+<p><strong>Bài học áp dụng ngay.</strong>
+- Một thông điệp đúng và một góc nhìn khác biệt có thể thay thế cả triệu đô quảng cáo.
+- <strong>Mô hình doanh thu lặp lại (subscription/continuity)</strong> biến khách một lần thành dòng tiền đều — cực hợp với nhà sản xuất hàng tiêu dùng nhanh.
+- Đừng đấu ngân sách với người khổng lồ; đổi luật chơi.</p>
+<p><strong>Bảng tóm tắt Phần A</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ví dụ</th>
+<th>Nguồn lực</th>
+<th>Đòn bẩy chính</th>
+<th>Bài học cốt lõi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quán ăn nhỏ (điển hình VN)</td>
+<td>Gần 0</td>
+<td>Thu hẹp món + UGC + khan hiếm thật</td>
+<td>Làm 1 thứ xuất sắc, đáng để quay chụp</td>
+</tr>
+<tr>
+<td>Local brand nội địa (điển hình VN)</td>
+<td>Nhỏ</td>
+<td>Niềm tin + micro-influencer + cộng đồng</td>
+<td>Niềm tin là kênh phân phối</td>
+</tr>
+<tr>
+<td>Dollar Shave Club (quốc tế, kiểm chứng)</td>
+<td>Startup nhỏ</td>
+<td>Thông điệp lan truyền + subscription</td>
+<td>Đổi luật chơi, đừng đấu ngân sách</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>PHẦN B — Thất bại kinh điển &amp; bài học sống còn</h2>
+<p>Khung phân tích mỗi ca: <strong>Chuyện gì xảy ra → Sai lầm cốt lõi → Bài học phòng tránh.</strong></p>
+<h3>B1 — Kodak &amp; Nokia &amp; BlackBerry: chết vì không thích ứng</h3>
+<p><strong>Chuyện gì xảy ra.</strong>
+- <strong>Kodak</strong> thống trị ngành phim ảnh, thực tế đã tham gia phát triển công nghệ máy ảnh số từ sớm nhưng chần chừ vì sợ ăn mất mảng phim đang hái ra tiền; nộp đơn phá sản (Chapter 11) <strong>năm 2012</strong>.
+- <strong>Nokia</strong> từng dẫn đầu điện thoại di động toàn cầu nhưng chậm chuyển sang hệ điều hành smartphone hiện đại; mảng thiết bị di động <strong>được Microsoft mua lại năm 2014</strong>.
+- <strong>BlackBerry</strong> thống trị điện thoại doanh nhân với bàn phím vật lý nhưng đánh giá thấp màn hình cảm ứng và hệ sinh thái ứng dụng; mất gần hết thị phần smartphone và sau đó <strong>dừng mảng điện thoại</strong>.</p>
+<p><strong>Sai lầm cốt lõi.</strong> Bảo vệ mô hình cũ đang sinh lời thay vì tự làm mới trước khi bị làm mới. "Người thắng hôm qua" trở thành tù nhân của chính thành công cũ (marketing gọi là <em>marketing myopia</em> — cận thị marketing: định nghĩa mình theo <em>sản phẩm</em> thay vì theo <em>nhu cầu khách hàng</em>).</p>
+<p><strong>Bài học phòng tránh.</strong>
+- Định nghĩa doanh nghiệp theo <strong>nhu cầu khách hàng</strong>, không theo sản phẩm. Kodak không bán phim — họ bán "lưu giữ khoảnh khắc".
+- Sẵn sàng <strong>tự ăn thịt sản phẩm cũ</strong> trước khi đối thủ làm điều đó.
+- SME có lợi thế: nhỏ, xoay nhanh. Đừng đánh mất lợi thế đó bằng tư duy "chúng ta luôn làm thế này".</p>
+<h3>B2 — Quibi: sản phẩm không có nhu cầu thật</h3>
+<p><strong>Chuyện gì xảy ra.</strong> Quibi là nền tảng video ngắn cao cấp, huy động được số vốn rất lớn (được đưa tin khoảng 1,75 tỷ USD — <em>theo báo chí, cần đối chiếu</em>), ra mắt <strong>tháng 4/2020</strong> và <strong>đóng cửa chỉ khoảng 6 tháng sau, cuối 2020</strong>. Nhiều tiền, nhiều sao, nhiều PR — vẫn chết.</p>
+<p><strong>Sai lầm cốt lõi.</strong> Xây một giải pháp cho <strong>vấn đề khách hàng không thực sự có</strong>. Người dùng đã có YouTube, TikTok (miễn phí) cho video ngắn; Quibi bắt trả tiền, không cho chia sẻ clip dễ dàng, ra mắt đúng lúc đại dịch khiến nhu cầu "xem trên đường di chuyển" biến mất.</p>
+<p><strong>Bài học phòng tránh.</strong>
+- <strong>Tiền không mua được nhu cầu.</strong> Trước khi đổ ngân sách, chứng minh có người <em>thật sự muốn trả tiền</em> — bán thử ở quy mô nhỏ trước.
+- Kiểm chứng nhu cầu <strong>trước</strong> khi kiểm chứng khả năng mở rộng. Thứ tự ngược lại giết doanh nghiệp.
+- Với SME: đừng yêu ý tưởng của mình. Yêu vấn đề của khách hàng.</p>
+<h3>B3 — "Đốt tiền quảng cáo khi offer yếu" (ví dụ điển hình/minh họa, Việt Nam)</h3>
+<p><strong>Chuyện gì xảy ra.</strong> Một shop/nhà sản xuất nhỏ có sản phẩm tạm ổn nhưng <strong>offer không nổi bật</strong> (giá không rõ ưu thế, không bảo hành, không lý do mua ngay). Thấy đối thủ chạy quảng cáo, họ tăng ngân sách ads để "theo kịp". Chi phí trên mỗi đơn (CPA) tăng dần, tỷ lệ chuyển đổi thấp, khách vào rồi rời. Càng đổ tiền càng lỗ. (<strong>Mô hình điển hình</strong> rất phổ biến ở SME Việt; <em>con số tùy trường hợp, cần kiểm chứng</em>.)</p>
+<p><strong>Sai lầm cốt lõi.</strong> Quảng cáo khuếch đại một offer yếu. Traffic không sửa được vấn đề chuyển đổi. Họ mua thêm sự chú ý cho một thông điệp không thuyết phục.</p>
+<p><strong>Bài học phòng tránh.</strong>
+- <strong>Sửa offer trước, chạy ads sau.</strong> Một offer mạnh (giá trị rõ, rủi ro thấp cho khách, lý do mua ngay) làm cùng ngân sách ra gấp nhiều đơn.
+- Theo dõi <strong>CPA và tỷ lệ chuyển đổi</strong>, không chỉ lượt tiếp cận. Reach nhiều mà không ra đơn là đốt tiền.
+- Nếu offer không tự bán được ở quy mô nhỏ (organic, khách quen), ads chỉ làm bạn lỗ nhanh hơn.</p>
+<h3>B4 — Mở rộng quá nhanh (over-expansion)</h3>
+<p><strong>Chuyện gì xảy ra (dạng điển hình).</strong> Một chuỗi F&amp;B/bán lẻ có một cửa hàng đầu tiên đông khách. Chủ vay tiền mở 5–10 điểm trong thời gian ngắn, chưa chuẩn hóa vận hành, chưa kiểm chứng mô hình ở địa điểm khác. Chất lượng không đồng đều, chi phí cố định phình to, dòng tiền âm; một điểm yếu kéo cả hệ thống. Kịch bản này lặp đi lặp lại ở cả VN lẫn quốc tế (<strong>mô hình điển hình</strong>; <em>chi tiết từng thương hiệu cần kiểm chứng</em>).</p>
+<p><strong>Sai lầm cốt lõi.</strong> Nhầm <strong>thành công của một điểm</strong> với <strong>khả năng nhân rộng đã được chứng minh</strong>. Tăng trưởng nhanh hơn năng lực vận hành và dòng tiền.</p>
+<p><strong>Bài học phòng tránh.</strong>
+- Chứng minh mô hình lặp lại được ở <strong>điểm thứ hai</strong> trước khi nghĩ tới điểm thứ mười.
+- Chuẩn hóa (quy trình, đào tạo, chất lượng) <em>trước</em> khi bấm nút scale.
+- Tăng trưởng không tự nó tốt — <strong>tăng trưởng có lãi và có dòng tiền</strong> mới tốt.</p>
+<h3>B5 — Phụ thuộc một kênh (single-channel dependency)</h3>
+<p><strong>Chuyện gì xảy ra (dạng điển hình).</strong> Một shop online sống hoàn toàn nhờ một nền tảng — một sàn TMĐT, hoặc một tài khoản mạng xã hội, hoặc quảng cáo của một platform. Khi nền tảng đổi thuật toán, tăng phí, hoặc khóa/hạn chế tài khoản, doanh thu bốc hơi qua đêm. Chủ shop không sở hữu mối quan hệ khách hàng — platform sở hữu. (<strong>Mô hình điển hình</strong> cực phổ biến; <em>cần kiểm chứng theo từng ca</em>.)</p>
+<p><strong>Sai lầm cốt lõi.</strong> Xây nhà trên đất thuê. Toàn bộ sinh mệnh doanh nghiệp nằm trong tay bên thứ ba mà mình không kiểm soát.</p>
+<p><strong>Bài học phòng tránh.</strong>
+- Sở hữu <strong>kênh trực tiếp</strong>: danh sách khách hàng (số điện thoại/Zalo/email), website riêng. Đó là tài sản của bạn.
+- Đa dạng hóa nguồn khách: đừng để &gt;50–60% doanh thu phụ thuộc một kênh (<em>ngưỡng tham khảo, tùy ngành</em>).
+- Chuyển khách từ nền tảng thuê về kênh sở hữu ngay khi có thể.</p>
+<h3>B6 — Sao chép đối thủ (me-too positioning)</h3>
+<p><strong>Chuyện gì xảy ra (dạng điển hình).</strong> Thấy đối thủ thành công, SME sao chép sản phẩm, thông điệp, cả cách chạy khuyến mãi. Kết quả: trở thành "bản sao mờ" không lý do để khách chọn mình thay vì bản gốc. Cuộc đua duy nhất còn lại là <strong>giảm giá</strong>, và ai vốn dày hơn thì thắng — thường không phải SME.</p>
+<p><strong>Sai lầm cốt lõi.</strong> Không có <strong>điểm khác biệt</strong> (differentiation). Khi giống hệt đối thủ, khách hàng chỉ còn một tiêu chí: giá. Đó là cuộc chiến SME luôn thua.</p>
+<p><strong>Bài học phòng tránh.</strong>
+- Tìm một <strong>góc riêng</strong>: tệp khách hẹp hơn, một lợi ích cụ thể, một câu chuyện thương hiệu không sao chép được.
+- Cạnh tranh bằng <strong>giá trị và sự khác biệt</strong>, không bằng giá. Giảm giá là đường cụt cho DN ít vốn.
+- Học <em>nguyên lý</em> của đối thủ, đừng chép <em>bề mặt</em> của họ.</p>
+<p><strong>Bảng tóm tắt Phần B</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ca thất bại</th>
+<th>Sai lầm cốt lõi</th>
+<th>Câu hỏi tự kiểm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kodak/Nokia/BlackBerry</td>
+<td>Không thích ứng, bảo vệ mô hình cũ</td>
+<td>"Nếu đối thủ làm ta lỗi thời, đòn đó là gì?"</td>
+</tr>
+<tr>
+<td>Quibi</td>
+<td>Sản phẩm không có nhu cầu thật</td>
+<td>"Có ai thật sự trả tiền cho cái này chưa?"</td>
+</tr>
+<tr>
+<td>Đốt ads offer yếu (VN)</td>
+<td>Khuếch đại offer yếu</td>
+<td>"Offer tự bán được khi chưa chạy ads không?"</td>
+</tr>
+<tr>
+<td>Mở rộng quá nhanh</td>
+<td>Scale trước khi chuẩn hóa</td>
+<td>"Mô hình đã lặp lại ở điểm 2 chưa?"</td>
+</tr>
+<tr>
+<td>Phụ thuộc 1 kênh</td>
+<td>Xây nhà trên đất thuê</td>
+<td>"Nếu mất kênh chính hôm nay, còn gì?"</td>
+</tr>
+<tr>
+<td>Sao chép đối thủ</td>
+<td>Không có khác biệt</td>
+<td>"Vì sao khách chọn ta thay vì bản gốc?"</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>Danh mục "tử huyệt" marketing của SME</h2>
+<p>Checklist các sai lầm chết người. Nếu bạn dính từ 3 mục trở lên, hãy dừng chi tiền quảng cáo và xử lý gốc trước.</p>
+<ul>
+<li>[ ] <strong>Chạy ads khi offer chưa đủ mạnh.</strong> Cách tránh: kiểm chứng offer bằng bán organic/khách quen trước; chỉ scale thứ đã chuyển đổi tốt.</li>
+<li>[ ] <strong>Không đo CPA và tỷ lệ chuyển đổi</strong>, chỉ nhìn lượt tiếp cận/like. Cách tránh: gắn chỉ số ra đơn vào mọi chiến dịch.</li>
+<li>[ ] <strong>Phụ thuộc một kênh/nền tảng.</strong> Cách tránh: xây danh sách khách sở hữu (Zalo/email/SĐT) + website riêng ngay từ đầu.</li>
+<li>[ ] <strong>Không có điểm khác biệt</strong>, cạnh tranh bằng giá. Cách tránh: chọn tệp hẹp + một lợi ích rõ + câu chuyện riêng.</li>
+<li>[ ] <strong>Menu/danh mục quá rộng</strong>, dàn trải nguồn lực. Cách tránh: thu hẹp về sản phẩm chủ lực, làm xuất sắc.</li>
+<li>[ ] <strong>Mở rộng trước khi chuẩn hóa</strong> vận hành và chứng minh mô hình. Cách tránh: nhân bản chỉ sau khi điểm thứ hai chạy tốt.</li>
+<li>[ ] <strong>Yêu ý tưởng hơn yêu vấn đề của khách.</strong> Cách tránh: bắt đầu từ nỗi đau khách hàng, không từ sản phẩm bạn thích làm.</li>
+<li>[ ] <strong>Không có dòng doanh thu lặp lại</strong>, phải săn khách mới liên tục. Cách tránh: thiết kế mua lại/subscription/combo định kỳ.</li>
+<li>[ ] <strong>Giảm giá như phản xạ</strong> mỗi khi ế. Cách tránh: tăng giá trị cảm nhận thay vì hạ giá; bảo vệ biên lợi nhuận.</li>
+<li>[ ] <strong>Bỏ bê khách cũ</strong>, dồn hết tiền săn khách mới. Cách tránh: chi phí giữ khách rẻ hơn nhiều so với chi phí tìm khách mới.</li>
+<li>[ ] <strong>Không thu thập &amp; dùng phản hồi khách.</strong> Cách tránh: hỏi lý do mua/không mua; sửa offer theo dữ liệu thật.</li>
+<li>[ ] <strong>Copy bề mặt đối thủ.</strong> Cách tránh: học nguyên lý, dựng góc riêng.</li>
+</ul>
+<hr />
+<h2>Khung tự đánh giá rủi ro cho SME</h2>
+<p>Biểu mẫu chấm điểm nhanh. Với mỗi câu, cho điểm <strong>0 = rủi ro cao / chưa làm</strong>, <strong>1 = trung bình</strong>, <strong>2 = tốt/vững</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Câu hỏi tự đánh giá</th>
+<th>Điểm (0–2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Offer của tôi tự bán được khi chưa chạy quảng cáo (organic, khách quen)?</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tôi biết chính xác CPA và tỷ lệ chuyển đổi của mình?</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tôi sở hữu danh sách khách trực tiếp (SĐT/Zalo/email), không phụ thuộc platform?</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Không kênh nào chiếm quá ~60% doanh thu của tôi?</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Tôi có điểm khác biệt rõ mà khách có thể nói thành một câu?</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tôi tập trung vào sản phẩm chủ lực thay vì dàn trải?</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Nếu mở rộng, tôi đã chứng minh mô hình lặp lại ở điểm/khu vực thứ hai?</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tôi có nguồn doanh thu lặp lại (mua lại/subscription/combo)?</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tôi giữ biên lợi nhuận mà không phải giảm giá liên tục?</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Tôi có thu thập và hành động theo phản hồi khách hàng?</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cách đọc điểm (thang 0–20):</strong>
+- <strong>0–7:</strong> Vùng nguy hiểm. Dừng đốt tiền quảng cáo. Sửa offer, khác biệt và kênh sở hữu trước.
+- <strong>8–14:</strong> Vùng dễ tổn thương. Nền tảng ổn nhưng có tử huyệt cần vá (thường là phụ thuộc 1 kênh hoặc thiếu doanh thu lặp lại).
+- <strong>15–20:</strong> Vùng vững. Có thể tăng tốc scale — nhưng vẫn rà lại các câu 3, 4, 7 trước mỗi bước mở rộng.</p>
+<hr />
+<h2>Bài tập phân tích</h2>
+<ol>
+<li>
+<p><strong>Khám tử huyệt của chính bạn.</strong> Điền khung tự đánh giá rủi ro ở trên cho doanh nghiệp của bạn. Chọn <strong>hai câu điểm thấp nhất</strong> và viết một hành động cụ thể làm được trong 7 ngày cho mỗi câu.</p>
+</li>
+<li>
+<p><strong>Mổ xẻ một ca thất bại.</strong> Chọn một doanh nghiệp nhỏ bạn biết đã đóng cửa (quán, shop, thương hiệu). Áp khung <em>Chuyện gì xảy ra → Sai lầm cốt lõi → Bài học</em>. Nó dính (những) tử huyệt nào trong danh mục?</p>
+</li>
+<li>
+<p><strong>Bài kiểm nhu cầu kiểu Quibi.</strong> Với một sản phẩm/dịch vụ bạn định tung ra: liệt kê 3 bằng chứng cho thấy có người <em>thật sự</em> sẽ trả tiền (không phải "họ nói sẽ mua"). Nếu chưa có, thiết kế một cách bán thử quy mô nhỏ để kiểm chứng trước khi đổ tiền.</p>
+</li>
+<li>
+<p><strong>Bài kiểm offer trước ads.</strong> Viết offer hiện tại của bạn thành một câu. Đưa cho 5 khách lạ. Nếu chưa ai muốn mua ngay, đừng tăng ngân sách quảng cáo — hãy làm lại offer.</p>
+</li>
+<li>
+<p><strong>Chống phụ thuộc kênh.</strong> Vẽ ra doanh thu theo kênh (%). Nếu một kênh &gt;60%, viết kế hoạch 90 ngày dịch chuyển 20% doanh thu sang kênh sở hữu.</p>
+</li>
+</ol>
+<hr />
+<h2>Prompt AI</h2>
+<p>Copy và điều chỉnh cho doanh nghiệp của bạn. Thay <code>[MÔ TẢ DN]</code> bằng ngành, sản phẩm, quy mô, kênh và offer hiện tại.</p>
+<p><strong>ChatGPT / Claude (phân tích tử huyệt):</strong></p>
+<blockquote>
+<p>"Tôi là chủ một SME: [MÔ TẢ DN]. Dựa trên danh mục tử huyệt marketing của SME (offer yếu, không đo CPA, phụ thuộc 1 kênh, không khác biệt, danh mục quá rộng, mở rộng quá nhanh, thiếu doanh thu lặp lại, giảm giá phản xạ, bỏ bê khách cũ, sao chép đối thủ), hãy chỉ ra 3 tử huyệt tôi có nguy cơ dính nhất và 1 hành động cụ thể trong 7 ngày cho mỗi cái. Hỏi lại tôi nếu thiếu thông tin."</p>
+</blockquote>
+<p><strong>Claude (mổ xẻ offer trước khi chạy ads):</strong></p>
+<blockquote>
+<p>"Đây là offer hiện tại của tôi: [DÁN OFFER]. Đóng vai một khách hàng hoài nghi, ít tiền. Cho tôi 5 lý do bạn KHÔNG mua ngay, rồi đề xuất cách vá từng lý do để offer đủ mạnh trước khi tôi chi tiền quảng cáo."</p>
+</blockquote>
+<p><strong>Gemini (nghiên cứu khác biệt so với đối thủ):</strong></p>
+<blockquote>
+<p>"Ngành của tôi: [NGÀNH], khu vực: [ĐỊA BÀN]. Liệt kê các đối thủ chính và điểm bán chung của họ. Gợi ý 3 góc định vị khác biệt mà một DN nhỏ vốn ít có thể sở hữu, tránh cạnh tranh bằng giá. Ghi rõ đâu là suy đoán cần tôi kiểm chứng."</p>
+</blockquote>
+<p><strong>Perplexity (kiểm chứng số liệu &amp; ca thất bại):</strong></p>
+<blockquote>
+<p>"Tìm nguồn công khai, có năm, về [Kodak phá sản / Quibi đóng cửa / Nokia bán mảng di động]. Nêu mốc thời gian và nguyên nhân được ghi nhận, kèm link nguồn. Phân biệt rõ số liệu đã kiểm chứng và số liệu còn tranh cãi."</p>
+</blockquote>
+<p><strong>NotebookLM (biến chương này thành tài liệu học):</strong></p>
+<blockquote>
+<p>"Nạp chương 'SME &amp; Thất bại kinh điển' này. Tạo cho tôi: (1) bản tóm tắt 10 gạch đầu dòng, (2) bộ 8 câu hỏi tự kiểm, (3) checklist hành động 30 ngày dựa trên danh mục tử huyệt."</p>
+</blockquote>
+<p><strong>AI Agent (giám sát rủi ro định kỳ):</strong></p>
+<blockquote>
+<p>"Mỗi tháng, dựa trên số liệu tôi cung cấp (doanh thu theo kênh, CPA, tỷ lệ chuyển đổi, tỷ lệ khách quay lại), tính lại điểm khung tự đánh giá rủi ro SME (thang 0–20), cảnh báo nếu bất kỳ chỉ số nào xấu đi, và đề xuất 1 hành động ưu tiên cho tháng tới."</p>
+</blockquote>
+<hr />
+<h2>Tổng kết</h2>
+<ul>
+<li>Marketing <strong>khuếch đại</strong>, không <strong>sửa chữa</strong>. Sản phẩm/offer/mô hình sai thì càng nhiều tiền càng chết nhanh.</li>
+<li>SME thắng không nhờ ngân sách mà nhờ: <strong>thu hẹp để xuất sắc</strong>, <strong>niềm tin &amp; cộng đồng</strong>, và <strong>đổi luật chơi</strong> thay vì đấu tiền.</li>
+<li>Thất bại kinh điển hiếm khi vì thiếu tiền. Kodak, Quibi có thừa tiền. Chúng chết vì <strong>không thích ứng</strong> và <strong>giải quyết nhu cầu không có thật</strong>.</li>
+<li>Sáu tử huyệt phổ biến nhất của SME: offer yếu mà vẫn đốt ads, mở rộng quá nhanh, phụ thuộc một kênh, sao chép đối thủ, không có doanh thu lặp lại, và cạnh tranh bằng giá.</li>
+<li>Trước mỗi đồng quảng cáo, hãy hỏi: <em>Offer đã đủ mạnh chưa? Ta có khác biệt không? Ta có sở hữu khách hàng không?</em> Ba câu này cứu nhiều doanh nghiệp hơn bất kỳ chiến dịch nào.</li>
+</ul>
+<p><strong>Một câu mang về:</strong> <em>Đừng đổ nước (ngân sách) vào một cái xô thủng (offer/mô hình yếu) — hãy vá xô trước.</em></p>
+<hr />
+<h2>Nguồn tham khảo</h2>
+<p>Ghi chú: Các mốc thời gian dưới đây thuộc kiến thức phổ biến, được đưa tin rộng rãi; <strong>hãy đối chiếu nguồn gốc trước khi trích trong ấn phẩm chính thức</strong>. Không có link nào được bịa; người đọc tự tra cứu từ khóa + năm.</p>
+<ul>
+<li><strong>Kodak</strong> nộp đơn bảo hộ phá sản (Chapter 11) — 2012. (Tra cứu báo chí tài chính 2012.)</li>
+<li><strong>Nokia</strong> — mảng thiết bị &amp; dịch vụ di động được Microsoft mua lại, thương vụ hoàn tất 2014. (Thông cáo Microsoft/Nokia 2013–2014.)</li>
+<li><strong>BlackBerry</strong> — suy giảm thị phần smartphone và rút khỏi mảng phần cứng điện thoại. (Báo chí công nghệ, giai đoạn 2013–2016 trở đi.)</li>
+<li><strong>Quibi</strong> — ra mắt 4/2020, đóng cửa cuối 2020; vốn huy động và giá trị được báo chí đưa tin (~1,75 tỷ USD, <em>cần đối chiếu</em>).</li>
+<li><strong>Dollar Shave Club</strong> — video ra mắt 2012; Unilever mua lại 2016 (giá công bố ~1 tỷ USD theo báo chí thời điểm, <em>cần đối chiếu</em>).</li>
+<li><strong>Marketing myopia</strong> (cận thị marketing) — khái niệm gốc của Theodore Levitt, Harvard Business Review, 1960.</li>
+<li>Các <strong>ví dụ SME Việt Nam</strong> (quán ăn, local brand, shop online) trong chương là <strong>mô hình điển hình/minh họa</strong> tổng hợp từ mẫu hình phổ biến, <strong>không gắn với một doanh nghiệp cụ thể trừ khi nêu tên</strong>; con số cụ thể <em>cần kiểm chứng theo từng trường hợp thực tế</em>.</li>
+</ul>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Bổ sung ca SME Việt Nam có tên thật + số liệu kiểm chứng</strong> (được doanh nghiệp cho phép công bố) để thay dần các ví dụ điển hình.</li>
+<li><strong>Thêm thất bại/thành công thời AI (2024–2035):</strong> SME dùng AI đúng cách vs. lạm dụng nội dung AI hàng loạt làm loãng thương hiệu.</li>
+<li><strong>Cập nhật rủi ro phụ thuộc nền tảng</strong> khi thuật toán/chính sách sàn TMĐT và mạng xã hội thay đổi.</li>
+<li><strong>Thêm dữ liệu ngưỡng ngành</strong> (CPA, tỷ lệ chuyển đổi, tỷ lệ phụ thuộc kênh an toàn) theo từng ngành cụ thể tại Việt Nam khi có khảo sát đáng tin.</li>
+<li><strong>Đối chiếu lại các con số quốc tế</strong> (Quibi, Dollar Shave Club) với nguồn gốc trước mỗi lần tái bản.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-10-case-study-05-case-study-viet-nam.html"><span>← Trước</span>Tập 10 · Chương 5 — Case Study Việt Nam: Trung Nguyên · Highlands · Biti&#x27;s · FPT</a><a class="next" href="00-kien-truc-master-outline.html"><span>Sau →</span>Master Outline</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

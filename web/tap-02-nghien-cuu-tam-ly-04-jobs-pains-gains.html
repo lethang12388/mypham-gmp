@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 2 · Chương 4 — Customer Jobs, Pains, Gains &amp; Bản đồ giá trị</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 2 · Chương 4 — Customer Jobs, Pains, Gains &amp; Bản đồ giá trị</h1>
+<blockquote>
+<p><strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+<strong>Tập 2:</strong> Nghiên cứu Tâm lý &amp; Hành vi Khách hàng
+<strong>Chương:</strong> 4 — Customer Jobs, Pains, Gains &amp; Bản đồ giá trị khách hàng
+<strong>Cấp độ:</strong> Nền tảng → Nâng cao
+<strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành biểu mẫu)
+<strong>Yêu cầu tiên quyết:</strong> Đã đọc Chương 1.5 (Value Proposition Canvas tổng quan) và Tập 2 · Chương 1–3 (chân dung khách hàng, phỏng vấn, insight).</p>
+</blockquote>
+<p><strong>Tóm tắt một câu:</strong> Chương này đào sâu nửa <em>Customer Profile</em> của Value Proposition Canvas — cách bóc tách Jobs (chức năng/xã hội/cảm xúc), Pains, Gains của khách hàng, xếp hạng mức độ quan trọng và biến chúng thành nguyên liệu để thiết kế pain relievers và gain creators bằng một biểu mẫu điền được.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Hầu hết sản phẩm thất bại không phải vì làm tệ, mà vì giải quyết sai việc. Người làm marketing thường mô tả khách hàng bằng nhân khẩu học ("nữ, 25–35 tuổi, thu nhập 15 triệu") rồi dừng lại ở đó — trong khi điều thực sự quyết định mua hàng nằm ở câu hỏi: <em>"Khách hàng đang cố hoàn thành việc gì trong cuộc sống của họ, và điều gì đang cản trở?"</em></p>
+<p>Theodore Levitt, giáo sư Harvard, để lại câu nói kinh điển: <em>"Khách hàng không muốn mua một cái mũi khoan 6mm. Họ muốn một cái lỗ 6mm trên tường"</em> (Levitt, giảng dạy thập ni 1960, phổ biến qua <em>Marketing Myopia</em>, 1960). Nói cách khác, người ta "thuê" (hire) sản phẩm để làm một <em>công việc</em> (job). Chương này cho bạn công cụ để nhìn thấy công việc đó một cách có hệ thống.</p>
+<p>Chương 1.5 đã giới thiệu toàn cảnh Value Proposition Canvas (cả hai nửa: Value Map và Customer Profile). <strong>Chương 4 này chỉ tập trung vào nửa Customer Profile</strong> — phía khách hàng — và trả lời câu hỏi thực chiến: <em>làm sao khai thác, đo lường, xếp hạng Jobs–Pains–Gains ngoài thực địa</em>, rồi bắc cầu sang phía giải pháp.</p>
+<h2>2. Khái niệm</h2>
+<p>Ba khối cấu thành <em>Customer Profile</em>:</p>
+<ul>
+<li><strong>Customer Jobs (Công việc của khách hàng):</strong> những gì khách hàng đang cố hoàn thành trong công việc hoặc cuộc sống — nhiệm vụ cần làm, vấn đề cần giải, nhu cầu cần thỏa mãn.</li>
+<li><strong>Pains (Nỗi đau):</strong> những kết quả xấu, rủi ro, trở ngại, khó chịu mà khách hàng gặp phải <em>trước, trong và sau khi</em> thực hiện job.</li>
+<li><strong>Gains (Lợi ích mong muốn):</strong> những kết quả tốt và lợi ích mà khách hàng muốn đạt được — gồm cả điều bắt buộc, kỳ vọng, mong muốn lẫn điều bất ngờ.</li>
+</ul>
+<p>Ba loại Job theo bản chất:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Loại Job</th>
+<th>Định nghĩa</th>
+<th>Ví dụ (khách mua sữa rửa mặt)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Functional job</strong> (chức năng)</td>
+<td>Nhiệm vụ cụ thể, thực dụng cần hoàn thành</td>
+<td>"Làm sạch dầu và bụi bẩn trên da mặt buổi tối"</td>
+</tr>
+<tr>
+<td><strong>Social job</strong> (xã hội)</td>
+<td>Cách khách muốn được người khác nhìn nhận</td>
+<td>"Trông có làn da khỏe, được đồng nghiệp khen 'da đẹp'"</td>
+</tr>
+<tr>
+<td><strong>Emotional job</strong> (cảm xúc)</td>
+<td>Trạng thái cảm xúc khách muốn đạt/tránh</td>
+<td>"Cảm thấy tự tin, an tâm rằng da không bị kích ứng"</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ngoài ra còn <strong>supporting jobs</strong> (job hỗ trợ): mua hàng, so sánh, đánh giá, chia sẻ trải nghiệm.</p>
+<h2>3. Lịch sử hình thành</h2>
+<ul>
+<li><strong>Thập niên 1960:</strong> Theodore Levitt gieo hạt tư duy "khách hàng mua kết quả, không mua sản phẩm" (<em>Marketing Myopia</em>, HBR, 1960).</li>
+<li><strong>Thập niên 1990–2000s:</strong> Clayton Christensen (Harvard) phát triển thành lý thuyết <strong>Jobs-to-be-Done (JTBD)</strong> — nổi tiếng qua ví dụ "milkshake" của McDonald's và cuốn <em>The Innovator's Solution</em> (Christensen &amp; Raynor, 2003), sau đó <em>Competing Against Luck</em> (Christensen và cộng sự, 2016).</li>
+<li><strong>2014:</strong> Alex Osterwalder, Yves Pigneur và cộng sự xuất bản <strong>Value Proposition Design</strong> (Wiley, 2014), đóng gói JTBD vào <strong>Value Proposition Canvas</strong> với cấu trúc Jobs–Pains–Gains ở nửa Customer Profile, ghép với Products &amp; Services / Pain Relievers / Gain Creators ở nửa Value Map.</li>
+<li><strong>Song song:</strong> Tony Ulwick phát triển <strong>Outcome-Driven Innovation (ODI)</strong> với "desired outcome statements" đo lường được (<em>What Customers Want</em>, 2005; <em>Jobs to be Done: Theory to Practice</em>, 2016).</li>
+</ul>
+<p>Value Proposition Canvas là bản "phóng to" của hai ô trong Business Model Canvas (Value Propositions và Customer Segments) mà chính nhóm Osterwalder đã giới thiệu trước đó (<em>Business Model Generation</em>, 2010).</p>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Chống "cận thị marketing":</strong> buộc bạn nhìn việc khách cần làm thay vì tính năng bạn muốn khoe.</li>
+<li><strong>Đảm bảo product–market fit:</strong> fit đạt được khi pain relievers/gain creators khớp đúng những pain/gain <em>quan trọng nhất</em> — không phải mọi pain/gain.</li>
+<li><strong>Sắc bén hóa thông điệp:</strong> copywriting mạnh nhất khi nói trúng job cốt lõi và pain nhức nhối nhất, bằng đúng từ ngữ khách dùng.</li>
+<li><strong>Ưu tiên nguồn lực R&amp;D:</strong> biết pain nào "extreme" giúp đội sản phẩm dồn lực vào đúng chỗ.</li>
+<li><strong>Ngôn ngữ chung liên phòng ban:</strong> marketing, sản phẩm, sales, CSKH cùng nhìn một Customer Profile.</li>
+</ol>
+<p>Osterwalder nhấn mạnh: <em>fit không phải là liệt kê nhiều — mà là chọn đúng vài điểm quan trọng để đánh trúng</em> (Value Proposition Design, 2014).</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Nguyên lý cốt lõi: <strong>con người thuê giải pháp để hoàn thành job trong một bối cảnh cụ thể</strong>. Khi một tình huống (context) kích hoạt nhu cầu, khách hàng "sa thải" giải pháp cũ và "tuyển" giải pháp mới nếu nó làm job tốt hơn.</p>
+<p>Ba trục vận hành:</p>
+<ul>
+<li><strong>Trục Job:</strong> Job ổn định theo thời gian, nhưng <em>giải pháp</em> cho job thì thay đổi. Ví dụ job "kết nối với bạn bè" tồn tại hàng thế kỷ; giải pháp đi từ thư tay → điện thoại → Facebook → Zalo.</li>
+<li><strong>Trục Pain:</strong> Pain càng nghiêm trọng, càng thường xuyên, khách càng sẵn sàng trả tiền để giải quyết. Đo bằng cặp <em>mức độ nghiêm trọng × tần suất</em>.</li>
+<li><strong>Trục Gain:</strong> Gain chia bốn cấp — required (bắt buộc), expected (kỳ vọng), desired (mong muốn), unexpected (bất ngờ). Gain "unexpected" là nơi tạo khác biệt và "wow".</li>
+</ul>
+<p>Cơ chế bắc cầu: mỗi <strong>pain reliever</strong> phải chỉ đích danh giảm một pain cụ thể; mỗi <strong>gain creator</strong> phải tạo ra một gain cụ thể. Không có cầu nối 1–1 nghĩa là tính năng đang "mồ côi".</p>
+<h2>6. Mô hình</h2>
+<p>Canvas ASCII của <strong>Customer Profile</strong> (nửa hình tròn bên phải VPC):</p>
+<pre><code>                CUSTOMER PROFILE (Hồ sơ khách hàng)
+        ┌───────────────────────────────────────────┐
+        │                                             │
+        │        ┌──────── GAINS ────────┐            │
+        │        │  Lợi ích mong muốn:     │           │
+        │        │  - Required / Expected  │           │
+        │        │  - Desired / Unexpected │           │
+        │        └─────────────────────────┘           │
+        │                                             │
+        │            ┌──── CUSTOMER ────┐              │
+        │            │      JOBS         │             │
+        │            │  Functional       │    ( O )    │
+        │            │  Social           │  hình tròn  │
+        │            │  Emotional        │             │
+        │            │  Supporting       │             │
+        │            └───────────────────┘             │
+        │                                             │
+        │        ┌──────── PAINS ────────┐            │
+        │        │  Nỗi đau:               │           │
+        │        │  - Kết quả xấu          │           │
+        │        │  - Trở ngại / Rủi ro    │           │
+        │        └─────────────────────────┘           │
+        │                                             │
+        └───────────────────────────────────────────┘
+</code></pre>
+<p>Cầu nối sang <strong>Value Map</strong> (nửa hình vuông bên trái — thuộc phạm vi Chương 1.5, ở đây chỉ nhắc để thấy điểm nối):</p>
+<pre><code>   VALUE MAP  (giải pháp)              CUSTOMER PROFILE (khách hàng)
+   ┌───────────────────┐               ┌───────────────────┐
+   │ Gain Creators  ───┼──── khớp ───▶ │ Gains             │
+   │ Products&amp;Services─┼──── khớp ───▶ │ Customer Jobs     │
+   │ Pain Relievers ───┼──── khớp ───▶ │ Pains             │
+   └───────────────────┘               └───────────────────┘
+        ĐÂY LÀ NƠI &quot;FIT&quot; XẢY RA
+</code></pre>
+<h2>7. Framework</h2>
+<p><strong>Framework JPG-RANK 5 bước</strong> (tổng hợp từ VPC của Osterwalder + ODI của Ulwick), dùng xuyên suốt chương:</p>
+<ol>
+<li><strong>Discover</strong> — Khai quật Jobs/Pains/Gains qua phỏng vấn, quan sát, review, social listening (xem Tập 2 · Chương 2–3).</li>
+<li><strong>Classify</strong> — Phân loại: Job thuộc functional/social/emotional; Pain thuộc trước/trong/sau; Gain thuộc 4 cấp.</li>
+<li><strong>Rank</strong> — Xếp hạng theo <em>tầm quan trọng</em> (với Job/Gain) và <em>mức nghiêm trọng</em> (với Pain).</li>
+<li><strong>Bridge</strong> — Bắc cầu 1–1 sang pain relievers và gain creators.</li>
+<li><strong>Validate</strong> — Kiểm chứng fit bằng bằng chứng thực tế (khách trả tiền, giữ chân, giới thiệu).</li>
+</ol>
+<h2>8. Công thức</h2>
+<p>Không có "công thức toán" tuyệt đối, nhưng ba biểu thức thực chiến giúp lượng hóa để xếp hạng:</p>
+<p><strong>(1) Điểm quan trọng của Job / Gain:</strong></p>
+<pre><code>Job Importance = Mức quan trọng (1–5) × Tần suất xuất hiện (1–5)
+</code></pre>
+<p><strong>(2) Điểm nghiêm trọng của Pain:</strong></p>
+<pre><code>Pain Severity = Mức đau (1–5, &quot;extreme→moderate&quot;) × Tần suất (1–5)
+</code></pre>
+<p><strong>(3) Điểm cơ hội (mô phỏng theo Opportunity Score của Ulwick, ODI):</strong></p>
+<pre><code>Opportunity = Importance + max(0, Importance − Satisfaction)
+</code></pre>
+<p>Trong đó <em>Importance</em> = mức quan trọng khách đánh giá về một outcome; <em>Satisfaction</em> = mức hài lòng hiện tại với giải pháp đang dùng. Khoảng cách lớn (quan trọng cao, hài lòng thấp) = cơ hội lớn (Ulwick, <em>What Customers Want</em>, 2005; công thức mang tính tham chiếu, cần kiểm chứng khi áp dụng cụ thể).</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình 9 bước triển khai đầy đủ:</p>
+<ol>
+<li>Chọn <strong>1 phân khúc khách hàng</strong> cụ thể (đừng gộp nhiều nhóm vào một canvas).</li>
+<li>Liệt kê <strong>Customer Jobs</strong> — bắt đầu từ functional, sau đó truy social và emotional ẩn sau.</li>
+<li>Đánh dấu <strong>job cốt lõi (core job)</strong> vs <strong>job phụ (supporting/related jobs)</strong>.</li>
+<li>Liệt kê <strong>Pains</strong> cho từng job, theo dòng thời gian trước–trong–sau.</li>
+<li>Liệt kê <strong>Gains</strong> cho từng job, phân theo 4 cấp required/expected/desired/unexpected.</li>
+<li><strong>Xếp hạng</strong> bằng công thức ở Mục 8; giữ lại top ưu tiên.</li>
+<li>Xác minh bằng dữ liệu định tính (trích nguyên văn lời khách) + định lượng (khảo sát).</li>
+<li><strong>Bắc cầu</strong> sang pain relievers &amp; gain creators (điểm nối với Chương 1.5).</li>
+<li>Cập nhật canvas định kỳ (job thay đổi khi context thị trường thay đổi).</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Người dùng thuê một chiếc máy khoan cầm tay.</strong></p>
+<ul>
+<li><strong>Functional job:</strong> Treo một kệ sách lên tường bê tông.</li>
+<li><strong>Social job:</strong> Cho thấy mình "khéo tay", tự làm được việc nhà.</li>
+<li><strong>Emotional job:</strong> Cảm giác tự hào, hài lòng khi nhìn kệ thẳng và chắc.</li>
+<li><strong>Pain:</strong> Sợ khoan lệch, sợ nứt tường, mũi khoan cùn, ồn làm phiền hàng xóm.</li>
+<li><strong>Gain:</strong> Lỗ khoan chính xác, kệ chắc, làm xong nhanh, không bụi bẩn.</li>
+</ul>
+<p>Bài học: nếu chỉ nhìn functional job, bạn bán "công suất motor". Nếu nhìn cả emotional job, bạn bán "sự tự tin khoan chuẩn ngay lần đầu" — thông điệp mạnh hơn hẳn.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>McDonald's &amp; ly milkshake</strong> (case JTBD kinh điển của Christensen, <em>Competing Against Luck</em>, 2016):</p>
+<p>McDonald's muốn tăng doanh số milkshake. Ban đầu họ cải tiến theo nhân khẩu học (thêm vị, thay đặc hơn) nhưng vô hiệu. Khi nghiên cứu theo <em>job</em>, nhóm phát hiện gần một nửa milkshake được mua vào buổi sáng, bởi người đi làm lái xe một mình.</p>
+<ul>
+<li><strong>Job được thuê:</strong> "Giúp tôi <em>bận rộn tay và không đói</em> suốt chặng lái xe dài buồn chán tới công ty."</li>
+<li><strong>Đối thủ thực sự:</strong> không phải milkshake hãng khác, mà là chuối, bánh donut, thanh bagel.</li>
+<li><strong>Pain của giải pháp cũ:</strong> chuối hết nhanh, donut vụn dính tay, bagel khô.</li>
+<li><strong>Gain mong muốn:</strong> đặc để hút lâu, một tay cầm được, gọn gàng.</li>
+</ul>
+<p>Kết luận: cùng một sản phẩm phục vụ <em>hai job khác nhau</em> (sáng: chống buồn chán khi lái xe; chiều: làm vui lòng con) — mỗi job cần thiết kế khác nhau.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Grab / dịch vụ gọi xe &amp; giao đồ ăn tại Việt Nam.</strong></p>
+<p>Xét phân khúc <em>nhân viên văn phòng đô thị, giờ nghỉ trưa</em>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Khối</th>
+<th>Nội dung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Functional job</strong></td>
+<td>"Có bữa trưa nóng, no bụng mà không phải rời văn phòng giữa trời nắng/mưa"</td>
+</tr>
+<tr>
+<td><strong>Social job</strong></td>
+<td>"Đặt món cùng nhóm đồng nghiệp, không bị xem là phiền phức"</td>
+</tr>
+<tr>
+<td><strong>Emotional job</strong></td>
+<td>"An tâm món đến đúng giờ, không phải lo trễ họp chiều"</td>
+</tr>
+<tr>
+<td><strong>Pains</strong></td>
+<td>Kẹt xe giờ trưa, đồ nguội, phí ship cao, tài xế gọi khó tìm địa chỉ, hết món</td>
+</tr>
+<tr>
+<td><strong>Gains</strong></td>
+<td>Giao nhanh &amp; đúng giờ, nhiều mã giảm giá, biết trước thời gian giao, đánh giá được tài xế</td>
+</tr>
+</tbody>
+</table></div>
+<p>Thiết kế của Grab (theo dõi đơn theo thời gian thực, ưu đãi GrabFood, đánh giá sao) chính là các <em>pain reliever</em> và <em>gain creator</em> khớp đúng khối này. Lưu ý: đây là phân tích minh họa dựa trên hành vi phổ biến; các con số thị phần cần tra cứu báo cáo chính thức (ví dụ báo cáo e-Conomy SEA của Google–Temasek–Bain) trước khi trích dẫn.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Airbnb.</strong> Osterwalder và nhóm thường dùng lĩnh vực lưu trú để minh họa VPC.</p>
+<p>Phân khúc <em>khách du lịch trẻ, ngân sách vừa, muốn trải nghiệm "sống như dân bản địa"</em>:</p>
+<ul>
+<li><strong>Functional job:</strong> Có chỗ ngủ an toàn ở thành phố lạ trong 3 đêm.</li>
+<li><strong>Social job:</strong> Kể lại chuyến đi "authentic", khác kiểu khách sạn đại trà.</li>
+<li><strong>Emotional job:</strong> Cảm giác thuộc về, được chào đón như người địa phương.</li>
+<li><strong>Pains:</strong> Khách sạn đắt, vô danh, không có bếp, khó gặp người bản xứ.</li>
+<li><strong>Gains:</strong> Giá hợp lý, không gian như nhà, host gợi ý địa điểm "chỉ dân địa phương biết".</li>
+</ul>
+<p>Slogan "Belong Anywhere" của Airbnb đánh thẳng vào <em>emotional job</em> (cảm giác thuộc về) chứ không phải functional job (chỗ ngủ) — minh chứng sức mạnh của việc đào sâu job cảm xúc.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Chỉ liệt kê functional job</strong>, bỏ quên social/emotional — nơi cảm xúc mua hàng thật sự nằm.</li>
+<li><strong>Gộp nhiều phân khúc</strong> vào một canvas → hồ sơ nhòe, ưu tiên sai.</li>
+<li><strong>Mô tả job bằng ngôn ngữ giải pháp của mình</strong> ("khách cần app của chúng tôi") thay vì ngôn ngữ job của khách ("khách cần đặt món nhanh").</li>
+<li><strong>Không xếp hạng</strong> — coi mọi pain/gain quan trọng như nhau, dàn trải nguồn lực.</li>
+<li><strong>Nhầm pain với "thiếu tính năng của bạn"</strong> — pain là vấn đề của khách, tồn tại độc lập với sản phẩm bạn.</li>
+<li><strong>Bịa job từ phòng họp</strong> thay vì khai quật từ khách thật (vi phạm nguyên tắc "get out of the building").</li>
+<li><strong>Quên gain "unexpected"</strong> — bỏ lỡ cơ hội tạo yếu tố "wow" khác biệt.</li>
+<li><strong>Canvas làm một lần rồi bỏ</strong> — job dịch chuyển theo thời gian, cần cập nhật.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p>Checklist hoàn thành một Customer Profile đạt chuẩn:</p>
+<ul>
+<li>[ ] Đã chọn đúng <strong>một</strong> phân khúc khách hàng cụ thể.</li>
+<li>[ ] Có ít nhất 3 functional, 2 social, 2 emotional jobs.</li>
+<li>[ ] Đã đánh dấu rõ <strong>1 core job</strong> và các job phụ.</li>
+<li>[ ] Mỗi job có Pains ứng với trước–trong–sau.</li>
+<li>[ ] Gains đã phân theo 4 cấp (required/expected/desired/unexpected).</li>
+<li>[ ] Đã <strong>xếp hạng</strong> tất cả bằng điểm số (Mục 8).</li>
+<li>[ ] Có ≥ 10 câu trích nguyên văn từ khách hàng thật làm bằng chứng.</li>
+<li>[ ] Mỗi pain/gain top ưu tiên đã có cầu nối tới một pain reliever/gain creator.</li>
+<li>[ ] Đã kiểm chứng fit bằng dữ liệu hành vi (không chỉ ý kiến).</li>
+<li>[ ] Ghi ngày cập nhật và người phụ trách canvas.</li>
+</ul>
+<h2>16. SOP</h2>
+<p><strong>SOP: Xây dựng Customer Profile trong 5 ngày làm việc</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Việc</th>
+<th>Đầu ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Chọn phân khúc, thu thập dữ liệu sẵn có (review, CSKH, social)</td>
+<td>Danh sách job/pain/gain thô</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Phỏng vấn 5–8 khách hàng theo kịch bản JTBD</td>
+<td>Bản ghi + trích nguyên văn</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Phân loại, gom nhóm, khử trùng lặp</td>
+<td>Danh sách đã phân loại</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Khảo sát định lượng chấm điểm importance/satisfaction (n ≥ 30)</td>
+<td>Bảng điểm xếp hạng</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Chốt canvas, bắc cầu sang value map, trình bày</td>
+<td>Canvas hoàn chỉnh + bản trình bày</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Trách nhiệm:</strong> Marketing chủ trì; Sản phẩm và Sales tham gia ngày 3–5; Data hỗ trợ ngày 4.
+<strong>Tần suất cập nhật:</strong> mỗi quý hoặc khi có thay đổi lớn về thị trường/đối thủ.</p>
+<h2>17. KPI</h2>
+<p>Chỉ số đo hiệu quả việc ứng dụng Jobs–Pains–Gains:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+<th>Gợi ý cách đo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Job coverage</strong></td>
+<td>% top job đã có giải pháp khớp</td>
+<td>(số job có pain reliever/gain creator) / (tổng top job)</td>
+</tr>
+<tr>
+<td><strong>Pain resolution rate</strong></td>
+<td>% pain nghiêm trọng đã được giải quyết</td>
+<td>Khảo sát trước–sau</td>
+</tr>
+<tr>
+<td><strong>Message resonance</strong></td>
+<td>Mức "trúng" của thông điệp</td>
+<td>A/B test CTR, thời gian ở lại trang</td>
+</tr>
+<tr>
+<td><strong>Fit evidence</strong></td>
+<td>Bằng chứng product–market fit</td>
+<td>Tỷ lệ giữ chân, NPS, tỷ lệ giới thiệu</td>
+</tr>
+<tr>
+<td><strong>Opportunity gap</strong></td>
+<td>Khoảng cách Importance − Satisfaction</td>
+<td>Khảo sát ODI (Ulwick, 2005)</td>
+</tr>
+<tr>
+<td><strong>Conversion by job</strong></td>
+<td>Tỷ lệ chuyển đổi phân theo job</td>
+<td>Gắn thẻ job vào phễu</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lưu ý: mọi con số ngưỡng "tốt/xấu" phải hiệu chỉnh theo ngành và cần benchmark thực tế (cần kiểm chứng), không áp một chuẩn chung.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>BIỂU MẪU BẢN ĐỒ JOBS–PAINS–GAINS (điền được)</strong></p>
+<p><em>Phân khúc khách hàng:</em> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_  <em>Ngày:</em> <strong><em>_</em></strong><strong><em>  <em>Người lập:</em> </em></strong><strong><em>_</em></strong></p>
+<p><strong>Phần A — Customer Jobs</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mô tả Job (ngôn ngữ của khách)</th>
+<th>Loại (F/S/E)</th>
+<th>Core hay Phụ</th>
+<th>Quan trọng (1–5)</th>
+<th>Tần suất (1–5)</th>
+<th>Điểm = QT×TS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>J2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>J3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>J4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(F = Functional, S = Social, E = Emotional)</em></p>
+<p><strong>Phần B — Pains</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mô tả Pain</th>
+<th>Gắn với Job #</th>
+<th>Trước/Trong/Sau</th>
+<th>Mức đau (1–5)</th>
+<th>Tần suất (1–5)</th>
+<th>Điểm nghiêm trọng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>P2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>P3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phần C — Gains</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mô tả Gain</th>
+<th>Gắn với Job #</th>
+<th>Cấp (Req/Exp/Des/Unexp)</th>
+<th>Quan trọng (1–5)</th>
+<th>Hài lòng hiện tại (1–5)</th>
+<th>Opportunity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>G2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>G3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phần D — Bắc cầu sang giải pháp</strong> (điểm nối Chương 1.5)</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pain/Gain ưu tiên</th>
+<th>Pain Reliever / Gain Creator tương ứng</th>
+<th>Đã có? (✓/✗)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phần E — Bằng chứng</strong> (trích nguyên văn ≥ 5 câu khách nói): <strong><em>_</em></strong><strong><em>_</em></strong>______</p>
+<h2>19. Prompt AI (6 công cụ)</h2>
+<p>Dưới đây là prompt mẫu cho 6 công cụ. Thay <code>[...]</code> bằng thông tin của bạn. Luôn kiểm chứng đầu ra AI với khách hàng thật — AI có thể "bịa" job không tồn tại.</p>
+<p><strong>1. ChatGPT (OpenAI)</strong></p>
+<pre><code>Đóng vai chuyên gia Jobs-to-be-Done. Phân khúc: [mô tả]. Hãy liệt kê
+10 functional jobs, 5 social jobs, 5 emotional jobs, viết bằng ngôn ngữ
+của khách (không dùng tên sản phẩm của tôi). Đánh dấu 1 core job. Trình
+bày dạng bảng có cột loại job và giả định mức quan trọng 1–5.
+</code></pre>
+<p><strong>2. Claude (Anthropic)</strong></p>
+<pre><code>Tôi cung cấp 8 bản ghi phỏng vấn khách hàng dưới đây [dán]. Hãy trích
+xuất Customer Jobs, Pains, Gains theo cấu trúc Value Proposition Canvas
+của Osterwalder. Với mỗi mục, trích 1 câu nguyên văn làm bằng chứng và
+gắn nhãn functional/social/emotional. Cảnh báo nếu suy luận vượt dữ liệu.
+</code></pre>
+<p><strong>3. Gemini (Google)</strong></p>
+<pre><code>Dựa trên các đánh giá công khai về [ngành/sản phẩm], tổng hợp các pain
+phổ biến nhất và xếp theo tần suất xuất hiện. Ghi rõ nguồn dạng đánh giá
+nào. Không bịa số liệu; nếu không đủ dữ liệu hãy nói rõ.
+</code></pre>
+<p><strong>4. Copilot (Microsoft)</strong></p>
+<pre><code>Giúp tôi soạn bảng khảo sát định lượng chấm điểm Importance (1–5) và
+Satisfaction (1–5) cho 12 outcome sau [liệt kê], theo phương pháp
+Outcome-Driven Innovation của Ulwick. Xuất ra bảng dán vào Excel/Forms.
+</code></pre>
+<p><strong>5. Perplexity</strong></p>
+<pre><code>Tìm các nghiên cứu/báo cáo công khai (kèm nguồn và năm) về hành vi và
+nỗi đau của [phân khúc] tại thị trường Việt Nam. Chỉ trả kết quả có
+trích dẫn kiểm chứng được; ghi rõ nếu dữ liệu cũ hoặc thiếu.
+</code></pre>
+<p><strong>6. NotebookLM (Google)</strong></p>
+<pre><code>Tôi tải lên các bản ghi phỏng vấn và báo cáo thị trường. Hãy tạo bản
+tóm tắt Jobs–Pains–Gains, chỉ dựa trên tài liệu đã tải, kèm trích dẫn
+tới đoạn nguồn cho từng phát hiện.
+</code></pre>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Bóc job ẩn:</strong> Chọn một sản phẩm bạn dùng hàng ngày. Viết 1 functional, 1 social, 1 emotional job. Cái nào là core?</li>
+<li><strong>Điền biểu mẫu:</strong> Dùng Mục 18, phỏng vấn 3 người quen về một hành vi mua gần đây; điền đủ Phần A–B–C.</li>
+<li><strong>Xếp hạng:</strong> Tính điểm cho toàn bộ job/pain/gain đã thu; chọn top 3 ưu tiên và giải thích.</li>
+<li><strong>Bắc cầu:</strong> Với top 3 pain, thiết kế 3 pain reliever tương ứng (nối sang Chương 1.5).</li>
+<li><strong>Phản biện:</strong> Tìm một quảng cáo bạn thấy dở; đoán job nó <em>tưởng</em> đang phục vụ vs job khách <em>thật sự</em> có.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt functional, social và emotional job. Cho một ví dụ mỗi loại.</li>
+<li>Vì sao phải phân biệt core job và supporting job?</li>
+<li>Bốn cấp của Gains là gì? Cấp nào tạo yếu tố "wow"?</li>
+<li>Nêu công thức xếp hạng Pain và giải thích từng biến.</li>
+<li>Opportunity Score (Ulwick) đo điều gì? Khi nào cơ hội lớn?</li>
+<li>"Fit" trong Value Proposition Canvas nghĩa là gì?</li>
+<li>Chương 4 khác Chương 1.5 ở điểm trọng tâm nào?</li>
+<li>Kể 3 sai lầm thường gặp khi lập Customer Profile.</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công — Netflix (chuyển từ DVD sang streaming).</strong>
+Netflix nhìn ra job cốt lõi của khách không phải "nhận đĩa DVD qua thư" mà là <em>"được xem nội dung tôi thích, ngay khi tôi muốn, không phiền phức"</em>.
+- Pain của mô hình cũ (và của Blockbuster): phải ra cửa hàng, phí trả trễ, hết đĩa hot.
+- Gain mong muốn: xem tức thì, tùy chọn rộng, không phạt phí.
+Bằng việc thiết kế streaming đánh trúng emotional job "thư giãn không rào cản" và loại bỏ pain "phí trả trễ", Netflix vượt qua Blockbuster. Bài học: cùng industry, ai đọc đúng job dịch chuyển sẽ thắng.</p>
+<p><strong>Case thất bại — Google Glass (2013–2015).</strong>
+Google Glass là kỳ tích công nghệ nhưng thất bại thương mại ở bản tiêu dùng.
+- Vấn đề job: sản phẩm giải một functional job mơ hồ ("truy cập thông tin rảnh tay") mà không đủ nhức để khách "thuê".
+- Pain <em>mới</em> nó tạo ra lớn hơn pain nó giải: người xung quanh lo bị quay lén (social pain), người đeo bị gọi là "Glasshole" (social job phản tác dụng), giá cao, pin yếu.
+- Không có gain "must-have" rõ ràng cho đời sống hằng ngày.
+Bài học: một sản phẩm có thể xuất sắc về kỹ thuật nhưng vẫn thất bại nếu không khớp một job đủ quan trọng và lại tạo ra social pain nghiêm trọng. (Chi tiết mốc thời gian và lý do nên tham chiếu phân tích báo chí công nghệ giai đoạn 2013–2015; cần kiểm chứng khi trích số liệu.)</p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li>Khách hàng <strong>thuê</strong> sản phẩm để hoàn thành một <strong>job</strong>; job chia thành functional, social, emotional (và supporting).</li>
+<li><strong>Pains</strong> là điều cản trở job; <strong>Gains</strong> là kết quả tốt khách mong, chia 4 cấp.</li>
+<li>Sức mạnh nằm ở <strong>xếp hạng</strong>: chỉ đánh vào job cốt lõi, pain nhức nhối nhất, gain quan trọng nhất.</li>
+<li><strong>Fit</strong> xảy ra khi pain relievers/gain creators khớp đúng những điểm quan trọng — không phải liệt kê nhiều.</li>
+<li>Chương này đào sâu <strong>phía khách hàng</strong> và cách <em>khai quật, đo lường, xếp hạng</em>; Chương 1.5 lo phía giải pháp và toàn cảnh canvas.</li>
+<li>Công cụ hành động chính: <strong>biểu mẫu Mục 18</strong> — điền được, có thể triển khai ngay tuần này.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<ul>
+<li>Levitt, T. (1960). <em>Marketing Myopia</em>. Harvard Business Review.</li>
+<li>Christensen, C. &amp; Raynor, M. (2003). <em>The Innovator's Solution</em>. Harvard Business Review Press.</li>
+<li>Christensen, C., Hall, T., Dillon, K., Duncan, D. (2016). <em>Competing Against Luck: The Story of Innovation and Customer Choice</em>. HarperBusiness.</li>
+<li>Ulwick, A. (2005). <em>What Customers Want: Using Outcome-Driven Innovation</em>. McGraw-Hill.</li>
+<li>Ulwick, A. (2016). <em>Jobs to be Done: Theory to Practice</em>. Idea Bite Press.</li>
+<li>Osterwalder, A., Pigneur, Y., Bernarda, G., Smith, A. (2014). <em>Value Proposition Design</em>. Wiley.</li>
+<li>Osterwalder, A. &amp; Pigneur, Y. (2010). <em>Business Model Generation</em>. Wiley.</li>
+<li>Google, Temasek &amp; Bain — <em>e-Conomy SEA</em> (báo cáo thường niên về kinh tế số Đông Nam Á; tra cứu bản mới nhất khi trích số liệu).</li>
+</ul>
+<p><em>(Ghi chú học thuật: mọi số liệu thị phần, tỷ lệ, mốc thời gian chi tiết cần tra cứu nguồn gốc trước khi trích dẫn trong tài liệu chính thức. Các ví dụ doanh nghiệp mang tính minh họa nguyên lý.)</em></p>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li>Bổ sung dữ liệu thị trường Việt Nam mới nhất (báo cáo e-Conomy SEA, Kantar, Nielsen) với số liệu đã kiểm chứng và trích dẫn cụ thể.</li>
+<li>Cập nhật tác động của <strong>AI tạo sinh</strong> tới việc khai quật Jobs–Pains–Gains (social listening tự động, phân tích review quy mô lớn) — kèm cảnh báo rủi ro "bịa job".</li>
+<li>Thêm case study Việt Nam thất bại có phân tích công khai đầy đủ.</li>
+<li>Đối chiếu VPC với các framework mới nổi (JTBD "Forces of Progress", ODI cập nhật) nếu có ấn bản mới sau 2024.</li>
+<li>Bổ sung bộ chỉ số benchmark theo ngành cho phần KPI (Mục 17) khi có dữ liệu đáng tin.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-02-nghien-cuu-tam-ly-03-persona-avatar-insight.html"><span>← Trước</span>Tập 2 · Chương 3 — Insight khách hàng &amp; Xây dựng Persona/Avatar</a><a class="next" href="tap-02-nghien-cuu-tam-ly-05-phan-tich-doi-thu.html"><span>Sau →</span>Tập 2 · Chương 5 — Phân tích đối thủ &amp; Bối cảnh cạnh tranh</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

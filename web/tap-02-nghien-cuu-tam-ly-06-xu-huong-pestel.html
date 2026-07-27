@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 2 · Chương 6 — Xu hướng, Dự báo &amp; Quét môi trường (PESTEL)</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 2 · Chương 6 — Xu hướng, Dự báo &amp; Quét môi trường (PESTEL)</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+- <strong>Tập:</strong> 2 — Nghiên cứu &amp; Tâm lý
+- <strong>Chương:</strong> 6
+- <strong>Chủ đề:</strong> Xu hướng, Dự báo &amp; Quét môi trường (PESTEL)
+- <strong>Đối tượng:</strong> Sinh viên marketing, marketer, chủ doanh nghiệp vừa và nhỏ, quản lý thương hiệu
+- <strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành biểu mẫu)
+- <strong>Phiên bản:</strong> 1.0 · Cập nhật: 2026-07
+- <strong>Yêu cầu tiên quyết:</strong> Chương 1–5 (nghiên cứu thị trường, hành vi, insight khách hàng)</p>
+</blockquote>
+<p><strong>Tóm tắt một câu:</strong> Chương này dạy bạn cách quét môi trường vĩ mô bằng khung PESTEL, phân biệt xu hướng thật với trào lưu nhất thời, lập kịch bản tương lai và dự báo nhu cầu để ra quyết định marketing chủ động thay vì bị động chạy theo thị trường.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Mọi chiến dịch marketing đều diễn ra bên trong một môi trường lớn hơn chính nó — nơi có chính sách nhà nước thay đổi, lãi suất lên xuống, thói quen tiêu dùng dịch chuyển, công nghệ mới xuất hiện, biến đổi khí hậu tác động và luật pháp siết chặt. Một marketer chỉ nhìn vào sản phẩm và đối thủ mà bỏ qua bức tranh vĩ mô sẽ giống như thuyền trưởng chỉ nhìn boong tàu mà quên nhìn thời tiết.</p>
+<p>Chương này trang bị cho bạn một "radar" để quét môi trường vĩ mô một cách có hệ thống, thay vì đọc tin tức ngẫu nhiên rồi giật mình. Công cụ chủ lực là <strong>PESTEL</strong> — sáu lăng kính giúp bạn nhìn thấy những lực đẩy đang định hình thị trường trước khi chúng biến thành cơ hội của người khác hoặc rủi ro của bạn.</p>
+<p>Điều quan trọng: quét môi trường không phải để dự đoán chính xác tương lai (không ai làm được điều đó), mà để <strong>chuẩn bị cho nhiều tương lai có thể xảy ra</strong>. Đó là lý do chương này kết hợp PESTEL với tư duy lập kịch bản (scenario planning) và dự báo nhu cầu ở mức cơ bản.</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Quét môi trường (Environmental Scanning):</strong> hoạt động thu thập, sàng lọc và diễn giải thông tin về các yếu tố bên ngoài có khả năng ảnh hưởng đến doanh nghiệp, nhằm phát hiện sớm cơ hội và rủi ro.</p>
+<p><strong>PESTEL:</strong> khung phân tích môi trường vĩ mô gồm sáu nhóm yếu tố:
+- <strong>P – Political (Chính trị):</strong> chính sách, ổn định chính trị, thuế, thương mại quốc tế, đầu tư công.
+- <strong>E – Economic (Kinh tế):</strong> tăng trưởng GDP, lạm phát, lãi suất, tỷ giá, thu nhập, việc làm, sức mua.
+- <strong>S – Social (Xã hội – Văn hóa):</strong> dân số, độ tuổi, lối sống, giá trị, thói quen tiêu dùng, giáo dục.
+- <strong>T – Technological (Công nghệ):</strong> công nghệ mới, tự động hóa, AI, hạ tầng số, tốc độ đổi mới.
+- <strong>E – Environmental (Môi trường):</strong> biến đổi khí hậu, tài nguyên, phát thải, kinh tế tuần hoàn, kỳ vọng "xanh".
+- <strong>L – Legal (Pháp lý):</strong> luật lao động, bảo vệ người tiêu dùng, quảng cáo, dữ liệu cá nhân, sở hữu trí tuệ.</p>
+<p><strong>Xu hướng (Trend) vs. Trào lưu nhất thời (Fad):</strong> <em>Trend</em> là chuyển dịch có nền tảng, kéo dài nhiều năm, có động lực cấu trúc (nhân khẩu học, công nghệ). <em>Fad</em> là cơn sốt ngắn hạn, bùng nổ nhanh và tắt nhanh, thiếu nền tảng bền vững.</p>
+<p><strong>Lập kịch bản (Scenario Planning):</strong> phương pháp xây dựng vài viễn cảnh tương lai khác biệt để kiểm tra độ vững của chiến lược trước các bất định.</p>
+<h2>3. Lịch sử hình thành</h2>
+<p>Tư duy quét môi trường vĩ mô hình thành từ thập niên 1960–1970. Nhà nghiên cứu Francis Aguilar trong cuốn <em>Scanning the Business Environment</em> (1967) đề xuất khung <strong>ETPS</strong> (Economic, Technical, Political, Social) — được xem là tiền thân của PEST/PESTEL (cần kiểm chứng chi tiết theo bản gốc).</p>
+<p>Qua thời gian, khung này được mở rộng: thêm <strong>Legal</strong> thành PESTLE, thêm <strong>Environmental</strong> thành PESTEL, tạo nên phiên bản sáu yếu tố phổ biến ngày nay. Song song, tập đoàn dầu khí <strong>Shell</strong> tiên phong áp dụng <strong>scenario planning</strong> từ thập niên 1970, nổi tiếng vì đã chuẩn bị trước cho cú sốc dầu mỏ 1973 — trở thành ví dụ kinh điển cho việc quét môi trường giúp doanh nghiệp không bị bất ngờ (cần kiểm chứng chi tiết).</p>
+<p>Đến thập niên 2010–2020, với dữ liệu số bùng nổ, quét môi trường chuyển từ "đọc báo cáo định kỳ" sang "lắng nghe liên tục" nhờ công cụ social listening, Google Trends và ngày nay là AI.</p>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Ra quyết định chủ động, không bị động:</strong> phát hiện sớm giúp bạn định vị trước đối thủ.</li>
+<li><strong>Giảm rủi ro chiến lược:</strong> một thay đổi luật (ví dụ luật bảo vệ dữ liệu cá nhân) có thể vô hiệu hóa cả một mô hình marketing dựa trên cookie.</li>
+<li><strong>Phân bổ nguồn lực đúng chỗ:</strong> biết đâu là trend thật để đầu tư, đâu là fad để tránh lãng phí ngân sách.</li>
+<li><strong>Đầu vào cho mọi khung khác:</strong> PESTEL cung cấp phần "cơ hội" và "thách thức" cho SWOT, phần "vĩ mô" cho phân tích ngành.</li>
+<li><strong>Nuôi dưỡng tư duy dài hạn:</strong> giai đoạn 2026–2035 chứng kiến AI, bền vững và thay đổi nhân khẩu học đan xen — doanh nghiệp không quét môi trường sẽ dễ lỗi thời.</li>
+</ol>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Quét môi trường vận hành theo một vòng lặp bốn nhịp:</p>
+<ol>
+<li><strong>Scanning (Quét):</strong> liên tục thu thập tín hiệu yếu (weak signals) từ nhiều nguồn.</li>
+<li><strong>Monitoring (Theo dõi):</strong> khoanh vùng các tín hiệu đáng chú ý và quan sát chúng biến đổi theo thời gian.</li>
+<li><strong>Forecasting (Dự báo):</strong> phóng chiếu xu hướng để ước lượng hướng đi và mức độ tác động.</li>
+<li><strong>Assessing (Đánh giá):</strong> diễn giải ý nghĩa với doanh nghiệp cụ thể của bạn — cơ hội hay đe dọa, gần hay xa.</li>
+</ol>
+<p>Nguyên lý cốt lõi: <strong>tín hiệu càng yếu, phát hiện càng sớm, lợi thế càng lớn — nhưng độ bất định cũng càng cao.</strong> Vì vậy quét môi trường luôn đi kèm việc phân loại tín hiệu theo hai trục: <strong>mức độ tác động</strong> và <strong>khả năng xảy ra</strong>.</p>
+<pre><code>        Tác động CAO
+             │
+   Theo dõi  │  Hành động
+   sát sao   │  ngay
+─────────────┼───────────── Khả năng xảy ra
+   Bỏ qua    │  Chuẩn bị
+   (ghi nhận)│  kịch bản
+             │
+        Tác động THẤP
+</code></pre>
+<h2>6. Mô hình</h2>
+<p><strong>Mô hình sáu lăng kính PESTEL</strong> đặt doanh nghiệp ở trung tâm, sáu nhóm lực vĩ mô bao quanh:</p>
+<pre><code>                 [ CHÍNH TRỊ (P) ]
+                        │
+   [ PHÁP LÝ (L) ] ──── ● ──── [ KINH TẾ (E) ]
+                     DOANH
+                    NGHIỆP
+   [ MÔI TRƯỜNG(E)]──── ● ──── [ XÃ HỘI (S) ]
+                        │
+               [ CÔNG NGHỆ (T) ]
+</code></pre>
+<p>Sáu lực này <strong>không tách rời</strong> mà tương tác: công nghệ AI (T) tạo ra nhu cầu luật mới về dữ liệu (L); áp lực môi trường (E) thúc đẩy chính sách thuế carbon (P); lạm phát (E-kinh tế) thay đổi thói quen tiêu dùng (S). Marketer giỏi đọc được các "dây chuyền nhân quả" giữa sáu lực, không chỉ liệt kê rời rạc.</p>
+<h2>7. Framework</h2>
+<p>Ngoài PESTEL, ba framework bổ trợ thường dùng trong quét xu hướng:</p>
+<ul>
+<li><strong>Ba tầng tín hiệu (Three Horizons):</strong> H1 – hiện tại (12 tháng), H2 – chuyển tiếp (2–5 năm), H3 – tương lai xa (5–10 năm). Giúp cân bằng giữa khai thác hiện tại và chuẩn bị tương lai.</li>
+<li><strong>STEEP / PESTEL-DG:</strong> biến thể nhấn mạnh yếu tố Nhân khẩu học (Demographic) và Toàn cầu hóa (Global) — hữu ích cho thị trường Việt Nam đang có cơ cấu dân số vàng và hội nhập sâu.</li>
+<li><strong>Trend Radar:</strong> biểu đồ vòng tròn đồng tâm, xu hướng càng gần tâm càng cấp thiết; phân theo múi P-E-S-T-E-L. Trực quan để trình bày cho ban lãnh đạo.</li>
+</ul>
+<p>Nguyên tắc phối hợp: <strong>PESTEL để quét rộng → Three Horizons để phân kỳ thời gian → Trend Radar để trình bày và ưu tiên.</strong></p>
+<h2>8. Công thức</h2>
+<p>Quét môi trường thiên về định tính, nhưng có vài công thức nền tảng cho phần dự báo nhu cầu:</p>
+<p><strong>1) Điểm ưu tiên xu hướng (Trend Priority Score):</strong></p>
+<pre><code>TPS = Mức độ tác động (1–5) × Khả năng xảy ra (1–5) × Độ cấp thiết thời gian (1–3)
+</code></pre>
+<p>TPS càng cao càng cần đưa vào kế hoạch sớm.</p>
+<p><strong>2) Dự báo trung bình trượt (Moving Average) — làm mượt dữ liệu quá khứ:</strong></p>
+<pre><code>Dự báo(t) = (D(t-1) + D(t-2) + ... + D(t-n)) / n
+</code></pre>
+<p><strong>3) Làm mượt hàm mũ (Exponential Smoothing):</strong></p>
+<pre><code>F(t) = α × D(t-1) + (1 − α) × F(t-1)
+</code></pre>
+<p>với α (0–1) là hệ số làm mượt; α cao phản ứng nhanh với thay đổi gần đây.</p>
+<p><strong>4) Ngoại suy tăng trưởng đơn giản:</strong></p>
+<pre><code>Nhu cầu dự báo = Nhu cầu hiện tại × (1 + tốc độ tăng trưởng kỳ vọng)^số kỳ
+</code></pre>
+<p>Lưu ý: mọi công thức dự báo đều dựa trên giả định quá khứ phản ánh tương lai — khi môi trường biến động mạnh (đứt gãy công nghệ, khủng hoảng), cần điều chỉnh bằng phán đoán chuyên gia và kịch bản.</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình quét môi trường PESTEL 7 bước:</p>
+<ol>
+<li><strong>Xác định phạm vi &amp; mục tiêu:</strong> quét cho quyết định gì? Thị trường/ngành/khu vực nào? Khung thời gian nào?</li>
+<li><strong>Chọn nguồn dữ liệu:</strong> báo cáo nhà nước, hiệp hội ngành, dữ liệu số, khảo sát, phỏng vấn chuyên gia.</li>
+<li><strong>Thu thập tín hiệu theo 6 nhóm PESTEL:</strong> điền vào biểu mẫu (mục 18).</li>
+<li><strong>Sàng lọc &amp; phân loại:</strong> loại nhiễu, giữ tín hiệu liên quan; phân biệt trend vs fad (mục 5, 14).</li>
+<li><strong>Đánh giá tác động &amp; khả năng:</strong> chấm điểm bằng TPS, đặt lên ma trận.</li>
+<li><strong>Lập kịch bản &amp; dự báo:</strong> dựng 2–4 viễn cảnh, dự báo nhu cầu cơ bản cho từng viễn cảnh.</li>
+<li><strong>Chuyển thành hành động:</strong> rút ra 3–5 hàm ý chiến lược, giao chủ sở hữu và mốc rà soát lại (thường theo quý).</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Bối cảnh:</strong> một quán cà phê nhỏ ở phường bạn muốn biết nên đầu tư gì trong năm tới.</p>
+<p>Áp PESTEL nhanh:
+- <strong>P:</strong> phường siết quy định vỉa hè → cần bố trí lại chỗ ngồi.
+- <strong>E:</strong> giá thuê mặt bằng tăng, sức mua sinh viên giảm → cân nhắc combo giá tốt.
+- <strong>S:</strong> giới trẻ chuộng không gian "check-in", làm việc từ xa → thêm ổ cắm, wifi mạnh, góc chụp ảnh.
+- <strong>T:</strong> khách quen đặt qua app giao đồ → mở kênh giao hàng.
+- <strong>E (môi trường):</strong> khách để ý ly nhựa → chuyển sang ly giấy/ly dùng lại.
+- <strong>L:</strong> quy định an toàn thực phẩm → chuẩn hóa giấy phép.</p>
+<p>Kết luận: hai ưu tiên rõ nhất là <strong>không gian làm việc + giao hàng qua app</strong> (trend thật, nền tảng vững), còn "món đồ uống hot theo mùa TikTok" chỉ là fad — làm nhưng không đầu tư lớn.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Bối cảnh:</strong> một chuỗi bán lẻ mỹ phẩm tầm trung lập kế hoạch 3 năm.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Yếu tố</th>
+<th>Tín hiệu phát hiện</th>
+<th>Hàm ý marketing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>Chính sách khuyến khích hàng sản xuất trong nước</td>
+<td>Đẩy dòng "Made in Vietnam", kể câu chuyện nội địa</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Thu nhập tầng lớp trung lưu tăng dần</td>
+<td>Mở rộng phân khúc cao cấp hơn</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Nam giới quan tâm chăm sóc da nhiều hơn</td>
+<td>Ra dòng skincare cho nam</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Livestream &amp; AR thử son ảo phổ biến</td>
+<td>Đầu tư commerce qua video, tính năng thử ảo</td>
+</tr>
+<tr>
+<td>E (mt)</td>
+<td>Người dùng ưu tiên bao bì tái chế</td>
+<td>Chuyển bao bì, minh bạch nguồn gốc</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Siết quảng cáo thổi phồng công dụng mỹ phẩm</td>
+<td>Rà soát nội dung, tránh cam kết quá mức</td>
+</tr>
+</tbody>
+</table></div>
+<p>Chuỗi này ưu tiên <strong>livestream commerce + dòng nam giới + bao bì bền vững</strong> — ba trend có nền tảng, và tránh chạy theo mọi "thành phần thần thánh" xuất hiện theo mùa.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>VinFast và làn sóng xe điện.</strong> Việt Nam có nhiều lực vĩ mô hội tụ: chính sách hỗ trợ giao thông xanh (P), cam kết giảm phát thải và áp lực môi trường đô thị (E), tầng lớp trung lưu tăng cùng đô thị hóa (S), hạ tầng sạc và công nghệ pin cải thiện (T). VinFast định vị thương hiệu quanh xu hướng điện hóa và "thương hiệu Việt vươn ra toàn cầu" — một ví dụ điển hình về việc đọc PESTEL để chọn hướng đi (thông tin định tính, số liệu doanh số cần kiểm chứng theo báo cáo công ty).</p>
+<p><strong>Thế Giới Di Động &amp; bán lẻ đa kênh.</strong> Khi trend mua sắm online tăng (T, S) và cạnh tranh giá gay gắt (E), doanh nghiệp này mở rộng mô hình online-to-offline, đa dạng chuỗi (điện máy, bách hóa) để bám theo dịch chuyển thói quen tiêu dùng (định tính, cần kiểm chứng chi tiết).</p>
+<p><strong>Bài học Việt Nam:</strong> cơ cấu dân số vàng đang chuyển dần sang già hóa trong 2026–2035, tầng lớp trung lưu mở rộng, hạ tầng số phủ rộng — ba lực S-E-T này là nền tảng cho nhiều xu hướng nội địa.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Netflix.</strong> Đọc đúng trend công nghệ (băng thông rộng, streaming) và xã hội (xem theo nhu cầu, binge-watching), Netflix chuyển từ cho thuê DVD sang streaming rồi sang sản xuất nội dung gốc. Đây là minh họa cho việc quét môi trường T + S dẫn đến tái định nghĩa mô hình kinh doanh (định tính).</p>
+<p><strong>Kodak (thất bại).</strong> Ngược lại, Kodak dù phát minh ra máy ảnh số sớm nhưng không hành động theo trend công nghệ mà mình quan sát được, bám vào phim truyền thống — một bài học kinh điển về việc "thấy trend nhưng không dám dịch chuyển" (định tính, cần kiểm chứng chi tiết mốc thời gian).</p>
+<p><strong>Unilever &amp; bền vững.</strong> Nhiều tập đoàn hàng tiêu dùng lớn đã đưa yếu tố môi trường (E) vào chiến lược thương hiệu, phản ứng với kỳ vọng "xanh" ngày càng cao của người tiêu dùng toàn cầu (định tính).</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Nhầm fad với trend:</strong> đổ ngân sách vào cơn sốt ngắn hạn rồi hụt hơi khi nó tắt.</li>
+<li><strong>Liệt kê rời rạc:</strong> viết ra danh sách PESTEL dài nhưng không rút ra hàm ý hành động.</li>
+<li><strong>Thiên kiến xác nhận:</strong> chỉ tìm tín hiệu ủng hộ điều mình đã tin.</li>
+<li><strong>Quét một lần rồi bỏ:</strong> môi trường thay đổi, nhưng báo cáo nằm im trong ngăn kéo.</li>
+<li><strong>Quá tải thông tin:</strong> thu thập tất cả mà không sàng lọc, dẫn đến tê liệt.</li>
+<li><strong>Dự báo điểm duy nhất:</strong> tin vào một con số tương lai duy nhất thay vì dải kịch bản.</li>
+<li><strong>Bỏ qua tương tác giữa các yếu tố:</strong> phân tích P, E, S, T, E, L tách biệt mà không thấy dây chuyền nhân quả.</li>
+<li><strong>Không gắn chủ sở hữu:</strong> không ai chịu trách nhiệm theo dõi tiếp xu hướng đã phát hiện.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p>Checklist quét môi trường PESTEL:</p>
+<ul>
+<li>[ ] Đã xác định rõ mục tiêu và phạm vi quét?</li>
+<li>[ ] Đã thu thập tín hiệu cho đủ cả 6 nhóm PESTEL?</li>
+<li>[ ] Mỗi nguồn có ghi rõ tên nguồn + năm?</li>
+<li>[ ] Đã phân biệt trend thật vs fad cho từng tín hiệu quan trọng?</li>
+<li>[ ] Đã chấm điểm tác động × khả năng (hoặc TPS)?</li>
+<li>[ ] Đã đặt các xu hướng ưu tiên lên ma trận/radar?</li>
+<li>[ ] Đã dựng ít nhất 2 kịch bản tương lai?</li>
+<li>[ ] Đã rút ra 3–5 hàm ý chiến lược cụ thể?</li>
+<li>[ ] Mỗi hàm ý có chủ sở hữu và mốc rà soát?</li>
+<li>[ ] Đã đặt lịch cập nhật định kỳ (quý/6 tháng)?</li>
+</ul>
+<h2>16. SOP (Quy trình chuẩn tác nghiệp)</h2>
+<p><strong>SOP-06: Quét môi trường PESTEL hàng quý</strong></p>
+<ul>
+<li><strong>Mục đích:</strong> duy trì radar vĩ mô cập nhật phục vụ lập kế hoạch marketing.</li>
+<li><strong>Tần suất:</strong> mỗi quý; rà soát nhanh hàng tháng.</li>
+<li><strong>Người thực hiện:</strong> trưởng nhóm insight/marketing.</li>
+<li><strong>Đầu vào:</strong> biểu mẫu PESTEL kỳ trước, danh sách nguồn, công cụ AI.</li>
+</ul>
+<p><strong>Các bước:</strong>
+1. Tuần 1: Thu thập tín hiệu mới từ danh sách nguồn cố định (mục 18) + AI quét.
+2. Tuần 1–2: Điền/cập nhật biểu mẫu PESTEL, đánh dấu tín hiệu mới nổi.
+3. Tuần 2: Sàng lọc trend vs fad, chấm TPS.
+4. Tuần 2: Cập nhật Trend Radar và ma trận ưu tiên.
+5. Tuần 3: Workshop nội bộ — rà soát kịch bản, cập nhật dự báo nhu cầu.
+6. Tuần 3: Viết bản tóm tắt 1 trang gửi ban lãnh đạo (hàm ý + hành động + chủ sở hữu).
+7. Tuần 4: Cập nhật kế hoạch marketing, lưu hồ sơ, đặt lịch kỳ sau.</p>
+<p><strong>Đầu ra:</strong> biểu mẫu PESTEL cập nhật + bản tóm tắt 1 trang + danh sách hành động có chủ sở hữu.</p>
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+<th>Gợi ý cách đo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tần suất quét</td>
+<td>Đảm bảo không "quét một lần rồi bỏ"</td>
+<td>Số kỳ quét thực hiện / số kỳ kế hoạch</td>
+</tr>
+<tr>
+<td>Độ phủ PESTEL</td>
+<td>Tránh bỏ sót nhóm yếu tố</td>
+<td>Số nhóm P-E-S-T-E-L có tín hiệu / 6</td>
+</tr>
+<tr>
+<td>Tỷ lệ tín hiệu thành hành động</td>
+<td>Quét có dẫn đến quyết định không</td>
+<td>Số hành động triển khai / số xu hướng ưu tiên</td>
+</tr>
+<tr>
+<td>Độ chính xác dự báo</td>
+<td>Chất lượng dự báo nhu cầu</td>
+<td>Sai số dự báo (MAPE) so với thực tế</td>
+</tr>
+<tr>
+<td>Thời gian phát hiện sớm (lead time)</td>
+<td>Phát hiện trước đối thủ bao lâu</td>
+<td>Khoảng cách giữa lúc ghi nhận và lúc xu hướng thành chủ đạo</td>
+</tr>
+<tr>
+<td>Số kịch bản được kiểm chứng</td>
+<td>Mức độ chuẩn bị đa tương lai</td>
+<td>Số kịch bản dựng / số quyết định lớn</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lưu ý: các ngưỡng KPI cụ thể tùy ngành và quy mô — cần hiệu chỉnh theo doanh nghiệp (cần kiểm chứng nội bộ).</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>BIỂU MẪU PESTEL (điền được)</strong></p>
+<p>Thông tin chung: Doanh nghiệp: <strong><em>_ · Thị trường/ngành: </em></strong>_ · Kỳ quét: Quý <strong>/20</strong> · Người lập: ____</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>Tín hiệu / Sự kiện</th>
+<th>Nguồn + Năm</th>
+<th>Trend hay Fad?</th>
+<th>Tác động (1–5)</th>
+<th>Khả năng (1–5)</th>
+<th>Cấp thiết (1–3)</th>
+<th>TPS</th>
+<th>Cơ hội/Đe dọa</th>
+<th>Hàm ý &amp; Hành động</th>
+<th>Chủ sở hữu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P – Chính trị</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E – Kinh tế</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>S – Xã hội</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>T – Công nghệ</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E – Môi trường</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>L – Pháp lý</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Tổng hợp:</strong> 3 xu hướng ưu tiên cao nhất (TPS lớn nhất): 1) <strong><em>_ 2) </em></strong><em> 3) <strong><em>_
+<strong>Kịch bản chính:</strong> Lạc quan: </em></strong></em> · Cơ sở: <strong><em>_ · Thận trọng: </em></strong>_
+<strong>Mốc rà soát tiếp theo:</strong> ____</p>
+<h2>19. Prompt AI (6 công cụ)</h2>
+<p>Dưới đây là gợi ý prompt để dùng AI quét xu hướng. <strong>Luôn kiểm chứng đầu ra AI bằng nguồn gốc thật — AI có thể bịa số liệu và trích dẫn.</strong></p>
+<ol>
+<li>
+<p><strong>ChatGPT (OpenAI):</strong>
+   <em>"Đóng vai chuyên gia quét môi trường vĩ mô. Lập bảng PESTEL cho ngành [ngành] tại thị trường [Việt Nam/khu vực] giai đoạn 2026–2030. Với mỗi yếu tố, nêu 2 tín hiệu định tính, đánh dấu đâu là trend đâu là fad, và ghi rõ chỗ nào cần tôi kiểm chứng số liệu."</em></p>
+</li>
+<li>
+<p><strong>Claude (Anthropic):</strong>
+   <em>"Phân tích các dây chuyền nhân quả giữa 6 yếu tố PESTEL cho [ngành]. Ví dụ: công nghệ AI → luật dữ liệu → hành vi tiêu dùng. Trình bày dạng sơ đồ văn bản và nêu 3 hàm ý chiến lược marketing. Không bịa số liệu; nếu cần dữ liệu, ghi '(cần kiểm chứng)'."</em></p>
+</li>
+<li>
+<p><strong>Gemini (Google):</strong>
+   <em>"Dựa trên các chủ đề đang được quan tâm, gợi ý 5 xu hướng xã hội (nhóm S trong PESTEL) đang nổi lên với người tiêu dùng [nhóm khách hàng] ở Việt Nam. Phân biệt xu hướng bền vững và cơn sốt ngắn hạn, giải thích lý do."</em></p>
+</li>
+<li>
+<p><strong>Perplexity:</strong>
+   <em>"Tổng hợp các báo cáo công khai gần đây về [xu hướng/ngành] tại [thị trường], kèm tên nguồn và năm xuất bản. Chỉ dùng nguồn có thể trích dẫn, liệt kê link gốc; nếu không chắc, nói rõ."</em></p>
+</li>
+<li>
+<p><strong>Microsoft Copilot:</strong>
+   <em>"Từ dữ liệu bán hàng 24 tháng trong file này, tính dự báo nhu cầu 6 tháng tới bằng trung bình trượt và làm mượt hàm mũ. Trình bày bảng và biểu đồ, giải thích giả định và giới hạn của dự báo."</em></p>
+</li>
+<li>
+<p><strong>NotebookLM (Google):</strong>
+   <em>"Từ các tài liệu tôi tải lên (báo cáo ngành, khảo sát), rút ra các tín hiệu vĩ mô theo 6 nhóm PESTEL, trích dẫn đúng đoạn nguồn cho từng tín hiệu, và nêu điểm mâu thuẫn giữa các tài liệu."</em></p>
+</li>
+</ol>
+<p><strong>Quy tắc chung khi dùng AI:</strong> yêu cầu AI tự đánh dấu chỗ suy đoán, đối chiếu tối thiểu 2 nguồn độc lập, và không bao giờ dán thẳng số liệu AI đưa vào báo cáo chính thức mà chưa xác minh.</p>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Quét nhanh:</strong> Chọn một doanh nghiệp bạn biết. Điền biểu mẫu PESTEL với tối thiểu 1 tín hiệu cho mỗi nhóm, ghi rõ nguồn + năm.</li>
+<li><strong>Phân loại trend/fad:</strong> Liệt kê 5 hiện tượng marketing bạn thấy gần đây, phân loại trend hay fad, giải thích tiêu chí.</li>
+<li><strong>Ma trận ưu tiên:</strong> Chấm TPS cho 6 tín hiệu và đặt lên ma trận tác động × khả năng.</li>
+<li><strong>Lập kịch bản:</strong> Dựng 3 kịch bản (lạc quan/cơ sở/thận trọng) cho ngành bạn chọn dựa trên 2 yếu tố bất định lớn nhất.</li>
+<li><strong>Dự báo cơ bản:</strong> Cho một chuỗi 12 tháng doanh số giả định, tính dự báo tháng 13 bằng trung bình trượt 3 kỳ và bằng làm mượt hàm mũ (α = 0,3). So sánh.</li>
+<li><strong>Dùng AI có kiểm chứng:</strong> Chạy 1 prompt ở mục 19, sau đó tìm 1 nguồn thật để xác minh hoặc bác bỏ một khẳng định AI đưa ra.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Sáu yếu tố của PESTEL là gì? Cho ví dụ mỗi yếu tố.</li>
+<li>Phân biệt trend và fad — nêu ít nhất 3 tiêu chí.</li>
+<li>Vòng lặp bốn nhịp của quét môi trường gồm những bước nào?</li>
+<li>Vì sao dự báo điểm duy nhất kém an toàn hơn lập kịch bản?</li>
+<li>Công thức TPS gồm những thành phần nào và dùng để làm gì?</li>
+<li>Nêu 3 sai lầm thường gặp khi làm PESTEL và cách khắc phục.</li>
+<li>Tại sao cần kiểm chứng số liệu do AI tạo ra?</li>
+<li>Cho một ví dụ về dây chuyền nhân quả giữa hai yếu tố PESTEL.</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công — Netflix đọc trend công nghệ + xã hội.</strong>
+Đầu thập niên 2000, Netflix quan sát hai lực: băng thông internet mở rộng (T) và thói quen người xem muốn nội dung theo nhu cầu, không phụ thuộc lịch phát sóng (S). Thay vì bám mô hình cho thuê đĩa, họ dịch chuyển sang streaming, rồi tiếp tục quét trend và đầu tư nội dung gốc khi thấy cạnh tranh nội dung tăng. Bài học: quét môi trường chỉ có giá trị khi doanh nghiệp <strong>dám hành động</strong> theo tín hiệu, kể cả khi phải tự phá vỡ mô hình đang kiếm tiền (định tính; mốc thời gian và số liệu cần kiểm chứng theo báo cáo công ty).</p>
+<p><strong>Case thất bại — Kodak thấy trend nhưng không dịch chuyển.</strong>
+Kodak sở hữu công nghệ máy ảnh số từ sớm và hiểu xu hướng số hóa nhiếp ảnh, nhưng lo ngại làm tổn hại mảng phim truyền thống sinh lời nên trì hoãn. Khi nhiếp ảnh số bùng nổ, thị trường phim sụp đổ nhanh hơn dự đoán. Bài học: <strong>phát hiện xu hướng mà thiếu can đảm hành động cũng nguy hiểm như không phát hiện</strong> — thiên kiến "bảo vệ doanh thu hiện tại" khiến doanh nghiệp bỏ lỡ chính tương lai mình đã nhìn thấy (định tính; chi tiết mốc thời gian cần kiểm chứng).</p>
+<p><strong>Đối chiếu:</strong> cả hai đều "thấy" trend công nghệ. Khác biệt nằm ở hành động. Đó là lý do quy trình PESTEL của chương này luôn kết thúc bằng <strong>hàm ý + chủ sở hữu + mốc rà soát</strong>, không dừng ở việc "biết".</p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li>Quét môi trường là radar vĩ mô giúp marketer chủ động thay vì bị động.</li>
+<li><strong>PESTEL</strong> — Chính trị, Kinh tế, Xã hội, Công nghệ, Môi trường, Pháp lý — là sáu lăng kính quét rộng; sức mạnh thật nằm ở việc đọc <strong>tương tác</strong> giữa chúng.</li>
+<li>Phân biệt <strong>trend</strong> (có nền tảng, dài hạn) với <strong>fad</strong> (cơn sốt ngắn hạn) để phân bổ nguồn lực đúng.</li>
+<li>Kết hợp PESTEL với <strong>lập kịch bản</strong> và <strong>dự báo nhu cầu cơ bản</strong> để chuẩn bị cho nhiều tương lai.</li>
+<li><strong>AI</strong> tăng tốc quét xu hướng nhưng phải kiểm chứng, không bịa số liệu.</li>
+<li>Xu hướng marketing 2026–2035 (định tính): AI thấm vào mọi khâu, video và livestream commerce lên ngôi, marketing cộng đồng và nội dung do người dùng tạo, tính bền vững thành kỳ vọng mặc định, cá nhân hóa sâu dựa trên dữ liệu — nhưng cần theo dõi và kiểm chứng liên tục, tránh khẳng định con số cứng.</li>
+<li>Giá trị của quét môi trường chỉ hiện thực hóa khi biến thành <strong>hành động có chủ sở hữu</strong>.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<blockquote>
+<p>Ghi chú: Danh mục dưới đây nêu tên tài liệu/nguồn để người học tra cứu bản gốc. Không kèm link để tránh dẫn nguồn sai; hãy tìm bản chính thức và kiểm chứng năm xuất bản.</p>
+</blockquote>
+<ol>
+<li>Aguilar, F. J. — <em>Scanning the Business Environment</em> (1967) — nguồn gốc khung ETPS/PEST (cần kiểm chứng).</li>
+<li>Johnson, Scholes &amp; Whittington — <em>Exploring Corporate Strategy</em> — trình bày PESTEL trong hoạch định chiến lược.</li>
+<li>Schwartz, P. — <em>The Art of the Long View</em> (1991) — nền tảng scenario planning.</li>
+<li>Shell Scenarios — tài liệu công khai của Shell về phương pháp lập kịch bản (cần kiểm chứng).</li>
+<li>Kotler, P. &amp; Keller, K. L. — <em>Marketing Management</em> — chương môi trường marketing vĩ mô.</li>
+<li>Google Trends — công cụ theo dõi mối quan tâm tìm kiếm theo thời gian.</li>
+<li>Báo cáo ngành từ các hiệp hội và cơ quan thống kê (ví dụ Tổng cục Thống kê Việt Nam) — dùng cho dữ liệu kinh tế - xã hội, cần tra bản gốc theo năm.</li>
+<li>Các báo cáo xu hướng tiêu dùng thường niên của các công ty nghiên cứu thị trường (Nielsen, Kantar, McKinsey…) — tham khảo có kiểm chứng năm và phạm vi.</li>
+</ol>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Số liệu cụ thể:</strong> mọi con số về thị trường, tăng trưởng, thị phần trong chương này đều để định tính; cần bổ sung dữ liệu có nguồn + năm khi triển khai thực tế.</li>
+<li><strong>Xu hướng 2026–2035:</strong> rà soát lại danh mục xu hướng (AI, video, cộng đồng, bền vững, cá nhân hóa) mỗi 6–12 tháng vì tốc độ thay đổi nhanh.</li>
+<li><strong>Case study Việt Nam:</strong> cập nhật diễn biến mới của VinFast, Thế Giới Di Động và các doanh nghiệp nội địa theo báo cáo chính thức.</li>
+<li><strong>Công cụ AI:</strong> danh sách 6 công cụ ở mục 19 có thể thay đổi tên/tính năng; cập nhật khi có công cụ mới hoặc thay đổi lớn.</li>
+<li><strong>Khung pháp lý dữ liệu:</strong> theo dõi các quy định mới về bảo vệ dữ liệu cá nhân và quảng cáo tại Việt Nam — ảnh hưởng trực tiếp nhóm L.</li>
+<li><strong>Kiểm chứng lịch sử:</strong> xác minh lại các mốc lịch sử (Aguilar 1967, Shell 1970s, Kodak) theo tài liệu gốc.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-02-nghien-cuu-tam-ly-05-phan-tich-doi-thu.html"><span>← Trước</span>Tập 2 · Chương 5 — Phân tích đối thủ &amp; Bối cảnh cạnh tranh</a><a class="next" href="tap-03-thuong-hieu-01-xay-dung-thuong-hieu.html"><span>Sau →</span>Tập 3 · Chương 1 — Xây dựng Thương hiệu</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

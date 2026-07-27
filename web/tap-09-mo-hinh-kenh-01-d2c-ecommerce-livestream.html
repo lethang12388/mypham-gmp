@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 9 · Chương 1 — D2C, E-commerce, Marketplace &amp; Livestream</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 9 · Chương 1 — D2C, E-commerce, Marketplace &amp; Livestream</h1>
+<blockquote>
+<p>Đối tượng: chủ doanh nghiệp, nhà bán hàng online, marketer, quản lý kênh, nhà máy OEM/mỹ phẩm muốn bán trực tiếp và xuất khẩu · Thời lượng đọc: ~30–40 phút · Phiên bản v1.0 (2026)</p>
+</blockquote>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Trong mười năm qua, cách hàng hóa đi từ nhà sản xuất đến tay người tiêu dùng Việt Nam đã bị viết lại gần như hoàn toàn. Trước đây, một nhà máy mỹ phẩm OEM sản xuất xong sẽ giao cho nhà phân phối, nhà phân phối giao cho đại lý, đại lý giao cho cửa hàng, và cửa hàng mới bán cho người dùng cuối. Mỗi mắt xích lấy một phần lợi nhuận, và nhà sản xuất gần như không biết ai đang dùng sản phẩm của mình.</p>
+<p>Ngày nay, cùng nhà máy đó có thể mở một gian hàng Shopee, một kênh TikTok Shop, một website riêng, thuê KOC livestream bán trực tiếp, và thậm chí đăng sản phẩm lên Amazon để bán sang Mỹ — tất cả mà không cần một nhà phân phối nào. Đây là bản chất của cuộc dịch chuyển sang <strong>D2C (Direct-to-Consumer)</strong> và <strong>thương mại điện tử đa kênh</strong>.</p>
+<p>Chương này là bản đồ thực chiến để bạn hiểu và vận hành cuộc dịch chuyển đó: từ mô hình D2C so với kênh truyền thống, các nền tảng cụ thể (Shopee, Lazada, TikTok Shop, website riêng, Amazon, Alibaba), livestream commerce, logistics, đến phần quan trọng nhất mà nhiều nhà bán bỏ qua — <strong>unit economics</strong>: bán một đơn hàng bạn thực sự lãi hay lỗ. Chương đặc biệt hữu ích cho ngành mỹ phẩm và nhà máy OEM Việt Nam đang muốn bán trực tiếp và xuất khẩu số.</p>
+<h2>2. Khái niệm</h2>
+<p>Ta cần thống nhất các thuật ngữ lõi (đây là phần định nghĩa — dữ kiện quy ước):</p>
+<ul>
+<li><strong>D2C (Direct-to-Consumer):</strong> mô hình thương hiệu/nhà sản xuất bán trực tiếp cho người tiêu dùng cuối, sở hữu quan hệ khách hàng và dữ liệu, không phụ thuộc trung gian phân phối.</li>
+<li><strong>E-commerce (Thương mại điện tử):</strong> mọi hoạt động mua bán hàng hóa/dịch vụ qua nền tảng số. D2C là một cách làm e-commerce; e-commerce rộng hơn D2C.</li>
+<li><strong>Marketplace (Sàn TMĐT):</strong> nền tảng trung gian tập hợp nhiều người bán và người mua (Shopee, Lazada, TikTok Shop, Amazon, Alibaba). Sàn sở hữu traffic và khách hàng; người bán "thuê chỗ".</li>
+<li><strong>Omnichannel (Đa kênh hợp nhất):</strong> vận hành nhiều kênh (online + offline) trên một hệ thống dữ liệu, tồn kho và trải nghiệm khách hàng thống nhất.</li>
+<li><strong>O2O (Online-to-Offline):</strong> cầu nối đưa khách từ online xuống cửa hàng (và ngược lại), ví dụ đặt online nhận tại cửa hàng.</li>
+<li><strong>Livestream commerce:</strong> bán hàng trực tiếp qua video phát trực tiếp, người xem đặt hàng ngay trong phiên.</li>
+<li><strong>KOL / KOC / Affiliate:</strong> KOL (Key Opinion Leader) — người ảnh hưởng lớn; KOC (Key Opinion Consumer) — người tiêu dùng có ảnh hưởng, review chân thực; Affiliate — cộng tác viên bán hàng ăn hoa hồng theo đơn.</li>
+<li><strong>Fulfillment:</strong> toàn bộ khâu lấy hàng, đóng gói, vận chuyển, giao và xử lý hoàn.</li>
+<li><strong>Contribution margin (biên đóng góp):</strong> phần còn lại của giá bán sau khi trừ toàn bộ chi phí biến đổi của một đơn — dùng để bù chi phí cố định và tạo lợi nhuận.</li>
+</ul>
+<h2>3. Lịch sử hình thành</h2>
+<p><em>(Phần này là dữ kiện lịch sử ở mức khái quát; các mốc năm cụ thể cần kiểm chứng lại theo nguồn chính thức.)</em></p>
+<ul>
+<li><strong>Giai đoạn tiền sàn (trước ~2012):</strong> bán online Việt Nam chủ yếu qua forum, rao vặt và mạng xã hội sơ khai. Thanh toán COD, niềm tin thấp.</li>
+<li><strong>Kỷ nguyên sàn TMĐT (~2012–2018):</strong> Lazada vào Việt Nam (2012), Shopee ra mắt thị trường Việt Nam (2016). Các sàn "đốt tiền" trợ giá vận chuyển và khuyến mãi để tạo thói quen mua online. Tiki, Sendo phát triển song song.</li>
+<li><strong>Bùng nổ và COVID (2019–2021):</strong> đại dịch đẩy nhanh việc mua online; livestream và mua sắm qua video tăng mạnh (xu hướng — cần kiểm chứng số cụ thể).</li>
+<li><strong>Kỷ nguyên shoppertainment &amp; TikTok Shop (2022–nay):</strong> TikTok Shop ra mắt tại Việt Nam năm 2022, hợp nhất nội dung giải trí với mua sắm, đưa livestream commerce thành kênh chủ lực. Cùng lúc, làn sóng D2C và xuất khẩu số qua Amazon/Alibaba tăng tốc cho nhà sản xuất Việt Nam.</li>
+</ul>
+<p>Trên thế giới, mô hình D2C hiện đại thường được gắn với các thương hiệu như Warby Parker, Dollar Shave Club, Glossier (Mỹ, thập niên 2010) — bán thẳng qua website, dựng thương hiệu bằng nội dung số, bỏ qua bán lẻ truyền thống.</p>
+<h2>4. Tại sao quan trọng</h2>
+<p><strong>Đối với nhà sản xuất/OEM và thương hiệu (dữ kiện + phân tích):</strong></p>
+<ol>
+<li><strong>Sở hữu biên lợi nhuận và dữ liệu.</strong> Bỏ trung gian nghĩa là giữ lại phần chiết khấu vốn chảy cho nhà phân phối, đồng thời nắm được dữ liệu khách hàng để bán lại, upsell, xây thương hiệu.</li>
+<li><strong>Rút ngắn khoảng cách với thị trường.</strong> Nhà máy nhận phản hồi sản phẩm trực tiếp, xoay vòng cải tiến nhanh hơn.</li>
+<li><strong>Đa kênh giảm rủi ro phụ thuộc.</strong> Không đặt cược toàn bộ vào một sàn hay một nhà phân phối.</li>
+<li><strong>Cửa ngõ xuất khẩu số.</strong> Amazon và Alibaba mở đường cho OEM Việt Nam bán ra toàn cầu mà không cần văn phòng ở nước ngoài — cực kỳ giá trị với ngành mỹ phẩm/gia công.</li>
+</ol>
+<p><strong>Nhưng — cảnh báo quan trọng (phân tích):</strong> đa kênh và livestream tạo doanh thu lớn <em>trên bề mặt</em> nhưng dễ che giấu thua lỗ. Phí sàn, chi phí livestream, hoàn hàng và CAC có thể ăn hết biên lợi nhuận. Vì vậy phần unit economics (mục 8) là trái tim của chương này, không phải phần phụ.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Bán hàng số vận hành trên bốn trụ cột liên kết:</p>
+<ol>
+<li><strong>Traffic (Lưu lượng):</strong> ai nhìn thấy sản phẩm. Nguồn gồm traffic nội sàn (search, đề xuất), nội dung (video, livestream), quảng cáo trả phí, và traffic sở hữu (website, database, tin nhắn).</li>
+<li><strong>Conversion (Chuyển đổi):</strong> bao nhiêu người xem thành người mua. Phụ thuộc offer, hình ảnh, review, giá, kịch bản livestream, độ tin cậy.</li>
+<li><strong>Fulfillment (Hoàn tất đơn):</strong> giao hàng đúng, nhanh, ít hoàn.</li>
+<li><strong>Retention &amp; LTV (Giữ chân &amp; giá trị vòng đời):</strong> khách mua lại. Đây là nơi D2C thắng kênh truyền thống — vì bạn sở hữu quan hệ khách hàng.</li>
+</ol>
+<p>Nguyên lý cốt lõi: <strong>mỗi kênh có một "vật lý" riêng.</strong> Sàn cho bạn traffic sẵn nhưng lấy phí và giữ khách. Website cho bạn sở hữu khách nhưng bạn phải tự kéo traffic. Livestream tạo chuyển đổi cảm xúc tức thời nhưng hoàn hàng cao. Hiểu vật lý từng kênh là điều kiện để phân bổ nguồn lực đúng.</p>
+<h2>6. Mô hình</h2>
+<p><strong>Bảng so sánh D2C vs kênh truyền thống (phân tích):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Kênh truyền thống (phân phối)</th>
+<th>D2C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quan hệ khách hàng</td>
+<td>Trung gian sở hữu</td>
+<td>Thương hiệu sở hữu</td>
+</tr>
+<tr>
+<td>Dữ liệu khách</td>
+<td>Gần như không có</td>
+<td>Đầy đủ</td>
+</tr>
+<tr>
+<td>Biên lợi nhuận/đơn</td>
+<td>Thấp (chia nhiều tầng)</td>
+<td>Cao hơn</td>
+</tr>
+<tr>
+<td>Chi phí marketing</td>
+<td>Trung gian gánh phần lớn</td>
+<td>Thương hiệu tự gánh</td>
+</tr>
+<tr>
+<td>Tốc độ mở rộng ban đầu</td>
+<td>Nhanh (mượn hệ thống có sẵn)</td>
+<td>Chậm hơn (tự xây)</td>
+</tr>
+<tr>
+<td>Kiểm soát thương hiệu/giá</td>
+<td>Yếu</td>
+<td>Mạnh</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Bảng so sánh các nền tảng (dữ kiện định tính — đặc điểm; các con số phí cụ thể cần tra biểu phí hiện hành của từng sàn):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nền tảng</th>
+<th>Điểm mạnh</th>
+<th>Điểm yếu</th>
+<th>Phù hợp nhất</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopee</td>
+<td>Traffic lớn, thói quen mua, hệ sinh thái voucher/ship</td>
+<td>Cạnh tranh giá gay gắt, phụ thuộc khuyến mãi</td>
+<td>Hàng tiêu dùng nhanh, giá tốt</td>
+</tr>
+<tr>
+<td>Lazada</td>
+<td>Liên kết hệ sinh thái, chính hãng (LazMall)</td>
+<td>Traffic thấp hơn Shopee ở nhiều ngành (cần kiểm chứng)</td>
+<td>Hàng chính hãng, điện tử</td>
+</tr>
+<tr>
+<td>TikTok Shop</td>
+<td>Nội dung + livestream, khám phá bằng video</td>
+<td>Hoàn hàng cao, phụ thuộc thuật toán &amp; KOC</td>
+<td>Mỹ phẩm, thời trang, sản phẩm demo tốt</td>
+</tr>
+<tr>
+<td>Website riêng (D2C)</td>
+<td>Sở hữu khách &amp; dữ liệu, biên cao</td>
+<td>Phải tự kéo traffic, chi phí xây</td>
+<td>Thương hiệu, bán lại, cao cấp</td>
+</tr>
+<tr>
+<td>Amazon</td>
+<td>Cửa ngõ thị trường Mỹ/EU, niềm tin cao</td>
+<td>Yêu cầu pháp lý/logistics phức tạp</td>
+<td>Xuất khẩu sản phẩm thương hiệu</td>
+</tr>
+<tr>
+<td>Alibaba.com</td>
+<td>Đầu mối B2B, tìm khách sỉ quốc tế</td>
+<td>Bán buôn, chu kỳ dài</td>
+<td>OEM/nhà máy tìm đơn xuất khẩu</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ba mô hình kết hợp phổ biến ở Việt Nam:</strong>
+- <strong>Marketplace-first:</strong> dồn lực vào Shopee/TikTok Shop trước để có dòng tiền, dựng thương hiệu song song.
+- <strong>D2C-hybrid:</strong> website làm "nhà" của thương hiệu, sàn làm kênh thu hút khách mới.
+- <strong>Export-OEM:</strong> nhà máy giữ đơn gia công B2B (Alibaba) đồng thời xây thương hiệu riêng bán lẻ quốc tế (Amazon) — mô hình chiến lược cho mỹ phẩm Việt.</p>
+<h2>7. Framework</h2>
+<p><strong>Framework "4T" phân bổ kênh (khung tư duy đề xuất):</strong></p>
+<ol>
+<li><strong>Target — Ai mua?</strong> Xác định khách hàng cốt lõi và họ đang ở nền tảng nào.</li>
+<li><strong>Traffic — Traffic đến từ đâu?</strong> Nội sàn, nội dung, quảng cáo, hay traffic sở hữu.</li>
+<li><strong>Truth (unit economics) — Kênh có lãi không?</strong> Tính biên đóng góp và điểm hòa vốn TRƯỚC khi scale.</li>
+<li><strong>Transfer — Chuyển khách thành tài sản.</strong> Đưa khách từ sàn về database/website để bán lại.</li>
+</ol>
+<p><strong>Phễu livestream (Livestream funnel):</strong></p>
+<pre><code>Tiếp cận (view vào phiên)
+   → Giữ chân (xem &gt;1 phút, retention)
+      → Tương tác (comment, thả tim, giỏ hàng)
+         → Chốt (click sản phẩm ghim → đặt hàng)
+            → Nhận hàng (không hoàn)
+               → Mua lại (retention sau phiên)
+</code></pre>
+<p>Mỗi tầng phễu có một KPI và một đòn bẩy riêng — mất khách ở tầng nào thì sửa đúng đòn bẩy tầng đó (ví dụ retention thấp → sửa hook 30 giây đầu; giỏ hàng cao nhưng chốt thấp → sửa call-to-action và chốt giá).</p>
+<h2>8. Công thức</h2>
+<p><em>(Tất cả con số dưới đây là </em><em>số minh họa</em><em> để giải thích công thức, không phải dữ liệu thị trường.)</em></p>
+<p><strong>8.1. Biên đóng góp trên mỗi đơn (Contribution Margin / đơn):</strong></p>
+<pre><code>CM/đơn = Giá bán
+        − Giá vốn hàng (COGS)
+        − Phí sàn (%)
+        − Phí thanh toán
+        − Chi phí đóng gói + vận chuyển (phần người bán chịu)
+        − Chi phí khuyến mãi/voucher phân bổ
+        − Chi phí hoàn hàng phân bổ
+</code></pre>
+<p>Ví dụ (số minh họa): Giá bán 300.000đ; COGS 90.000đ; phí sàn 10% = 30.000đ; phí thanh toán 5.000đ; đóng gói + ship người bán chịu 20.000đ; voucher phân bổ 15.000đ; hoàn hàng phân bổ 10.000đ.
+→ CM/đơn = 300.000 − 90.000 − 30.000 − 5.000 − 20.000 − 15.000 − 10.000 = <strong>130.000đ</strong>.</p>
+<p><strong>8.2. Chi phí hoàn hàng phân bổ:</strong></p>
+<pre><code>Hoàn hàng phân bổ/đơn = Tỷ lệ hoàn × (Chi phí ship 2 chiều + hao hụt hàng hoàn)
+</code></pre>
+<p>Số minh họa: tỷ lệ hoàn 10%, mỗi ca hoàn tốn 40.000đ ship + 20.000đ hao hụt = 60.000đ → phân bổ 0,10 × 60.000 = 6.000đ/đơn.</p>
+<p><strong>8.3. Điểm hòa vốn kênh (Break-even):</strong></p>
+<pre><code>Số đơn hòa vốn = Chi phí cố định kênh / CM/đơn
+</code></pre>
+<p>Số minh họa: kênh tốn cố định 26.000.000đ/tháng (nhân sự vận hành + công cụ); CM/đơn 130.000đ → cần <strong>200 đơn/tháng</strong> để hòa vốn.</p>
+<p><strong>8.4. CAC theo kênh và biên sau marketing:</strong></p>
+<pre><code>CAC = Tổng chi phí marketing kênh / Số khách mới kênh đó
+Lãi ròng/đơn (khách mới) = CM/đơn − CAC
+</code></pre>
+<p>Số minh họa: chi 20.000.000đ ads được 100 khách mới → CAC 200.000đ. Nếu CM/đơn chỉ 130.000đ thì mỗi khách mới <strong>lỗ 70.000đ ở lần đầu</strong> — chỉ hòa được nếu khách mua lại (LTV bù CAC).</p>
+<p><strong>8.5. ROI livestream:</strong></p>
+<pre><code>ROI (%) = (Doanh thu ròng phiên − Chi phí phiên) / Chi phí phiên × 100
+
+Doanh thu ròng phiên = Doanh thu sau hoàn − phí sàn − COGS − hoa hồng KOC
+Chi phí phiên = cát-xê + sản xuất + quảng cáo đẩy phiên + quà tặng
+</code></pre>
+<p>Số minh họa: doanh thu sau hoàn 100.000.000đ; trừ phí sàn + COGS + hoa hồng còn lại ròng 40.000.000đ; chi phí phiên 25.000.000đ → ROI = (40.000.000 − 25.000.000)/25.000.000 × 100 = <strong>60%</strong>.</p>
+<p><strong>8.6. AOV và GMV vs doanh thu thực:</strong></p>
+<pre><code>AOV = GMV / số đơn
+Doanh thu thực = GMV − giá trị đơn hủy/hoàn
+</code></pre>
+<p>Cảnh báo (phân tích): GMV (tổng giá trị hàng bán) không phải tiền về túi. Luôn quy về CM và tiền mặt thực nhận.</p>
+<h2>9. Quy trình</h2>
+<p><strong>Quy trình triển khai bán đa kênh (10 bước):</strong></p>
+<ol>
+<li><strong>Chốt sản phẩm &amp; định vị:</strong> SKU chủ lực, USP, phân khúc giá.</li>
+<li><strong>Tính unit economics nháp:</strong> ước lượng CM/đơn từng kênh trước khi mở.</li>
+<li><strong>Chọn kênh mồi (1–2 kênh):</strong> không mở 5 kênh cùng lúc; chọn nơi khách tập trung.</li>
+<li><strong>Chuẩn hóa tài sản bán:</strong> hình ảnh, mô tả, review, video, kịch bản livestream.</li>
+<li><strong>Dựng vận hành &amp; logistics:</strong> kho, quy trình đóng gói, đối tác giao vận, chính sách hoàn.</li>
+<li><strong>Chạy thử &amp; thu dữ liệu:</strong> đo conversion, tỷ lệ hoàn, CAC thực tế.</li>
+<li><strong>Đối chiếu với unit economics:</strong> kênh nào vượt điểm hòa vốn thì nhân đôi; kênh lỗ cấu trúc thì sửa hoặc dừng.</li>
+<li><strong>Mở rộng kênh &amp; livestream:</strong> thêm KOC/affiliate, tăng tần suất livestream.</li>
+<li><strong>Chuyển khách thành tài sản:</strong> đẩy khách về database/website, xây CRM, chương trình mua lại.</li>
+<li><strong>Chuẩn bị xuất khẩu:</strong> hồ sơ sản phẩm, chứng nhận, Amazon/Alibaba (xem mục 11 &amp; 12).</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p>Chị Lan làm xà phòng thủ công. Ban đầu chị bỏ sỉ cho 3 cửa hàng với giá 40.000đ/bánh (giá lẻ cửa hàng bán 90.000đ). Chị lãi 15.000đ/bánh và không biết ai dùng.</p>
+<p>Chị chuyển sang bán trực tiếp: mở gian Shopee và một trang Facebook, bán lẻ 79.000đ/bánh. Sau khi trừ COGS 25.000đ, phí sàn, ship và đóng gói (số minh họa), CM/bánh còn khoảng 35.000đ — gấp hơn hai lần bán sỉ. Quan trọng hơn: chị có số điện thoại và Zalo của khách, nhắn tin khi có mẻ mới, và 30% khách mua lại. Đây là D2C ở quy mô nhỏ nhất: <strong>biên cao hơn + sở hữu khách hàng</strong>.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p>Một nhà máy OEM mỹ phẩm giả định (mô hình hóa, không phải công ty cụ thể) chuyển mình theo lộ trình 3 lớp:</p>
+<ul>
+<li><strong>Lớp 1 — Giữ dòng tiền B2B:</strong> tiếp tục nhận đơn gia công cho các thương hiệu, đăng năng lực nhà máy lên Alibaba.com để nhận đơn xuất khẩu sỉ.</li>
+<li><strong>Lớp 2 — Xây thương hiệu D2C nội địa:</strong> ra thương hiệu riêng, bán trên Shopee + TikTok Shop, dùng KOC review và livestream. Mỗi đơn được tính CM chặt chẽ; livestream đo ROI theo phiên.</li>
+<li><strong>Lớp 3 — Xuất khẩu thương hiệu:</strong> đưa dòng sản phẩm chủ lực lên Amazon (thị trường Mỹ) qua chương trình bán hàng toàn cầu, tận dụng FBA để lo fulfillment.</li>
+</ul>
+<p>Bài học mô hình: nhà máy không phải chọn giữa B2B và D2C — họ <strong>xếp tầng</strong> để B2B nuôi dòng tiền còn D2C xây tài sản thương hiệu và biên lợi nhuận dài hạn.</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p><em>(Các tên nền tảng và chương trình là dữ kiện; số liệu thị phần/doanh thu cụ thể cần tra báo cáo cập nhật — dưới đây nêu ở mức định tính.)</em></p>
+<ul>
+<li><strong>TikTok Shop &amp; livestream:</strong> từ khi ra mắt tại Việt Nam (2022), TikTok Shop biến livestream thành kênh bán chủ lực cho mỹ phẩm, thời trang, đồ gia dụng. Nhiều nhà bán tổ chức phiên "mega live" nhiều giờ với đội KOC luân phiên.</li>
+<li><strong>Shopee:</strong> vẫn là sàn có traffic tiêu dùng lớn; các thương hiệu Việt dùng Shopee Mall + livestream Shopee Live + voucher để đẩy đơn.</li>
+<li><strong>Amazon Global Selling Vietnam:</strong> Amazon có chương trình hỗ trợ nhà bán Việt Nam xuất khẩu (ví dụ nhóm hàng gia dụng, thủ công, chăm sóc cá nhân) sang thị trường Mỹ — cực kỳ liên quan cho OEM mỹ phẩm muốn xuất khẩu số. (Chi tiết chương trình/điều kiện cần tra trang chính thức Amazon Global Selling.)</li>
+<li><strong>Nhà bán livestream Việt:</strong> đã hình thành lớp "chiến thần livestream" và các công ty MCN chuyên vận hành phiên live doanh số lớn (tên và số liệu cụ thể cần kiểm chứng, tránh dẫn con số truyền miệng).</li>
+</ul>
+<p>Điểm chung của các case Việt Nam thắng: <strong>nội dung + niềm tin (KOC review thật) + vận hành giao hàng tốt + kiểm soát hoàn hàng</strong>.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<ul>
+<li><strong>Amazon (Mỹ):</strong> hạ tầng marketplace + FBA (Fulfillment by Amazon) cho phép người bán toàn cầu tiếp cận khách Mỹ mà không cần kho riêng tại đó. Là cửa ngõ xuất khẩu thương hiệu phổ biến nhất.</li>
+<li><strong>Alibaba.com (B2B) &amp; 1688 (nguồn hàng):</strong> Alibaba.com là đầu mối B2B quốc tế để nhà máy tìm khách sỉ; Taobao/Tmall phục vụ bán lẻ nội địa Trung Quốc.</li>
+<li><strong>Shein:</strong> mô hình "ultra-fast fashion" D2C, tích hợp dữ liệu nhu cầu real-time với chuỗi cung ứng phản ứng nhanh, bán thẳng toàn cầu qua app. Minh chứng cho sức mạnh khi D2C + dữ liệu + supply chain hợp nhất (mô tả định tính; số liệu tài chính cần kiểm chứng).</li>
+<li><strong>Dollar Shave Club / Warby Parker / Glossier (Mỹ):</strong> các thương hiệu D2C kinh điển xây bằng nội dung và bán thẳng qua website, sau đó mới mở rộng ra bán lẻ.</li>
+</ul>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Say GMV, quên contribution margin.</strong> Doanh thu tăng nhưng càng bán càng lỗ vì không tính đủ phí sàn, hoàn hàng, voucher.</li>
+<li><strong>Mở quá nhiều kênh cùng lúc.</strong> Dàn mỏng nguồn lực, không kênh nào đủ sâu để có lãi.</li>
+<li><strong>Không tính hoàn hàng vào giá.</strong> Livestream và TikTok Shop có tỷ lệ hoàn cao; bỏ qua khoản này là ảo tưởng lợi nhuận.</li>
+<li><strong>Phụ thuộc 100% một sàn.</strong> Sàn đổi chính sách/phí là biên lợi nhuận bay hơi.</li>
+<li><strong>Không sở hữu khách hàng.</strong> Bán mãi trên sàn mà không kéo khách về database → không có tài sản, CAC không bao giờ được LTV bù lại.</li>
+<li><strong>Livestream không kịch bản, không đo phễu.</strong> Chạy theo cảm hứng, không biết mất khách ở tầng nào.</li>
+<li><strong>Đốt tiền KOL/KOC không đo ROI.</strong> Trả cát-xê lớn nhưng không tính doanh thu ròng sau hoàn.</li>
+<li><strong>Xuất khẩu mà chưa chuẩn hồ sơ.</strong> Với mỹ phẩm, thiếu chứng nhận/thành phần/nhãn theo chuẩn nước nhập khẩu là bị chặn ngay.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p><strong>Trước khi mở một kênh:</strong>
+- [ ] Đã tính CM/đơn dự kiến cho kênh này chưa?
+- [ ] Biết điểm hòa vốn kênh (số đơn/tháng) chưa?
+- [ ] Có ước lượng tỷ lệ hoàn và đưa vào giá chưa?
+- [ ] Tài sản bán (ảnh, video, review, mô tả) đã sẵn sàng?
+- [ ] Logistics và chính sách hoàn đã dựng chưa?
+- [ ] Có cơ chế kéo khách về database (Zalo, SĐT, email) chưa?</p>
+<p><strong>Trước một phiên livestream:</strong>
+- [ ] Có kịch bản theo phễu (hook, giữ chân, chốt) chưa?
+- [ ] Sản phẩm ghim, giá, mã giảm đã cài sẵn?
+- [ ] Đội ngũ (host, trợ live, chốt đơn, kỹ thuật) phân vai rõ?
+- [ ] KPI phiên và cách đo ROI đã định trước?</p>
+<p><strong>Trước khi xuất khẩu:</strong>
+- [ ] Chứng nhận/hồ sơ sản phẩm theo chuẩn nước nhập?
+- [ ] Nhãn, thành phần, ngôn ngữ đúng quy định?
+- [ ] Mô hình fulfillment (FBA hay tự ship) đã chọn?
+- [ ] Đã tính chi phí logistics quốc tế và thuế vào giá?</p>
+<h2>16. SOP</h2>
+<p><strong>SOP vận hành một phiên livestream (mẫu rút gọn):</strong></p>
+<ul>
+<li><strong>T-3 ngày:</strong> chốt sản phẩm, giá, offer độc quyền phiên; viết kịch bản; set giỏ hàng.</li>
+<li><strong>T-1 ngày:</strong> chạy quảng cáo/đăng bài "nhắc lịch live"; test thiết bị, ánh sáng, âm thanh; chuẩn bị hàng và mã giảm.</li>
+<li><strong>T-0 (trong phiên):</strong>
+  1. Mở màn hook 30–60 giây (lý do xem ngay).
+  2. Giới thiệu sản phẩm theo cụm, mỗi cụm có demo + call-to-action.
+  3. Chốt bằng khan hiếm thật (số lượng, thời gian).
+  4. Trợ live trả comment, ghim sản phẩm đang nói.
+  5. Chốt đơn theo dõi real-time, thông báo "sắp hết".</li>
+<li><strong>T+1 ngày:</strong> đối soát đơn, xử lý đơn ảo/hủy; tính ROI phiên; ghi chú tầng phễu nào rớt.</li>
+<li><strong>T+3 ngày:</strong> nhắn khách đã mua (upsell/mua lại); đưa khách vào database.</li>
+</ul>
+<p><strong>SOP xử lý hoàn hàng:</strong> ghi nhận lý do hoàn → phân loại (lỗi sản phẩm / khách đổi ý / giao sai) → cập nhật tỷ lệ hoàn theo SKU và theo kênh → điều chỉnh giá/kịch bản nếu hoàn vượt ngưỡng.</p>
+<h2>17. KPI</h2>
+<p><strong>KPI theo tầng phễu và theo kênh (bảng chỉ số — không kèm benchmark bịa):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>Chỉ số</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traffic</td>
+<td>Lượt xem, view vào phiên, CTR quảng cáo</td>
+<td>Độ phủ đầu phễu</td>
+</tr>
+<tr>
+<td>Chuyển đổi</td>
+<td>Conversion rate, tỷ lệ giỏ hàng → đơn</td>
+<td>Sức chốt</td>
+</tr>
+<tr>
+<td>Giá trị đơn</td>
+<td>AOV, GMV, doanh thu thực</td>
+<td>Quy mô &amp; chất lượng đơn</td>
+</tr>
+<tr>
+<td>Lợi nhuận</td>
+<td>CM/đơn, tỷ lệ CM/doanh thu</td>
+<td>Bán có lãi không</td>
+</tr>
+<tr>
+<td>Chi phí khách</td>
+<td>CAC theo kênh, ROAS</td>
+<td>Hiệu quả marketing</td>
+</tr>
+<tr>
+<td>Rủi ro</td>
+<td>Tỷ lệ hoàn/hủy, tỷ lệ đơn ảo</td>
+<td>Chất lượng đơn thực</td>
+</tr>
+<tr>
+<td>Livestream</td>
+<td>Retention &gt;1 phút, avg view time, ROI phiên</td>
+<td>Sức khỏe phễu live</td>
+</tr>
+<tr>
+<td>Giữ chân</td>
+<td>Tỷ lệ mua lại, LTV, LTV/CAC</td>
+<td>Tài sản dài hạn</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nguyên tắc: <strong>LTV/CAC</strong> là chỉ số sống còn của D2C. Nếu LTV không bù nổi CAC, mô hình không bền dù doanh thu lớn.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Mẫu bảng tính unit economics theo kênh (điền số thực của bạn):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Shopee</th>
+<th>TikTok Shop</th>
+<th>Website</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Giá bán</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>COGS</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Phí sàn %</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Phí thanh toán</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ship (người bán chịu)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Voucher phân bổ</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hoàn hàng phân bổ</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CM/đơn</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>=Giá bán − tổng chi phí biến đổi</td>
+</tr>
+<tr>
+<td>Chi phí cố định kênh/tháng</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Số đơn hòa vốn</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>=Cố định / CM/đơn</td>
+</tr>
+<tr>
+<td>CAC</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Lãi/đơn khách mới</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>=CM/đơn − CAC</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Mẫu báo cáo phiên livestream:</strong> ngày | kênh | thời lượng | peak view | avg view time | comment | đơn chốt | đơn sau hoàn | doanh thu ròng | chi phí phiên | <strong>ROI</strong> | tầng phễu rớt | hành động sửa.</p>
+<h2>19. Prompt AI</h2>
+<p><em>(Dùng các prompt sau với ChatGPT, Claude, Gemini, Perplexity, NotebookLM, hoặc AI Agent. Luôn kiểm chứng số liệu AI đưa ra.)</em></p>
+<ul>
+<li><strong>ChatGPT / Claude — viết kịch bản livestream:</strong> "Bạn là đạo diễn livestream bán mỹ phẩm. Viết kịch bản 60 phút cho sản phẩm [tên], phân khúc [giá], theo phễu: hook 30s, 4 cụm sản phẩm mỗi cụm có demo + CTA, phần chốt bằng khan hiếm thật. Nêu lời thoại mẫu và việc của trợ live."</li>
+<li><strong>Claude — dựng bảng unit economics:</strong> "Tính contribution margin/đơn và điểm hòa vốn kênh với các thông số sau: [liệt kê]. Chỉ ra kênh nào lỗ cấu trúc và giải thích tại sao. Đừng bịa số tôi chưa cung cấp."</li>
+<li><strong>Perplexity — nghiên cứu thị trường có nguồn:</strong> "Tổng hợp biểu phí bán hàng hiện hành của Shopee và TikTok Shop tại Việt Nam năm 2026, kèm nguồn chính thức và ngày cập nhật. Nếu không chắc, nói rõ."</li>
+<li><strong>Gemini — phân tích đối thủ:</strong> "Phân tích 5 gian hàng mỹ phẩm bán chạy trên TikTok Shop Việt Nam: định vị, khoảng giá, chiến thuật livestream. Nêu giả định và nguồn."</li>
+<li><strong>NotebookLM — học từ tài liệu của bạn:</strong> nạp báo cáo TMĐT + biểu phí sàn + số liệu nội bộ, hỏi: "Từ các tài liệu này, kênh nào có CM cao nhất và rủi ro hoàn hàng lớn nhất? Trích dẫn đúng tài liệu."</li>
+<li><strong>AI Agent — quy trình tự động:</strong> "Mỗi tối, đọc báo cáo phiên livestream, tính ROI, gắn cờ phiên ROI âm, và đề xuất tầng phễu cần sửa. Xuất bảng tóm tắt."</li>
+</ul>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Tính CM/đơn:</strong> lấy một SKU thật của bạn, điền đầy đủ chi phí biến đổi cho Shopee và TikTok Shop. So sánh CM/đơn hai kênh.</li>
+<li><strong>Điểm hòa vốn:</strong> với CM/đơn vừa tính, cho chi phí cố định kênh 20 triệu/tháng, tính số đơn hòa vốn.</li>
+<li><strong>Phễu livestream:</strong> vẽ phễu 6 tầng cho một phiên bạn từng làm (hoặc giả định), gán một KPI cho mỗi tầng.</li>
+<li><strong>CAC vs LTV:</strong> ước lượng CAC một kênh và số lần mua lại trung bình; kết luận LTV có bù CAC không.</li>
+<li><strong>Kế hoạch xuất khẩu:</strong> chọn một sản phẩm và liệt kê 5 việc cần làm trước khi lên Amazon hoặc Alibaba.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt D2C, e-commerce và marketplace. Cho ví dụ mỗi loại.</li>
+<li>Vì sao GMV cao không đồng nghĩa với lợi nhuận? Nêu 3 khoản dễ bị bỏ sót.</li>
+<li>Viết công thức contribution margin/đơn và điểm hòa vốn kênh.</li>
+<li>Sáu tầng của phễu livestream là gì? Đòn bẩy cho tầng "giữ chân" là gì?</li>
+<li>Khác biệt giữa KOL, KOC và affiliate? Khi nào nên dùng cái nào?</li>
+<li>Vì sao "sở hữu khách hàng" là lợi thế cốt lõi của D2C so với kênh truyền thống?</li>
+<li>Với nhà máy OEM mỹ phẩm, vì sao nên xếp tầng B2B (Alibaba) và D2C (Amazon/sàn nội địa) thay vì chọn một?</li>
+<li>LTV/CAC nói lên điều gì về sức khỏe mô hình?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công (mô hình hóa dựa trên xu hướng thực, không phải một công ty cụ thể):</strong>
+Một thương hiệu mỹ phẩm Việt bắt đầu bằng gia công OEM. Họ ra dòng sản phẩm riêng, chọn TikTok Shop làm kênh mồi vì sản phẩm demo tốt bằng video. Thay vì thuê một KOL đắt tiền, họ dựng đội 15 KOC review chân thực và livestream đều đặn 3 phiên/tuần. Điểm quyết định: họ tính CM/đơn chặt, chỉ chạy khuyến mãi ở mức còn dương biên, và kéo mọi khách về Zalo OA để bán lại. Khi kênh nội địa có lãi ổn định, họ đưa SKU chủ lực lên Amazon qua FBA để xuất khẩu. Bài học: <strong>nội dung + KOC thật + kỷ luật unit economics + sở hữu khách hàng + xếp tầng xuất khẩu.</strong></p>
+<p><strong>Case thất bại (mô hình hóa — lỗi phổ biến quan sát được):</strong>
+Một nhà bán khác "bùng nổ" nhờ một phiên mega-live tạo GMV vài tỷ đồng và tự hào công bố con số. Nhưng họ đã trả cát-xê KOL rất cao, giảm giá sâu để đẩy đơn, và không lường tỷ lệ hoàn/đơn ảo lên tới hàng chục phần trăm. Sau đối soát: doanh thu thực còn lại nhỏ, CM/đơn âm, và họ hết hàng nên giao trễ khiến hoàn hàng tăng tiếp. Vì không kéo khách về database, họ không có ai để bán lại bù lỗ. Bài học: <strong>GMV là phù phiếm, contribution margin và tiền mặt thực mới là sự thật; livestream không kiểm soát hoàn hàng và không sở hữu khách là cái bẫy thua lỗ.</strong></p>
+<h2>23. Tổng kết</h2>
+<p>Bán hàng số tại Việt Nam 2026–2035 không còn là chọn "có nên lên sàn không", mà là <strong>thiết kế một hệ đa kênh có lãi và bền</strong>. Ba trụ cần nhớ:</p>
+<ol>
+<li><strong>Vật lý mỗi kênh khác nhau</strong> — sàn cho traffic nhưng lấy phí và giữ khách; website cho quyền sở hữu nhưng bắt bạn tự kéo traffic; livestream tạo chuyển đổi cảm xúc nhưng hoàn hàng cao.</li>
+<li><strong>Unit economics là trọng tài</strong> — CM/đơn, điểm hòa vốn, CAC và LTV quyết định kênh nào scale, kênh nào dừng. GMV không phải tiền về túi.</li>
+<li><strong>Sở hữu khách hàng là tài sản</strong> — mục tiêu cuối của D2C là biến giao dịch trên sàn thành quan hệ lâu dài trong database của bạn.</li>
+</ol>
+<p>Với nhà máy OEM/mỹ phẩm Việt Nam, cơ hội lớn nhất là <strong>xếp tầng</strong>: giữ dòng tiền B2B, xây thương hiệu D2C nội địa, và mở cửa xuất khẩu số qua Amazon/Alibaba — tất cả trên một nền kỷ luật tài chính đơn hàng.</p>
+<h2>24. Nguồn tham khảo</h2>
+<p><em>(Danh sách nguồn nên tra cứu, kèm khuyến nghị kiểm chứng bản mới nhất. Không dẫn link cụ thể để tránh sai lệch — hãy truy cập trang chính thức.)</em></p>
+<ul>
+<li>Trung tâm/Cục Thương mại điện tử và Kinh tế số (iDEA), Bộ Công Thương — Sách trắng Thương mại điện tử Việt Nam (cập nhật hằng năm).</li>
+<li>Báo cáo "e-Conomy SEA" (Google, Temasek, Bain &amp; Company) — quy mô kinh tế số Đông Nam Á.</li>
+<li>Trang trợ giúp/biểu phí chính thức của Shopee, Lazada, TikTok Shop Việt Nam (để lấy phí và chính sách hiện hành).</li>
+<li>Amazon Global Selling Vietnam — điều kiện, chương trình, FBA cho nhà bán Việt Nam xuất khẩu.</li>
+<li>Alibaba.com — hướng dẫn dành cho nhà cung cấp/nhà máy B2B.</li>
+<li>Tài liệu về mô hình D2C: các bài phân tích về Warby Parker, Dollar Shave Club, Glossier, Shein (kiểm chứng số liệu tài chính từ nguồn gốc).</li>
+<li>Sách/khung về unit economics và contribution margin trong e-commerce (giáo trình tài chính vận hành TMĐT).</li>
+</ul>
+<blockquote>
+<p>Lưu ý trích dẫn: mọi số liệu thị trường trong chương này khi cần dùng chính thức phải tra lại nguồn gốc và ghi rõ năm. Các con số minh họa công thức đã được đánh dấu "số minh họa" và không phản ánh dữ liệu thị trường thực.</p>
+</blockquote>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li>Biểu phí và chính sách cập nhật của Shopee, Lazada, TikTok Shop (thay đổi thường xuyên).</li>
+<li>Số liệu thị phần và quy mô TMĐT Việt Nam theo Sách trắng / e-Conomy SEA bản mới nhất.</li>
+<li>Diễn biến chính sách thuế đối với người bán online và livestream tại Việt Nam.</li>
+<li>Quy định pháp lý về livestream, quảng cáo mỹ phẩm và công bố sản phẩm.</li>
+<li>Điều kiện và chương trình xuất khẩu số mới của Amazon Global Selling và Alibaba.</li>
+<li>Xu hướng AI trong TMĐT: đề xuất cá nhân hóa, AI host livestream, tự động hóa vận hành.</li>
+<li>Case study Việt Nam có số liệu đã kiểm chứng (thay cho các case mô hình hóa hiện tại).</li>
+</ul></article><div class="nav"><a class="prev" href="tap-08-ai-marketing-06-quan-tri-rui-ro-ai.html"><span>← Trước</span>Tập 8 · Chương 6 — Quản trị rủi ro AI trong Marketing</a><a class="next" href="tap-09-mo-hinh-kenh-02-b2b-abm.html"><span>Sau →</span>Tập 9 · Chương 2 — B2B Marketing &amp; Account-Based Marketing</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

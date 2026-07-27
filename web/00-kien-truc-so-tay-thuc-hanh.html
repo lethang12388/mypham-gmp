@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sổ tay thực hành nhanh</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>SỔ TAY THỰC HÀNH NHANH</h1>
+<blockquote>
+<p>Bản rút gọn để <strong>làm ngay</strong>. Gom những biểu mẫu, checklist và prompt AI dùng nhiều nhất vào một chỗ. Mỗi công cụ có ghi chương gốc để bạn đọc sâu khi cần. In file này ra, điền tay hoặc copy vào tài liệu làm việc.</p>
+</blockquote>
+<hr />
+<h2>A. Bộ biểu mẫu cốt lõi (điền được)</h2>
+<h3>A1. Marketing One-Pager <em>(Chương 1.1)</em></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Điền</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WHY (vì sao tồn tại)</td>
+<td></td>
+</tr>
+<tr>
+<td>Khách hàng cốt lõi</td>
+<td></td>
+</tr>
+<tr>
+<td>Nỗi đau / Job To Be Done</td>
+<td></td>
+</tr>
+<tr>
+<td>Giá trị khác biệt</td>
+<td></td>
+</tr>
+<tr>
+<td>Câu định vị (1 câu)</td>
+<td></td>
+</tr>
+<tr>
+<td>3 lợi ích chính</td>
+<td>1. 2. 3.</td>
+</tr>
+<tr>
+<td>Bằng chứng tin cậy</td>
+<td></td>
+</tr>
+<tr>
+<td>3 kênh ưu tiên</td>
+<td>1. 2. 3.</td>
+</tr>
+<tr>
+<td>3 chỉ số theo dõi</td>
+<td>1. 2. 3.</td>
+</tr>
+<tr>
+<td>Kêu gọi hành động</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3>A2. Chân dung khách hàng — Persona/Avatar <em>(Chương 2.3)</em></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Điền</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tên &amp; ảnh đại diện (hình mẫu)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nhân khẩu (tuổi, giới, thu nhập, nơi ở)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nghề nghiệp &amp; vai trò</td>
+<td></td>
+</tr>
+<tr>
+<td>Mục tiêu / mong muốn</td>
+<td></td>
+</tr>
+<tr>
+<td>Nỗi đau / trở ngại</td>
+<td></td>
+</tr>
+<tr>
+<td>"Job To Be Done"</td>
+<td></td>
+</tr>
+<tr>
+<td>Kênh thông tin họ tin</td>
+<td></td>
+</tr>
+<tr>
+<td>Rào cản khi mua</td>
+<td></td>
+</tr>
+<tr>
+<td>Câu nói tiêu biểu của họ</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3>A3. Value Proposition (1 câu) <em>(Chương 1.5)</em></h3>
+<blockquote>
+<p><strong>Dành cho</strong> [khách hàng mục tiêu] <strong>đang gặp</strong> [nỗi đau], <strong>sản phẩm của chúng tôi</strong> là [danh mục] <strong>giúp</strong> [lợi ích chính], <strong>khác với</strong> [đối thủ] <strong>ở chỗ</strong> [khác biệt].</p>
+</blockquote>
+<h3>A4. Định vị (1 câu) <em>(Chương 1.2)</em></h3>
+<blockquote>
+<p>Chúng tôi là <strong>[danh mục]</strong> dành cho <strong>[ai]</strong> muốn <strong>[giá trị]</strong> — vì <strong>[lý do tin]</strong>.</p>
+</blockquote>
+<h3>A5. Cấu trúc thông điệp Hook–Story–Offer <em>(Chương 3.2)</em></h3>
+<ul>
+<li><strong>Hook (3 giây):</strong> …</li>
+<li><strong>Story (vấn đề → giải pháp):</strong> …</li>
+<li><strong>Offer (đề nghị + CTA):</strong> …</li>
+</ul>
+<h3>A6. Lịch nội dung 1 tuần <em>(Chương 5.1, 5.2)</em></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thứ</th>
+<th>Kênh</th>
+<th>Trụ nội dung</th>
+<th>Định dạng</th>
+<th>Thông điệp</th>
+<th>CTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>B. Checklist "trước khi tiêu tiền marketing"</h2>
+<ul>
+<li>[ ] Đã có <strong>WHY</strong> và <strong>khách hàng cốt lõi</strong> rõ ràng (không phải "mọi người").</li>
+<li>[ ] Đã biết <strong>Job To Be Done</strong> thật của khách.</li>
+<li>[ ] <strong>Value Proposition</strong> viết được trong 1 câu, khách hiểu ngay.</li>
+<li>[ ] <strong>Offer</strong> đủ hấp dẫn (giá trị ≫ giá) — sửa offer trước khi chạy ads.</li>
+<li>[ ] Chọn <strong>đúng phân khúc</strong> và <strong>đúng kênh</strong> khách hàng tin.</li>
+<li>[ ] Có <strong>cách đo lường</strong> gắn doanh thu/giá trị (không chỉ like/view).</li>
+<li>[ ] Có <strong>trang/điểm chạm chuyển đổi</strong> rõ ràng với 1 CTA.</li>
+<li>[ ] Có ngân sách thử nghiệm nhỏ trước khi nhân rộng.</li>
+</ul>
+<h2>C. Bảng chỉ số marketing tối thiểu <em>(Chương 6.1, 7.1)</em></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Ý nghĩa</th>
+<th>Cách tính (rút gọn)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAC</td>
+<td>Chi phí thu 1 khách</td>
+<td>Chi marketing ÷ số khách mới</td>
+</tr>
+<tr>
+<td>CLV</td>
+<td>Giá trị vòng đời khách</td>
+<td>LN gộp TB/khách × số lần mua × tuổi thọ</td>
+</tr>
+<tr>
+<td>CLV : CAC</td>
+<td>Sức khỏe mô hình</td>
+<td>CLV ÷ CAC (mục tiêu ≥ 3:1 — <em>kinh nghiệm, cần kiểm chứng theo ngành</em>)</td>
+</tr>
+<tr>
+<td>Tỷ lệ chuyển đổi</td>
+<td>Hiệu quả phễu</td>
+<td>Số mua ÷ số khách vào phễu</td>
+</tr>
+<tr>
+<td>ROAS</td>
+<td>Hiệu quả quảng cáo</td>
+<td>Doanh thu quảng cáo ÷ chi quảng cáo</td>
+</tr>
+<tr>
+<td>Tỷ lệ quay lại</td>
+<td>Sức giữ chân</td>
+<td>Khách mua lại ÷ tổng khách</td>
+</tr>
+<tr>
+<td>NPS</td>
+<td>Thiện cảm</td>
+<td>% ủng hộ − % chê</td>
+</tr>
+</tbody>
+</table></div>
+<h2>D. Thư viện Prompt AI đa dụng</h2>
+<p>Thay <code>[...]</code> bằng thông tin thật. Dùng được với ChatGPT, Claude, Gemini (điều chỉnh nhẹ theo công cụ).</p>
+<p><strong>Phân tích chiến lược (Claude/ChatGPT):</strong></p>
+<pre><code>Đóng vai hội đồng chiến lược (Kotler, Porter, Byron Sharp). Doanh nghiệp của tôi: [mô tả].
+Hãy: (1) đánh giá định vị hiện tại; (2) chỉ 3 điểm mù lớn nhất; (3) đề xuất 3 nước đi ưu tiên trong 90 ngày. Hỏi lại nếu thiếu thông tin.
+</code></pre>
+<p><strong>Xây Persona (ChatGPT/Claude):</strong></p>
+<pre><code>Dựa trên mô tả khách hàng: [dán]. Hãy dựng 1 persona đầy đủ: nhân khẩu, mục tiêu, nỗi đau, Job To Be Done, kênh tin cậy, rào cản mua, 3 câu nói tiêu biểu. Ghi rõ phần nào là suy đoán cần kiểm chứng bằng phỏng vấn thật.
+</code></pre>
+<p><strong>Viết nội dung (ChatGPT/Claude):</strong></p>
+<pre><code>Viết [định dạng: bài Facebook / kịch bản video 30s / email] cho [sản phẩm], hướng tới persona [dán].
+Dùng cấu trúc Hook–Story–Offer, giọng [tính từ], 1 CTA duy nhất: [CTA]. Tránh sáo rỗng. Đưa 3 phiên bản tiêu đề.
+</code></pre>
+<p><strong>Tìm dẫn chứng có nguồn (Perplexity):</strong></p>
+<pre><code>Tìm dữ liệu &amp; nguồn đáng tin (kèm năm) về [chủ đề/thị trường VN]. Trích dẫn nguồn cụ thể. Nếu không chắc, nói rõ &quot;chưa xác minh&quot;.
+</code></pre>
+<p><strong>Biến chương sách thành khóa học (NotebookLM):</strong></p>
+<pre><code>Từ tài liệu đã tải: tạo (1) tóm tắt 10 ý chính; (2) 8 câu hỏi thảo luận; (3) dàn ý bài giảng 60 phút; (4) 5 câu hỏi kiểm tra.
+</code></pre>
+<p><strong>AI Agent (tự động hóa 1 quy trình):</strong></p>
+<pre><code>Mục tiêu: [ví dụ: lập kế hoạch nội dung tháng cho sản phẩm X].
+Hãy làm theo bước, DỪNG chờ tôi xác nhận sau mỗi bước: (1) hỏi tôi 5 câu thu thập thông tin; (2) đề xuất 4 trụ nội dung; (3) lập lịch 12 bài; (4) xuất file markdown.
+</code></pre>
+<h2>E. Nhắc lại 5 nguyên tắc "xương sống"</h2>
+<ol>
+<li><strong>Bán giá trị, không bán giá</strong> — thoát cuộc đua xuống đáy.</li>
+<li><strong>Lấy khách hàng làm gốc, không lấy sản phẩm</strong> — tránh "Marketing Myopia".</li>
+<li><strong>Sửa offer trước, khuếch đại sau</strong> — không quảng cáo để cứu offer yếu.</li>
+<li><strong>Đo thứ đáng đo</strong> — gắn chỉ số với doanh thu/giá trị.</li>
+<li><strong>Tư duy trước, công cụ (kể cả AI) sau.</strong></li>
+</ol>
+<hr />
+<blockquote>
+<p>⚠️ Mọi con số trong sổ tay chỉ là công thức/kinh nghiệm — hãy kiểm chứng với dữ liệu ngành của bạn. Xem quy tắc trích dẫn tại <a href="HUONG-DAN-CAP-NHAT.md"><code>HUONG-DAN-CAP-NHAT.md</code></a>.</p>
+</blockquote>
+<p><em>Phiên bản sổ tay: v1.0 · 2026</em></p></article><div class="nav"><a class="prev" href="00-kien-truc-lo-trinh-hoc.html"><span>← Trước</span>Lộ trình học &amp; thực hành</a><a class="next" href="00-kien-truc-thuat-ngu.html"><span>Sau →</span>Thuật ngữ Marketing</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Outline</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>MASTER OUTLINE — Lộ trình toàn bộ bộ sách</h1>
+<blockquote>
+<p>Bản đồ tổng thể của <strong>MARKETING THỰC CHIẾN 2026–2035</strong>. Đây là "hiến pháp" về cấu trúc: mọi chương mới phải nằm trong một tập, tuân theo template chương, và cập nhật trạng thái tại đây.</p>
+</blockquote>
+<p><strong>Chú thích trạng thái:</strong> 🟢 Hoàn chỉnh · 🟡 Đang biên soạn · ⚪ Đã lên kế hoạch</p>
+<p>Bản phát hành <strong>v1.0 (2026)</strong> hoàn thành kiến trúc + <strong>62/62 chương hoàn chỉnh (100%)</strong> — cả 10 tập đã đầy đủ theo lộ trình. Từ đây, việc mở rộng là thêm tập/chương mới hoặc cập nhật nội dung theo thời gian (mục "Cần cập nhật trong tương lai" của mỗi chương).</p>
+<blockquote>
+<p>🧭 Điều hướng nhanh: <a href="MUC-LUC.md">Mục lục có liên kết</a> · <a href="LO-TRINH-HOC.md">Lộ trình học theo vai trò</a> · <a href="SO-TAY-THUC-HANH.md">Sổ tay thực hành</a></p>
+</blockquote>
+<hr />
+<h2>TẬP 1 — Nền tảng &amp; Tư duy Marketing</h2>
+<p><em>Mục tiêu: xây nền tư duy đúng trước khi học kỹ thuật.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>Tư duy Marketing 2026–2035: từ "bán hàng" đến "tạo &amp; truyền tải giá trị"</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>STP — Phân khúc, Chọn thị trường mục tiêu &amp; Định vị</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>Marketing Mix: 4P → 7P → 4C → 4E</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>Marketing là gì: bản chất, lịch sử &amp; các trường phái</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>Value Proposition &amp; Jobs To Be Done (Christensen)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>Chiến lược cạnh tranh (Porter) &amp; lợi thế bền vững</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.7</td>
+<td>Marketing cho doanh nghiệp nhỏ &amp; nguồn lực hạn chế</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>1.8</td>
+<td>Đạo đức Marketing &amp; phát triển bền vững</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 2 — Nghiên cứu thị trường &amp; Tâm lý khách hàng</h2>
+<p><em>Mục tiêu: hiểu thị trường và con người trước khi tác động.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>Tâm lý học hành vi &amp; Kinh tế học hành vi trong Marketing</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Nghiên cứu thị trường: định tính &amp; định lượng</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Insight khách hàng &amp; xây dựng Persona/Avatar</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>Customer Jobs, Pains, Gains &amp; bản đồ giá trị</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>Phân tích đối thủ &amp; bối cảnh cạnh tranh</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>Xu hướng, dự báo &amp; quét môi trường (PESTEL)</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 3 — Thương hiệu &amp; Định vị</h2>
+<p><em>Mục tiêu: xây tài sản thương hiệu dài hạn.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td>Xây dựng Thương hiệu: Brand Identity, Equity &amp; Định vị</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Storytelling &amp; Narrative thương hiệu</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Kiến trúc thương hiệu &amp; mở rộng thương hiệu</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>Nhận diện hình ảnh, Brand Voice &amp; hệ thống thiết kế</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>Thương hiệu cá nhân (Personal Branding)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>Đo lường sức khỏe thương hiệu</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 4 — Sản phẩm, Giá &amp; Phân phối</h2>
+<p><em>Mục tiêu: làm chủ 3P còn lại của marketing mix cổ điển.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td>Chiến lược Giá (Pricing): từ chi phí đến giá trị &amp; tâm lý giá</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Phát triển sản phẩm &amp; đổi mới (Product &amp; Innovation)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>Vòng đời sản phẩm &amp; danh mục sản phẩm</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>Chiến lược phân phối &amp; quản trị kênh</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>Bao bì, trải nghiệm sản phẩm &amp; điểm chạm vật lý</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 5 — Digital Marketing &amp; Nội dung</h2>
+<p><em>Mục tiêu: hiện diện và thu hút trên môi trường số.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1</td>
+<td>Content Marketing &amp; SEO thời AI Search (GEO/AEO)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>Social Media &amp; nền tảng: Facebook, Instagram, LinkedIn, Threads</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>Video ngắn &amp; TikTok/Reels/Shorts</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>YouTube &amp; video dài (YouTube Creator Academy)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td>Email Marketing &amp; Automation</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td>Community Building &amp; Marketing cộng đồng</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>5.7</td>
+<td>Influencer, KOL &amp; KOC Marketing</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 6 — Bán hàng, Funnel &amp; CRM</h2>
+<p><em>Mục tiêu: biến sự chú ý thành doanh thu và lòng trung thành.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1</td>
+<td>Marketing Funnel, Customer Journey &amp; Trải nghiệm khách hàng (CX)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>Sales &amp; bán hàng tư vấn (Consultative Selling)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>CRM &amp; quản trị quan hệ khách hàng</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>Marketing Automation &amp; Lead Nurturing</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td>Service Marketing &amp; chăm sóc sau bán</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>6.6</td>
+<td>Retention, Loyalty &amp; tăng CLV</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 7 — Growth, Performance &amp; Data</h2>
+<p><em>Mục tiêu: tăng trưởng dựa trên dữ liệu và thử nghiệm.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.1</td>
+<td>Growth Marketing &amp; Performance Marketing</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>Data Analytics cho Marketing &amp; đo lường</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td>A/B Testing &amp; văn hóa thử nghiệm</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>Attribution &amp; đo lường thời hậu-cookie</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>7.5</td>
+<td>Quảng cáo trả phí: Google, Meta, TikTok Ads</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>7.6</td>
+<td>Tài chính Marketing: ngân sách, ROI, CAC/CLV</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 8 — AI Marketing &amp; Chuyển đổi số</h2>
+<p><em>Mục tiêu: dùng AI làm đòn bẩy năng suất &amp; sáng tạo — trọng tâm 2026–2035.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1</td>
+<td>AI Marketing, AI Agent &amp; MCP — Tự động hóa bằng AI</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>8.2</td>
+<td>Prompt Engineering cho Marketer</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>8.3</td>
+<td>Sản xuất nội dung bằng AI (văn bản, hình ảnh, video, giọng nói)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>8.4</td>
+<td>Personalization at scale &amp; AI trong CRM</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>8.5</td>
+<td>Xây dựng Knowledge Base &amp; RAG cho doanh nghiệp</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>8.6</td>
+<td>Quản trị rủi ro AI: hallucination, bản quyền, đạo đức, dữ liệu</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 9 — Mô hình kinh doanh &amp; Kênh</h2>
+<p><em>Mục tiêu: áp dụng marketing theo từng mô hình và kênh.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9.1</td>
+<td>D2C, E-commerce, Marketplace &amp; Livestream</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>9.2</td>
+<td>B2B Marketing &amp; Account-Based Marketing</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>9.3</td>
+<td>Retail &amp; Omnichannel/O2O</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>9.4</td>
+<td>Affiliate &amp; Partnership Marketing</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>9.5</td>
+<td>International Marketing &amp; Xuất khẩu (cho nhà máy OEM/nhà sản xuất)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>9.6</td>
+<td>Bán trên Amazon, Alibaba &amp; sàn quốc tế</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<h2>TẬP 10 — Case Study &amp; Thư viện thực chiến</h2>
+<p><em>Mục tiêu: học từ thành công và thất bại thực tế.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chương</th>
+<th>Trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1</td>
+<td>Case Study: Apple · Vinamilk · Thế Giới Di Động</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>10.2</td>
+<td>Case Study: Amazon · Netflix · Tesla</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>10.3</td>
+<td>Case Study: Nike · Coca-Cola · Starbucks</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>10.4</td>
+<td>Case Study: P&amp;G · Unilever · Toyota</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>10.5</td>
+<td>Case Study Việt Nam: Trung Nguyên · Highlands · Biti's · FPT</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>10.6</td>
+<td>Case Study SME &amp; thất bại kinh điển (bài học sống còn)</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>Nguyên tắc mở rộng outline</h2>
+<ol>
+<li><strong>Mọi chương mới</strong> phải thuộc một tập hiện có hoặc một tập mới được khai báo tại đây trước.</li>
+<li>Đặt tên file: <code>NN-slug-khong-dau.md</code> (ví dụ <code>03-marketing-mix.md</code>).</li>
+<li>Chương phải theo đúng <a href="CHUONG-TEMPLATE.md"><code>CHUONG-TEMPLATE.md</code></a> — 24 mục + "Cần cập nhật trong tương lai".</li>
+<li>Cập nhật trạng thái (⚪→🟡→🟢) tại bảng tương ứng ngay khi thay đổi.</li>
+<li>Tuân thủ <a href="HUONG-DAN-CAP-NHAT.md"><code>HUONG-DAN-CAP-NHAT.md</code></a> về trích dẫn &amp; phiên bản.</li>
+</ol>
+<p><em>Phiên bản outline: v1.0 · 2026</em></p></article><div class="nav"><a class="prev" href="tap-10-case-study-06-sme-that-bai-kinh-dien.html"><span>← Trước</span>Tập 10 · Chương 6 — Case Study: SME &amp; Thất bại kinh điển</a><a class="next" href="00-kien-truc-huong-dan-cap-nhat.html"><span>Sau →</span>Hướng dẫn cập nhật &amp; trích dẫn</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>
