@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 3 · Chương 3 — Kiến trúc thương hiệu &amp; Mở rộng thương hiệu</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 3 · Chương 3 — Kiến trúc thương hiệu &amp; Mở rộng thương hiệu</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+- <strong>Tập:</strong> 3 — Thương hiệu &amp; Định vị
+- <strong>Chương:</strong> 3 — Kiến trúc thương hiệu &amp; Mở rộng thương hiệu (Brand Architecture &amp; Extension)
+- <strong>Cấp độ:</strong> Trung cấp → Nâng cao
+- <strong>Đối tượng:</strong> Brand manager, marketing lead, founder, giám đốc marketing (CMO)
+- <strong>Thời lượng học đề xuất:</strong> 6–8 giờ (đọc + làm bài tập + case study)
+- <strong>Điều kiện tiên quyết:</strong> Đã nắm chương "Định vị thương hiệu" và "Tài sản thương hiệu (Brand Equity)"
+- <strong>Phiên bản:</strong> 1.0 · Cập nhật 2026</p>
+</blockquote>
+<p><strong>Tóm tắt 1 câu:</strong> Chương này chỉ cho bạn cách <em>sắp xếp</em> mối quan hệ giữa các thương hiệu trong một tổ chức (branded house, house of brands, endorsed, sub-brand) và cách <em>nới rộng</em> một thương hiệu sang sản phẩm/danh mục mới mà không làm loãng giá trị hay tự ăn thịt chính mình.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Một công ty hiếm khi chỉ có một sản phẩm. Ngay khi bạn ra sản phẩm thứ hai, một câu hỏi chiến lược xuất hiện: <em>"Nó sẽ mang tên gì, và quan hệ thế nào với cái đã có?"</em> Đó chính là bài toán <strong>kiến trúc thương hiệu</strong>.</p>
+<p>Hãy tưởng tượng hai công ty. Apple bán iPhone, iPad, Mac, Watch, AirPods — tất cả đều gắn chặt vào một cái tên "Apple". Ngược lại, Unilever bán OMO, Dove, Lifebuoy, Sunsilk, Knorr, Comfort — người tiêu dùng dùng cả đời mà nhiều khi không biết chúng cùng một nhà. Hai triết lý đối lập, cả hai đều thành công hàng trăm tỷ USD. Vậy đâu là lựa chọn đúng cho <em>bạn</em>?</p>
+<p>Kiến trúc thương hiệu không phải là chuyện thẩm mỹ hay sở thích của founder. Nó quyết định: chi phí marketing (nuôi một thương hiệu hay mười thương hiệu?), rủi ro khủng hoảng (một sản phẩm dính phốt có kéo cả tập đoàn xuống không?), tốc độ ra mắt sản phẩm mới, và khả năng bán giá cao. Chọn sai kiến trúc, bạn có thể đốt ngân sách gấp nhiều lần mà thương hiệu vẫn mờ nhạt.</p>
+<p>Chương này đi từ khái niệm nền tảng đến các mô hình kinh điển của David Aaker và Kevin Keller, sau đó chuyển sang phần thực chiến nhất: <strong>mở rộng thương hiệu</strong> — nơi phần lớn sai lầm đắt giá xảy ra.</p>
+<hr />
+<h2>2. Khái niệm</h2>
+<p><strong>Kiến trúc thương hiệu (Brand Architecture)</strong> là cấu trúc tổ chức và mối quan hệ giữa các thương hiệu, thương hiệu con và dòng sản phẩm trong danh mục của một doanh nghiệp. Nó trả lời: thương hiệu nào là chủ đạo, thương hiệu nào phụ thuộc, và người tiêu dùng nên hiểu quan hệ giữa chúng ra sao.</p>
+<p>Các thuật ngữ cốt lõi cần phân biệt rõ:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thuật ngữ</th>
+<th>Định nghĩa ngắn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Master brand / Corporate brand</strong></td>
+<td>Thương hiệu mẹ, thường trùng tên công ty (Apple, Vingroup).</td>
+</tr>
+<tr>
+<td><strong>Sub-brand (thương hiệu con)</strong></td>
+<td>Thương hiệu gắn với thương hiệu mẹ nhưng có bản sắc riêng (Apple <em>iPhone</em>, Sony <em>PlayStation</em>).</td>
+</tr>
+<tr>
+<td><strong>Endorsed brand (thương hiệu được bảo chứng)</strong></td>
+<td>Thương hiệu độc lập nhưng có mẹ đứng sau bảo chứng ("Courtyard <em>by Marriott</em>").</td>
+</tr>
+<tr>
+<td><strong>House of brands</strong></td>
+<td>Tập hợp các thương hiệu độc lập, mẹ ẩn danh (P&amp;G, Unilever).</td>
+</tr>
+<tr>
+<td><strong>Brand extension (mở rộng thương hiệu)</strong></td>
+<td>Dùng thương hiệu sẵn có để vào <em>danh mục sản phẩm mới</em> (Dove xà phòng → Dove dầu gội).</td>
+</tr>
+<tr>
+<td><strong>Line extension (mở rộng dòng)</strong></td>
+<td>Thêm biến thể trong <em>cùng danh mục</em> (Coca-Cola → Coca-Cola Zero, hương vani).</td>
+</tr>
+<tr>
+<td><strong>Brand portfolio (danh mục thương hiệu)</strong></td>
+<td>Toàn bộ các thương hiệu một công ty sở hữu và cách chúng phân vai.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Phân biệt then chốt:</strong> <em>line extension</em> mở rộng theo chiều ngang trong cùng ngành hàng (ít rủi ro, dễ pha loãng nếu quá nhiều SKU); <em>brand extension</em> nhảy sang ngành hàng khác (rủi ro cao hơn nhưng đòn bẩy lớn hơn).</p>
+<hr />
+<h2>3. Lịch sử hình thành</h2>
+<ul>
+<li><strong>Cuối thế kỷ 19 – đầu 20:</strong> Procter &amp; Gamble tiên phong mô hình <em>house of brands</em>. Với Ivory (1879) rồi Tide (1946), P&amp;G cố tình để các thương hiệu cạnh tranh nhau trên kệ, tạo nên hệ thống <strong>brand management</strong> hiện đại (khai sinh chức danh "brand man" năm 1931 bởi Neil McElroy).</li>
+<li><strong>Thập niên 1980–1990:</strong> Làn sóng M&amp;A khiến các tập đoàn ôm hàng chục thương hiệu, làm nảy sinh nhu cầu cấp bách về "quản trị danh mục thương hiệu".</li>
+<li><strong>1991 &amp; 1996:</strong> <strong>David A. Aaker</strong> xuất bản <em>Managing Brand Equity</em> và <em>Building Strong Brands</em>, đặt nền móng lý thuyết về tài sản thương hiệu và cấu trúc thương hiệu.</li>
+<li><strong>1998:</strong> <strong>Kevin Lane Keller</strong> xuất bản <em>Strategic Brand Management</em>, hệ thống hóa mô hình <strong>CBBE (Customer-Based Brand Equity)</strong> và khái niệm <strong>brand hierarchy</strong> (hệ thống cấp bậc thương hiệu: corporate → family → individual → modifier).</li>
+<li><strong>2000:</strong> Aaker &amp; Erich Joachimsthaler công bố <strong>Brand Relationship Spectrum</strong> trong <em>Brand Leadership</em> — khung xương sống mà chương này dùng.</li>
+<li><strong>2010s–2020s:</strong> Kỷ nguyên digital và startup khiến bài toán kiến trúc trở nên năng động hơn: các "nhà" thương hiệu hình thành nhanh qua gọi vốn, mua bán, và mở rộng sang hệ sinh thái (ví dụ mô hình tập đoàn đa ngành ở Việt Nam như Vingroup, Masan).</li>
+</ul>
+<hr />
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Tối ưu chi phí marketing.</strong> Branded house dồn toàn bộ ngân sách vào <em>một</em> cái tên → đòn bẩy khổng lồ. House of brands phải nuôi nhiều thương hiệu → tốn kém nhưng bù lại chiếm nhiều phân khúc.</li>
+<li><strong>Quản trị rủi ro lây nhiễm.</strong> Nếu một sản phẩm dính khủng hoảng, house of brands cô lập thiệt hại (thương hiệu khác không hề hấn); branded house thì "một con sâu làm rầu nồi canh".</li>
+<li><strong>Khả năng phủ phân khúc &amp; giá.</strong> Nhiều thương hiệu độc lập cho phép phủ từ bình dân đến cao cấp mà không xung đột định vị.</li>
+<li><strong>Tốc độ &amp; chi phí ra mắt sản phẩm mới.</strong> Mở rộng thương hiệu tận dụng nhận biết sẵn có → giảm chi phí gia nhập thị trường, tăng tỉ lệ dùng thử.</li>
+<li><strong>Rõ ràng cho khách hàng và nội bộ.</strong> Kiến trúc mạch lạc giúp khách hàng định hướng ("cần gì mua nấy") và giúp đội ngũ biết đầu tư nguồn lực vào đâu.</li>
+<li><strong>Bảo vệ và khuếch đại tài sản thương hiệu.</strong> Mở rộng đúng cách <em>xây thêm</em> equity; mở rộng sai <em>rút cạn</em> equity.</li>
+</ol>
+<hr />
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Kiến trúc thương hiệu vận hành trên ba nguyên lý cốt lõi:</p>
+<p><strong>Nguyên lý 1 — Chuyển giao liên tưởng (association transfer).</strong> Khi hai thương hiệu chia sẻ một cái tên, các liên tưởng (chất lượng, tính cách, hình ảnh) chảy qua lại giữa chúng. Đây là con dao hai lưỡi: liên tưởng tốt được khuếch đại, liên tưởng xấu cũng lan theo.</p>
+<p><strong>Nguyên lý 2 — Fit (độ khớp).</strong> Keller nhấn mạnh: mở rộng thành công khi có <strong>sự phù hợp</strong> giữa thương hiệu mẹ và danh mục mới, ở hai chiều: (a) <em>fit về hình ảnh/liên tưởng</em> (thương hiệu "cao cấp" mở rộng sang sản phẩm cao cấp), và (b) <em>fit về năng lực</em> (khách hàng tin công ty đủ khả năng làm ra sản phẩm mới đó). Thiếu fit → khách hàng bối rối, từ chối.</p>
+<p><strong>Nguyên lý 3 — Đánh đổi giữa đòn bẩy và rủi ro.</strong> Càng gắn chặt vào thương hiệu mẹ (branded house) → đòn bẩy càng lớn nhưng rủi ro lây nhiễm càng cao. Càng tách rời (house of brands) → an toàn hơn nhưng chi phí xây dựng từng thương hiệu càng lớn. Endorsed và sub-brand nằm giữa, cân bằng hai thái cực.</p>
+<hr />
+<h2>6. Mô hình — Aaker's Brand Relationship Spectrum</h2>
+<p>David Aaker đề xuất một <strong>phổ (spectrum)</strong> 4 chiến lược lớn, xếp từ "một thương hiệu chi phối tất cả" đến "nhiều thương hiệu độc lập":</p>
+<pre><code>BRANDED HOUSE  ───►  SUB-BRANDS  ───►  ENDORSED BRANDS  ───►  HOUSE OF BRANDS
+(một thương hiệu)                                          (nhiều thương hiệu)
+
+Mẹ chi phối 100%    Mẹ + con phối     Con dẫn, mẹ đứng      Mỗi thương hiệu
+                    hợp cân bằng      sau bảo chứng nhẹ     đứng độc lập
+</code></pre>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chiến lược</th>
+<th>Vai trò thương hiệu mẹ</th>
+<th>Ví dụ</th>
+<th>Ưu điểm</th>
+<th>Nhược điểm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branded house</strong></td>
+<td>Chủ đạo, gần như duy nhất</td>
+<td>Apple, Google, FedEx, VinFast</td>
+<td>Đòn bẩy tối đa, chi phí thấp/thương hiệu</td>
+<td>Rủi ro lây nhiễm cao, khó phủ nhiều phân khúc</td>
+</tr>
+<tr>
+<td><strong>Sub-brand</strong></td>
+<td>Đồng chủ đạo với con</td>
+<td>Apple <em>iPhone</em>, Sony <em>PlayStation</em>, Toyota <em>Camry</em></td>
+<td>Vừa tận dụng mẹ, vừa tạo bản sắc con</td>
+<td>Cần đầu tư nuôi cả hai tầng</td>
+</tr>
+<tr>
+<td><strong>Endorsed brand</strong></td>
+<td>Bảo chứng, đứng sau</td>
+<td><em>Courtyard by Marriott</em>, <em>Polo by Ralph Lauren</em></td>
+<td>Con linh hoạt, mẹ tăng độ tin</td>
+<td>Bảo chứng loãng nếu quá nhiều con</td>
+</tr>
+<tr>
+<td><strong>House of brands</strong></td>
+<td>Ẩn danh hoặc rất mờ</td>
+<td>P&amp;G, Unilever, Masan Consumer</td>
+<td>Phủ mọi phân khúc, cô lập rủi ro</td>
+<td>Chi phí marketing cực lớn, không cộng hưởng</td>
+</tr>
+</tbody>
+</table></div>
+<p>Trong thực tế, <em>sub-brand</em> và <em>endorsed</em> còn được chia nhỏ: sub-brand có "co-drivers" (con và mẹ ngang vai) hay "mẹ dẫn dắt"; endorsed có "token endorsement" (bảo chứng rất nhẹ) đến "strong endorsement" (bảo chứng mạnh). Phổ này <em>liên tục</em>, không phải bốn ô rời rạc.</p>
+<hr />
+<h2>7. Framework — Keller's Brand Hierarchy + Ma trận quyết định</h2>
+<p>Kevin Keller bổ sung mô hình <strong>Brand Hierarchy (hệ thống cấp bậc thương hiệu)</strong> gồm 4 tầng:</p>
+<pre><code>Tầng 1 — Corporate/Company brand      → Vingroup
+Tầng 2 — Family brand                 → Vin- (Vinhomes, VinFast, Vinpearl)
+Tầng 3 — Individual/Product brand     → VinFast VF8
+Tầng 4 — Modifier (biến thể/phiên bản)→ VF8 Eco / VF8 Plus
+</code></pre>
+<p><strong>Ma trận quyết định chọn kiến trúc</strong> (kết hợp Aaker + thực tiễn):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Câu hỏi chẩn đoán</th>
+<th>Nghiêng về Branded House</th>
+<th>Nghiêng về House of Brands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sản phẩm có cùng đối tượng, cùng giá trị cốt lõi?</td>
+<td>Có</td>
+<td>Không, phân khúc khác biệt lớn</td>
+</tr>
+<tr>
+<td>Rủi ro khủng hoảng của một sản phẩm cao?</td>
+<td>Thấp</td>
+<td>Cao → cần cô lập</td>
+</tr>
+<tr>
+<td>Ngân sách marketing giới hạn?</td>
+<td>Có → dồn một tên</td>
+<td>Dồi dào</td>
+</tr>
+<tr>
+<td>Muốn bán giá cao đồng nhất?</td>
+<td>Có</td>
+<td>Cần cả cao cấp lẫn bình dân</td>
+</tr>
+<tr>
+<td>Định vị các sản phẩm có xung đột nhau không?</td>
+<td>Không xung đột</td>
+<td>Xung đột (vd: cao cấp vs bình dân)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>8. Công thức</h2>
+<p>Không có "công thức" định lượng tuyệt đối cho kiến trúc, nhưng có vài công cụ định lượng/định tính hữu dụng:</p>
+<p><strong>(a) Điểm fit của mở rộng thương hiệu (Extension Fit Score):</strong></p>
+<pre><code>Fit = w1 × (Fit hình ảnh) + w2 × (Fit năng lực) + w3 × (Fit kênh/khách hàng)
+</code></pre>
+<p>Chấm mỗi yếu tố thang 1–5, trọng số w tự đặt (thường w1≈w2≈0.4; w3≈0.2). Fit &lt; 3.0 → cân nhắc dừng hoặc dùng thương hiệu mới.</p>
+<p><strong>(b) Tỉ lệ tự ăn thịt (Cannibalization Rate):</strong></p>
+<pre><code>Cannibalization % = (Doanh số mất đi của sản phẩm cũ / Doanh số của sản phẩm mới) × 100%
+</code></pre>
+<p>Nếu phần lớn doanh số sản phẩm mới đến từ việc "cướp" khách của chính sản phẩm cũ (thay vì mở rộng thị trường) → cannibalization cao, cần xem lại.</p>
+<p><strong>(c) Nguyên tắc kinh nghiệm về danh mục:</strong> không có con số vàng cố định — cần tự đo bằng doanh thu, biên lợi nhuận và chi phí duy trì từng thương hiệu, rồi cắt bỏ các thương hiệu "đuôi dài" không sinh lời (nguyên tắc <em>brand portfolio pruning</em> — tỉa danh mục).</p>
+<blockquote>
+<p>Lưu ý: các trọng số và ngưỡng trên là khung tham khảo để ra quyết định, không phải hằng số học thuật <em>(cần kiểm chứng theo bối cảnh từng doanh nghiệp)</em>.</p>
+</blockquote>
+<hr />
+<h2>9. Quy trình</h2>
+<p><strong>Bước 1 — Kiểm kê (Audit).</strong> Liệt kê toàn bộ thương hiệu, sản phẩm, dòng sản phẩm hiện có. Vẽ sơ đồ cây thực trạng.</p>
+<p><strong>Bước 2 — Phân vai (Role assignment).</strong> Xác định thương hiệu chiến lược (strategic brand), thương hiệu đòn bẩy (flanker/fighter brand), thương hiệu bò sữa (cash cow), thương hiệu bạc đạn (silver bullet — kéo hình ảnh).</p>
+<p><strong>Bước 3 — Chẩn đoán định vị.</strong> Mỗi thương hiệu phục vụ phân khúc nào? Có chồng lấn/xung đột không?</p>
+<p><strong>Bước 4 — Chọn chiến lược trên Spectrum.</strong> Dùng ma trận ở Mục 7 để quyết branded house / sub-brand / endorsed / house of brands cho từng nhánh.</p>
+<p><strong>Bước 5 — Thiết kế hệ thống đặt tên &amp; nhận diện.</strong> Quy ước tên, logo, mức độ hiển thị của thương hiệu mẹ.</p>
+<p><strong>Bước 6 — Đánh giá mở rộng (nếu có sản phẩm mới).</strong> Chấm Extension Fit Score, ước lượng cannibalization.</p>
+<p><strong>Bước 7 — Triển khai &amp; truyền thông.</strong> Ra mắt, giáo dục thị trường về quan hệ giữa các thương hiệu.</p>
+<p><strong>Bước 8 — Theo dõi &amp; tỉa danh mục.</strong> Đo KPI, loại bỏ thương hiệu yếu, hợp nhất khi cần.</p>
+<hr />
+<h2>10. Ví dụ đơn giản</h2>
+<p>Chị Lan bán một tiệm bánh nhỏ tên <strong>"Bếp Lan"</strong>. Ban đầu chỉ có bánh mì. Chị muốn thêm sản phẩm mới:</p>
+<ul>
+<li><strong>Thêm bánh mì nguyên cám, bánh mì mè đen</strong> → đây là <strong>line extension</strong> (cùng danh mục "bánh mì"). Rủi ro thấp, tận dụng ngay uy tín "Bếp Lan".</li>
+<li><strong>Thêm bánh kem sinh nhật</strong> → vẫn trong ngành bánh, vẫn dùng tên "Bếp Lan" → <strong>brand extension nhẹ</strong>, fit cao.</li>
+<li><strong>Thêm nước rửa chén "Bếp Lan"</strong> → <strong>brand extension mạo hiểm</strong>: khách sẽ thấy kỳ cục ("sao tiệm bánh lại làm nước rửa chén?"). Fit năng lực = 1/5. Nên dùng <em>tên khác</em> nếu vẫn muốn làm.</li>
+</ul>
+<p>Bài học: giữ tên khi sản phẩm mới <em>khớp</em> với hình ảnh và năng lực; đổi tên khi nhảy quá xa.</p>
+<hr />
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Apple — Branded house điển hình.</strong> Mọi sản phẩm (iPhone, iPad, Mac, Watch, AirPods, Vision Pro) đều đứng dưới một thương hiệu Apple với vài sub-brand (chữ "i", "Mac"). Toàn bộ ngân sách, uy tín, hệ sinh thái dồn vào một cái tên → khi Apple ra sản phẩm mới, cả thế giới chú ý ngay, chi phí tạo nhận biết gần như bằng 0. Đổi lại, Apple phải giữ chuẩn chất lượng tuyệt đối vì một thất bại (ví dụ sản phẩm lỗi) sẽ ảnh hưởng toàn bộ thương hiệu.</p>
+<p><strong>Procter &amp; Gamble — House of brands điển hình.</strong> P&amp;G sở hữu Tide, Ariel, Pantene, Head &amp; Shoulders, Gillette, Pampers, Oral-B... Người dùng chọn Pantene không vì "P&amp;G" mà vì bản thân Pantene. Cấu trúc này cho P&amp;G phủ <em>nhiều phân khúc trong cùng ngành hàng</em> mà không xung đột (ví dụ nhiều nhãn dầu gội cạnh nhau trên kệ), đồng thời cô lập rủi ro: nếu một nhãn dính khủng hoảng, các nhãn khác không liên đới.</p>
+<p>Hai công ty, hai triết lý trái ngược, cùng thành công — bằng chứng rằng <em>không có kiến trúc "đúng" tuyệt đối</em>, chỉ có kiến trúc <em>phù hợp với chiến lược</em>.</p>
+<hr />
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Vingroup — Branded house / Sub-brand với tiền tố "Vin-".</strong> Vingroup dùng chiến lược "gia đình thương hiệu" (family brand) mạnh: Vinhomes (bất động sản nhà ở), Vincom (trung tâm thương mại), Vinpearl (nghỉ dưỡng), Vinmec (y tế), VinFast (ô tô/xe điện), VinUni (đại học). Tiền tố "Vin-" tạo cộng hưởng nhận biết cực nhanh cho mỗi lĩnh vực mới — một dạng <em>sub-brand có mẹ dẫn dắt</em>. Đòn bẩy lớn: khi VinFast ra đời, uy tín Vingroup giúp tạo niềm tin ban đầu. Rủi ro: hình ảnh các nhánh liên đới nhau.</p>
+<p><strong>VinFast</strong> là ví dụ mở rộng thương hiệu táo bạo: từ tập đoàn bất động sản/bán lẻ nhảy sang sản xuất ô tô — một cú <em>brand extension</em> xa về năng lực, được "gánh" bởi uy tín tài chính và quy mô của Vingroup <em>(mức độ thành công dài hạn cần theo dõi thêm)</em>.</p>
+<p><strong>Masan — House of brands trong ngành tiêu dùng.</strong> Masan Consumer sở hữu nhiều nhãn độc lập: Chin-su, Nam Ngư (nước mắm/nước tương), Omachi, Kokomi (mì gói), Vinacafé, Wake-Up (cà phê). Người tiêu dùng mua Nam Ngư hay Omachi mà thường không nghĩ tới "Masan" — đúng tinh thần house of brands, giúp Masan phủ nhiều phân khúc giá trong cùng ngành FMCG.</p>
+<p><strong>THACO (Trường Hải) — Mô hình endorsed/hỗn hợp.</strong> THACO vừa lắp ráp/phân phối các thương hiệu ô tô quốc tế (Kia, Mazda, Peugeot — các thương hiệu độc lập), vừa phát triển thương hiệu riêng và mở rộng sang nông nghiệp (THACO AGRI), cơ khí, logistics — một cấu trúc tập đoàn đa ngành với thương hiệu mẹ THACO đóng vai bảo chứng ở nhiều mảng.</p>
+<hr />
+<h2>13. Ví dụ quốc tế</h2>
+<ul>
+<li><strong>Google / Alphabet — Tái cấu trúc kiến trúc.</strong> Năm 2015, Google lập công ty mẹ <strong>Alphabet</strong> để tách các "bet" mạo hiểm (Waymo, Verily, Calico) khỏi thương hiệu cốt lõi Google. Đây là ví dụ kinh điển về việc <em>chuyển từ branded house sang cấu trúc holding kiểu house of brands</em> để cô lập rủi ro và làm rõ định giá.</li>
+<li><strong>Marriott — Endorsed brand.</strong> "Courtyard by Marriott", "Residence Inn by Marriott", "Fairfield by Marriott" — mỗi nhãn phục vụ một phân khúc giá/nhu cầu, được Marriott bảo chứng. Chuỗi endorsement giúp Marriott phủ từ bình dân đến siêu sang (Ritz-Carlton, St. Regis — các nhãn gần như độc lập).</li>
+<li><strong>Toyota vs Lexus — Tách thương hiệu để lên hạng.</strong> Toyota lập <strong>Lexus</strong> như một thương hiệu <em>độc lập</em> (house of brands nhẹ) để bán xe sang, tránh việc hình ảnh "phổ thông" của Toyota kéo tụt định vị cao cấp. Nếu gọi là "Toyota Lexus", giá trị cao cấp sẽ bị pha loãng.</li>
+<li><strong>Coca-Cola — Line extension và giới hạn.</strong> Coca-Cola Zero, Diet Coke, Coca-Cola hương vani là <em>line extension</em> thành công. Nhưng "New Coke" (1985) là bài học kinh điển về việc thay đổi lõi thương hiệu quá đà (xem Case Study).</li>
+</ul>
+<hr />
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Mở rộng quá xa (over-extension).</strong> Dùng tên thương hiệu cho danh mục không fit → khách bối rối, thương hiệu mất trọng tâm (vd: thương hiệu thời trang làm... đồ ăn).</li>
+<li><strong>Pha loãng thương hiệu (brand dilution).</strong> Mỗi lần mở rộng làm liên tưởng cốt lõi mờ đi. Quá nhiều thứ mang một tên → tên chẳng còn nghĩa gì rõ ràng.</li>
+<li><strong>Tự ăn thịt (cannibalization) không kiểm soát.</strong> Sản phẩm mới cướp khách của sản phẩm cũ cùng nhà thay vì mở rộng thị trường.</li>
+<li><strong>Phình danh mục (brand proliferation).</strong> Tạo quá nhiều thương hiệu/SKU khiến chi phí quản trị bùng nổ, kênh phân phối ngộp, không thương hiệu nào đủ nguồn lực.</li>
+<li><strong>Kiến trúc không nhất quán.</strong> Chỗ dùng branded house, chỗ endorsed, chỗ độc lập một cách ngẫu hứng → khách và cả nội bộ không hiểu logic.</li>
+<li><strong>Bỏ qua rủi ro lây nhiễm ngược.</strong> Gắn thương hiệu cao cấp lên sản phẩm giá rẻ để "tận dụng", làm hỏng định vị cao cấp.</li>
+<li><strong>Đặt tên con trùng lặp/khó phân biệt.</strong> Hệ thống modifier rối rắm (nhiều phiên bản tên na ná) khiến khách không biết chọn gì.</li>
+<li><strong>Mở rộng vì "làm được" chứ không vì "khách muốn".</strong> Fit năng lực có nhưng fit nhu cầu/hình ảnh không → thất bại.</li>
+</ol>
+<hr />
+<h2>15. Checklist</h2>
+<p>Trước khi quyết định kiến trúc hoặc một cú mở rộng, hãy chấm từng mục:</p>
+<ul>
+<li>[ ] Đã vẽ sơ đồ cây kiến trúc thương hiệu hiện trạng?</li>
+<li>[ ] Đã xác định rõ vai trò từng thương hiệu (chiến lược / cash cow / fighter / silver bullet)?</li>
+<li>[ ] Các thương hiệu có định vị chồng lấn hay xung đột không?</li>
+<li>[ ] Sản phẩm mới <em>fit hình ảnh</em> với thương hiệu mẹ? (chấm 1–5)</li>
+<li>[ ] Sản phẩm mới <em>fit năng lực</em> (khách tin công ty làm được)? (chấm 1–5)</li>
+<li>[ ] Đã ước lượng tỉ lệ cannibalization?</li>
+<li>[ ] Rủi ro khủng hoảng của sản phẩm mới có đủ cao để cần tách thương hiệu?</li>
+<li>[ ] Ngân sách đủ nuôi thêm một thương hiệu độc lập (nếu chọn house of brands)?</li>
+<li>[ ] Hệ thống đặt tên (naming convention) có nhất quán và dễ hiểu?</li>
+<li>[ ] Có kế hoạch tỉa danh mục cho các thương hiệu yếu?</li>
+<li>[ ] Truyền thông đã làm rõ quan hệ giữa các thương hiệu cho khách?</li>
+</ul>
+<hr />
+<h2>16. SOP — Quy trình chuẩn ra quyết định kiến trúc thương hiệu</h2>
+<p><strong>SOP-BA-01: Đánh giá và quyết định mở rộng thương hiệu</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bước</th>
+<th>Việc làm</th>
+<th>Người chịu trách nhiệm</th>
+<th>Đầu ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Nhận đề xuất sản phẩm/danh mục mới</td>
+<td>Brand Manager</td>
+<td>Brief sản phẩm</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Kiểm kê kiến trúc hiện trạng, vẽ sơ đồ cây</td>
+<td>Brand Team</td>
+<td>Sơ đồ kiến trúc</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chấm Extension Fit Score (hình ảnh + năng lực + kênh)</td>
+<td>Brand + Research</td>
+<td>Bảng điểm fit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Nghiên cứu người tiêu dùng (khảo sát fit, phản ứng)</td>
+<td>Market Research</td>
+<td>Báo cáo insight</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ước lượng cannibalization &amp; doanh thu mở rộng thị trường</td>
+<td>Finance + Brand</td>
+<td>Mô hình tài chính</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Quyết định chiến lược trên Spectrum (branded/sub/endorsed/độc lập)</td>
+<td>CMO / Hội đồng thương hiệu</td>
+<td>Quyết định kiến trúc</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Thiết kế tên, nhận diện, mức hiển thị thương hiệu mẹ</td>
+<td>Brand + Design</td>
+<td>Bộ nhận diện</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Kế hoạch ra mắt &amp; truyền thông quan hệ thương hiệu</td>
+<td>Marketing</td>
+<td>Kế hoạch GTM</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Theo dõi KPI sau 3–6–12 tháng, quyết định giữ/tỉa</td>
+<td>Brand + Analytics</td>
+<td>Báo cáo review</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Nguyên tắc leo thang:</strong> Fit Score &lt; 3.0 hoặc cannibalization dự kiến &gt; ngưỡng nội bộ → bắt buộc trình Hội đồng thương hiệu, cân nhắc dùng thương hiệu mới thay vì mở rộng.</p>
+<hr />
+<h2>17. KPI</h2>
+<p>Các chỉ số theo dõi sức khỏe kiến trúc và mở rộng thương hiệu:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nhận biết</strong></td>
+<td>Brand awareness (aided/unaided) từng thương hiệu</td>
+<td>Đo độ nhận biết &amp; cộng hưởng</td>
+</tr>
+<tr>
+<td><strong>Liên tưởng</strong></td>
+<td>Brand association clarity / attribute score</td>
+<td>Kiểm tra pha loãng: liên tưởng còn rõ không?</td>
+</tr>
+<tr>
+<td><strong>Mở rộng</strong></td>
+<td>Trial rate &amp; repeat rate của sản phẩm mở rộng</td>
+<td>Đo sức hút và giữ chân</td>
+</tr>
+<tr>
+<td><strong>Cannibalization</strong></td>
+<td>% doanh số mới đến từ khách cũ cùng nhà</td>
+<td>Kiểm soát tự ăn thịt</td>
+</tr>
+<tr>
+<td><strong>Tăng trưởng thực</strong></td>
+<td>Incremental revenue (doanh thu tăng thêm ròng)</td>
+<td>Mở rộng có <em>mở rộng thị trường</em> không?</td>
+</tr>
+<tr>
+<td><strong>Hiệu quả chi phí</strong></td>
+<td>Marketing cost per brand / ROMI từng thương hiệu</td>
+<td>Đo gánh nặng danh mục</td>
+</tr>
+<tr>
+<td><strong>Tài sản</strong></td>
+<td>Brand equity index, price premium</td>
+<td>Mở rộng xây hay rút equity?</td>
+</tr>
+<tr>
+<td><strong>Danh mục</strong></td>
+<td>Số thương hiệu sinh lời / tổng số thương hiệu</td>
+<td>Sức khỏe portfolio, tín hiệu tỉa</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu 1 — Bảng chấm Extension Fit Score</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Trọng số</th>
+<th>Điểm (1–5)</th>
+<th>Điểm × trọng số</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fit hình ảnh/liên tưởng</td>
+<td>0.40</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fit năng lực (khách tin làm được)</td>
+<td>0.40</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fit kênh/khách hàng</td>
+<td>0.20</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tổng Fit Score</strong></td>
+<td></td>
+<td></td>
+<td><strong>___ / 5</strong></td>
+</tr>
+<tr>
+<td><strong>Kết luận</strong></td>
+<td></td>
+<td></td>
+<td>Giữ tên mẹ / Sub-brand / Endorsed / Tên mới</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 2 — Ma trận vai trò thương hiệu (Brand Portfolio Role Map)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thương hiệu</th>
+<th>Phân khúc phục vụ</th>
+<th>Vai trò (chiến lược/cash cow/fighter/silver bullet)</th>
+<th>Chiến lược Spectrum</th>
+<th>Trạng thái (giữ/đầu tư/tỉa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 3 — Sơ đồ cây kiến trúc (điền tên thật)</strong></p>
+<pre><code>[THƯƠNG HIỆU MẸ]
+├── [Nhánh 1] ── [Sản phẩm/biến thể]
+├── [Nhánh 2] ── [Sản phẩm/biến thể]
+└── [Nhánh 3] ── [Sản phẩm/biến thể]
+</code></pre>
+<hr />
+<h2>19. Prompt AI</h2>
+<p>Các prompt mẫu để dùng với công cụ AI trong công việc kiến trúc thương hiệu:</p>
+<p><strong>ChatGPT / Claude — Phân tích &amp; tư vấn chiến lược:</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia brand architecture theo khung Aaker's Brand Relationship Spectrum và Keller's Brand Hierarchy. Công ty tôi có các sản phẩm/thương hiệu sau: [liệt kê]. Hãy: (1) vẽ sơ đồ cây kiến trúc hiện trạng; (2) chẩn đoán chồng lấn định vị; (3) đề xuất chiến lược trên Spectrum (branded house / sub-brand / endorsed / house of brands) kèm lý do; (4) chỉ ra rủi ro pha loãng và cannibalization."</p>
+</blockquote>
+<p><strong>Claude — Đánh giá mở rộng thương hiệu:</strong></p>
+<blockquote>
+<p>"Tôi đang cân nhắc mở rộng thương hiệu [X] (hiện định vị: [...]) sang danh mục [Y]. Hãy chấm Extension Fit Score theo 3 tiêu chí (fit hình ảnh, fit năng lực, fit kênh, thang 1–5), nêu lập luận từng điểm, cảnh báo rủi ro, và khuyến nghị: giữ tên mẹ, dùng sub-brand, endorsed, hay tạo tên mới."</p>
+</blockquote>
+<p><strong>Gemini — Nghiên cứu đối thủ &amp; thị trường:</strong></p>
+<blockquote>
+<p>"Phân tích kiến trúc thương hiệu của 3 đối thủ trong ngành [...]: họ dùng branded house hay house of brands? Danh mục thương hiệu con của họ ra sao? Rút ra bài học cho công ty tôi. Trích nguồn nếu có."</p>
+</blockquote>
+<p><strong>Perplexity — Kiểm chứng dữ kiện &amp; nguồn:</strong></p>
+<blockquote>
+<p>"Tập đoàn [...] hiện sở hữu những thương hiệu con nào, mỗi thương hiệu định vị phân khúc gì? Cung cấp nguồn và năm cho từng dữ kiện."</p>
+</blockquote>
+<p><strong>NotebookLM — Tổng hợp tài liệu nội bộ:</strong></p>
+<blockquote>
+<p>"Từ các tài liệu brand guideline và báo cáo thị trường tôi tải lên, hãy tóm tắt kiến trúc thương hiệu hiện tại, liệt kê mọi thương hiệu con và vai trò, và chỉ ra điểm không nhất quán trong hệ thống đặt tên."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa):</strong></p>
+<blockquote>
+<p>"Xây một agent theo dõi hằng quý: kéo dữ liệu doanh thu &amp; chi phí marketing từng thương hiệu, tính ROMI và incremental revenue, gắn cờ (flag) các thương hiệu có ROMI âm 2 quý liên tiếp để đề xuất tỉa danh mục, và tự tạo báo cáo Brand Portfolio Health."</p>
+</blockquote>
+<p><em>Lưu ý:</em> luôn để AI <em>trích nguồn</em> và tự đánh dấu chỗ suy đoán; đừng để AI bịa số liệu thị phần hay tài chính.</p>
+<hr />
+<h2>20. Bài tập</h2>
+<ol>
+<li>
+<p><strong>Vẽ sơ đồ cây.</strong> Chọn một tập đoàn Việt Nam (Vingroup, Masan, THACO, FPT...) và vẽ sơ đồ cây kiến trúc thương hiệu 4 tầng theo Keller. Đánh dấu mỗi nhánh là branded house / sub-brand / endorsed / độc lập.</p>
+</li>
+<li>
+<p><strong>Chẩn đoán Spectrum.</strong> Với 3 công ty bạn biết rõ, xác định vị trí của họ trên Aaker's Brand Relationship Spectrum và giải thích vì sao lựa chọn đó phù hợp/không phù hợp với chiến lược của họ.</p>
+</li>
+<li>
+<p><strong>Chấm mở rộng.</strong> Đề xuất một sản phẩm mới cho một thương hiệu bạn yêu thích. Chấm Extension Fit Score bằng Biểu mẫu 1. Kết luận nên giữ tên hay đổi tên.</p>
+</li>
+<li>
+<p><strong>Phân tích cannibalization.</strong> Tìm một ví dụ line extension (vd một hãng nước ngọt ra vị mới). Lập luận: doanh số của vị mới chủ yếu là mở rộng thị trường hay tự ăn thịt sản phẩm cũ?</p>
+</li>
+<li>
+<p><strong>Tái cấu trúc.</strong> Giả sử bạn là CMO của một công ty có 12 thương hiệu, 4 trong đó thua lỗ. Đề xuất kế hoạch tỉa danh mục và lý do.</p>
+</li>
+</ol>
+<hr />
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt <em>line extension</em> và <em>brand extension</em>. Cho ví dụ mỗi loại.</li>
+<li>Bốn chiến lược trong Aaker's Brand Relationship Spectrum là gì? Sắp xếp chúng theo mức độ chi phối của thương hiệu mẹ.</li>
+<li>Vì sao P&amp;G chọn house of brands còn Apple chọn branded house? Nêu 3 yếu tố quyết định.</li>
+<li>Hai chiều "fit" theo Keller khi đánh giá mở rộng thương hiệu là gì?</li>
+<li>Pha loãng thương hiệu (brand dilution) khác gì cannibalization?</li>
+<li>Khi nào nên tạo thương hiệu <em>mới</em> thay vì mở rộng thương hiệu sẵn có?</li>
+<li>Endorsed brand khác sub-brand ở điểm nào? Cho ví dụ.</li>
+<li>Nêu 4 tầng trong Keller's Brand Hierarchy và cho ví dụ mỗi tầng ở một tập đoàn Việt Nam.</li>
+<li>Vì sao Toyota tách Lexus thành thương hiệu độc lập thay vì "Toyota Lexus"?</li>
+<li>Kể 3 KPI đo sức khỏe của một cú mở rộng thương hiệu.</li>
+</ol>
+<hr />
+<h2>22. Case Study</h2>
+<h3>Case thành công — Dove (Unilever): mở rộng thương hiệu có kỷ luật</h3>
+<p>Dove khởi đầu là <em>một bánh xà phòng</em> (thanh làm sạch chứa kem dưỡng ẩm) với định vị lõi rất rõ: <strong>"dịu nhẹ, dưỡng ẩm, chăm sóc da"</strong>. Từ nền tảng đó, Unilever mở rộng Dove sang sữa tắm, sữa rửa mặt, dầu gội, lăn khử mùi, chăm sóc tóc — mỗi bước đều <em>fit chặt</em> với lõi "chăm sóc dịu nhẹ". Chiến dịch "Real Beauty" (2004) củng cố một ý nghĩa cảm xúc nhất quán xuyên suốt mọi sản phẩm.</p>
+<p><strong>Vì sao thành công:</strong> mọi mở rộng đều bám sát <em>cả fit hình ảnh (dịu nhẹ, chăm sóc) lẫn fit năng lực (chăm sóc cá nhân)</em>. Dove không nhảy sang danh mục lạc lõng. Kết quả: từ một sản phẩm thành một thương hiệu chăm sóc cá nhân toàn cầu — minh chứng brand extension đúng cách <em>xây thêm</em> equity thay vì rút cạn. <em>(Số liệu doanh thu cụ thể cần kiểm chứng từ báo cáo Unilever.)</em></p>
+<p><strong>Bài học:</strong> mở rộng quanh một <em>ý nghĩa lõi</em> rõ ràng và nhất quán; đừng mở rộng theo cơ hội rời rạc.</p>
+<h3>Case thất bại — "New Coke" (Coca-Cola, 1985): động vào lõi thương hiệu</h3>
+<p>Năm 1985, đối mặt sức ép từ Pepsi, Coca-Cola quyết định <em>thay đổi công thức cốt lõi</em> và tung "New Coke" thay thế Coke nguyên bản. Dù test mù vị giác cho kết quả tích cực, phản ứng công chúng dữ dội: người tiêu dùng cảm thấy <em>bản sắc và ký ức gắn với Coca-Cola bị tước đoạt</em>. Chỉ sau vài tháng, công ty phải khôi phục công thức cũ dưới tên "Coca-Cola Classic".</p>
+<p><strong>Vì sao thất bại:</strong> đây không hẳn là mở rộng mà là <em>thay thế lõi thương hiệu</em> — bài học đắt về việc thương hiệu là <strong>ý nghĩa trong tâm trí khách hàng</strong>, không chỉ là sản phẩm vật lý. Chạm vào lõi mà không hiểu giá trị cảm xúc gắn với nó là cực kỳ rủi ro.</p>
+<p><strong>Bài học:</strong> trước khi thay đổi hay mở rộng chạm tới bản sắc cốt lõi, phải hiểu <em>ý nghĩa cảm xúc</em> khách hàng gán cho thương hiệu, không chỉ dựa vào test chức năng. (Một số phân tích cho rằng vụ việc vô tình làm <em>tăng</em> tình cảm với Coke nguyên bản — một kết cục ngoài ý muốn.)</p>
+<hr />
+<h2>23. Tổng kết</h2>
+<ul>
+<li><strong>Kiến trúc thương hiệu</strong> là cách sắp xếp quan hệ giữa các thương hiệu trong một tổ chức, quyết định chi phí, rủi ro và khả năng tăng trưởng.</li>
+<li><strong>Aaker's Brand Relationship Spectrum</strong> đặt bốn chiến lược trên một phổ liên tục: <em>branded house → sub-brand → endorsed brand → house of brands</em>, từ đòn bẩy tối đa/rủi ro cao đến an toàn/chi phí lớn.</li>
+<li><strong>Keller's Brand Hierarchy</strong> bổ sung 4 tầng (corporate → family → product → modifier) và nguyên lý <strong>fit</strong> hai chiều (hình ảnh + năng lực) làm kim chỉ nam cho mở rộng.</li>
+<li><strong>Mở rộng thương hiệu:</strong> phân biệt <em>line extension</em> (cùng danh mục) và <em>brand extension</em> (danh mục mới); cảnh giác <em>pha loãng</em> và <em>cannibalization</em>.</li>
+<li><strong>Không có kiến trúc đúng tuyệt đối:</strong> Apple (branded house) và P&amp;G/Unilever (house of brands) cùng thành công. Chọn kiến trúc <em>phù hợp với chiến lược, phân khúc, ngân sách và khẩu vị rủi ro</em>.</li>
+<li><strong>Kỷ luật là chìa khóa:</strong> mở rộng quanh một ý nghĩa lõi rõ ràng (Dove), đừng động vào lõi một cách liều lĩnh (New Coke), và thường xuyên <em>tỉa danh mục</em> để giữ portfolio khỏe mạnh.</li>
+</ul>
+<hr />
+<h2>24. Nguồn tham khảo</h2>
+<ol>
+<li>Aaker, David A. (1991). <em>Managing Brand Equity</em>. The Free Press.</li>
+<li>Aaker, David A. (1996). <em>Building Strong Brands</em>. The Free Press.</li>
+<li>Aaker, David A. &amp; Joachimsthaler, Erich (2000). <em>Brand Leadership</em> — nguồn giới thiệu <strong>Brand Relationship Spectrum</strong>. The Free Press.</li>
+<li>Aaker, David A. (2004). <em>Brand Portfolio Strategy</em>. The Free Press.</li>
+<li>Keller, Kevin Lane (1998, và các bản cập nhật sau). <em>Strategic Brand Management</em> — mô hình <strong>CBBE</strong> và <strong>Brand Hierarchy</strong>. Prentice Hall / Pearson.</li>
+<li>Keller, Kevin Lane (1993). "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity". <em>Journal of Marketing</em>, 57(1).</li>
+<li>Kotler, Philip &amp; Keller, Kevin Lane. <em>Marketing Management</em> (các ấn bản) — chương về brand portfolio &amp; extension. Pearson.</li>
+<li>Ries, Al &amp; Trout, Jack. <em>Positioning: The Battle for Your Mind</em> — bối cảnh định vị liên quan.</li>
+<li>Tài liệu doanh nghiệp công khai: báo cáo thường niên và website của Vingroup, Masan Group, THACO, Unilever, P&amp;G, Marriott International, Alphabet/Google <em>(cần truy cập bản chính thức để lấy số liệu cập nhật)</em>.</li>
+</ol>
+<blockquote>
+<p><strong>Lưu ý trích dẫn:</strong> Các dữ kiện định lượng (doanh thu, thị phần, số lượng thương hiệu con cụ thể tại một thời điểm) trong chương chỉ nêu định tính; khi dùng cho báo cáo thực tế, hãy đối chiếu số liệu từ báo cáo tài chính/annual report chính thức và ghi rõ năm.</p>
+</blockquote>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Kiến trúc thương hiệu trong kỷ nguyên AI &amp; platform:</strong> ảnh hưởng của trợ lý AI, tìm kiếm hội thoại và thương mại tự động tới cách khách hàng nhận diện quan hệ thương hiệu.</li>
+<li><strong>Số liệu doanh nghiệp Việt Nam mới nhất:</strong> cập nhật danh mục và kết quả kinh doanh của Vingroup, VinFast, Masan, THACO theo báo cáo thường niên các năm 2025–2026 trở đi.</li>
+<li><strong>Mô hình định lượng fit &amp; cannibalization:</strong> bổ sung phương pháp đo lường thực nghiệm và benchmark ngành (cần dữ liệu khảo sát thực tế).</li>
+<li><strong>Xu hướng "brand roll-up" &amp; mua bán thương hiệu số:</strong> cấu trúc house of brands kiểu aggregator (gom nhiều thương hiệu D2C/e-commerce) — mô hình mới cần theo dõi.</li>
+<li><strong>Kết quả dài hạn của các cú mở rộng táo bạo:</strong> đánh giá lại VinFast và các thương hiệu mở rộng xa năng lực sau vài năm vận hành.</li>
+<li><strong>Cập nhật khung lý thuyết:</strong> theo dõi các ấn bản mới của Keller/Kotler và nghiên cứu học thuật cập nhật về brand extension.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-03-thuong-hieu-02-storytelling-narrative.html"><span>← Trước</span>Tập 3 · Chương 2 — Storytelling &amp; Narrative thương hiệu</a><a class="next" href="tap-03-thuong-hieu-04-nhan-dien-brand-voice.html"><span>Sau →</span>Tập 3 · Chương 4 — Nhận diện hình ảnh, Brand Voice &amp; Hệ thống thiết kế</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

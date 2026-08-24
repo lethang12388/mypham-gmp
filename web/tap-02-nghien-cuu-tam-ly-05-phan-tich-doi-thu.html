@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 2 · Chương 5 — Phân tích đối thủ &amp; Bối cảnh cạnh tranh</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 2 · Chương 5 — Phân tích đối thủ &amp; Bối cảnh cạnh tranh</h1>
+<blockquote>
+<p><strong>Metadata</strong>
+- <strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+- <strong>Tập:</strong> 2 — Nghiên cứu &amp; Tâm lý
+- <strong>Chương:</strong> 5
+- <strong>Cấp độ:</strong> Trung cấp → Nâng cao
+- <strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành trên một thị trường thật)
+- <strong>Đầu ra kỳ vọng:</strong> Học viên tự lập được hồ sơ đối thủ, ma trận cạnh tranh, bản đồ định vị và bảng benchmark cho ngành hàng của mình — bằng nguồn dữ liệu hợp pháp.
+- <strong>Yêu cầu đầu vào:</strong> Đã hoàn thành Chương về Chân dung khách hàng (Buyer Persona) và Phân khúc thị trường.</p>
+</blockquote>
+<p><strong>Tóm tắt một câu:</strong> Chương này dạy cách xác định đầy đủ ba tầng đối thủ (trực tiếp, gián tiếp, thay thế) rồi bóc tách họ bằng ma trận cạnh tranh, SWOT, benchmarking, bản đồ định vị và teardown sản phẩm — dựa hoàn toàn trên nguồn thông tin công khai và trong ranh giới đạo đức.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Không một quyết định marketing nào tồn tại trong chân không. Mỗi khi bạn đặt giá, viết một dòng tiêu đề, chọn kênh phân phối hay hứa hẹn một lợi ích, khách hàng của bạn đang đồng thời so sánh nó với ít nhất ba đến năm lựa chọn khác trong đầu họ. Phân tích đối thủ chính là kỷ luật giúp bạn nhìn thấy đúng những lựa chọn đó — thay vì tưởng tượng ra chúng.</p>
+<p>Trong Tập 2 này, chúng ta đặt phân tích đối thủ ngay sau phần nghiên cứu tâm lý khách hàng vì hai chủ đề là hai mặt của một tấm gương: hiểu khách hàng cho bạn biết họ <em>muốn</em> gì; hiểu đối thủ cho bạn biết họ <em>đang được cung cấp</em> gì. Khoảng trống giữa hai điều đó chính là cơ hội của bạn.</p>
+<p>Chương này không dạy bạn "đánh bại" đối thủ bằng mọi giá. Nó dạy bạn <em>đọc bối cảnh cạnh tranh</em> một cách có hệ thống, hợp pháp và lặp lại được, để mọi lựa chọn định vị và phân bổ ngân sách đều có căn cứ. Một điểm nhấn xuyên suốt: mọi kỹ thuật ở đây đều dừng lại ở ranh giới của dữ liệu công khai và đạo đức nghề nghiệp — không do thám bất hợp pháp, không giả mạo, không đánh cắp.</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Phân tích đối thủ (competitor analysis)</strong> là quá trình thu thập, hệ thống hóa và diễn giải thông tin về các đơn vị đang hoặc có khả năng cạnh tranh giành cùng một nguồn nhu cầu, ngân sách hoặc sự chú ý của khách hàng mục tiêu, nhằm hỗ trợ ra quyết định chiến lược.</p>
+<p>Cần phân biệt ba tầng đối thủ:</p>
+<ul>
+<li><strong>Đối thủ trực tiếp (direct):</strong> Cùng giải pháp, cùng phân khúc khách hàng. Ví dụ: hai thương hiệu serum vitamin C tầm giá 300–500 nghìn đồng nhắm nữ 25–35 tuổi.</li>
+<li><strong>Đối thủ gián tiếp (indirect):</strong> Giải pháp khác nhưng phục vụ cùng nhu cầu. Ví dụ: một spa cung cấp liệu trình sáng da cạnh tranh gián tiếp với serum tại nhà.</li>
+<li><strong>Đối thủ thay thế (substitute):</strong> Cách hoàn toàn khác để "xóa bỏ nhu cầu". Ví dụ: khách chọn không mua gì cả, hoặc chuyển ngân sách skincare sang thẩm mỹ nội khoa; với phần mềm, đối thủ thay thế thường là "Excel + làm thủ công".</li>
+</ul>
+<p><strong>Bối cảnh cạnh tranh (competitive landscape)</strong> là bức tranh tổng thể về tất cả các tầng đối thủ, cấu trúc ngành, rào cản gia nhập, quyền lực thương lượng và các động lực thay đổi theo thời gian.</p>
+<h2>3. Lịch sử hình thành</h2>
+<p>Tư duy phân tích cạnh tranh có gốc rễ học thuật rõ ràng. Năm 1979–1980, Michael E. Porter (Harvard Business School) công bố mô hình <strong>Five Forces</strong> và cuốn <em>Competitive Strategy</em> (1980), đặt nền móng cho việc phân tích cấu trúc ngành thay vì chỉ nhìn từng đối thủ đơn lẻ. Trước đó, phân tích SWOT được phổ biến rộng rãi từ thập niên 1960 (thường gắn với nhóm nghiên cứu ở Stanford Research Institute, dù nguồn gốc chính xác còn tranh luận — <em>cần kiểm chứng</em>).</p>
+<p>Khái niệm <strong>định vị (positioning)</strong> được Al Ries và Jack Trout hệ thống hóa trong loạt bài trên <em>Advertising Age</em> (1972) và cuốn <em>Positioning: The Battle for Your Mind</em> (1981), từ đó sinh ra công cụ bản đồ định vị. Sang thập niên 1990–2000, cùng sự bùng nổ của web, phân tích đối thủ chuyển từ "đọc catalogue và báo cáo ngành" sang khai thác dữ liệu số: từ khóa, quảng cáo, nội dung, đánh giá trực tuyến. Từ khoảng 2010 trở đi, hệ sinh thái công cụ SEO/quảng cáo và mạng xã hội biến việc benchmark đối thủ thành hoạt động thường nhật của mọi đội marketing.</p>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Tránh định vị trùng lặp:</strong> Nếu bạn vô tình hứa đúng lợi ích mà thị trường đã bão hòa, chi phí thuyết phục tăng vọt.</li>
+<li><strong>Định giá có căn cứ:</strong> Bạn cần biết "mặt bằng giá tham chiếu" trong tâm trí khách hàng trước khi đặt giá của mình.</li>
+<li><strong>Phát hiện khoảng trống (white space):</strong> Những nhu cầu chưa ai phục vụ tốt là nơi ROI marketing cao nhất.</li>
+<li><strong>Phòng thủ:</strong> Biết đối thủ mạnh ở đâu giúp bạn không tấn công vào điểm bất khả chiến bại của họ.</li>
+<li><strong>Dự báo nước đi:</strong> Đối thủ tăng ngân sách quảng cáo, đổi bao bì, tuyển ồ ạt sales... đều là tín hiệu sớm.</li>
+<li><strong>Thuyết phục nội bộ và nhà đầu tư:</strong> Một bản đồ cạnh tranh rõ ràng là bằng chứng bạn hiểu thị trường.</li>
+</ol>
+<p>Ngược lại, hệ quả của việc <em>không</em> phân tích: đốt tiền vào thông điệp không khác biệt, bị bất ngờ bởi nước đi giá của đối thủ, và ra quyết định dựa trên cảm tính của người sáng lập.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Phân tích đối thủ vận hành theo một vòng lặp bốn bước có tính chu kỳ:</p>
+<ol>
+<li><strong>Định biên (scoping):</strong> Xác định <em>ai</em> là đối thủ ở cả ba tầng — dựa trên khách hàng, không dựa trên trực giác. Quy tắc vàng: đối thủ là bất cứ ai mà khách hàng của bạn cân nhắc <em>thay thế cho bạn</em>.</li>
+<li><strong>Thu thập (collection):</strong> Gom dữ liệu công khai theo cấu trúc: sản phẩm, giá, kênh, thông điệp, nội dung, đánh giá, tài chính (nếu công bố).</li>
+<li><strong>Diễn giải (analysis):</strong> Đưa dữ liệu thô vào các khung — ma trận, SWOT, benchmark, perceptual map — để tìm mẫu hình và khoảng trống.</li>
+<li><strong>Hành động &amp; giám sát (act &amp; monitor):</strong> Chuyển insight thành quyết định định vị/giá/kênh, rồi thiết lập cơ chế theo dõi định kỳ.</li>
+</ol>
+<p>Nguyên lý nền tảng: <strong>so sánh phải theo tiêu chí giống nhau (apples-to-apples)</strong> và <strong>lấy khách hàng làm hệ quy chiếu</strong>, không lấy tính năng làm hệ quy chiếu. Một sản phẩm có 20 tính năng chưa chắc thắng sản phẩm có 5 tính năng nếu khách hàng chỉ cần 3.</p>
+<h2>6. Mô hình</h2>
+<p>Ba mô hình nền tảng nên dùng kết hợp:</p>
+<p><strong>a) Porter's Five Forces</strong> — phân tích cấu trúc ngành qua năm lực:</p>
+<pre><code>                 [Đối thủ tiềm năng gia nhập]
+                            │
+                            ▼
+[Quyền lực   ]  ──►  [ CẠNH TRANH  ]  ◄──  [Quyền lực  ]
+[nhà cung cấp]       [ NỘI BỘ NGÀNH]       [khách hàng ]
+                            ▲
+                            │
+                    [Sản phẩm thay thế]
+</code></pre>
+<p><strong>b) SWOT</strong> — nội lực (Strengths/Weaknesses) và ngoại cảnh (Opportunities/Threats), áp dụng cho <em>chính bạn</em> và <em>từng đối thủ trọng điểm</em>.</p>
+<p><strong>c) Strategic Group Map</strong> — nhóm các đối thủ theo hai trục chiến lược (ví dụ: giá vs. độ phủ kênh) để thấy các "cụm" cạnh tranh và khoảng trống giữa các cụm.</p>
+<h2>7. Framework</h2>
+<p>Framework thực chiến đề xuất trong chương này gọi là <strong>5C-COMP</strong> — sáu khối phân tích một đối thủ cần bóc tách:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Khối</th>
+<th>Câu hỏi cốt lõi</th>
+<th>Nguồn dữ liệu hợp pháp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C1 – Company</strong></td>
+<td>Họ là ai, mô hình kinh doanh, quy mô?</td>
+<td>Website, cổng đăng ký doanh nghiệp, báo chí</td>
+</tr>
+<tr>
+<td><strong>C2 – Customer</strong></td>
+<td>Họ phục vụ ai, phân khúc nào?</td>
+<td>Nội dung, review, phần "khách hàng của chúng tôi"</td>
+</tr>
+<tr>
+<td><strong>C3 – Content &amp; Channel</strong></td>
+<td>Họ nói gì, ở đâu, tần suất nào?</td>
+<td>Blog, mạng xã hội, kênh quảng cáo công khai</td>
+</tr>
+<tr>
+<td><strong>C4 – Commercial</strong></td>
+<td>Giá, khuyến mãi, gói dịch vụ?</td>
+<td>Trang giá, sàn TMĐT, brochure</td>
+</tr>
+<tr>
+<td><strong>C5 – Capability</strong></td>
+<td>Sản phẩm mạnh/yếu ở đâu?</td>
+<td>Teardown, dùng thử, review, thông số</td>
+</tr>
+<tr>
+<td><strong>COMP – Positioning</strong></td>
+<td>Họ đứng ở đâu trong tâm trí khách?</td>
+<td>Tổng hợp toàn bộ trên + perceptual map</td>
+</tr>
+</tbody>
+</table></div>
+<p>Framework này ghép trực tiếp vào ma trận cạnh tranh ở mục 8 và bản đồ định vị ở mục 6.</p>
+<h2>8. Công thức</h2>
+<p>Phân tích đối thủ có tính định tính cao, nhưng vẫn có vài công thức lượng hóa hữu ích:</p>
+<p><strong>Chỉ số cạnh tranh có trọng số (Weighted Competitive Score):</strong></p>
+<pre><code>Điểm đối thủ =  Σ (Trọng số tiêu chí_i × Điểm tiêu chí_i)
+                với Σ Trọng số = 1.0 (hoặc 100%)
+</code></pre>
+<p>Ví dụ tiêu chí: Chất lượng sản phẩm (0.30), Giá/giá trị (0.25), Thương hiệu (0.20), Kênh phân phối (0.15), Dịch vụ (0.10). Chấm mỗi đối thủ trên thang 1–5.</p>
+<p><strong>Chỉ số Share of Voice (SOV) tương đối</strong> — dùng để so mức độ hiện diện:</p>
+<pre><code>SOV thương hiệu A = (Lượng đề cập/hiển thị của A) / (Tổng của toàn bộ đối thủ trong tập) × 100%
+</code></pre>
+<p><strong>Price Index (chỉ số giá tương đối):</strong></p>
+<pre><code>Price Index = (Giá của bạn / Giá trung bình đối thủ trực tiếp) × 100
+</code></pre>
+<p>Chỉ số 100 = ngang mặt bằng; &gt;100 = định giá cao hơn; &lt;100 = định giá thấp hơn. Lưu ý: mọi con số nhập vào công thức phải là dữ liệu thật đã kiểm chứng, không ước đoán.</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình chín bước triển khai một dự án phân tích đối thủ:</p>
+<ol>
+<li><strong>Xác định mục tiêu</strong> dự án (ra mắt sản phẩm mới? đặt lại giá? tìm khoảng trống?).</li>
+<li><strong>Lập danh sách đối thủ</strong> ba tầng — bắt đầu từ 10–15 cái tên, lọc còn 4–6 trọng điểm.</li>
+<li><strong>Thiết kế bảng tiêu chí</strong> so sánh và trọng số (mục 8).</li>
+<li><strong>Thu thập dữ liệu công khai</strong> theo 5C-COMP, ghi rõ nguồn + ngày truy cập.</li>
+<li><strong>Điền ma trận cạnh tranh</strong> (mục 18) và tính điểm có trọng số.</li>
+<li><strong>Vẽ perceptual map</strong> với hai trục quan trọng nhất với khách hàng.</li>
+<li><strong>Chạy SWOT</strong> cho bạn và 2–3 đối thủ trọng điểm; benchmark KPI.</li>
+<li><strong>Rút insight &amp; khoảng trống</strong>, đề xuất hành động định vị/giá/kênh.</li>
+<li><strong>Thiết lập giám sát định kỳ</strong> (hàng quý) và cập nhật hồ sơ.</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p>Một quán cà phê nhỏ trong khu dân cư muốn định vị lại. Chủ quán lập danh sách:</p>
+<ul>
+<li><strong>Trực tiếp:</strong> 3 quán cà phê khác trong bán kính 500m.</li>
+<li><strong>Gián tiếp:</strong> Một tiệm trà sữa và một quầy cà phê mang đi.</li>
+<li><strong>Thay thế:</strong> Khách tự pha cà phê ở nhà, hoặc mua qua ứng dụng giao đồ uống.</li>
+</ul>
+<p>Bằng cách đi bộ khảo sát (quan sát công khai), chụp menu niêm yết giá và đọc đánh giá trên bản đồ số, chủ quán phát hiện: tất cả đối thủ đều cạnh tranh về giá và tốc độ, không ai định vị "không gian yên tĩnh để làm việc". Đó chính là khoảng trống. Quyết định: bổ sung ổ cắm điện, Wi-Fi mạnh, khu vực im lặng — và truyền thông đúng thông điệp đó.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p>Một công ty SaaS quản lý bán hàng B2B tại thị trường vừa và nhỏ thực hiện phân tích trước khi tái định giá. Họ dựng ma trận 6 đối thủ theo 5C-COMP, chấm điểm có trọng số, và nhận ra:</p>
+<ul>
+<li>Đối thủ dẫn đầu mạnh về thương hiệu và tích hợp nhưng giá cao và onboarding phức tạp (nhiều review công khai than phiền về thời gian triển khai).</li>
+<li>Nhóm đối thủ giá rẻ thắng về giá nhưng yếu về hỗ trợ tiếng Việt và tính năng báo cáo.</li>
+<li>Đối thủ thay thế lớn nhất là "khách vẫn dùng Excel + Zalo".</li>
+</ul>
+<p>Insight: khoảng trống nằm ở "triển khai nhanh trong 48 giờ + hỗ trợ tiếng Việt tận nơi cho SMB". Công ty tái định vị quanh tốc độ onboarding thay vì đua tính năng, và điều chỉnh Price Index về mức ~95 so với nhóm dẫn đầu. (Đây là ví dụ minh họa cấu trúc phân tích; các con số là giả định giáo trình, <em>cần kiểm chứng</em> khi áp dụng thực tế.)</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p>Thị trường bán lẻ và TMĐT Việt Nam là môi trường lý tưởng để thực hành phân tích đối thủ bằng nguồn công khai:</p>
+<ul>
+<li><strong>Ngành gọi xe/giao đồ ăn:</strong> Grab, Be, Xanh SM (thuộc hệ sinh thái VinGroup/GSM) cạnh tranh trực tiếp; đối thủ thay thế là xe ôm truyền thống và tự đi. Việc Xanh SM tham gia thị trường taxi/gọi xe điện từ năm 2023 (<em>cần kiểm chứng mốc và số liệu thị phần cụ thể</em>) là ví dụ điển hình về một đối thủ mới làm dịch chuyển bản đồ định vị bằng trục "xe điện/thân thiện môi trường".</li>
+<li><strong>Ngành TMĐT:</strong> Shopee, Lazada, TikTok Shop cạnh tranh trên các trục giá, phí ship, giải trí-mua sắm (shoppertainment). Nhà bán hàng có thể benchmark đối thủ ngay trên sàn: giá niêm yết, số lượng đã bán hiển thị công khai, đánh giá sao, tốc độ phản hồi.</li>
+<li><strong>Ngành mỹ phẩm nội địa:</strong> Các thương hiệu Việt cạnh tranh với hàng nhập; nguồn benchmark là gian hàng chính hãng trên sàn, fanpage, và nội dung KOL/KOC công khai.</li>
+</ul>
+<p>Bài học Việt Nam: đừng chỉ nhìn đối thủ trực tiếp trong nước — hàng nhập khẩu và nền tảng nước ngoài thường là đối thủ gián tiếp/thay thế mạnh nhất.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Netflix vs. Blockbuster</strong> là case kinh điển về đối thủ thay thế: Blockbuster nhìn đối thủ là các cửa hàng cho thuê băng đĩa khác, trong khi mối đe dọa thật đến từ mô hình hoàn toàn mới (thuê qua thư rồi streaming). Blockbuster nộp đơn phá sản năm 2010.</p>
+<p><strong>Coca-Cola vs. Pepsi</strong> minh họa perceptual map và định vị lâu dài: hai thương hiệu chiếm hai vị trí khác nhau trong tâm trí (truyền thống/hoài niệm vs. trẻ trung/thế hệ mới) dù sản phẩm gần tương đương — cho thấy trận chiến cạnh tranh diễn ra trong nhận thức, không chỉ trên kệ hàng.</p>
+<p><strong>Ngành xe điện toàn cầu:</strong> Tesla mở đầu phân khúc, sau đó các hãng truyền thống (VW, BYD, Hyundai...) tràn vào. BYD vươn lên thành nhà sản xuất xe điện lớn nhất thế giới xét theo doanh số một số quý gần đây (<em>cần kiểm chứng mốc và số liệu cụ thể theo báo cáo quý</em>) — ví dụ về việc bản đồ cạnh tranh trong một ngành có thể đảo lộn trong vài năm.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Chỉ nhìn đối thủ trực tiếp</strong>, bỏ qua thay thế — sai lầm giết chết Blockbuster.</li>
+<li><strong>So sánh tính năng thay vì giá trị khách hàng</strong> — đếm tính năng thay vì hỏi khách cần gì.</li>
+<li><strong>Sao chép đối thủ</strong> thay vì tìm khoảng trống — biến mình thành bản sao mờ nhạt.</li>
+<li><strong>Phân tích một lần rồi cất tủ</strong> — bối cảnh cạnh tranh thay đổi liên tục.</li>
+<li><strong>Bịa số liệu / dựa vào tin đồn</strong> — đặc biệt nguy hiểm khi đưa vào công thức định lượng.</li>
+<li><strong>Ám ảnh đối thủ, quên khách hàng</strong> — dành 90% thời gian dõi đối thủ, 10% nghe khách.</li>
+<li><strong>Vượt ranh giới đạo đức/pháp lý</strong> — giả danh, xâm nhập hệ thống, mua dữ liệu nội bộ bị rò rỉ. Đây không chỉ là sai lầm mà là vi phạm.</li>
+<li><strong>Trục perceptual map không quan trọng với khách</strong> — vẽ map bằng tiêu chí bạn thích chứ không phải tiêu chí khách quyết định mua.</li>
+</ol>
+<h2>15. Checklist</h2>
+<ul>
+<li>[ ] Đã liệt kê đối thủ ở cả ba tầng (trực tiếp/gián tiếp/thay thế)?</li>
+<li>[ ] Danh sách đối thủ xuất phát từ hành vi khách hàng, không từ trực giác?</li>
+<li>[ ] Đã chọn 4–6 đối thủ trọng điểm để phân tích sâu?</li>
+<li>[ ] Bảng tiêu chí có trọng số phản ánh đúng ưu tiên của khách?</li>
+<li>[ ] Mọi dữ liệu đều có nguồn công khai + ngày truy cập ghi lại?</li>
+<li>[ ] Không sử dụng bất kỳ thông tin thu thập bất hợp pháp nào?</li>
+<li>[ ] Đã vẽ perceptual map bằng hai trục quan trọng với khách hàng?</li>
+<li>[ ] Đã chạy SWOT cho mình và ít nhất 2 đối thủ?</li>
+<li>[ ] Đã xác định ít nhất một khoảng trống (white space) khả thi?</li>
+<li>[ ] Có lịch giám sát định kỳ (hàng quý)?</li>
+</ul>
+<h2>16. SOP</h2>
+<p><strong>SOP-05: Cập nhật hồ sơ cạnh tranh hàng quý</strong></p>
+<ol>
+<li><strong>Phạm vi:</strong> Áp dụng cho toàn bộ đối thủ trọng điểm trong danh mục.</li>
+<li><strong>Tần suất:</strong> Mỗi quý; đột xuất khi có sự kiện lớn (đối thủ ra mắt/đổi giá).</li>
+<li><strong>Người chịu trách nhiệm:</strong> Chuyên viên nghiên cứu thị trường (chính), Trưởng phòng Marketing (duyệt).</li>
+<li><strong>Các bước:</strong>
+   - Bước 1: Rà lại danh sách đối thủ, thêm/bớt theo diễn biến thị trường.
+   - Bước 2: Cập nhật từng khối 5C-COMP từ nguồn công khai; ghi nguồn + ngày.
+   - Bước 3: Cập nhật giá và Price Index; chụp màn hình làm bằng chứng.
+   - Bước 4: Cập nhật ma trận điểm có trọng số và perceptual map.
+   - Bước 5: Ghi lại "thay đổi đáng chú ý" so với quý trước.
+   - Bước 6: Đề xuất hành động; trình duyệt.</li>
+<li><strong>Đầu ra:</strong> Bản hồ sơ cạnh tranh phiên bản mới + báo cáo 1 trang cho lãnh đạo.</li>
+<li><strong>Nguyên tắc tuân thủ:</strong> Chỉ dùng nguồn hợp pháp; lưu trữ bằng chứng nguồn; không lưu dữ liệu cá nhân trái phép.</li>
+</ol>
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Định nghĩa</th>
+<th>Mục tiêu tham chiếu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Độ phủ đối thủ</td>
+<td>% đối thủ trọng điểm có hồ sơ đầy đủ 5C-COMP</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Độ tươi dữ liệu</td>
+<td>% dữ liệu cập nhật trong ≤ 90 ngày</td>
+<td>≥ 90%</td>
+</tr>
+<tr>
+<td>Price Index</td>
+<td>Giá của bạn / giá TB đối thủ trực tiếp × 100</td>
+<td>Theo chiến lược định vị</td>
+</tr>
+<tr>
+<td>Share of Voice</td>
+<td>Tỷ lệ hiện diện của bạn trong tập đối thủ</td>
+<td>Tăng theo quý</td>
+</tr>
+<tr>
+<td>Số white space phát hiện</td>
+<td>Khoảng trống khả thi tìm được mỗi kỳ</td>
+<td>≥ 1</td>
+</tr>
+<tr>
+<td>Tỷ lệ hành động</td>
+<td>% insight được chuyển thành quyết định</td>
+<td>≥ 50%</td>
+</tr>
+<tr>
+<td>Thời gian phản ứng</td>
+<td>Số ngày từ khi phát hiện nước đi đối thủ đến khi phản hồi</td>
+<td>Càng ngắn càng tốt</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lưu ý: các mục tiêu trên là mốc tham chiếu giáo trình; mỗi doanh nghiệp cần hiệu chỉnh theo ngành và nguồn lực.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu 18.1 — Bảng so sánh đối thủ (Competitive Matrix)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí (trọng số)</th>
+<th style="text-align: center;">Chúng ta</th>
+<th style="text-align: center;">Đối thủ A</th>
+<th style="text-align: center;">Đối thủ B</th>
+<th style="text-align: center;">Đối thủ C</th>
+<th style="text-align: center;">Đối thủ D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chất lượng SP (0.30)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Giá / giá trị (0.25)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Sức mạnh thương hiệu (0.20)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Kênh phân phối (0.15)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Dịch vụ &amp; hỗ trợ (0.10)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><strong>Điểm có trọng số</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Phân khúc khách chính</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Thông điệp định vị</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Điểm mạnh nổi bật</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Điểm yếu khai thác được</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Nguồn dữ liệu + ngày</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Cách dùng:</em> chấm mỗi tiêu chí thang 1–5, nhân trọng số, cộng lại thành "Điểm có trọng số". Ghi rõ nguồn ở dòng cuối để đảm bảo truy vết được.</p>
+<p><strong>Biểu mẫu 18.2 — Khung SWOT một đối thủ</strong></p>
+<pre><code>┌──────────────────────┬──────────────────────┐
+│ STRENGTHS (Điểm mạnh)│ WEAKNESSES (Điểm yếu)│
+│ - ...                │ - ...                │
+├──────────────────────┼──────────────────────┤
+│ OPPORTUNITIES (Cơ hội)│ THREATS (Nguy cơ)   │
+│ - ...                │ - ...                │
+└──────────────────────┴──────────────────────┘
+</code></pre>
+<p><strong>Biểu mẫu 18.3 — Bản đồ định vị (Perceptual Map) mẫu</strong></p>
+<p>Ví dụ ngành serum dưỡng da, hai trục: <em>Giá</em> (dọc) × <em>Mức độ chuyên biệt/điều trị</em> (ngang).</p>
+<pre><code>             GIÁ CAO
+                │
+        (D)     │      (A)
+      cao cấp   │   dược mỹ phẩm
+       phổ thông│   điều trị
+   PHỔ THÔNG ───┼─────────────── CHUYÊN BIỆT/ĐIỀU TRỊ
+                │
+        (C)     │      (B)
+      giá rẻ    │   giá vừa
+      đại trà   │   thành phần active
+                │        ◄── KHOẢNG TRỐNG?
+             GIÁ THẤP
+</code></pre>
+<p>Điểm giao nhau thưa thớt (ví dụ góc "giá vừa + chuyên biệt điều trị") gợi ý white space tiềm năng — cần kiểm chứng bằng khảo sát nhu cầu thật.</p>
+<h2>19. Prompt AI (6 công cụ)</h2>
+<p>Dưới đây là prompt gợi ý cho sáu công cụ AI phổ biến. Nguyên tắc: AI chỉ giúp <em>cấu trúc và diễn giải</em>; dữ liệu đầu vào phải do bạn thu thập hợp pháp, và mọi số liệu AI đưa ra phải được kiểm chứng.</p>
+<ol>
+<li>
+<p><strong>ChatGPT (OpenAI):</strong></p>
+<blockquote>
+<p>"Tôi dán dưới đây dữ liệu công khai đã thu thập về 5 đối thủ trong ngành [X]. Hãy giúp tôi điền vào khung 5C-COMP, chỉ ra 3 khoảng trống định vị tiềm năng và đánh dấu chỗ nào dữ liệu còn thiếu để tôi tự bổ sung. Không được bịa số liệu."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Claude (Anthropic):</strong></p>
+<blockquote>
+<p>"Đóng vai chuyên gia chiến lược cạnh tranh. Dựa trên bảng ma trận tôi cung cấp, hãy viết phân tích SWOT cho thương hiệu của tôi và 2 đối thủ mạnh nhất, kèm 3 khuyến nghị định vị. Nêu rõ giả định nào bạn đang dùng và chỗ nào cần tôi kiểm chứng thêm."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Gemini (Google):</strong></p>
+<blockquote>
+<p>"Tôi cung cấp danh sách đối thủ và mô tả sản phẩm. Hãy đề xuất hai trục quan trọng nhất với khách hàng để vẽ perceptual map cho ngành [X] và giải thích lý do chọn hai trục đó."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Perplexity:</strong></p>
+<blockquote>
+<p>"Tổng hợp các nguồn công khai gần đây về bối cảnh cạnh tranh ngành [X] tại Việt Nam. Trích dẫn nguồn kèm ngày. Nếu không có nguồn đáng tin, hãy nói rõ là không tìm thấy thay vì suy đoán."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Microsoft Copilot:</strong></p>
+<blockquote>
+<p>"Từ bảng dữ liệu đối thủ trong file Excel này, hãy tạo bảng điểm có trọng số theo tiêu chí tôi định nghĩa và biểu đồ so sánh Price Index giữa các đối thủ."</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Grok (xAI):</strong></p>
+<blockquote>
+<p>"Quét các thảo luận công khai trên mạng xã hội về thương hiệu [đối thủ A] trong 30 ngày qua và tóm tắt 5 lời khen và 5 lời phàn nàn thường gặp nhất của khách hàng, kèm ví dụ trích dẫn công khai."</p>
+</blockquote>
+</li>
+</ol>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Lập bản đồ ba tầng:</strong> Chọn một sản phẩm bạn quen thuộc, liệt kê tối thiểu 3 đối thủ trực tiếp, 3 gián tiếp, 2 thay thế. Giải thích tiêu chí phân loại.</li>
+<li><strong>Điền ma trận:</strong> Dùng Biểu mẫu 18.1, thu thập dữ liệu công khai cho 4 đối thủ, chấm điểm có trọng số và tính "Điểm có trọng số".</li>
+<li><strong>Vẽ perceptual map:</strong> Chọn hai trục quan trọng nhất với khách và đặt 4–6 đối thủ lên bản đồ. Chỉ ra khoảng trống.</li>
+<li><strong>Teardown giá:</strong> Chụp lại (công khai) bảng giá của 3 đối thủ, tính Price Index của một thương hiệu bạn chọn làm gốc.</li>
+<li><strong>Kiểm toán đạo đức:</strong> Viết một đoạn 150 từ liệt kê ba việc bạn <em>sẽ không làm</em> khi thu thập thông tin đối thủ và vì sao.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt đối thủ trực tiếp, gián tiếp và thay thế bằng ví dụ riêng của bạn.</li>
+<li>Tại sao "lấy khách hàng làm hệ quy chiếu" quan trọng hơn "đếm tính năng"?</li>
+<li>Năm lực của Porter gồm những gì? Lực nào thường bị bỏ sót nhất?</li>
+<li>Perceptual map giúp ích gì mà ma trận cạnh tranh không làm được?</li>
+<li>Công thức Price Index nói lên điều gì và có hạn chế nào?</li>
+<li>Kể ba nguồn thông tin hợp pháp và ba hành vi vượt ranh giới đạo đức.</li>
+<li>Vì sao phân tích đối thủ phải lặp lại định kỳ thay vì làm một lần?</li>
+<li>Sai lầm nào trong mục 14 nguy hiểm nhất với doanh nghiệp non trẻ? Vì sao?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công — Netflix đọc đúng đối thủ thay thế.</strong> Từ cuối thập niên 1990, Netflix khởi đầu bằng cho thuê DVD qua đường bưu điện, cạnh tranh với chuỗi cửa hàng cho thuê băng đĩa. Điểm sắc bén là Netflix không định vị mình chống lại các cửa hàng cho thuê, mà nhìn xa hơn về công nghệ phân phối nội dung. Khi băng thông cho phép, họ chủ động chuyển sang streaming (khoảng năm 2007) và sau đó tự sản xuất nội dung gốc. Kết quả: định hình lại toàn bộ ngành giải trí tại gia, trong khi Blockbuster — đối thủ từng có cơ hội mua lại Netflix — nộp đơn phá sản năm 2010. Bài học: đối thủ nguy hiểm nhất thường không cùng "hình dạng" với bạn. (Các mốc thời gian nêu theo trí nhớ phổ biến, <em>cần kiểm chứng</em> chi tiết trước khi trích dẫn chính thức.)</p>
+<p><strong>Case thất bại — Nokia và điểm mù cạnh tranh.</strong> Đầu những năm 2000, Nokia dẫn đầu tuyệt đối thị trường điện thoại di động. Nhưng khung phân tích cạnh tranh của họ tập trung vào các nhà sản xuất phần cứng điện thoại truyền thống, trong khi mối đe dọa thật đến từ một định nghĩa lại sản phẩm: điện thoại như một nền tảng phần mềm và hệ sinh thái ứng dụng (iPhone 2007, Android sau đó). Khi bối cảnh cạnh tranh dịch chuyển từ "phần cứng" sang "hệ điều hành + kho ứng dụng", lợi thế cũ trở nên vô nghĩa. Mảng điện thoại của Nokia suy giảm nhanh và cuối cùng được Microsoft mua lại (thỏa thuận công bố năm 2013). Bài học: định nghĩa sai <em>trục cạnh tranh</em> nguy hiểm hơn định nghĩa sai <em>đối thủ</em>. (Chi tiết mốc và thương vụ <em>cần kiểm chứng</em>.)</p>
+<h2>23. Tổng kết</h2>
+<p>Phân tích đối thủ không phải là hoạt động gián điệp, cũng không phải bài tập lý thuyết cất trong ngăn kéo. Nó là một kỷ luật ra quyết định: nhìn thị trường qua con mắt khách hàng, lập bản đồ đầy đủ ba tầng đối thủ, bóc tách họ bằng những khung chuẩn (ma trận, SWOT, benchmark, perceptual map, teardown), rồi biến insight thành quyết định định vị và phân bổ nguồn lực.</p>
+<p>Ba thông điệp cần nhớ:</p>
+<ol>
+<li><strong>Lấy khách hàng làm hệ quy chiếu.</strong> Đối thủ là bất cứ ai khách hàng cân nhắc thay thế bạn — kể cả "không mua gì".</li>
+<li><strong>So sánh có cấu trúc, cập nhật định kỳ.</strong> Một lần phân tích là ảnh chụp; giá trị nằm ở vòng lặp giám sát.</li>
+<li><strong>Đạo đức và pháp lý là ranh giới bất khả xâm phạm.</strong> Sức mạnh của phân tích đến từ việc đọc dữ liệu công khai thông minh hơn người khác — không phải từ việc lấy dữ liệu người khác không được phép lấy.</li>
+</ol>
+<p>Chương tiếp theo sẽ nối insight cạnh tranh vào việc xây dựng định vị và tuyên ngôn giá trị khác biệt.</p>
+<h2>24. Nguồn tham khảo</h2>
+<p><em>Danh mục dưới đây là các nguồn nền tảng để tra cứu; hãy kiểm chứng ấn bản, năm và số liệu cụ thể trước khi trích dẫn chính thức.</em></p>
+<ul>
+<li>Porter, M. E. (1980). <em>Competitive Strategy: Techniques for Analyzing Industries and Competitors</em>. Free Press.</li>
+<li>Porter, M. E. (1979). "How Competitive Forces Shape Strategy". <em>Harvard Business Review</em>.</li>
+<li>Ries, A. &amp; Trout, J. (1981). <em>Positioning: The Battle for Your Mind</em>. McGraw-Hill.</li>
+<li>Kotler, P. &amp; Keller, K. L. <em>Marketing Management</em> (các ấn bản cập nhật). Pearson.</li>
+<li>Nghiên cứu &amp; báo cáo ngành công khai (ví dụ báo cáo thị trường TMĐT/di động Việt Nam) — <em>cần dẫn nguồn và năm cụ thể khi sử dụng</em>.</li>
+<li>Dữ liệu công khai trên website chính thức, sàn TMĐT, hồ sơ doanh nghiệp và mạng xã hội của đối thủ — <em>ghi rõ ngày truy cập</em>.</li>
+</ul>
+<blockquote>
+<p><strong>Lưu ý học thuật:</strong> Mọi con số minh họa trong chương này (điểm số, Price Index, mốc thời gian doanh nghiệp) được dùng cho mục đích giảng dạy và cần được kiểm chứng bằng nguồn sơ cấp trước khi đưa vào tài liệu chính thức. Không trích dẫn lại các con số ví dụ như dữ liệu thực tế.</p>
+</blockquote>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Công cụ AI &amp; dữ liệu:</strong> Cập nhật danh sách công cụ phân tích đối thủ, khả năng mới của các mô hình AI và ranh giới pháp lý về thu thập dữ liệu (đặc biệt quy định bảo vệ dữ liệu cá nhân tại Việt Nam và quốc tế).</li>
+<li><strong>Số liệu thị trường:</strong> Bổ sung số liệu thị phần cập nhật cho các case Việt Nam (gọi xe, TMĐT, mỹ phẩm) kèm nguồn và năm.</li>
+<li><strong>Case study mới:</strong> Thêm case thành công/thất bại giai đoạn 2024–2035 khi có dữ liệu kiểm chứng.</li>
+<li><strong>Chuẩn đạo đức:</strong> Cập nhật khung tuân thủ khi luật về cạnh tranh, quảng cáo và dữ liệu thay đổi.</li>
+<li><strong>Perceptual map động:</strong> Bổ sung kỹ thuật dựng bản đồ định vị từ dữ liệu lớn/đánh giá trực tuyến theo thời gian thực.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-02-nghien-cuu-tam-ly-04-jobs-pains-gains.html"><span>← Trước</span>Tập 2 · Chương 4 — Customer Jobs, Pains, Gains &amp; Bản đồ giá trị</a><a class="next" href="tap-02-nghien-cuu-tam-ly-06-xu-huong-pestel.html"><span>Sau →</span>Tập 2 · Chương 6 — Xu hướng, Dự báo &amp; Quét môi trường (PESTEL)</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

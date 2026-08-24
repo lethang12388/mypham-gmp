@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 6 · Chương 1 — Marketing Funnel, Customer Journey &amp; CX</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 6 · Chương 1 — Marketing Funnel, Customer Journey &amp; CX</h1>
+<blockquote>
+<p>Đối tượng: Marketer, chủ doanh nghiệp, sales &amp; CX team | Thời lượng đọc: ~35–45 phút | Phiên bản: v1.0 (2026)</p>
+</blockquote>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Mọi doanh nghiệp — dù bán mỹ phẩm, cà phê hay phần mềm — đều sống nhờ một dòng chảy: người lạ biết đến bạn, cân nhắc, mua hàng, quay lại và giới thiệu người khác. Chương này mổ xẻ dòng chảy đó dưới ba lăng kính bổ sung cho nhau: <strong>Marketing Funnel</strong> (phễu — cách ta hình dung quá trình chuyển đổi), <strong>Customer Journey</strong> (hành trình — cách khách hàng thực sự trải nghiệm), và <strong>CX</strong> (trải nghiệm khách hàng — chất lượng của từng điểm chạm).</p>
+<p>Ba khái niệm này thường bị dùng lẫn lộn. Funnel là góc nhìn <em>của doanh nghiệp</em> (tôi chuyển đổi được bao nhiêu %). Journey là góc nhìn <em>của khách hàng</em> (tôi cảm thấy thế nào ở mỗi bước). CX là <em>chất lượng</em> của trải nghiệm đó. Hiểu rõ ranh giới giúp bạn tránh sai lầm kinh điển: tối ưu phễu tăng số nhưng phá vỡ trải nghiệm, khiến khách mua một lần rồi biến mất.</p>
+<p>Chương được viết theo tinh thần "thực chiến": vừa đủ lý thuyết để bạn có bản đồ, vừa đủ công cụ (framework, công thức, checklist, SOP, KPI, prompt AI) để bạn triển khai ngay tuần này.</p>
+<h2>2. Khái niệm</h2>
+<ul>
+<li><strong>Marketing Funnel (phễu marketing):</strong> Mô hình hình dung quá trình một tập lớn người tiềm năng thu hẹp dần qua các giai đoạn cho tới khi thành khách mua. Gọi là "phễu" vì số lượng người giảm dần ở mỗi tầng — trên rộng, dưới hẹp.</li>
+<li><strong>Customer Journey (hành trình khách hàng):</strong> Toàn bộ chuỗi tương tác và cảm xúc của một người với thương hiệu, từ lúc nhận biết đến sau khi mua. Không nhất thiết tuyến tính.</li>
+<li><strong>Touchpoint (điểm chạm):</strong> Mỗi lần khách hàng tiếp xúc thương hiệu — quảng cáo, website, tin nhắn, nhân viên, bao bì, email...</li>
+<li><strong>Moment of Truth (khoảnh khắc quyết định):</strong> Điểm chạm có sức nặng bất tương xứng, quyết định khách ở lại hay rời đi (khái niệm được P&amp;G phổ biến rộng rãi từ những năm 2000).</li>
+<li><strong>CX (Customer Experience):</strong> Tổng thể nhận thức và cảm xúc của khách hàng qua tất cả điểm chạm.</li>
+<li><strong>Conversion (chuyển đổi):</strong> Hành động mong muốn tại một tầng phễu (điền form, thêm giỏ, mua...).</li>
+<li><strong>Retention (giữ chân) &amp; Loyalty (trung thành):</strong> Khả năng khiến khách quay lại và gắn bó.</li>
+</ul>
+<p><em>(Phân biệt: các định nghĩa trên là dữ kiện thuật ngữ đã được chuẩn hóa trong ngành; cách áp dụng cụ thể là phần phân tích của chương.)</em></p>
+<h2>3. Lịch sử hình thành</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mốc</th>
+<th>Đóng góp</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1898</td>
+<td><strong>E. St. Elmo Lewis</strong> phác thảo chuỗi Attention–Interest–Desire–Action</td>
+<td>Thường được ghi nhận là gốc của AIDA</td>
+</tr>
+<tr>
+<td>1924</td>
+<td><strong>William W. Townsend</strong> liên hệ ý tưởng AIDA với hình phễu bán hàng</td>
+<td>Hình ảnh "phễu" gắn với AIDA từ đây</td>
+</tr>
+<tr>
+<td>1960</td>
+<td><strong>E. Jerome McCarthy</strong> phổ biến 4P — bối cảnh marketing hiện đại</td>
+<td></td>
+</tr>
+<tr>
+<td>2007–2009</td>
+<td><strong>P&amp;G / A.G. Lafley</strong> phổ biến "First &amp; Second Moment of Truth"</td>
+<td>Khách quyết định ngay tại kệ hàng</td>
+</tr>
+<tr>
+<td>2011</td>
+<td><strong>Dave McClure</strong> giới thiệu <strong>AARRR (Pirate Metrics)</strong></td>
+<td>Khung đo cho startup</td>
+</tr>
+<tr>
+<td>2013</td>
+<td><strong>Google</strong> công bố mô hình <strong>See–Think–Do–Care</strong> (Avinash Kaushik)</td>
+<td>Phễu theo ý định</td>
+</tr>
+<tr>
+<td>2018</td>
+<td><strong>HubSpot</strong> chính thức chuyển từ funnel sang <strong>Flywheel</strong></td>
+<td>Khơi lại tranh luận "funnel is dead"</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(Dữ kiện lịch sử; một số năm mang tính phổ biến hóa, các mốc trước 1960 nên xem là quy ước học thuật — cần kiểm chứng nếu trích dẫn chính xác.)</em></p>
+<h2>4. Tại sao quan trọng</h2>
+<ol>
+<li><strong>Chẩn đoán được chỗ rò rỉ.</strong> Không có phễu, bạn chỉ thấy "doanh thu thấp". Có phễu, bạn thấy <em>chính xác</em> tầng nào tụt: traffic tốt nhưng thêm-giỏ kém? Thêm-giỏ tốt nhưng thanh toán rớt?</li>
+<li><strong>Phân bổ ngân sách đúng chỗ.</strong> Đổ tiền vào top-funnel trong khi rò rỉ ở checkout là ném tiền qua cửa sổ.</li>
+<li><strong>Ngôn ngữ chung giữa các phòng ban.</strong> Marketing, Sales, CX, Product cùng nhìn một bản đồ.</li>
+<li><strong>Chuyển từ "săn bắn" sang "trồng trọt".</strong> Journey và CX buộc doanh nghiệp nghĩ về vòng đời, không chỉ đơn hàng đầu.</li>
+<li><strong>Kinh tế học của tăng trưởng.</strong> Giữ chân một khách cũ thường rẻ hơn nhiều so với thu hút khách mới — nguyên tắc được nhắc rộng rãi trong ngành, dù con số cụ thể tùy ngành (cần kiểm chứng theo bối cảnh của bạn).</li>
+</ol>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Nguyên lý cốt lõi: <strong>ở mỗi giai đoạn, một phần người tiếp tục và một phần rơi rụng.</strong> Ba lực chi phối tỷ lệ đi tiếp:</p>
+<ul>
+<li><strong>Relevance (liên quan):</strong> Thông điệp có khớp với ý định của người ở giai đoạn đó không? (Người "Think" cần so sánh, không cần chốt gấp.)</li>
+<li><strong>Friction (ma sát):</strong> Bước này khó/rắc rối tới mức nào? (Form 10 ô, bắt tạo tài khoản, phí ẩn.)</li>
+<li><strong>Motivation (động lực):</strong> Giá trị nhận được có vượt chi phí cảm nhận (tiền, thời gian, rủi ro) không?</li>
+</ul>
+<p>Công thức tư duy đơn giản: <strong>Chuyển đổi ↑ khi Liên quan ↑, Động lực ↑, Ma sát ↓.</strong></p>
+<p>Journey/CX bổ sung chiều <strong>cảm xúc</strong>: cùng một tỷ lệ chuyển đổi, nhưng nếu khách rời đi ức chế thì họ không quay lại và còn kể xấu — điều phễu thuần túy không đo được. Đó là lý do phễu cần được "bọc" bởi trải nghiệm.</p>
+<h2>6. Mô hình</h2>
+<p><strong>6.1. Phễu cổ điển AIDA</strong></p>
+<pre><code>   ┌───────────────────────────┐
+   │      AWARENESS / Attention │  ← Biết đến
+   ├─────────────────────────┤
+   │      INTEREST             │  ← Quan tâm
+   ├───────────────────────┤
+   │      DESIRE               │  ← Khao khát
+   ├─────────────────────┤
+   │      ACTION               │  ← Hành động (mua)
+   └───────────────────┘
+</code></pre>
+<p><strong>6.2. Phễu hiện đại — See–Think–Do–Care (Google)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Giai đoạn</th>
+<th>Đối tượng</th>
+<th>Ý định</th>
+<th>Nội dung phù hợp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>See</strong></td>
+<td>Toàn bộ người có thể quan tâm</td>
+<td>Chưa có ý định mua</td>
+<td>Branding, cảm hứng</td>
+</tr>
+<tr>
+<td><strong>Think</strong></td>
+<td>Bắt đầu cân nhắc</td>
+<td>Đang tìm hiểu, so sánh</td>
+<td>So sánh, review, hướng dẫn</td>
+</tr>
+<tr>
+<td><strong>Do</strong></td>
+<td>Sẵn sàng mua</td>
+<td>Ý định mua rõ</td>
+<td>Ưu đãi, CTA, retargeting</td>
+</tr>
+<tr>
+<td><strong>Care</strong></td>
+<td>Đã mua ≥1 lần</td>
+<td>Cần được chăm sóc</td>
+<td>Hỗ trợ, loyalty, upsell</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ưu điểm của STDC so với AIDA: gắn nội dung với <em>ý định</em>, và có tầng <strong>Care</strong> cho khách hiện hữu.</p>
+<p><strong>6.3. Flywheel (HubSpot)</strong></p>
+<pre><code>        Attract
+       ↗        ↘
+   Delight      Engage
+       ↖        ↙
+        (khách hàng ở tâm)
+</code></pre>
+<p>Flywheel bỏ hình phễu tuyến tính, đặt khách hàng ở trung tâm với ba pha <strong>Attract – Engage – Delight</strong>. Ý tưởng: khách hài lòng tạo lực đẩy (referral, review) quay lại nuôi giai đoạn Attract — vòng lặp tự gia tốc, thay vì "rơi ra khỏi đáy phễu".</p>
+<h2>7. Framework</h2>
+<p><strong>7.1. AARRR — Pirate Metrics (Dave McClure, 2007/2011)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chữ</th>
+<th>Giai đoạn</th>
+<th>Câu hỏi đo lường</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong>cquisition</td>
+<td>Thu hút</td>
+<td>Người đến từ đâu?</td>
+</tr>
+<tr>
+<td><strong>A</strong>ctivation</td>
+<td>Kích hoạt</td>
+<td>Trải nghiệm đầu có "aha" không?</td>
+</tr>
+<tr>
+<td><strong>R</strong>etention</td>
+<td>Giữ chân</td>
+<td>Họ có quay lại?</td>
+</tr>
+<tr>
+<td><strong>R</strong>eferral</td>
+<td>Giới thiệu</td>
+<td>Họ có rủ người khác?</td>
+</tr>
+<tr>
+<td><strong>R</strong>evenue</td>
+<td>Doanh thu</td>
+<td>Họ trả tiền chưa?</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(Lưu ý: có 2 thứ tự phổ biến — bản gốc McClure và biến thể "RARRA" của Reforge đặt Retention lên đầu. Không có "chuẩn tuyệt đối"; chọn theo mô hình kinh doanh.)</em></p>
+<p><strong>7.2. Customer Journey Mapping</strong> — 5 lớp cho mỗi giai đoạn:
+1. <strong>Hành động</strong> khách làm gì
+2. <strong>Touchpoint</strong> ở đâu
+3. <strong>Suy nghĩ / câu hỏi</strong> trong đầu họ
+4. <strong>Cảm xúc</strong> (vui/lo/bực) — vẽ thành "emotion curve"
+5. <strong>Cơ hội</strong> doanh nghiệp can thiệp</p>
+<p><strong>7.3. Đối chiếu: "Funnel is dead" hay không?</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Quan điểm "Funnel đã lỗi thời"</th>
+<th>Phản biện cân bằng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hành trình thực không tuyến tính</td>
+<td>Đúng, nhưng phễu vẫn là <em>công cụ đo</em> hữu ích, không phải mô tả hành vi</td>
+</tr>
+<tr>
+<td>Phễu bỏ quên khách sau mua</td>
+<td>Phễu hiện đại (STDC) đã có tầng Care</td>
+</tr>
+<tr>
+<td>Flywheel/Journey nhân bản hơn</td>
+<td>Đúng về triết lý, nhưng vẫn cần số liệu chuyển đổi từng bước để tối ưu</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Kết luận thực chiến:</strong> Đừng chọn phe. Dùng <strong>phễu để đo và chẩn đoán</strong>, dùng <strong>journey/flywheel để thiết kế trải nghiệm và giữ chân</strong>. Chúng bổ sung, không loại trừ. <em>(Đây là ý kiến/phân tích của hội đồng biên soạn.)</em></p>
+<h2>8. Công thức</h2>
+<p>Tất cả số dưới đây là <strong>số minh họa</strong> để demo cách tính, không phải số liệu thị trường.</p>
+<p><strong>8.1. Conversion rate từng bước</strong></p>
+<pre><code>CR (bước) = (Số người hoàn thành bước) / (Số người bước vào bước) × 100%
+</code></pre>
+<p>Ví dụ minh họa: 10.000 truy cập → 1.500 thêm giỏ → 300 thanh toán.
+- CR thêm giỏ = 1.500/10.000 = <strong>15%</strong>
+- CR thanh toán = 300/1.500 = <strong>20%</strong>
+- CR tổng = 300/10.000 = <strong>3%</strong></p>
+<p><strong>8.2. CAC (Customer Acquisition Cost)</strong></p>
+<pre><code>CAC = Tổng chi phí Marketing &amp; Sales / Số khách hàng MỚI có được
+</code></pre>
+<p>Số minh họa: chi 100 triệu, có 200 khách mới → CAC = <strong>500.000đ/khách</strong>.</p>
+<p><strong>8.3. CLV / LTV (Customer Lifetime Value)</strong> — công thức phổ biến:</p>
+<pre><code>CLV = Giá trị đơn TB × Số lần mua/năm × Số năm gắn bó × Biên lợi nhuận gộp
+</code></pre>
+<p>Số minh họa: 400.000đ × 4 lần × 3 năm × 30% = <strong>1.440.000đ</strong>.</p>
+<p><strong>8.4. Tỷ lệ vàng CLV:CAC</strong></p>
+<pre><code>Tỷ lệ = CLV / CAC
+</code></pre>
+<p>Với số trên: 1.440.000 / 500.000 = <strong>2,88</strong>. Nhiều nhà đầu tư SaaS nhắc con số tham chiếu ~3:1 là "khỏe mạnh" (heuristic ngành, không phải quy luật — cần kiểm chứng theo ngành của bạn).</p>
+<p><strong>8.5. Giá trị phễu (Funnel Value) — ước tính doanh thu kỳ vọng</strong></p>
+<pre><code>Doanh thu kỳ vọng = Lượng vào đỉnh phễu × Tích các CR từng bước × Giá trị đơn TB
+</code></pre>
+<p>Số minh họa: 10.000 × 3% × 400.000đ = <strong>120 triệu</strong>. Nâng CR thanh toán từ 20%→25% (giữ nguyên phần còn lại) → CR tổng 3,75% → <strong>150 triệu</strong> (+25%) mà không cần thêm traffic. Đây là sức mạnh của tối ưu phễu.</p>
+<h2>9. Quy trình</h2>
+<p>Quy trình 8 bước xây và tối ưu phễu + journey:</p>
+<ol>
+<li><strong>Xác định mục tiêu &amp; giai đoạn</strong> — chọn khung (STDC/AARRR) phù hợp mô hình.</li>
+<li><strong>Vẽ journey map</strong> — liệt kê touchpoint, suy nghĩ, cảm xúc mỗi giai đoạn.</li>
+<li><strong>Gắn chỉ số (KPI) cho từng tầng.</strong></li>
+<li><strong>Cài đo lường</strong> — tracking, UTM, event, khảo sát NPS/CSAT.</li>
+<li><strong>Đo baseline</strong> — biết CR từng bước hiện tại.</li>
+<li><strong>Tìm điểm rò rỉ lớn nhất</strong> — ưu tiên tầng tụt sâu nhất.</li>
+<li><strong>Giả thuyết &amp; A/B test</strong> — giảm ma sát / tăng liên quan / tăng động lực.</li>
+<li><strong>Đóng vòng CX</strong> — thu feedback sau mua, cải thiện, quay lại bước 5.</li>
+</ol>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Một tiệm bánh online bán qua Facebook:</strong></p>
+<pre><code>Nhìn thấy post   1.000 người
+     ↓ 12%
+Nhắn tin hỏi      120 người
+     ↓ 40%
+Chốt đơn           48 người
+     ↓ 85%
+Nhận hàng thành công 41 người
+</code></pre>
+<ul>
+<li>Rò rỉ lớn nhất: từ "nhắn tin" → "chốt" (60% rớt). Chẩn đoán: có thể do trả lời chậm hoặc giá gây sốc.</li>
+<li>Hành động: chuẩn hóa kịch bản trả lời trong 5 phút, báo giá kèm ảnh thật. <em>(Số minh họa.)</em></li>
+</ul>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Một thương hiệu mỹ phẩm D2C (bối cảnh giả định, số minh họa):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tầng (STDC)</th>
+<th>Kênh</th>
+<th>KPI</th>
+<th>Chỉ số minh họa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>See</td>
+<td>TikTok, KOL</td>
+<td>Reach, view</td>
+<td>2 triệu view</td>
+</tr>
+<tr>
+<td>Think</td>
+<td>Bài review, landing</td>
+<td>CTR, time-on-page</td>
+<td>CTR 1,8%</td>
+</tr>
+<tr>
+<td>Do</td>
+<td>Website, ưu đãi</td>
+<td>CR mua, AOV</td>
+<td>CR 2,5%, AOV 350k</td>
+</tr>
+<tr>
+<td>Care</td>
+<td>Email, Zalo OA, loyalty</td>
+<td>Tỷ lệ mua lại</td>
+<td>28% mua lại/90 ngày</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bài học: thương hiệu này phát hiện tầng <strong>Care</strong> yếu (mua lại thấp), nên chuyển ngân sách sang chuỗi email chăm sóc + chương trình tích điểm thay vì đổ thêm vào quảng cáo See. <em>(Phân tích minh họa.)</em></p>
+<h2>12. Ví dụ Việt Nam</h2>
+<ul>
+<li><strong>Shopee</strong> vận hành phễu đa lớp: top-funnel bằng livestream &amp; voucher toàn sàn, mid-funnel bằng gợi ý cá nhân hóa, bottom-funnel bằng flash sale + freeship, và Care bằng Shopee Coins, game tương tác (Shopee Farm) để tăng tần suất quay lại. Đây là ví dụ điển hình flywheel: mỗi lượt mua nuôi dữ liệu gợi ý cho lượt sau. <em>(Quan sát định tính, không kèm số nội bộ.)</em></li>
+<li><strong>Thế Giới Di Động (TGDĐ):</strong> mạnh ở "moment of truth" tại cửa hàng — nhân viên tư vấn được huấn luyện kỹ, kết hợp online-to-offline (đặt online, nhận/tư vấn tại shop). Trải nghiệm hậu mãi (bảo hành, đổi trả) là điểm chạm giữ chân.</li>
+<li><strong>The Coffee House:</strong> đầu tư app riêng và chương trình thành viên để chuyển khách từ "mua một lần" sang "thành viên", tăng tần suất và dữ liệu hành vi — ví dụ về tầng Care/Retention. <em>(Định tính; mức độ thành công theo từng thời kỳ — cần kiểm chứng.)</em></li>
+<li><strong>MoMo:</strong> dùng cashback, "lắc xì", ví trả sau và hệ sinh thái dịch vụ để tăng Activation và Retention — biến thanh toán thành thói quen hằng ngày. Đây là phễu mà Retention quan trọng hơn Acquisition (mô hình RARRA).</li>
+</ul>
+<p><em>(Các mô tả trên là quan sát công khai/định tính về cách vận hành, không trích số liệu tài chính nội bộ.)</em></p>
+<h2>13. Ví dụ quốc tế</h2>
+<ul>
+<li><strong>Amazon:</strong> giảm ma sát đến mức tối đa với "1-Click ordering" (được cấp bằng sáng chế năm 1999, đã hết hạn 2017) — kinh điển về hạ friction ở tầng Do. Prime biến phí thành viên thành động lực mua lại (Care).</li>
+<li><strong>Netflix:</strong> tối ưu Activation bằng cá nhân hóa đề xuất; đo Retention qua tỷ lệ giữ thuê bao — một tổ chức lấy Retention làm trung tâm.</li>
+<li><strong>HubSpot:</strong> không chỉ dạy flywheel mà tự vận hành theo nó — nội dung miễn phí (Attract) → công cụ freemium (Engage) → khách hài lòng giới thiệu (Delight).</li>
+<li><strong>Starbucks Rewards:</strong> chương trình loyalty dựa trên "Stars", biến khách vãng lai thành thành viên nạp tiền trước — ví dụ mạnh về Loyalty &amp; Retention.</li>
+</ul>
+<p><em>(Dữ kiện về 1-Click patent có mốc năm; phần còn lại là mô tả định tính về cách vận hành.)</em></p>
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Chỉ tối ưu đỉnh phễu</strong> (đổ traffic) mà bỏ rò rỉ ở checkout.</li>
+<li><strong>Đo vanity metrics</strong> (like, view) thay vì chỉ số chuyển đổi thật.</li>
+<li><strong>Bỏ quên tầng Care</strong> — coi bán xong là hết chuyện.</li>
+<li><strong>Thông điệp sai giai đoạn</strong> — chốt sale với người mới ở "See".</li>
+<li><strong>Journey map làm cho có</strong> rồi cất tủ, không gắn KPI.</li>
+<li><strong>Tối ưu số mà phá CX</strong> — ép upsell, phí ẩn, làm khách ức chế.</li>
+<li><strong>Nhầm CAC/CLV</strong> — tính CAC quên chi phí nhân sự/sales.</li>
+<li><strong>Đo NPS nhưng không hành động</strong> — hỏi rồi không đóng vòng phản hồi.</li>
+<li><strong>Coi funnel và journey là đối thủ</strong> thay vì công cụ bổ sung.</li>
+</ol>
+<h2>15. Checklist</h2>
+<p><strong>Trước khi chạy phễu:</strong>
+- [ ] Đã chọn khung phù hợp (AIDA/STDC/AARRR)?
+- [ ] Đã vẽ journey map có emotion curve?
+- [ ] Mỗi tầng có ≥1 KPI đo được?
+- [ ] Đã cài tracking/UTM/event đầy đủ?
+- [ ] Đã xác định "moment of truth" chính?</p>
+<p><strong>Khi tối ưu:</strong>
+- [ ] Biết CR baseline từng bước?
+- [ ] Đã xác định tầng rò rỉ lớn nhất?
+- [ ] Mỗi thay đổi là 1 giả thuyết A/B test được?
+- [ ] Có đo CAC &amp; CLV theo kênh?</p>
+<p><strong>Sau mua (CX):</strong>
+- [ ] Có thu NPS/CSAT/CES?
+- [ ] Có quy trình đóng vòng phản hồi?
+- [ ] Có chương trình retention/loyalty?</p>
+<h2>16. SOP — Quy trình chuẩn tối ưu phễu hằng tháng</h2>
+<p><strong>Mục tiêu:</strong> Nâng CR tổng và mua lại mỗi chu kỳ 30 ngày.</p>
+<ol>
+<li><strong>Ngày 1–2 — Thu số:</strong> Xuất CR từng tầng, CAC/kênh, CLV, NPS tháng trước.</li>
+<li><strong>Ngày 3 — Chẩn đoán:</strong> Xếp hạng tầng theo mức rò rỉ × lượng traffic (ưu tiên tác động lớn).</li>
+<li><strong>Ngày 4 — Giả thuyết:</strong> Với tầng ưu tiên, viết 2–3 giả thuyết theo trục Liên quan/Ma sát/Động lực.</li>
+<li><strong>Ngày 5–7 — Thiết kế test:</strong> Định nghĩa biến, nhóm A/B, cỡ mẫu, tiêu chí thắng.</li>
+<li><strong>Ngày 8–24 — Chạy test.</strong></li>
+<li><strong>Ngày 25–27 — Phân tích:</strong> Chốt biến thắng, ước tính tác động lên Funnel Value.</li>
+<li><strong>Ngày 28 — Triển khai &amp; tài liệu hóa.</strong></li>
+<li><strong>Ngày 29–30 — Đóng vòng CX:</strong> Review feedback, cập nhật journey map, chốt hạng mục tháng sau.</li>
+</ol>
+<p><strong>Người chịu trách nhiệm:</strong> Growth/Marketing lead (chủ trì), Data (số), CX (feedback), Product/Dev (triển khai).</p>
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Giai đoạn</th>
+<th>KPI chính</th>
+<th>Công thức/ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquisition</td>
+<td>Traffic, CPC, CTR, CAC</td>
+<td>CAC = chi phí / khách mới</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>CR đăng ký/kích hoạt, % đạt "aha"</td>
+<td></td>
+</tr>
+<tr>
+<td>Chuyển đổi</td>
+<td>CR từng bước, CR tổng, AOV</td>
+<td></td>
+</tr>
+<tr>
+<td>Retention</td>
+<td>Tỷ lệ mua lại, churn, tần suất</td>
+<td>Churn = % khách rời trong kỳ</td>
+</tr>
+<tr>
+<td>Referral</td>
+<td>NPS, tỷ lệ giới thiệu, K-factor</td>
+<td></td>
+</tr>
+<tr>
+<td>Revenue</td>
+<td>CLV, CLV:CAC, doanh thu/khách</td>
+<td></td>
+</tr>
+<tr>
+<td>CX</td>
+<td><strong>NPS, CSAT, CES</strong></td>
+<td>Xem dưới</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ba thước đo CX cốt lõi:</strong>
+- <strong>NPS (Net Promoter Score):</strong> "Bạn sẵn sàng giới thiệu chúng tôi cho bạn bè ở mức nào (0–10)?" → % Promoter (9–10) − % Detractor (0–6). Thang −100 đến +100.
+- <strong>CSAT (Customer Satisfaction):</strong> "Bạn hài lòng thế nào với [trải nghiệm này]?" → % người chọn mức hài lòng.
+- <strong>CES (Customer Effort Score):</strong> "Bạn phải bỏ bao nhiêu công sức để giải quyết việc này?" → đo ma sát; điểm nỗ lực thấp thường gắn với lòng trung thành cao.</p>
+<p><em>(NPS do Fred Reichheld/Bain &amp; Company giới thiệu ~2003; là dữ kiện. Diễn giải mức "tốt/xấu" tùy ngành — cần kiểm chứng benchmark.)</em></p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>18.1. Bảng đo phễu (điền hằng tháng)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tầng</th>
+<th>Vào</th>
+<th>Ra</th>
+<th>CR bước</th>
+<th>CR tích lũy</th>
+<th>Ghi chú rò rỉ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>See/Traffic</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Think</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Do/Mua</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Care/Mua lại</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>18.2. Journey map một dòng cho mỗi giai đoạn</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Giai đoạn</th>
+<th>Touchpoint</th>
+<th>Khách nghĩ gì</th>
+<th>Cảm xúc (−/+)</th>
+<th>Rò rỉ</th>
+<th>Cơ hội cải thiện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>18.3. Thẻ giả thuyết A/B</strong></p>
+<pre><code>Tầng: ______  | Vấn đề: ______
+Giả thuyết: Nếu [thay đổi] thì [CR] tăng vì [lý do: liên quan/ma sát/động lực]
+Chỉ số thắng: ______ | Cỡ mẫu: ______ | Thời gian: ______
+</code></pre>
+<h2>19. Prompt AI</h2>
+<p>Dùng cho ChatGPT, Claude, Gemini, Perplexity, NotebookLM, AI Agent. Điều chỉnh phần trong [ ].</p>
+<p><strong>19.1. ChatGPT / Claude — Vẽ journey map</strong></p>
+<pre><code>Bạn là chuyên gia CX. Sản phẩm: [mô tả]. Khách hàng mục tiêu: [avatar].
+Hãy vẽ customer journey map dạng bảng theo 5 giai đoạn See-Think-Do-Care-Advocate,
+mỗi giai đoạn gồm: touchpoint, suy nghĩ của khách, cảm xúc, điểm rò rỉ tiềm ẩn,
+và 2 ý tưởng cải thiện. Đánh dấu &quot;moment of truth&quot; quan trọng nhất.
+</code></pre>
+<p><strong>19.2. Claude — Chẩn đoán rò rỉ phễu từ số liệu</strong></p>
+<pre><code>Đây là số phễu của tôi: [dán bảng CR từng bước].
+Hãy: (1) tính CR tích lũy, (2) chỉ ra tầng rò rỉ nghiêm trọng nhất theo
+mức rò rỉ × lượng traffic, (3) đề xuất 3 giả thuyết test theo trục
+Liên quan/Ma sát/Động lực. Không bịa số; nếu thiếu dữ liệu hãy nêu rõ.
+</code></pre>
+<p><strong>19.3. Gemini — Ý tưởng nội dung theo tầng STDC</strong></p>
+<pre><code>Cho thương hiệu [tên/ngành]. Đề xuất 3 định dạng nội dung cho mỗi tầng
+See, Think, Do, Care — kèm mục tiêu, kênh và 1 KPI đo được cho từng ý.
+</code></pre>
+<p><strong>19.4. Perplexity — Nghiên cứu benchmark (có nguồn)</strong></p>
+<pre><code>Tìm benchmark conversion rate / NPS trung bình cho ngành [ngành] năm gần nhất.
+Trích dẫn nguồn và năm cho mỗi con số. Nếu số liệu không đáng tin, nói rõ.
+</code></pre>
+<p><strong>19.5. NotebookLM — Tổng hợp feedback khách</strong></p>
+<pre><code>Nguồn: [upload khảo sát NPS/CSAT + review]. Hãy tổng hợp 5 chủ đề than phiền
+lớn nhất, 5 điểm khách khen, và map từng chủ đề vào giai đoạn journey tương ứng.
+</code></pre>
+<p><strong>19.6. AI Agent — Tự động hóa vòng CX</strong></p>
+<pre><code>Vai trò: CX Ops Agent. Nhiệm vụ định kỳ hằng tuần:
+1) Thu điểm NPS/CSAT mới, 2) phân loại theo giai đoạn journey,
+3) gắn cờ khách Detractor cần chăm sóc, 4) tạo báo cáo tóm tắt + đề xuất hành động.
+Ràng buộc: chỉ dùng dữ liệu thật, ghi rõ khi thiếu, không tự gửi mail cho khách khi chưa được duyệt.
+</code></pre>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Vẽ phễu của chính bạn:</strong> Chọn một sản phẩm bạn đang bán, liệt kê 4 tầng và điền số thật 30 ngày qua. Tầng nào rò rỉ nhất?</li>
+<li><strong>Tính toán:</strong> Với traffic 8.000, CR thêm giỏ 12%, CR thanh toán 25%, AOV 500.000đ — tính doanh thu kỳ vọng. Nếu tăng CR thanh toán lên 30%, doanh thu tăng bao nhiêu %?</li>
+<li><strong>CLV:CAC:</strong> CAC = 600k, đơn TB 450k, mua 3 lần/năm, gắn bó 2 năm, biên gộp 35%. Tính CLV và tỷ lệ CLV:CAC. Có "khỏe" không?</li>
+<li><strong>Journey map:</strong> Vẽ emotion curve cho một trải nghiệm mua gần đây của chính bạn (là khách hàng). Đâu là moment of truth?</li>
+<li><strong>Thiết kế 1 câu hỏi NPS</strong> cho doanh nghiệp bạn và kế hoạch đóng vòng phản hồi.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt Funnel, Journey và CX bằng ngôn ngữ của bạn.</li>
+<li>AIDA khác See–Think–Do–Care ở điểm cốt lõi nào?</li>
+<li>Flywheel giải quyết hạn chế gì của phễu tuyến tính?</li>
+<li>Viết đủ 5 chữ AARRR và câu hỏi đo cho mỗi chữ.</li>
+<li>Ba lực chi phối tỷ lệ chuyển đổi ở mỗi bước là gì?</li>
+<li>Công thức CAC, CLV, và tỷ lệ CLV:CAC "tham chiếu khỏe mạnh" thường được nhắc là bao nhiêu?</li>
+<li>NPS, CSAT, CES đo điều gì khác nhau?</li>
+<li>"Moment of truth" là gì? Cho một ví dụ.</li>
+<li>Vì sao tối ưu số mà bỏ CX là nguy hiểm?</li>
+<li>Trình bày lập luận cân bằng cho tranh cãi "funnel is dead".</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>22.1. Thành công — Amazon: hạ ma sát ở tầng Do</strong>
+Bối cảnh: đầu quá trình thương mại điện tử, bước thanh toán rườm rà khiến giỏ hàng bị bỏ nhiều. Amazon triển khai <strong>1-Click ordering</strong> (cấp bằng sáng chế 1999), lưu sẵn thông tin thanh toán/giao hàng để mua chỉ bằng một cú nhấp. Cùng với Prime (biến phí thành viên thành động lực mua lại), Amazon vừa hạ friction ở tầng Do vừa nâng Retention ở tầng Care. Bài học: rò rỉ lớn thường nằm ở ma sát checkout — gỡ nó có đòn bẩy doanh thu khổng lồ mà không cần thêm traffic. <em>(Mốc patent là dữ kiện; tác động doanh thu cụ thể — cần kiểm chứng.)</em></p>
+<p><strong>22.2. Thất bại — "phễu đẹp, CX vỡ"</strong>
+Kịch bản điển hình (tổng hợp, minh họa — không nêu đích danh): một thương hiệu D2C tăng trưởng nóng nhờ quảng cáo mạnh, CR mua cao nhờ giảm giá sâu và upsell ép buộc ở checkout (thêm sản phẩm mặc định vào giỏ, phí ẩn hiện ở bước cuối). Số ngắn hạn rất đẹp: CAC thấp, CR cao. Nhưng: NPS âm, tỷ lệ hoàn trả tăng, review 1 sao lan truyền, mua lại gần như bằng 0. Sau vài tháng, chi phí quảng cáo tăng (vì phải liên tục thay khách mới) trong khi CLV sụp — mô hình lỗ. Bài học: <strong>một phễu tối ưu cho đơn đầu nhưng phá CX sẽ tự bào mòn CLV</strong>, buộc doanh nghiệp chạy trên "máy chạy bộ" thu hút vô tận. <em>(Case tổng hợp mang tính minh họa; không phải mô tả một công ty cụ thể.)</em></p>
+<h2>23. Tổng kết</h2>
+<ul>
+<li><strong>Funnel, Journey, CX là ba lăng kính bổ sung:</strong> phễu để <em>đo và chẩn đoán</em>, journey để <em>thiết kế trải nghiệm</em>, CX để <em>đảm bảo chất lượng từng điểm chạm</em>.</li>
+<li><strong>AIDA → STDC → Flywheel</strong> phản ánh sự tiến hóa từ tuyến tính sang lấy khách hàng làm trung tâm; nhưng "funnel is dead" là cách nói cực đoan — hãy dùng cả hai.</li>
+<li><strong>AARRR</strong> cho startup một khung đo đầu-cuối; với nhiều mô hình, <strong>Retention</strong> mới là đòn bẩy lớn nhất.</li>
+<li><strong>Công thức CAC, CLV, CLV:CAC, Funnel Value</strong> biến trực giác thành quyết định phân bổ ngân sách.</li>
+<li><strong>NPS/CSAT/CES</strong> đưa cảm xúc khách hàng thành số để hành động — nhưng vô nghĩa nếu không đóng vòng phản hồi.</li>
+<li><strong>Nguyên tắc vàng:</strong> đừng tối ưu số bằng cách phá trải nghiệm; tăng trưởng bền vững đến từ khách quay lại và giới thiệu.</li>
+</ul>
+<h2>24. Nguồn tham khảo</h2>
+<p><em>(Nguồn có thật; khuyến nghị tra cứu trực tiếp trên website chính thức. Không kèm link để tránh dẫn sai địa chỉ — vui lòng tìm theo tên.)</em></p>
+<ol>
+<li>E. St. Elmo Lewis — nguồn gốc mô hình AIDA (tài liệu lịch sử marketing).</li>
+<li>Avinash Kaushik — "See, Think, Do, Care" framework (Google, blog Occam's Razor, 2013).</li>
+<li>HubSpot — "The Flywheel Model" (tài liệu chính thức HubSpot, từ 2018).</li>
+<li>Dave McClure — "Startup Metrics for Pirates (AARRR)" (bài thuyết trình, 2007).</li>
+<li>Fred Reichheld &amp; Bain &amp; Company — "The One Number You Need to Grow", Harvard Business Review (2003) — nguồn gốc NPS.</li>
+<li>P&amp;G / A.G. Lafley — khái niệm "First Moment of Truth" (tài liệu P&amp;G, ~2005).</li>
+<li>Google/Think with Google — tài liệu về Micro-Moments &amp; hành trình khách hàng.</li>
+<li>Reforge (Brian Balfour) — biến thể "RARRA" và tư duy retention-first.</li>
+<li>USPTO — Amazon "1-Click" patent US5960411 (1999).</li>
+<li>Philip Kotler &amp; Kevin Keller — <em>Marketing Management</em> (giáo trình nền tảng về hành vi mua &amp; journey).</li>
+</ol>
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Số liệu benchmark theo ngành</strong> (CR, NPS, CLV:CAC trung bình) — cần cập nhật hằng năm với nguồn năm gần nhất; hiện chương chỉ dùng số minh họa.</li>
+<li><strong>Tác động của AI Agent lên journey</strong> — trợ lý mua sắm AI, chatbot chủ động có thể làm phễu "co lại" hoặc phi tuyến tính hơn; theo dõi 2026–2028.</li>
+<li><strong>Zero/first-party data &amp; privacy</strong> — thay đổi luật (cookie, tracking) ảnh hưởng cách đo phễu; cập nhật khi khung pháp lý VN/quốc tế thay đổi.</li>
+<li><strong>Case Việt Nam có số liệu công khai</strong> — bổ sung khi có báo cáo chính thức từ Shopee/MoMo/The Coffee House.</li>
+<li><strong>Kiểm chứng các mốc lịch sử AIDA</strong> (Lewis 1898, Townsend 1924) từ nguồn học thuật gốc.</li>
+<li><strong>Cập nhật benchmark NPS "tốt/xấu"</strong> theo ngành mỹ phẩm/F&amp;B/thương mại điện tử VN.</li>
+</ul></article><div class="nav"><a class="prev" href="tap-05-digital-noi-dung-07-influencer-kol-koc.html"><span>← Trước</span>Tập 5 · Chương 7 — Influencer, KOL &amp; KOC Marketing</a><a class="next" href="tap-06-funnel-crm-02-sales-consultative-selling.html"><span>Sau →</span>Tập 6 · Chương 2 — Sales &amp; Bán hàng tư vấn</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

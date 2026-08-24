@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 4 · Chương 4 — Chiến lược Phân phối &amp; Quản trị Kênh</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 4 · Chương 4 — Chiến lược Phân phối &amp; Quản trị Kênh</h1>
+<blockquote>
+<p><strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+<strong>Tập:</strong> 4 — Sản phẩm, Giá &amp; Kênh
+<strong>Chương:</strong> 4 — Chiến lược Phân phối &amp; Quản trị Kênh (Distribution &amp; Channel Management)
+<strong>Phiên bản:</strong> 1.0 · <strong>Cập nhật:</strong> 2026
+<strong>Đối tượng:</strong> Giám đốc kinh doanh, Trade Marketing Manager, Sales Manager, chủ doanh nghiệp SME ngành hàng tiêu dùng và mỹ phẩm
+<strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành biểu mẫu)</p>
+</blockquote>
+<p><strong>Tóm tắt một câu:</strong> Chương này trình bày toàn diện cách thiết kế cấu trúc kênh phân phối, lựa chọn độ bao phủ, quản trị mạng lưới nhà phân phối – đại lý – điểm bán, xử lý xung đột kênh và giá, triển khai trade marketing và vận hành mô hình omnichannel — với trọng tâm thực chiến cho ngành hàng tiêu dùng nhanh (FMCG) và mỹ phẩm tại Việt Nam.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Trong bốn chữ P kinh điển của Marketing-mix (Product, Price, Place, Promotion), chữ <strong>Place</strong> — Phân phối — thường bị xem là "kém hào nhoáng" nhất. Nó không có sự sáng tạo bay bổng như quảng cáo, không gợi cảm xúc như thương hiệu, cũng không kịch tính như trận chiến về giá. Nhưng những người làm nghề lâu năm đều thuộc lòng một chân lý: <strong>"Sản phẩm tốt mà không có mặt trên kệ thì không tồn tại trong mắt người mua."</strong></p>
+<p>Phân phối là cây cầu vật lý và số hóa nối sản phẩm với người tiêu dùng. Một chiến dịch quảng cáo trị giá hàng chục tỷ đồng có thể đổ sông đổ biển nếu khi khách hàng bước vào cửa hàng, họ không tìm thấy sản phẩm — hoặc tìm thấy nhưng bị đặt ở góc khuất, hết hàng, hoặc bán với giá cao hơn cửa hàng bên cạnh. Ngược lại, nhiều thương hiệu Việt Nam vươn lên dẫn đầu không nhờ sản phẩm đột phá, mà nhờ một mạng lưới phân phối "phủ đến tận thôn xóm" mà đối thủ ngoại khó lòng sao chép.</p>
+<p>Chương này được viết cho người <strong>làm thật</strong>: người phải đàm phán chiết khấu với nhà phân phối, phải quyết định trưng bày bao nhiêu mặt hàng trên kệ, phải xử lý khi một đại lý phá giá làm loạn thị trường, phải cân bằng giữa kênh truyền thống (chợ, tạp hóa, nhà thuốc) và kênh hiện đại (siêu thị, chuỗi bán lẻ, sàn thương mại điện tử). Chúng ta sẽ đi từ khái niệm nền tảng đến công thức đo lường, quy trình vận hành, biểu mẫu và cả prompt AI để bạn có thể áp dụng ngay.</p>
+<hr />
+<h2>2. Khái niệm</h2>
+<p><strong>Kênh phân phối (Distribution Channel / Marketing Channel)</strong> là tập hợp các tổ chức và cá nhân độc lập lẫn phụ thuộc tham gia vào quá trình đưa một sản phẩm hoặc dịch vụ từ nhà sản xuất đến tay người tiêu dùng cuối cùng, sẵn sàng để sử dụng hoặc tiêu dùng (Kotler &amp; Keller, <em>Marketing Management</em>).</p>
+<p>Một số thuật ngữ cốt lõi cần phân biệt rõ:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thuật ngữ</th>
+<th>Định nghĩa ngắn gọn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nhà sản xuất (Manufacturer)</strong></td>
+<td>Đơn vị tạo ra sản phẩm</td>
+</tr>
+<tr>
+<td><strong>Nhà phân phối (Distributor)</strong></td>
+<td>Đối tác mua hàng số lượng lớn, giữ tồn kho, phân phối lại cho điểm bán trong một khu vực</td>
+</tr>
+<tr>
+<td><strong>Đại lý (Agent/Dealer)</strong></td>
+<td>Trung gian bán hàng, có thể không sở hữu hàng hóa (đại lý hoa hồng) hoặc sở hữu (đại lý mua đứt)</td>
+</tr>
+<tr>
+<td><strong>Điểm bán / Điểm bán lẻ (Retail Outlet)</strong></td>
+<td>Nơi người tiêu dùng trực tiếp mua hàng: tạp hóa, nhà thuốc, siêu thị, cửa hàng mỹ phẩm</td>
+</tr>
+<tr>
+<td><strong>Bán buôn (Wholesale)</strong></td>
+<td>Bán số lượng lớn cho trung gian, không bán cho người tiêu dùng cuối</td>
+</tr>
+<tr>
+<td><strong>Bán lẻ (Retail)</strong></td>
+<td>Bán trực tiếp cho người tiêu dùng cuối</td>
+</tr>
+<tr>
+<td><strong>GT (General Trade)</strong></td>
+<td>Kênh truyền thống: chợ, tạp hóa, nhà thuốc lẻ, cửa hàng nhỏ</td>
+</tr>
+<tr>
+<td><strong>MT (Modern Trade)</strong></td>
+<td>Kênh hiện đại: siêu thị, đại siêu thị, cửa hàng tiện lợi, chuỗi bán lẻ có hệ thống</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Quản trị kênh (Channel Management)</strong> là toàn bộ hoạt động thiết kế, tuyển chọn, tạo động lực, hỗ trợ, đánh giá và điều chỉnh các thành viên kênh nhằm đạt mục tiêu phân phối của doanh nghiệp một cách hiệu quả và bền vững, đồng thời giảm thiểu xung đột.</p>
+<hr />
+<h2>3. Lịch sử hình thành</h2>
+<p>Phân phối tồn tại từ khi con người bắt đầu trao đổi hàng hóa, nhưng tư duy <strong>quản trị kênh có hệ thống</strong> là sản phẩm của thế kỷ 20.</p>
+<ul>
+<li><strong>Thời kỳ tiền công nghiệp:</strong> Thương lái và chợ đóng vai trò trung gian; kênh phân phối tự phát, phụ thuộc vào mạng lưới cá nhân.</li>
+<li><strong>Đầu thế kỷ 20:</strong> Sự trỗi dậy của bán lẻ chuỗi và đặt hàng qua thư (mail order) ở Mỹ (Sears Roebuck) tạo tiền đề cho hệ thống phân phối quy mô lớn.</li>
+<li><strong>Thập niên 1950–1960:</strong> Wroe Alderson và các học giả marketing đưa ra lý thuyết "kênh như hệ thống hành vi có tổ chức", nhấn mạnh chức năng của trung gian (function of intermediaries).</li>
+<li><strong>Thập niên 1970:</strong> Louis W. Stern và Adel El-Ansary phát triển lý thuyết <strong>kênh marketing dọc (Vertical Marketing System - VMS)</strong> và nghiên cứu sâu về <strong>quyền lực và xung đột trong kênh</strong> (channel power &amp; conflict) — nền tảng học thuật vẫn được giảng dạy đến nay.</li>
+<li><strong>Thập niên 1990:</strong> Sự bùng nổ của đại siêu thị (Walmart, Carrefour) làm dịch chuyển quyền lực từ nhà sản xuất sang nhà bán lẻ; khái niệm <strong>Trade Marketing</strong> và <strong>Category Management</strong> ra đời.</li>
+<li><strong>Thập niên 2000–2010:</strong> Thương mại điện tử (Amazon, Alibaba) và bán hàng đa kênh (multichannel) làm thay đổi cấu trúc kênh truyền thống.</li>
+<li><strong>Thập niên 2010–nay:</strong> Khái niệm <strong>Omnichannel</strong> (đa kênh liền mạch) và <strong>D2C (Direct-to-Consumer)</strong> trở thành xu hướng chủ đạo, đặc biệt sau đại dịch COVID-19 thúc đẩy chuyển đổi số kênh phân phối (cần kiểm chứng số liệu cụ thể theo từng thị trường).</li>
+</ul>
+<p>Tại Việt Nam, kênh phân phối hiện đại (siêu thị, cửa hàng tiện lợi) phát triển mạnh từ khoảng cuối thập niên 1990 với Co.opmart, và tăng tốc từ 2010 trở đi. Tuy nhiên, kênh truyền thống (GT) vẫn chiếm tỷ trọng lớn trong tổng doanh số FMCG Việt Nam (thường được các báo cáo ngành ước tính ở mức đa số, cần kiểm chứng theo báo cáo Kantar/Nielsen từng năm).</p>
+<hr />
+<h2>4. Tại sao quan trọng</h2>
+<p>Phân phối quan trọng vì những lý do sau, đặc biệt trong ngành hàng tiêu dùng và mỹ phẩm:</p>
+<ol>
+<li>
+<p><strong>Không có mặt trên kệ = không có doanh thu.</strong> Người tiêu dùng FMCG thường quyết định mua tại điểm bán trong vài giây; nếu sản phẩm không hiện diện, họ mua sản phẩm khác. Đây là lý do "độ phủ" (distribution coverage) là chỉ số sinh tử.</p>
+</li>
+<li>
+<p><strong>Rào cản cạnh tranh bền vững.</strong> Một mạng lưới phân phối sâu rộng cần nhiều năm và nhiều nguồn lực để xây dựng — khó sao chép hơn một công thức sản phẩm hay một mẩu quảng cáo. Đây là "con hào kinh tế" (economic moat) của nhiều doanh nghiệp Việt.</p>
+</li>
+<li>
+<p><strong>Kiểm soát trải nghiệm và giá.</strong> Cấu trúc kênh quyết định việc doanh nghiệp có kiểm soát được giá bán lẻ, chất lượng trưng bày và trải nghiệm khách hàng hay không.</p>
+</li>
+<li>
+<p><strong>Hiệu quả chi phí và dòng tiền.</strong> Trung gian giúp giảm số lượng giao dịch cần thiết (từ M×N xuống M+N), chia sẻ rủi ro tồn kho và cung cấp tín dụng thương mại — ảnh hưởng trực tiếp đến vốn lưu động.</p>
+</li>
+<li>
+<p><strong>Với mỹ phẩm nói riêng:</strong> kênh phân phối còn là kênh <strong>tư vấn và xây dựng niềm tin</strong> (nhà thuốc, chuỗi mỹ phẩm chuyên nghiệp, spa). Sản phẩm chăm sóc da thường cần người bán giải thích, demo, và xử lý lo ngại về an toàn — điều mà kênh không phù hợp có thể phá hỏng thương hiệu.</p>
+</li>
+</ol>
+<hr />
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Kênh phân phối vận hành dựa trên việc thực hiện một chuỗi <strong>chức năng (channel functions)</strong>. Dù có bao nhiêu trung gian, các chức năng này không biến mất — chúng chỉ được phân bổ lại cho ai đó thực hiện. Đây là nguyên lý nền tảng: <strong>"Bạn có thể loại bỏ trung gian, nhưng không thể loại bỏ chức năng của họ."</strong></p>
+<p>Các chức năng chính:</p>
+<ul>
+<li><strong>Thông tin (Information):</strong> thu thập và truyền tải thông tin thị trường, khách hàng, đối thủ.</li>
+<li><strong>Xúc tiến (Promotion):</strong> truyền thông thuyết phục tại điểm bán.</li>
+<li><strong>Đàm phán (Negotiation):</strong> thỏa thuận giá, điều khoản để chuyển giao quyền sở hữu.</li>
+<li><strong>Đặt hàng (Ordering):</strong> truyền ý định mua từ dưới lên trên.</li>
+<li><strong>Tài trợ (Financing):</strong> cung cấp và luân chuyển vốn để tồn trữ hàng.</li>
+<li><strong>Chấp nhận rủi ro (Risk-taking):</strong> gánh rủi ro tồn kho, hư hỏng, hết hạn.</li>
+<li><strong>Sở hữu vật lý (Physical possession):</strong> lưu kho và vận chuyển.</li>
+<li><strong>Thanh toán (Payment):</strong> luân chuyển dòng tiền.</li>
+<li><strong>Chuyển giao quyền sở hữu (Title):</strong> chuyển quyền sở hữu hàng hóa.</li>
+</ul>
+<p>Các dòng chảy (flows) trong kênh diễn ra theo hai chiều:</p>
+<pre><code>NHÀ SẢN XUẤT  ──(hàng hóa, sở hữu, xúc tiến)──►  NGƯỜI TIÊU DÙNG
+NHÀ SẢN XUẤT  ◄──(thanh toán, đặt hàng, thông tin)──  NGƯỜI TIÊU DÙNG
+</code></pre>
+<p>Nguyên lý then chốt thứ hai: <strong>kênh là một hệ thống phụ thuộc lẫn nhau</strong>. Thành công của nhà sản xuất phụ thuộc vào nỗ lực của điểm bán, và ngược lại. Vì mỗi thành viên là một thực thể độc lập theo đuổi lợi ích riêng, kênh luôn tồn tại sẵn mầm mống <strong>xung đột</strong> — đây là lý do quản trị kênh tồn tại.</p>
+<hr />
+<h2>6. Mô hình</h2>
+<h3>6.1. Mô hình cấp kênh (Channel Levels)</h3>
+<p>Số "cấp" của kênh được đếm theo số lượng trung gian giữa nhà sản xuất và người tiêu dùng.</p>
+<pre><code>KÊNH CẤP 0 (Kênh trực tiếp - Direct):
+Nhà sản xuất ─────────────────────────────► Người tiêu dùng
+(VD: website D2C, cửa hàng hãng, bán hàng qua livestream của hãng)
+
+KÊNH CẤP 1:
+Nhà sản xuất ──► Nhà bán lẻ ──► Người tiêu dùng
+(VD: hãng bán trực tiếp cho chuỗi siêu thị)
+
+KÊNH CẤP 2:
+Nhà sản xuất ──► Nhà bán buôn/NPP ──► Nhà bán lẻ ──► Người tiêu dùng
+(VD: mô hình FMCG phổ biến tại VN)
+
+KÊNH CẤP 3:
+Nhà sản xuất ──► NPP ──► Đại lý/bán buôn ──► Nhà bán lẻ ──► Người tiêu dùng
+(VD: phân phối sâu đến vùng nông thôn, miền núi)
+</code></pre>
+<h3>6.2. Mô hình hệ thống marketing dọc (Vertical Marketing System - VMS)</h3>
+<ul>
+<li><strong>VMS công ty (Corporate):</strong> nhà sản xuất sở hữu luôn khâu phân phối/bán lẻ (VD: chuỗi cửa hàng của chính hãng).</li>
+<li><strong>VMS hợp đồng (Contractual):</strong> liên kết qua hợp đồng, điển hình là <strong>nhượng quyền (franchise)</strong> và chuỗi tự nguyện.</li>
+<li><strong>VMS quản trị (Administered):</strong> một thành viên có sức mạnh vượt trội (thương hiệu lớn hoặc nhà bán lẻ lớn) điều phối cả kênh mà không cần sở hữu.</li>
+</ul>
+<h3>6.3. Kênh trực tiếp vs gián tiếp</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Kênh trực tiếp (Direct)</th>
+<th>Kênh gián tiếp (Indirect)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trung gian</td>
+<td>Không</td>
+<td>Có (1 hoặc nhiều cấp)</td>
+</tr>
+<tr>
+<td>Kiểm soát giá &amp; trải nghiệm</td>
+<td>Cao</td>
+<td>Thấp dần theo số cấp</td>
+</tr>
+<tr>
+<td>Biên lợi nhuận/đơn vị</td>
+<td>Cao hơn</td>
+<td>Chia sẻ cho trung gian</td>
+</tr>
+<tr>
+<td>Độ phủ thị trường</td>
+<td>Chậm, tốn kém tự xây</td>
+<td>Nhanh, tận dụng mạng lưới sẵn có</td>
+</tr>
+<tr>
+<td>Vốn &amp; rủi ro tồn kho</td>
+<td>Tự gánh</td>
+<td>Chia sẻ với trung gian</td>
+</tr>
+<tr>
+<td>Ví dụ mỹ phẩm</td>
+<td>Website hãng, cửa hàng flagship</td>
+<td>Guardian, Watsons, Hasaki, nhà thuốc</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>7. Framework</h2>
+<h3>7.1. Ba chiến lược độ bao phủ (Coverage Strategies)</h3>
+<p>Đây là khung quyết định nền tảng khi thiết kế kênh:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chiến lược</th>
+<th>Mô tả</th>
+<th>Phù hợp với</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phân phối rộng rãi (Intensive)</strong></td>
+<td>Có mặt ở càng nhiều điểm bán càng tốt</td>
+<td>Hàng tiện lợi, tiêu dùng nhanh, giá thấp</td>
+<td>Nước ngọt, mì gói, dầu gội, sữa tắm phổ thông</td>
+</tr>
+<tr>
+<td><strong>Phân phối chọn lọc (Selective)</strong></td>
+<td>Chỉ chọn một số điểm bán đạt tiêu chí nhất định</td>
+<td>Hàng mua có cân nhắc, cần tư vấn</td>
+<td>Mỹ phẩm trung–cao cấp, dược mỹ phẩm ở nhà thuốc chọn lọc</td>
+</tr>
+<tr>
+<td><strong>Phân phối độc quyền (Exclusive)</strong></td>
+<td>Mỗi khu vực chỉ một nhà phân phối/điểm bán duy nhất</td>
+<td>Hàng cao cấp, xa xỉ, cần kiểm soát hình ảnh</td>
+<td>Mỹ phẩm cao cấp, nước hoa niche, thiết bị làm đẹp chuyên nghiệp cho spa</td>
+</tr>
+</tbody>
+</table></div>
+<h3>7.2. Khung tiêu chí "6C" lựa chọn thành viên kênh (gợi ý thực chiến)</h3>
+<ul>
+<li><strong>Coverage</strong> — vùng phủ và mạng lưới điểm bán của đối tác.</li>
+<li><strong>Capital</strong> — năng lực tài chính, khả năng ôm tồn kho và công nợ.</li>
+<li><strong>Capability</strong> — đội ngũ bán hàng, kho bãi, logistics.</li>
+<li><strong>Character</strong> — uy tín, đạo đức kinh doanh, lịch sử tuân thủ giá.</li>
+<li><strong>Continuity</strong> — cam kết dài hạn, không "đánh nhanh rút gọn".</li>
+<li><strong>Compatibility</strong> — sự phù hợp với danh mục và chiến lược thương hiệu (không ôm sản phẩm đối thủ cạnh tranh trực tiếp).</li>
+</ul>
+<h3>7.3. Khung Push–Pull</h3>
+<ul>
+<li><strong>Chiến lược đẩy (Push):</strong> dồn nguồn lực xuống kênh (chiết khấu, thưởng, trưng bày) để trung gian "đẩy" hàng đến người mua. Phù hợp khi thương hiệu chưa mạnh.</li>
+<li><strong>Chiến lược kéo (Pull):</strong> đầu tư quảng cáo tạo nhu cầu để người tiêu dùng chủ động hỏi mua, kéo hàng qua kênh. Phù hợp khi thương hiệu mạnh.</li>
+<li>Thực chiến FMCG/mỹ phẩm VN: hầu hết dùng <strong>kết hợp Push + Pull</strong> theo tỷ trọng thay đổi theo giai đoạn vòng đời sản phẩm.</li>
+</ul>
+<hr />
+<h2>8. Công thức</h2>
+<blockquote>
+<p><strong>Lưu ý:</strong> Tất cả con số dưới đây là <strong>(số minh họa)</strong> để hướng dẫn cách tính, không phải số liệu thị trường thực tế.</p>
+</blockquote>
+<h3>8.1. Độ phủ số lượng (Numeric Distribution)</h3>
+<p>Tỷ lệ % số điểm bán <strong>có bán</strong> sản phẩm của bạn trên tổng số điểm bán trong một khu vực/kênh.</p>
+<pre><code>Numeric Distribution (%) = (Số điểm bán có hàng của bạn / Tổng số điểm bán) × 100
+</code></pre>
+<p>Ví dụ (số minh họa): Khu vực có 1.000 nhà thuốc, sản phẩm của bạn có mặt ở 300 → Numeric Distribution = 30%.</p>
+<h3>8.2. Độ phủ trọng số (Weighted Distribution)</h3>
+<p>Tính theo <strong>doanh số/tiềm năng</strong> của các điểm bán, không đếm bằng nhau. Một siêu thị lớn "nặng" hơn nhiều một tạp hóa nhỏ.</p>
+<pre><code>Weighted Distribution (%) = (Doanh số ngành hàng của các điểm bán CÓ bán sản phẩm bạn
+                            / Tổng doanh số ngành hàng của TẤT CẢ điểm bán) × 100
+</code></pre>
+<p>Ví dụ (số minh họa): Bạn chỉ có mặt ở 30% số điểm bán (numeric), nhưng đó là những điểm bán lớn chiếm 55% doanh số ngành hàng → Weighted Distribution = 55%. Khoảng chênh giữa weighted và numeric cho biết bạn đang tập trung ở điểm bán lớn hay nhỏ.</p>
+<h3>8.3. Sell-through / Sell-through rate</h3>
+<p>Tỷ lệ hàng đã bán ra (sell-out) so với hàng đã nhập vào kho điểm bán/NPP trong một kỳ.</p>
+<pre><code>Sell-through (%) = (Số lượng bán ra trong kỳ / Số lượng nhập trong kỳ) × 100
+</code></pre>
+<p>Hoặc theo tồn kho:</p>
+<pre><code>Sell-through (%) = Đơn vị đã bán / (Đơn vị đã bán + Tồn kho cuối kỳ) × 100
+</code></pre>
+<p>Ví dụ (số minh họa): Nhập 1.000 hộp, bán ra 650 hộp trong tháng → Sell-through = 65%. Sell-through thấp kéo dài là dấu hiệu nhồi hàng (over-stock) và nguy cơ trả hàng/hết hạn.</p>
+<h3>8.4. Sell-in vs Sell-out</h3>
+<ul>
+<li><strong>Sell-in:</strong> lượng hàng nhà sản xuất bán vào kênh (NPP/điểm bán). Là doanh thu ghi nhận của hãng.</li>
+<li><strong>Sell-out:</strong> lượng hàng điểm bán bán ra cho người tiêu dùng cuối. Là "sức khỏe thật" của thương hiệu.</li>
+</ul>
+<p>Nguyên tắc vàng: <strong>Sell-in cao mà sell-out thấp = bom nổ chậm.</strong> Hàng ứ trong kênh sẽ dẫn tới xả hàng, phá giá, trả hàng.</p>
+<h3>8.5. Các chỉ số tồn kho bổ trợ</h3>
+<pre><code>Days of Inventory (số ngày tồn kho) = (Tồn kho bình quân / Giá vốn hàng bán) × Số ngày trong kỳ
+Vòng quay tồn kho (Inventory Turnover) = Giá vốn hàng bán / Tồn kho bình quân
+OSA - On-Shelf Availability (%) = (Số lần kiểm tra có hàng trên kệ / Tổng số lần kiểm tra) × 100
+</code></pre>
+<hr />
+<h2>9. Quy trình</h2>
+<p>Quy trình xây dựng và quản trị kênh gồm 8 bước:</p>
+<ol>
+<li><strong>Phân tích nhu cầu khách hàng về dịch vụ kênh</strong> — khách cần mua ở đâu, số lượng bao nhiêu, cần tư vấn không, cần giao nhanh không.</li>
+<li><strong>Xác định mục tiêu và ràng buộc kênh</strong> — mục tiêu độ phủ, chi phí, mức kiểm soát; ràng buộc về đặc tính sản phẩm (dễ hỏng, giá trị cao), luật pháp, ngân sách.</li>
+<li><strong>Thiết kế phương án kênh</strong> — chọn số cấp, loại trung gian, độ bao phủ (rộng/chọn lọc/độc quyền), chính sách push–pull.</li>
+<li><strong>Đánh giá phương án</strong> — theo tiêu chí kinh tế (chi phí/doanh thu), kiểm soát và khả năng thích ứng.</li>
+<li><strong>Tuyển chọn thành viên kênh</strong> — áp dụng khung 6C, ký hợp đồng phân phối rõ ràng.</li>
+<li><strong>Tạo động lực cho thành viên kênh</strong> — chính sách chiết khấu, thưởng doanh số, hỗ trợ trade marketing, đào tạo.</li>
+<li><strong>Đánh giá thành viên kênh định kỳ</strong> — theo KPI: doanh số, độ phủ, tuân thủ giá, mức tồn kho, chất lượng trưng bày.</li>
+<li><strong>Điều chỉnh cấu trúc kênh</strong> — thêm/bớt thành viên, tái cấu trúc vùng, chuyển đổi mô hình khi thị trường thay đổi.</li>
+</ol>
+<hr />
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Bối cảnh:</strong> Chị Lan sản xuất một dòng son dưỡng handmade tại nhà.</p>
+<ul>
+<li>
+<p><strong>Giai đoạn 1 — Kênh cấp 0 (trực tiếp):</strong> Chị bán qua Facebook cá nhân và livestream. Chị kiểm soát 100% giá và trải nghiệm, biên lợi nhuận cao, nhưng mỗi ngày chỉ bán được vài chục thỏi vì tự làm mọi việc.</p>
+</li>
+<li>
+<p><strong>Giai đoạn 2 — Thêm kênh cấp 1:</strong> Chị ký gửi cho 5 cửa hàng mỹ phẩm nhỏ trong thành phố (phân phối chọn lọc). Doanh số tăng, nhưng chị phải chiết khấu 30% (số minh họa) cho cửa hàng và bắt đầu mất một phần kiểm soát về cách trưng bày.</p>
+</li>
+<li>
+<p><strong>Giai đoạn 3 — Thêm nhà phân phối (cấp 2):</strong> Khi muốn bán ra tỉnh khác, chị không thể tự giao hàng cho từng cửa hàng. Chị tìm một nhà phân phối khu vực, bán sỉ với chiết khấu cao hơn (40%, số minh họa) để họ ôm tồn kho và tự phân phối lại cho các điểm bán trong tỉnh đó.</p>
+</li>
+</ul>
+<p><strong>Bài học:</strong> Càng nhiều cấp kênh, độ phủ càng nhanh nhưng biên lợi nhuận trên mỗi đơn vị càng giảm và mức kiểm soát càng thấp. Đây là sự đánh đổi cốt lõi của mọi quyết định phân phối.</p>
+<hr />
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p><strong>Bối cảnh:</strong> Công ty MyPham-GMP (giả định minh họa) ra mắt dòng dược mỹ phẩm trị mụn, đặt mục tiêu phủ toàn quốc trong 18 tháng.</p>
+<p><strong>Cấu trúc kênh thiết kế:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Kênh</th>
+<th>Loại</th>
+<th>Chiến lược phủ</th>
+<th>Mục tiêu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nhà thuốc</td>
+<td>GT</td>
+<td>Chọn lọc</td>
+<td>Xây uy tín dược mỹ phẩm, dược sĩ tư vấn</td>
+</tr>
+<tr>
+<td>Chuỗi mỹ phẩm (Hasaki, Guardian, Watsons...)</td>
+<td>MT</td>
+<td>Chọn lọc</td>
+<td>Doanh số &amp; hình ảnh thương hiệu</td>
+</tr>
+<tr>
+<td>Sàn TMĐT (Shopee, Lazada, TikTok Shop)</td>
+<td>Online</td>
+<td>Rộng có kiểm soát</td>
+<td>Doanh số &amp; tiếp cận toàn quốc</td>
+</tr>
+<tr>
+<td>Website + cửa hàng flagship</td>
+<td>D2C (cấp 0)</td>
+<td>Trực tiếp</td>
+<td>Biên cao, dữ liệu khách hàng, kiểm soát giá gốc</td>
+</tr>
+<tr>
+<td>Spa/clinic da liễu</td>
+<td>Selective/Exclusive</td>
+<td>Độc quyền theo vùng</td>
+<td>Kênh chuyên nghiệp, tin cậy cao</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Quyết định then chốt:</strong> Công ty đặt <strong>giá bán lẻ đề xuất (RRP)</strong> thống nhất trên mọi kênh và áp dụng chính sách chống phá giá trên sàn TMĐT (kiểm soát mã seller, thu hồi quyền phân phối nếu bán dưới sàn giá). Đồng thời triển khai đội <strong>Trade Marketing</strong> hỗ trợ trưng bày tại nhà thuốc và chuỗi mỹ phẩm, kèm chương trình đào tạo dược sĩ/tư vấn viên.</p>
+<hr />
+<h2>12. Ví dụ Việt Nam</h2>
+<p><strong>Vinamilk</strong> — thường được nhắc đến như một hình mẫu về hệ thống phân phối FMCG Việt Nam, với mạng lưới hàng trăm nghìn điểm bán lẻ trên cả nước, hệ thống nhà phân phối phủ khắp các tỉnh, kết hợp chuỗi cửa hàng "Giấc Mơ Sữa Việt" (kênh trực tiếp) và hiện diện mạnh trên cả GT lẫn MT (con số cụ thể theo báo cáo thường niên Vinamilk từng năm — cần kiểm chứng). Điểm mạnh cốt lõi là <strong>độ phủ sâu và rộng</strong> cùng năng lực logistics.</p>
+<p><strong>Masan Consumer / The CrownX</strong> — nổi bật với chiến lược tích hợp sản xuất và bán lẻ qua việc sở hữu chuỗi <strong>WinMart/WinMart+</strong> (trước đây là VinMart do Masan tiếp quản từ Vingroup năm 2019), tạo ra một hệ thống <strong>VMS công ty</strong> kết hợp giữa hàng tiêu dùng do Masan sản xuất và kênh bán lẻ do Masan kiểm soát — một ví dụ điển hình về tích hợp dọc trong ngành FMCG Việt (cần kiểm chứng số liệu điểm bán theo báo cáo Masan).</p>
+<p><strong>Ngành mỹ phẩm VN:</strong> Sự trỗi dậy của các chuỗi bán lẻ mỹ phẩm chuyên biệt như <strong>Hasaki, Guardian, Watsons</strong> đã tạo ra kênh MT chuyên nghiệp cho dược mỹ phẩm và skincare, thay đổi cách các thương hiệu nội địa (như Cocoon, M.O.I, Cỏ Mềm...) tiếp cận thị trường — kết hợp chuỗi mỹ phẩm, nhà thuốc, sàn TMĐT và livestream. Cocoon là ví dụ về thương hiệu mỹ phẩm thuần chay Việt Nam mở rộng qua cả chuỗi bán lẻ hiện đại lẫn TMĐT (chi tiết độ phủ cần kiểm chứng).</p>
+<hr />
+<h2>13. Ví dụ quốc tế</h2>
+<p><strong>Coca-Cola</strong> — biểu tượng của chiến lược phân phối rộng rãi (intensive) với triết lý "within an arm's reach of desire" (trong tầm với của khao khát). Hệ thống đóng chai (bottler) nhượng quyền khu vực trên toàn cầu là ví dụ kinh điển về VMS hợp đồng, cho phép phủ hàng đến hàng chục triệu điểm bán.</p>
+<p><strong>Apple</strong> — kết hợp kênh trực tiếp (Apple Store, apple.com) với kênh chọn lọc (nhà bán lẻ ủy quyền). Apple kiểm soát chặt trải nghiệm và giá bán để bảo vệ định vị cao cấp, hạn chế phá giá — ví dụ điển hình về <strong>phân phối chọn lọc + kiểm soát giá</strong>.</p>
+<p><strong>L'Oréal</strong> — quản trị danh mục đa thương hiệu qua đa kênh khác biệt: kênh đại chúng (L'Oréal Paris, Maybelline ở siêu thị/drugstore), kênh cao cấp (Lancôme, YSL ở department store), kênh dược mỹ phẩm (La Roche-Posay, Vichy ở <strong>nhà thuốc</strong>), và kênh chuyên nghiệp (Kérastase ở salon tóc). Đây là bài học kinh điển: <strong>mỗi phân khúc thương hiệu cần một cấu trúc kênh riêng phù hợp với hành vi mua.</strong></p>
+<p><strong>Amazon</strong> — định nghĩa lại kênh với mô hình marketplace + logistics (FBA), trở thành hạ tầng phân phối mà nhiều thương hiệu vừa phụ thuộc vừa cạnh tranh — minh họa sự dịch chuyển quyền lực về phía nền tảng.</p>
+<hr />
+<h2>14. Sai lầm thường gặp</h2>
+<ol>
+<li><strong>Nhồi hàng vào kênh (channel stuffing)</strong> để đạt chỉ tiêu sell-in, trong khi sell-out yếu → hàng ứ, phá giá, trả hàng, hết hạn.</li>
+<li><strong>Bỏ quên sell-out.</strong> Chỉ đo doanh số bán vào kênh mà không theo dõi hàng có thực sự đến tay người tiêu dùng hay không.</li>
+<li><strong>Xung đột kênh không được quản lý</strong> — kênh online phá giá kênh offline, NPP vùng này bán lấn sang vùng NPP khác (bán chồng lấn/tràn vùng).</li>
+<li><strong>Chọn NPP chỉ vì tài chính mạnh</strong> mà bỏ qua năng lực bán hàng và độ phù hợp → NPP ôm hàng nhưng không đẩy được.</li>
+<li><strong>Phân phối quá rộng cho sản phẩm cao cấp</strong> → làm loãng hình ảnh thương hiệu, mất giá trị định vị.</li>
+<li><strong>Không kiểm soát giá bán lẻ (RRP)</strong> → loạn giá, mất niềm tin của cả điểm bán lẫn người tiêu dùng.</li>
+<li><strong>Bỏ bê trưng bày (visibility)</strong> — sản phẩm có trên kệ nhưng bị đặt ở vị trí khuất, ít mặt hàng (facings), không có POSM.</li>
+<li><strong>Chính sách chiết khấu thiếu nhất quán</strong> giữa các kênh → tạo cơ hội arbitrage (mua kênh rẻ bán kênh đắt).</li>
+<li><strong>Đối xử với omnichannel như multichannel</strong> — vận hành các kênh rời rạc, dữ liệu không liên thông, khách hàng có trải nghiệm gãy khúc.</li>
+<li><strong>Không có điều khoản chấm dứt và bảo vệ vùng rõ ràng</strong> trong hợp đồng phân phối → tranh chấp pháp lý khi thay NPP.</li>
+</ol>
+<hr />
+<h2>15. Checklist</h2>
+<p><strong>Checklist thiết kế &amp; vận hành kênh:</strong></p>
+<ul>
+<li>[ ] Đã xác định rõ hành vi mua và nhu cầu dịch vụ kênh của khách hàng mục tiêu?</li>
+<li>[ ] Đã chọn chiến lược độ phủ (rộng/chọn lọc/độc quyền) phù hợp với định vị sản phẩm?</li>
+<li>[ ] Đã xác định số cấp kênh và loại trung gian cho từng phân khúc thị trường?</li>
+<li>[ ] Đã có tiêu chí tuyển chọn thành viên kênh (theo 6C) bằng văn bản?</li>
+<li>[ ] Hợp đồng phân phối có điều khoản về vùng, giá RRP, chỉ tiêu, và chấm dứt?</li>
+<li>[ ] Đã thiết lập chính sách giá &amp; chiết khấu nhất quán giữa các kênh?</li>
+<li>[ ] Có cơ chế theo dõi cả sell-in VÀ sell-out?</li>
+<li>[ ] Có đo Numeric Distribution và Weighted Distribution định kỳ?</li>
+<li>[ ] Có chính sách chống phá giá và xử lý xung đột kênh?</li>
+<li>[ ] Có kế hoạch trade marketing (trưng bày, POSM, khuyến mãi kênh)?</li>
+<li>[ ] Có quy trình quản lý tồn kho và cảnh báo hàng cận date?</li>
+<li>[ ] Dữ liệu online-offline có liên thông (nếu vận hành omnichannel)?</li>
+<li>[ ] Có chương trình đào tạo cho đội bán/tư vấn viên tại điểm bán?</li>
+<li>[ ] Có KPI và lịch đánh giá thành viên kênh định kỳ?</li>
+</ul>
+<hr />
+<h2>16. SOP</h2>
+<p><strong>SOP: Quy trình viếng thăm điểm bán của nhân viên bán hàng (Sales Rep) theo mô hình 8 bước bán hàng — áp dụng GT/MT ngành mỹ phẩm &amp; FMCG</strong></p>
+<ol>
+<li><strong>Chuẩn bị (Planning &amp; Preparation):</strong> Kiểm tra tuyến (route), mục tiêu doanh số, danh sách điểm bán, tồn kho, chương trình đang chạy.</li>
+<li><strong>Chào hỏi &amp; quan sát ngoài cửa (Greeting):</strong> Chào chủ điểm bán, quan sát biển hiệu, POSM.</li>
+<li><strong>Kiểm tra trưng bày &amp; tồn kho (Merchandising Check):</strong> Đếm facings, kiểm tra OSA (có hàng trên kệ), date, giá bán niêm yết, tồn kho tại điểm.</li>
+<li><strong>Chuẩn hóa trưng bày (Merchandising):</strong> Sắp xếp theo planogram, lau kệ, dán POSM, xoay mặt hàng cận date ra trước (FEFO).</li>
+<li><strong>Phân tích &amp; đề xuất đơn hàng (Sales Presentation):</strong> Dựa trên sell-out kỳ trước và tồn kho, đề xuất đơn hàng phù hợp, giới thiệu sản phẩm mới/khuyến mãi.</li>
+<li><strong>Xử lý phản đối (Objection Handling):</strong> Giải quyết lo ngại về giá, tồn kho, công nợ.</li>
+<li><strong>Chốt đơn &amp; xác nhận (Closing):</strong> Ghi đơn, xác nhận số lượng, điều khoản giao hàng và thanh toán.</li>
+<li><strong>Ghi nhận &amp; báo cáo (Recording &amp; Reporting):</strong> Cập nhật dữ liệu vào app DMS, chụp ảnh trưng bày, ghi chú phản hồi thị trường, lên lịch viếng thăm kế tiếp.</li>
+</ol>
+<p><strong>SOP xử lý xung đột giá/phá giá:</strong>
+1. Phát hiện (báo cáo từ điểm bán/khách hàng/công cụ giám sát giá online).
+2. Xác minh nguồn (mã NPP/seller nào bán phá giá).
+3. Cảnh báo lần 1 bằng văn bản.
+4. Nếu tái phạm: giảm/tạm ngưng chiết khấu và ưu đãi.
+5. Vi phạm nghiêm trọng/lặp lại: thu hồi quyền phân phối theo hợp đồng.</p>
+<hr />
+<h2>17. KPI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>KPI</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Độ phủ</strong></td>
+<td>Numeric Distribution (%)</td>
+<td>% điểm bán có hàng</td>
+</tr>
+<tr>
+<td></td>
+<td>Weighted Distribution (%)</td>
+<td>% theo doanh số ngành hàng</td>
+</tr>
+<tr>
+<td></td>
+<td>Số điểm bán hoạt động (Active Outlets)</td>
+<td>Điểm bán có phát sinh đơn trong kỳ</td>
+</tr>
+<tr>
+<td><strong>Sức bán</strong></td>
+<td>Sell-in / Sell-out</td>
+<td>Bán vào kênh / bán ra người dùng</td>
+</tr>
+<tr>
+<td></td>
+<td>Sell-through rate (%)</td>
+<td>Tốc độ tiêu thụ hàng đã nhập</td>
+</tr>
+<tr>
+<td></td>
+<td>Doanh số/điểm bán (Sales per Outlet)</td>
+<td>Hiệu suất từng điểm</td>
+</tr>
+<tr>
+<td><strong>Trưng bày</strong></td>
+<td>Share of Shelf (%)</td>
+<td>Tỷ lệ diện tích/facings so với ngành</td>
+</tr>
+<tr>
+<td></td>
+<td>OSA - On-Shelf Availability (%)</td>
+<td>Tỷ lệ có hàng trên kệ khi kiểm tra</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ tuân thủ planogram (%)</td>
+<td>Trưng bày đúng chuẩn</td>
+</tr>
+<tr>
+<td><strong>Tồn kho</strong></td>
+<td>Days of Inventory</td>
+<td>Số ngày tồn kho bình quân</td>
+</tr>
+<tr>
+<td></td>
+<td>Vòng quay tồn kho</td>
+<td>Tần suất luân chuyển hàng</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ hàng cận/hết date (%)</td>
+<td>Rủi ro tồn kho</td>
+</tr>
+<tr>
+<td><strong>Kênh &amp; giá</strong></td>
+<td>Tỷ lệ tuân thủ giá RRP (%)</td>
+<td>Mức độ giữ giá của kênh</td>
+</tr>
+<tr>
+<td></td>
+<td>Số vụ xung đột kênh/kỳ</td>
+<td>Sức khỏe quan hệ kênh</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ đơn hàng đúng hạn (OTIF)</td>
+<td>Chất lượng phục vụ kênh</td>
+</tr>
+<tr>
+<td><strong>Omnichannel</strong></td>
+<td>Tỷ trọng doanh số online/offline</td>
+<td>Cơ cấu kênh</td>
+</tr>
+<tr>
+<td></td>
+<td>Tỷ lệ click-and-collect / BOPIS</td>
+<td>Mức tích hợp đa kênh</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu 1 — Hồ sơ đánh giá nhà phân phối (Distributor Scorecard)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tiêu chí (6C)</th>
+<th>Trọng số</th>
+<th>Điểm (1–5)</th>
+<th>Điểm × trọng số</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coverage (vùng phủ)</td>
+<td>20%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capital (tài chính)</td>
+<td>20%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capability (năng lực)</td>
+<td>20%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Character (uy tín)</td>
+<td>15%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Continuity (cam kết)</td>
+<td>15%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Compatibility (phù hợp)</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tổng</strong></td>
+<td>100%</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 2 — Báo cáo viếng thăm điểm bán (Store Visit Report)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Trường</th>
+<th>Nội dung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ngày / Nhân viên / Tuyến</td>
+<td></td>
+</tr>
+<tr>
+<td>Tên &amp; loại điểm bán (GT/MT)</td>
+<td></td>
+</tr>
+<tr>
+<td>Numeric mặt hàng có trên kệ (SKU)</td>
+<td></td>
+</tr>
+<tr>
+<td>OSA (có hàng / hết hàng)</td>
+<td></td>
+</tr>
+<tr>
+<td>Số facings vs đối thủ</td>
+<td></td>
+</tr>
+<tr>
+<td>Giá niêm yết vs RRP</td>
+<td></td>
+</tr>
+<tr>
+<td>Tồn kho tại điểm</td>
+<td></td>
+</tr>
+<tr>
+<td>Đơn hàng đề xuất/chốt</td>
+<td></td>
+</tr>
+<tr>
+<td>POSM đã triển khai</td>
+<td></td>
+</tr>
+<tr>
+<td>Phản hồi/khiếu nại</td>
+<td></td>
+</tr>
+<tr>
+<td>Ảnh trưng bày (link)</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu 3 — Bảng theo dõi sell-in / sell-out theo NPP (hàng tháng)</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>NPP</th>
+<th>Tồn đầu kỳ</th>
+<th>Sell-in</th>
+<th>Sell-out</th>
+<th>Tồn cuối kỳ</th>
+<th>Sell-through (%)</th>
+<th>Days of Inventory</th>
+<th>Cảnh báo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>19. Prompt AI</h2>
+<blockquote>
+<p>Các prompt dưới đây được thiết kế để dùng với nhiều công cụ AI. Luôn kiểm chứng số liệu AI đưa ra — AI có thể "bịa" số.</p>
+</blockquote>
+<p><strong>ChatGPT / Claude — Thiết kế cấu trúc kênh:</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia trade marketing ngành mỹ phẩm Việt Nam. Tôi có một dòng [dược mỹ phẩm trị mụn], giá bán lẻ dự kiến [X đồng], target [nữ 18–30 tuổi thành thị]. Hãy đề xuất cấu trúc kênh phân phối (số cấp, loại kênh GT/MT/online/D2C), chiến lược độ phủ cho từng kênh, và phân bổ ngân sách trade marketing gợi ý. Trình bày dạng bảng. Ghi rõ giả định nào cần tôi kiểm chứng."</p>
+</blockquote>
+<p><strong>Claude — Phân tích xung đột kênh:</strong></p>
+<blockquote>
+<p>"Tôi đang gặp tình trạng seller trên Shopee bán sản phẩm của tôi thấp hơn giá tại chuỗi Hasaki 20%, khiến chuỗi phàn nàn. Hãy phân tích nguyên nhân gốc rễ có thể có, và đề xuất 5 giải pháp kiểm soát giá xuyên kênh, kèm ưu/nhược điểm và rủi ro pháp lý cần lưu ý."</p>
+</blockquote>
+<p><strong>Gemini — Nghiên cứu bối cảnh kênh bán lẻ:</strong></p>
+<blockquote>
+<p>"Tổng hợp bức tranh kênh bán lẻ mỹ phẩm tại Việt Nam năm gần nhất: các chuỗi lớn, tỷ trọng GT vs MT vs online, xu hướng TikTok Shop. Trích dẫn nguồn và năm cho từng số liệu; đánh dấu rõ số nào là ước tính."</p>
+</blockquote>
+<p><strong>Perplexity — Kiểm chứng số liệu:</strong></p>
+<blockquote>
+<p>"Tỷ trọng kênh truyền thống (GT) trong tổng doanh số FMCG tại Việt Nam là bao nhiêu theo báo cáo mới nhất của Kantar hoặc Nielsen? Cung cấp con số, tên báo cáo và năm phát hành."</p>
+</blockquote>
+<p><strong>NotebookLM — Tổng hợp tài liệu nội bộ:</strong></p>
+<blockquote>
+<p>"Từ các báo cáo bán hàng và hợp đồng phân phối tôi đã tải lên, hãy tóm tắt: (1) danh sách NPP và vùng phụ trách, (2) chính sách chiết khấu theo kênh, (3) các điều khoản về giá RRP và xử lý vi phạm. Trích dẫn trang nguồn."</p>
+</blockquote>
+<p><strong>AI Agent (tự động hóa) — Giám sát giá &amp; tồn kho:</strong></p>
+<blockquote>
+<p>"Thiết lập agent: mỗi ngày quét giá bán sản phẩm [mã SKU] trên Shopee/Lazada/TikTok Shop, so với RRP [X đồng]. Nếu phát hiện seller bán dưới [ngưỡng %], gửi cảnh báo kèm link, tên seller và mức chênh. Đồng thời tổng hợp báo cáo tồn kho tuần từ file DMS và gắn cờ NPP có sell-through dưới [ngưỡng %]."</p>
+</blockquote>
+<hr />
+<h2>20. Bài tập</h2>
+<ol>
+<li>
+<p><strong>Thiết kế kênh:</strong> Bạn ra mắt một dòng serum vitamin C giá 350.000đ/lọ (số minh họa). Hãy thiết kế cấu trúc kênh (vẽ sơ đồ cấp kênh) và chọn chiến lược độ phủ cho từng kênh, giải thích lý do.</p>
+</li>
+<li>
+<p><strong>Tính toán độ phủ:</strong> Một khu vực có 500 điểm bán với tổng doanh số ngành hàng là 10 tỷ đồng/tháng. Sản phẩm của bạn có mặt tại 150 điểm bán, các điểm này chiếm 6,5 tỷ đồng doanh số ngành hàng. Tính Numeric Distribution và Weighted Distribution. Nhận xét về chiến lược điểm bán của bạn.</p>
+</li>
+<li>
+<p><strong>Sell-through:</strong> NPP A nhập 2.000 hộp đầu tháng, tồn đầu kỳ 500 hộp, tồn cuối kỳ 900 hộp. Tính sell-out và sell-through. NPP này có dấu hiệu nhồi hàng không?</p>
+</li>
+<li>
+<p><strong>Xử lý xung đột:</strong> Viết một chính sách 1 trang để ngăn kênh online phá giá kênh offline cho thương hiệu mỹ phẩm của bạn.</p>
+</li>
+<li>
+<p><strong>Trade marketing:</strong> Thiết kế một chương trình trưng bày (visibility) cho quầy skincare tại nhà thuốc, nêu rõ POSM, vị trí, số facings mục tiêu và KPI đo lường.</p>
+</li>
+</ol>
+<hr />
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Phân biệt kênh trực tiếp và gián tiếp. Nêu ưu/nhược điểm mỗi loại.</li>
+<li>Kênh cấp 2 khác kênh cấp 3 ở điểm nào? Cho ví dụ FMCG Việt Nam.</li>
+<li>Ba chiến lược độ bao phủ là gì? Loại sản phẩm nào phù hợp với từng loại?</li>
+<li>Phân biệt GT và MT. Vì sao GT vẫn quan trọng tại Việt Nam?</li>
+<li>Numeric và Weighted Distribution khác nhau thế nào? Khi nào weighted cao hơn nhiều so với numeric?</li>
+<li>Tại sao sell-in cao mà sell-out thấp lại nguy hiểm?</li>
+<li>Nêu 3 nguyên nhân phổ biến của xung đột kênh và cách xử lý.</li>
+<li>Trade marketing khác gì với marketing thương hiệu (brand marketing)?</li>
+<li>Omnichannel khác multichannel ở điểm cốt lõi nào?</li>
+<li>Với ngành mỹ phẩm, vì sao kênh nhà thuốc và spa có vai trò đặc biệt?</li>
+</ol>
+<hr />
+<h2>22. Case Study</h2>
+<h3>22.1. Case thành công — Vinamilk và hệ thống phân phối phủ khắp</h3>
+<p><strong>Bối cảnh:</strong> Vinamilk xây dựng vị thế dẫn đầu ngành sữa Việt Nam một phần lớn nhờ hệ thống phân phối. Doanh nghiệp phát triển song song kênh GT (mạng lưới điểm bán lẻ rộng khắp qua các nhà phân phối), kênh MT (siêu thị, cửa hàng tiện lợi) và kênh trực tiếp (chuỗi cửa hàng "Giấc Mơ Sữa Việt", bán hàng online).</p>
+<p><strong>Yếu tố thành công:</strong>
+- Độ phủ sâu và rộng đến cả khu vực nông thôn — rào cản mà đối thủ khó vượt.
+- Đầu tư mạnh vào logistics và hệ thống quản lý phân phối (DMS).
+- Kết hợp push (hỗ trợ NPP, điểm bán) và pull (thương hiệu mạnh).</p>
+<p><strong>Bài học:</strong> Trong FMCG, độ phủ phân phối là lợi thế cạnh tranh bền vững. (Số liệu cụ thể về số điểm bán và tỷ trọng kênh cần kiểm chứng theo báo cáo thường niên Vinamilk từng năm.)</p>
+<h3>22.2. Case thất bại — bài học về xung đột kênh &amp; phá giá online (tổng hợp minh họa)</h3>
+<p><strong>Bối cảnh (minh họa ngành mỹ phẩm VN):</strong> Một thương hiệu mỹ phẩm nội địa tăng trưởng nóng nhờ đẩy mạnh sell-in cho nhiều nhà phân phối và mở rộng ồ ạt trên sàn TMĐT mà không kiểm soát giá và mã seller.</p>
+<p><strong>Diễn biến:</strong>
+- Nhiều seller nhập hàng từ NPP rồi bán phá giá trên sàn để đẩy tồn kho.
+- Giá online thấp hơn giá tại các chuỗi mỹ phẩm và nhà thuốc → các chuỗi phản ứng, giảm đặt hàng hoặc trả hàng.
+- Sell-in ảo cao trong khi sell-out yếu → hàng ứ, cận date, làn sóng xả hàng lan rộng.
+- Người tiêu dùng mất niềm tin vì "không biết đâu là giá thật", nghi ngờ hàng thật/giả.</p>
+<p><strong>Nguyên nhân gốc:</strong> Chạy theo doanh số sell-in ngắn hạn, thiếu chính sách kiểm soát giá RRP xuyên kênh và không quản trị xung đột kênh.</p>
+<p><strong>Bài học:</strong> Tăng trưởng phân phối phải đi kèm kiểm soát giá và theo dõi sell-out. Không có "kỷ luật kênh", tăng trưởng nhanh có thể tự hủy. (Đây là kịch bản tổng hợp mang tính minh họa; nếu dẫn tên doanh nghiệp cụ thể cần kiểm chứng nguồn.)</p>
+<hr />
+<h2>23. Tổng kết</h2>
+<ul>
+<li><strong>Phân phối là chữ P quyết định "có mặt hay không có mặt"</strong> — nền tảng để mọi nỗ lực marketing khác phát huy tác dụng.</li>
+<li><strong>Cấu trúc kênh</strong> được xác định bởi số cấp (0–3) và độ bao phủ (rộng / chọn lọc / độc quyền), luôn là sự đánh đổi giữa <strong>độ phủ – biên lợi nhuận – mức kiểm soát</strong>.</li>
+<li><strong>Quản trị kênh</strong> xoay quanh tuyển chọn (6C), tạo động lực, đánh giá và điều chỉnh thành viên kênh, đồng thời chủ động quản lý <strong>xung đột kênh và giá</strong>.</li>
+<li><strong>Đo lường là bắt buộc:</strong> Numeric &amp; Weighted Distribution cho độ phủ; sell-in vs sell-out và sell-through cho sức khỏe thật; OSA và Share of Shelf cho hiện diện trên kệ.</li>
+<li><strong>Trade marketing và trưng bày (visibility)</strong> biến "có hàng" thành "được chọn mua" tại điểm quyết định.</li>
+<li><strong>Với FMCG &amp; mỹ phẩm Việt Nam:</strong> GT (tạp hóa, nhà thuốc) vẫn song hành cùng MT (chuỗi bán lẻ, siêu thị) và online; kênh nhà thuốc, chuỗi mỹ phẩm chuyên biệt và spa đóng vai trò tư vấn và xây niềm tin đặc thù cho mỹ phẩm.</li>
+<li><strong>Tương lai thuộc về omnichannel</strong> — vận hành liền mạch online-offline với dữ liệu liên thông và giá nhất quán.</li>
+</ul>
+<p>Nguyên tắc cuối cùng để ghi nhớ: <strong>"Đừng chỉ bán được hàng vào kênh — hãy chắc chắn hàng bán được RA khỏi kênh."</strong></p>
+<hr />
+<h2>24. Nguồn tham khảo</h2>
+<blockquote>
+<p>Các nguồn dưới đây mang tính học thuật/tham khảo tiêu chuẩn. Số liệu thị trường cụ thể cần kiểm chứng theo báo cáo gốc mới nhất; không dẫn link để tránh sai lệch.</p>
+</blockquote>
+<ol>
+<li>Kotler, P. &amp; Keller, K. L. — <em>Marketing Management</em> (các ấn bản), chương về Designing and Managing Marketing Channels.</li>
+<li>Stern, L. W., El-Ansary, A. I. &amp; Coughlan, A. T. — <em>Marketing Channels</em>.</li>
+<li>Kotler, P. &amp; Armstrong, G. — <em>Principles of Marketing</em>, phần Marketing Channels &amp; Retailing.</li>
+<li>Corstjens, J. &amp; Corstjens, M. — <em>Store Wars: The Battle for Mindspace and Shelfspace</em> (về trade marketing &amp; shelf).</li>
+<li>Báo cáo ngành bán lẻ/FMCG Việt Nam của <strong>Kantar Worldpanel</strong> và <strong>NielsenIQ</strong> (theo năm — cần kiểm chứng số liệu cập nhật).</li>
+<li>Báo cáo thường niên của <strong>Vinamilk</strong>, <strong>Masan Group/Masan Consumer</strong> (cho số liệu điểm bán &amp; cơ cấu kênh — cần kiểm chứng).</li>
+<li>Tài liệu về Category Management &amp; Trade Marketing của <strong>ECR (Efficient Consumer Response)</strong>.</li>
+<li>Báo cáo thương mại điện tử Việt Nam (VECOM, các nền tảng) cho dữ liệu online &amp; TikTok Shop (cần kiểm chứng theo năm).</li>
+</ol>
+<hr />
+<h2>Cần cập nhật trong tương lai</h2>
+<ul>
+<li><strong>Số liệu thị trường cập nhật:</strong> tỷ trọng GT/MT/online trong FMCG &amp; mỹ phẩm Việt Nam theo báo cáo Kantar/NielsenIQ mới nhất; số điểm bán của Vinamilk, Masan/WinCommerce; quy mô các chuỗi mỹ phẩm (Hasaki, Guardian, Watsons).</li>
+<li><strong>TikTok Shop &amp; social commerce:</strong> tác động lên cấu trúc kênh và xung đột giá — mảng biến động nhanh, cần cập nhật hằng năm.</li>
+<li><strong>Quy định pháp lý:</strong> luật cạnh tranh liên quan đến áp giá bán lại (resale price maintenance), quản lý bán hàng đa cấp, quy định về mỹ phẩm — cần rà soát khi có thay đổi.</li>
+<li><strong>Công nghệ kênh:</strong> ứng dụng AI trong dự báo tồn kho, giám sát giá tự động, quản lý DMS thế hệ mới, quầy kệ thông minh (retail media, smart shelf).</li>
+<li><strong>Mô hình D2C &amp; quick-commerce:</strong> sự trỗi dậy của giao hàng siêu tốc và bán trực tiếp có thể tái định hình cấu trúc cấp kênh.</li>
+<li><strong>Case study nội địa có kiểm chứng:</strong> bổ sung case thất bại/thành công thực tế của mỹ phẩm Việt với nguồn dẫn cụ thể (hiện đang dùng kịch bản tổng hợp minh họa).</li>
+</ul></article><div class="nav"><a class="prev" href="tap-04-san-pham-gia-kenh-03-vong-doi-danh-muc-san-pham.html"><span>← Trước</span>Tập 4 · Chương 3 — Vòng đời sản phẩm &amp; Quản trị danh mục</a><a class="next" href="tap-04-san-pham-gia-kenh-05-bao-bi-trai-nghiem.html"><span>Sau →</span>Tập 4 · Chương 5 — Bao bì, Trải nghiệm sản phẩm &amp; Điểm chạm vật lý</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>

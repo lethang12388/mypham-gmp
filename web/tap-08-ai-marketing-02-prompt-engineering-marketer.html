@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tập 8 · Chương 2 — Prompt Engineering cho Marketer</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#666;--bg:#fff;--card:#f6f7f9;--accent:#1f4e79;--border:#e4e6eb;--code:#b03060}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:var(--fg);background:var(--bg);line-height:1.75;font-size:17px}
+header.top{position:sticky;top:0;z-index:20;background:var(--accent);color:#fff;padding:11px 16px;
+display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+header.top a{color:#fff;text-decoration:none;font-weight:600}
+header.top .home{font-size:15px}
+header.top .bk{font-size:13px;opacity:.85;margin-left:auto;text-align:right;line-height:1.2}
+main{max-width:820px;margin:0 auto;padding:22px 18px 60px}
+article{overflow-wrap:break-word}
+h1{font-size:1.7em;line-height:1.25;color:var(--accent);margin:.4em 0 .5em;border-bottom:3px solid var(--accent);padding-bottom:.25em}
+h2{font-size:1.32em;color:var(--accent);margin:1.5em 0 .5em;border-bottom:1px solid var(--border);padding-bottom:.2em}
+h3{font-size:1.12em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;color:#333}
+p{margin:.6em 0}
+a{color:var(--accent)}
+blockquote{margin:.8em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);
+border-radius:0 6px 6px 0;color:#333}
+code{background:#f0f1f3;padding:.1em .35em;border-radius:4px;font-size:.9em;color:var(--code);
+font-family:'SFMono-Regular',Consolas,Menlo,monospace}
+pre{background:#f6f7f9;border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;
+font-size:.82em;line-height:1.5}
+pre code{background:none;color:#222;padding:0}
+.table-wrap{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92em;min-width:340px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfc}
+ul,ol{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:1.5em 0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border)}
+.nav a{flex:1;text-decoration:none;padding:12px 14px;background:var(--card);border-radius:10px;
+border:1px solid var(--border);font-size:.9em;color:var(--fg)}
+.nav a.next{text-align:right}
+.nav a span{display:block;font-size:.75em;color:var(--muted)}
+/* index */
+.hero{text-align:center;padding:30px 16px 6px}
+.hero h1{border:none;font-size:2em;margin-bottom:.15em}
+.hero .sub{color:var(--muted);font-size:1.02em}
+.hero .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;
+padding:6px 14px;border-radius:20px;font-size:.85em;font-weight:600}
+.vol{margin:26px 0 8px;font-size:1.15em;color:var(--accent);font-weight:700;border-bottom:2px solid var(--border);padding-bottom:6px}
+.chapters{list-style:none;padding:0;margin:0}
+.chapters li{margin:0}
+.chapters a{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin:7px 0;
+text-decoration:none;color:var(--fg);background:#fff;transition:.15s;font-size:.98em}
+.chapters a:hover{background:var(--card);border-color:var(--accent)}
+.chapters .num{color:var(--accent);font-weight:700;margin-right:6px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+.quick a{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;
+text-decoration:none;color:var(--accent);font-size:.86em;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:30px 16px}
+@media (prefers-color-scheme: dark){
+:root{--fg:#e6e6e6;--muted:#9aa0a6;--bg:#16181c;--card:#22262c;--accent:#6ea8dc;--border:#333940;--code:#e58bb0}
+.chapters a,pre code{color:var(--fg)} .chapters a{background:#1c1f24}
+pre{background:#1c1f24} code{background:#22262c} tr:nth-child(even) td{background:#1c1f24}
+th{color:#08121c}
+}
+</style>
+</head><body>
+<header class="top"><a class="home" href="../index.html">☰ Mục lục</a>
+<a class="bk" href="../index.html">MARKETING THỰC CHIẾN<br>2026–2035</a></header>
+<main><article><h1>Tập 8 · Chương 2 — Prompt Engineering cho Marketer</h1>
+<blockquote>
+<p><strong>Bộ giáo trình:</strong> MARKETING THỰC CHIẾN 2026–2035
+<strong>Tập 8:</strong> AI Marketing &amp; Chuyển đổi số
+<strong>Chương 2:</strong> Prompt Engineering cho Marketer — Ra lệnh cho AI hiệu quả
+<strong>Cấp độ:</strong> Nền tảng → Ứng dụng
+<strong>Thời lượng học đề xuất:</strong> 6–8 giờ (lý thuyết + thực hành)
+<strong>Điều kiện tiên quyết:</strong> Tập 8 Chương 1 (Tổng quan AI trong Marketing)
+<strong>Phiên bản:</strong> 1.0 · Cập nhật 07/2026</p>
+</blockquote>
+<p><strong>Tóm tắt một câu:</strong> Prompt Engineering là kỹ năng thiết kế câu lệnh có cấu trúc để biến các mô hình AI ngôn ngữ thành một cộng sự marketing đáng tin cậy — nhanh hơn, đúng ý hơn và kiểm soát được.</p>
+<hr />
+<h2>1. Giới thiệu</h2>
+<p>Năm 2023, một câu lệnh AI kiểu "viết bài quảng cáo cho sản phẩm của tôi" còn được xem là đủ. Đến giai đoạn 2026–2035, khi các mô hình ngôn ngữ lớn (LLM) trở thành công cụ làm việc hằng ngày của phòng marketing, khoảng cách năng suất giữa hai marketer không còn nằm ở việc "ai biết dùng AI" mà ở việc "ai ra lệnh cho AI giỏi hơn".</p>
+<p>Prompt Engineering — nghệ thuật và kỹ thuật viết câu lệnh cho AI — chính là lớp kỹ năng bản lề đó. Nó không đòi hỏi bạn biết lập trình. Nó đòi hỏi bạn biết tư duy rõ ràng, diễn đạt mạch lạc và hiểu cách "cỗ máy đoán chữ" bên trong AI vận hành để khai thác đúng cách.</p>
+<p>Chương này viết cho marketer thực chiến: người viết content, người chạy quảng cáo, người làm nghiên cứu thị trường, trưởng nhóm cần chuẩn hóa quy trình. Bạn sẽ học cách cấu trúc một prompt tốt, các kỹ thuật nâng cao (few-shot, chain-of-thought, role prompting), cách xây thư viện prompt cho cả phòng, cách chọn đúng model cho từng việc, và quan trọng nhất — cách kiểm chứng đầu ra để không bị AI "bịa" làm hại thương hiệu.</p>
+<h2>2. Khái niệm</h2>
+<p><strong>Prompt</strong> là toàn bộ nội dung bạn nhập vào một mô hình AI ngôn ngữ để nhận về kết quả: có thể là một câu hỏi, một chỉ dẫn, một đoạn ngữ cảnh kèm yêu cầu, hoặc tổ hợp cả ba.</p>
+<p><strong>Prompt Engineering</strong> là quá trình thiết kế, thử nghiệm và tinh chỉnh prompt một cách có phương pháp nhằm đạt được đầu ra chính xác, nhất quán và phù hợp mục tiêu.</p>
+<p>Một số khái niệm nền cần phân biệt:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thuật ngữ</th>
+<th>Ý nghĩa ngắn gọn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM (Large Language Model)</strong></td>
+<td>Mô hình ngôn ngữ lớn, dự đoán từ tiếp theo dựa trên xác suất. Ví dụ: GPT, Claude, Gemini.</td>
+</tr>
+<tr>
+<td><strong>Token</strong></td>
+<td>Đơn vị nhỏ AI xử lý (một từ có thể là 1–3 token). Ảnh hưởng độ dài và chi phí.</td>
+</tr>
+<tr>
+<td><strong>Context window</strong></td>
+<td>Lượng thông tin tối đa AI "nhớ" trong một phiên (tính bằng token).</td>
+</tr>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>Tham số điều chỉnh độ "sáng tạo/ngẫu nhiên" của đầu ra (thấp = an toàn, cao = bay bổng).</td>
+</tr>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>Hiện tượng AI tạo ra thông tin sai nhưng nghe rất thuyết phục.</td>
+</tr>
+<tr>
+<td><strong>System prompt</strong></td>
+<td>Chỉ dẫn nền quy định vai trò và hành vi của AI xuyên suốt phiên làm việc.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Điểm mấu chốt cần nhớ: AI <strong>không hiểu</strong> theo nghĩa con người. Nó dự đoán chuỗi từ có xác suất cao nhất dựa trên dữ liệu huấn luyện và prompt của bạn. Prompt càng rõ ràng và giàu ngữ cảnh, "vùng xác suất" AI tìm kiếm càng thu hẹp đúng hướng.</p>
+<h2>3. Lịch sử hình thành</h2>
+<ul>
+<li><strong>2017:</strong> Kiến trúc Transformer ra đời (bài báo "Attention Is All You Need" của Google) — nền móng cho mọi LLM hiện đại.</li>
+<li><strong>2018–2020:</strong> Các mô hình GPT-2, GPT-3 (OpenAI) cho thấy khả năng làm nhiều việc chỉ bằng chỉ dẫn ngôn ngữ tự nhiên, khai sinh khái niệm "prompting".</li>
+<li><strong>2020–2022:</strong> Xuất hiện các kỹ thuật nền: few-shot learning (học từ vài ví dụ trong prompt) và sau đó là chain-of-thought (khuyến khích AI "suy nghĩ từng bước").</li>
+<li><strong>Cuối 2022:</strong> ChatGPT ra mắt công chúng, đưa việc "ra lệnh cho AI" từ giới nghiên cứu ra đại chúng. "Prompt engineer" bắt đầu được nhắc như một vai trò công việc.</li>
+<li><strong>2023–2024:</strong> Bùng nổ Claude (Anthropic), Gemini (Google), cùng các công cụ như Perplexity (tìm kiếm có trích nguồn) và NotebookLM (làm việc trên tài liệu của người dùng). Prompt engineering phân hóa theo từng nền tảng.</li>
+<li><strong>2025 trở đi:</strong> Xu hướng dịch chuyển từ "prompt đơn lẻ" sang <strong>AI Agent</strong> (AI tự lập kế hoạch và thực thi nhiều bước) và "context engineering" (thiết kế toàn bộ ngữ cảnh, dữ liệu, công cụ cấp cho AI). Kỹ năng viết prompt vẫn là lõi, nhưng mở rộng thành thiết kế hệ thống.</li>
+</ul>
+<p><em>(Mốc thời gian mang tính khái quát; một số chi tiết sản phẩm có thể thay đổi — cần kiểm chứng khi trích dẫn học thuật.)</em></p>
+<h2>4. Tại sao quan trọng</h2>
+<p>Với marketer, prompt engineering không phải kỹ năng "hay thì có", mà là đòn bẩy năng suất trực tiếp:</p>
+<ol>
+<li><strong>Tốc độ sản xuất nội dung:</strong> Rút ngắn thời gian tạo bản nháp bài viết, email, kịch bản từ hàng giờ xuống vài phút.</li>
+<li><strong>Chất lượng và nhất quán:</strong> Prompt tốt giữ đúng giọng thương hiệu (brand voice), đúng định dạng, đúng thông điệp cốt lõi qua hàng trăm đầu ra.</li>
+<li><strong>Mở rộng quy mô cá nhân hóa:</strong> Cùng một khung prompt có thể sinh 50 biến thể quảng cáo cho 50 phân khúc khác nhau.</li>
+<li><strong>Dân chủ hóa chuyên môn:</strong> Một nhân viên mới có thể tạo ra kết quả gần với chuyên gia nếu dùng đúng prompt library của phòng.</li>
+<li><strong>Giảm chi phí và rủi ro:</strong> Prompt kém tạo ra đầu ra sai, phải sửa nhiều lần, tốn token và thời gian; tệ hơn là đăng nhầm thông tin sai gây khủng hoảng thương hiệu.</li>
+</ol>
+<p>Nói ngắn gọn: AI là bộ khuếch đại. Prompt tốt khuếch đại năng lực; prompt tồi khuếch đại sai lầm.</p>
+<h2>5. Nguyên lý hoạt động</h2>
+<p>Để ra lệnh giỏi, cần hiểu (ở mức marketer) AI hoạt động ra sao:</p>
+<ul>
+<li><strong>AI dự đoán, không tra cứu.</strong> Mặc định, LLM sinh văn bản dựa trên xác suất, không "tra" một cơ sở dữ liệu sự thật. Đây là lý do nó có thể bịa số liệu rất trơn tru.</li>
+<li><strong>Prompt định hình "vùng tìm kiếm".</strong> Mỗi từ trong prompt là một tín hiệu thu hẹp khả năng. "Viết bài" cho vùng rất rộng; "Viết caption Facebook 3 câu, giọng hài hước, cho mẹ bỉm sữa 28–35 tuổi ở TP.HCM" thu hẹp mạnh về đúng đích.</li>
+<li><strong>Ngữ cảnh gần cuối được ưu tiên.</strong> AI thường bám sát chỉ dẫn đặt gần cuối prompt và các ví dụ bạn cung cấp.</li>
+<li><strong>Vai trò (role) kích hoạt phong cách.</strong> Khi bạn nói "Bạn là copywriter 10 năm kinh nghiệm mảng mỹ phẩm", AI dịch chuyển sang vùng ngôn ngữ đặc trưng của vai trò đó.</li>
+<li><strong>Không có trí nhớ dài hạn mặc định.</strong> Ngoài context window của phiên, AI không tự nhớ dự án của bạn. Muốn nhất quán, phải nạp lại ngữ cảnh (hoặc dùng công cụ có bộ nhớ/tài liệu như NotebookLM).</li>
+<li><strong>Có giới hạn dữ liệu và thời điểm.</strong> Model có "ngày cắt kiến thức"; thông tin mới hơn có thể sai hoặc thiếu, trừ khi model được kết nối tìm kiếm trực tuyến.</li>
+</ul>
+<p>Hiểu sáu điểm này giúp bạn không "thần thánh hóa" cũng không xem thường AI, mà điều khiển nó như một cộng sự có điểm mạnh và điểm mù rõ ràng.</p>
+<h2>6. Mô hình</h2>
+<p>Mô hình tư duy nền tảng của một prompt tốt gồm <strong>6 thành phần</strong>, viết tắt dễ nhớ theo tiếng Việt: <strong>V–N–N–R–V–Đ</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Vai trò</th>
+<th>Câu hỏi cần trả lời</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vai trò (Role)</strong></td>
+<td>Đặt AI vào đúng "tư cách" chuyên môn</td>
+<td>AI đang đóng vai ai?</td>
+</tr>
+<tr>
+<td><strong>Ngữ cảnh (Context)</strong></td>
+<td>Cung cấp bối cảnh, sản phẩm, đối tượng</td>
+<td>AI cần biết gì để làm đúng?</td>
+</tr>
+<tr>
+<td><strong>Nhiệm vụ (Task)</strong></td>
+<td>Nêu rõ việc cần làm</td>
+<td>AI phải tạo ra cái gì?</td>
+</tr>
+<tr>
+<td><strong>Ràng buộc (Constraints)</strong></td>
+<td>Giới hạn: độ dài, giọng điệu, điều cấm</td>
+<td>Đâu là biên không được vượt?</td>
+</tr>
+<tr>
+<td><strong>Ví dụ (Examples)</strong></td>
+<td>Mẫu tham chiếu để bắt chước</td>
+<td>"Tốt" trông như thế nào?</td>
+</tr>
+<tr>
+<td><strong>Định dạng đầu ra (Format)</strong></td>
+<td>Cấu trúc kết quả</td>
+<td>Trả về dạng gì (bảng, danh sách, JSON...)?</td>
+</tr>
+</tbody>
+</table></div>
+<p>Không phải prompt nào cũng cần đủ 6 thành phần. Việc đơn giản có thể chỉ cần Nhiệm vụ + Định dạng. Nhưng với công việc marketing quan trọng, càng đầy đủ càng ổn định.</p>
+<h2>7. Framework</h2>
+<p>Ba framework tư duy nên thuộc lòng:</p>
+<p><strong>Framework A — RTF (Role – Task – Format):</strong> Dành cho việc nhanh.</p>
+<blockquote>
+<p>"Bạn là chuyên gia SEO. Viết 10 tiêu đề bài blog về kem chống nắng cho da dầu. Trình bày dạng danh sách đánh số."</p>
+</blockquote>
+<p><strong>Framework B — CO-STAR:</strong> Chuẩn cho nội dung marketing bài bản.
+- <strong>C</strong>ontext (Ngữ cảnh)
+- <strong>O</strong>bjective (Mục tiêu)
+- <strong>S</strong>tyle (Phong cách)
+- <strong>T</strong>one (Giọng điệu)
+- <strong>A</strong>udience (Đối tượng)
+- <strong>R</strong>esponse format (Định dạng phản hồi)</p>
+<p><strong>Framework C — Vòng lặp tinh chỉnh (Iterative Loop):</strong> Prompt hiếm khi hoàn hảo ngay lần đầu.</p>
+<blockquote>
+<p>Prompt → Đánh giá đầu ra → Chỉ ra điểm chưa đạt → Yêu cầu sửa cụ thể → Lặp lại.</p>
+</blockquote>
+<p>Ba framework này bổ trợ nhau: RTF để phác nhanh, CO-STAR để làm chuẩn, Vòng lặp để hoàn thiện.</p>
+<h2>8. Công thức</h2>
+<p>Công thức khung prompt chuẩn cho marketer (có thể copy và điền vào):</p>
+<pre><code>[VAI TRÒ] Bạn là {chuyên gia/vai trò cụ thể + số năm kinh nghiệm + lĩnh vực}.
+
+[NGỮ CẢNH] Bối cảnh: {sản phẩm/dịch vụ}. Khách hàng mục tiêu: {chân dung}.
+Vấn đề họ gặp: {nỗi đau}. Điểm khác biệt của sản phẩm: {USP}.
+
+[NHIỆM VỤ] Hãy {động từ hành động rõ ràng + sản phẩm đầu ra cụ thể}.
+
+[RÀNG BUỘC] Yêu cầu: độ dài {…}; giọng điệu {…}; ngôn ngữ tiếng Việt tự nhiên;
+KHÔNG {điều cấm: sáo rỗng/cường điệu/vi phạm quy định quảng cáo}.
+
+[VÍ DỤ] Tham khảo phong cách mẫu sau: &quot;{dán 1–3 ví dụ đạt chuẩn}&quot;.
+
+[ĐỊNH DẠNG] Trả về dưới dạng {bảng/danh sách/đoạn văn/khung có tiêu đề}.
+</code></pre>
+<p>Ba biến thể kỹ thuật quan trọng cần kết hợp vào công thức trên:</p>
+<ul>
+<li><strong>Zero-shot:</strong> Không đưa ví dụ, chỉ mô tả nhiệm vụ. Nhanh nhưng kém ổn định với việc khó.</li>
+<li><strong>Few-shot:</strong> Đưa 2–5 ví dụ mẫu để AI bắt chước phong cách/định dạng. Tăng độ chính xác rõ rệt cho việc cần nhất quán.</li>
+<li><strong>Chain-of-thought (CoT):</strong> Thêm câu "Hãy suy nghĩ và phân tích từng bước trước khi đưa kết luận". Hữu ích cho phân tích dữ liệu, chọn chiến lược, lập luận — không cần thiết cho việc sáng tạo ngắn.</li>
+</ul>
+<h2>9. Quy trình</h2>
+<p>Quy trình 7 bước áp dụng cho mọi tác vụ prompt trong marketing:</p>
+<ol>
+<li><strong>Xác định mục tiêu đầu ra:</strong> Bạn cần chính xác cái gì? (VD: 5 caption, 1 báo cáo phân tích, 20 ý tưởng.)</li>
+<li><strong>Chọn công cụ/model phù hợp:</strong> Việc cần trích nguồn → Perplexity; việc trên tài liệu riêng → NotebookLM; việc viết dài, lập luận → Claude/GPT/Gemini (xem Mục 19 &amp; bảng so sánh).</li>
+<li><strong>Soạn prompt theo khung V–N–N–R–V–Đ.</strong></li>
+<li><strong>Chạy thử và đọc kỹ đầu ra</strong> — không copy mù.</li>
+<li><strong>Đánh giá theo tiêu chí:</strong> Đúng ý? Đúng giọng? Có bịa? Có vi phạm?</li>
+<li><strong>Tinh chỉnh (iterate):</strong> Nêu cụ thể điểm sửa, chạy lại. Lưu prompt tốt lại.</li>
+<li><strong>Kiểm chứng &amp; biên tập cuối:</strong> Đối chiếu sự thật, thêm chất người, phê duyệt trước khi dùng.</li>
+</ol>
+<p>Bước 7 không bao giờ được bỏ. AI tạo bản nháp; con người chịu trách nhiệm cuối cùng.</p>
+<h2>10. Ví dụ đơn giản</h2>
+<p><strong>Prompt tồi (zero-context):</strong></p>
+<blockquote>
+<p>"Viết quảng cáo cho serum của tôi."</p>
+</blockquote>
+<p>Kết quả: chung chung, sáo rỗng, không dùng được.</p>
+<p><strong>Prompt tốt (đủ khung):</strong></p>
+<blockquote>
+<p>"Bạn là copywriter mảng mỹ phẩm 8 năm kinh nghiệm. Sản phẩm: serum vitamin C 15% cho da xỉn màu. Khách hàng: nữ 25–35 tuổi, dân văn phòng, da mệt mỏi vì thức khuya. USP: thẩm thấu nhanh, không nhờn rít. Hãy viết 3 caption Facebook, mỗi caption tối đa 4 dòng, giọng thân thiện gần gũi, có 1 câu hook mở đầu và 1 CTA. KHÔNG dùng từ 'thần dược', 'số 1', hay cam kết chữa bệnh. Trình bày mỗi caption cách nhau bằng gạch ngang."</p>
+</blockquote>
+<p>Sự khác biệt: prompt thứ hai cho AI đủ vai trò, ngữ cảnh, ràng buộc pháp lý và định dạng — kết quả gần như dùng được ngay sau biên tập nhẹ.</p>
+<h2>11. Ví dụ doanh nghiệp</h2>
+<p>Bối cảnh: một thương hiệu mỹ phẩm nội địa (SME) cần sản xuất nội dung đều đặn cho 4 kênh. Họ xây một prompt "xưởng nội dung" tái sử dụng:</p>
+<pre><code>[VAI TRÒ] Bạn là Content Lead của thương hiệu mỹ phẩm sạch &quot;ABC&quot;.
+[NGỮ CẢNH] Brand voice: ấm áp, trung thực, không hù dọa. Đối tượng: nữ 25–40,
+quan tâm thành phần lành tính. Đọc kỹ tài liệu brand guideline đính kèm trước khi viết.
+[NHIỆM VỤ] Từ 1 thông điệp gốc tôi cung cấp, hãy chuyển thể thành:
+  1) 1 bài Facebook (150–200 từ)
+  2) 3 caption Instagram (kèm 5 hashtag mỗi bài)
+  3) 1 kịch bản TikTok 30 giây (chia cảnh + lời thoại)
+  4) 1 email ngắn (tiêu đề + thân bài 120 từ)
+[RÀNG BUỘC] Giữ nhất quán thông điệp gốc; tuân thủ quy định quảng cáo mỹ phẩm
+(không cam kết chữa bệnh, không so sánh hạ thấp đối thủ). Tiếng Việt tự nhiên.
+[ĐỊNH DẠNG] Trình bày theo 4 mục có tiêu đề rõ ràng.
+
+Thông điệp gốc: &quot;{điền vào đây}&quot;
+</code></pre>
+<p>Giá trị doanh nghiệp: một prompt chuẩn hóa cho phép nhân viên bất kỳ tạo ra bộ nội dung 4 kênh nhất quán chỉ trong vài phút, thay vì bốn người làm rời rạc. Đây chính là hạt nhân của một <strong>prompt library</strong> (xem Mục 18).</p>
+<h2>12. Ví dụ Việt Nam</h2>
+<p>Đặc thù thị trường Việt Nam đòi hỏi prompt phải "nội địa hóa" — nếu không, AI dễ cho ra văn phong dịch máy, cứng và Tây hóa.</p>
+<p><strong>Prompt tối ưu cho ngữ cảnh Việt:</strong></p>
+<blockquote>
+<p>"Bạn là người viết content bản địa Việt Nam. Viết caption cho chương trình sale 'Mua 1 tặng 1' dịp Tết. Giọng điệu vui tươi, đời thường, dùng cách nói tự nhiên của người Việt (tránh văn dịch, tránh từ Hán-Việt nặng nề). Đối tượng: các bạn nữ Gen Z ở Hà Nội và TP.HCM. Chèn hợp lý 1–2 từ ngữ đang thịnh hành nhưng không lạm dụng. Độ dài 3–4 dòng, có emoji vừa phải, kết bằng CTA dẫn về Zalo OA."</p>
+</blockquote>
+<p>Lưu ý thực chiến cho thị trường Việt:
+- Yêu cầu AI tránh "văn dịch máy" một cách tường minh — đây là lỗi phổ biến nhất.
+- Nêu rõ nền tảng bản địa (Zalo, TikTok Shop, Shopee Live) vì AI mặc định nghiêng về nền tảng phương Tây.
+- Với slang/trend, tự cung cấp từ khóa hiện hành thay vì để AI đoán, vì kiến thức model có độ trễ thời gian <em>(cần kiểm chứng độ mới)</em>.
+- Luôn rà lại yếu tố văn hóa, vùng miền và quy định quảng cáo trong nước.</p>
+<h2>13. Ví dụ quốc tế</h2>
+<p>Khi làm nội dung cho thị trường nước ngoài, prompt cần khai báo rõ thị trường, ngôn ngữ và chuẩn văn hóa:</p>
+<blockquote>
+<p>"You are a senior copywriter for the US market. Product: a Vietnamese-origin natural skincare serum entering Amazon US. Target: women 25–40, ingredient-conscious, value transparency. Write a product description of ~200 words. Tone: confident but not exaggerated; comply with US cosmetic advertising norms (no disease-treatment claims). Avoid clichés. Format: 1 headline + 3 short benefit bullets + 1 closing line."</p>
+</blockquote>
+<p>Bài học chuyển ngữ:
+- <strong>Không dịch prompt Việt sang tiếng Anh rồi mong kết quả bản địa.</strong> Hãy prompt trực tiếp bằng ngôn ngữ và tư duy của thị trường đích.
+- Khai báo chuẩn pháp lý địa phương (FDA/FTC ở Mỹ, GDPR khi liên quan dữ liệu ở EU...) — dù vẫn phải để bộ phận pháp lý kiểm tra lại, đây không phải tư vấn pháp lý.
+- Yêu cầu AI nêu giả định về khác biệt văn hóa nếu có, để bạn kiểm soát.</p>
+<h2>14. Sai lầm thường gặp</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Sai lầm</th>
+<th>Hệ quả</th>
+<th>Cách khắc phục</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt quá mơ hồ ("viết hay vào")</td>
+<td>Đầu ra chung chung</td>
+<td>Thêm vai trò, ngữ cảnh, ràng buộc cụ thể</td>
+</tr>
+<tr>
+<td>Nhồi quá nhiều nhiệm vụ trong 1 prompt</td>
+<td>AI làm hời hợt, bỏ sót</td>
+<td>Tách thành các bước tuần tự</td>
+</tr>
+<tr>
+<td>Không nêu định dạng đầu ra</td>
+<td>Kết quả khó dùng lại</td>
+<td>Luôn khai báo format</td>
+</tr>
+<tr>
+<td>Tin tuyệt đối số liệu AI đưa ra</td>
+<td>Đăng thông tin sai, rủi ro pháp lý</td>
+<td>Bắt buộc kiểm chứng nguồn</td>
+</tr>
+<tr>
+<td>Không đưa ví dụ khi cần nhất quán</td>
+<td>Giọng điệu trôi dạt</td>
+<td>Dùng few-shot</td>
+</tr>
+<tr>
+<td>Copy nguyên đầu ra, không biên tập</td>
+<td>Nội dung "nhạt AI", thiếu chất người</td>
+<td>Luôn có bước edit của người</td>
+</tr>
+<tr>
+<td>Dùng sai model cho việc</td>
+<td>Tốn thời gian, kết quả kém</td>
+<td>Chọn model theo tác vụ (Mục 19)</td>
+</tr>
+<tr>
+<td>Bỏ ràng buộc pháp lý/quảng cáo</td>
+<td>Vi phạm quy định, gỡ bài, phạt</td>
+<td>Ghi rõ điều cấm trong prompt</td>
+</tr>
+<tr>
+<td>Dán dữ liệu nhạy cảm của khách vào AI công cộng</td>
+<td>Rò rỉ dữ liệu, vi phạm bảo mật</td>
+<td>Ẩn danh dữ liệu, dùng công cụ có cam kết bảo mật</td>
+</tr>
+</tbody>
+</table></div>
+<h2>15. Checklist</h2>
+<p>Checklist trước khi bấm "gửi" một prompt quan trọng:</p>
+<ul>
+<li>[ ] Đã nêu <strong>vai trò</strong> cho AI chưa?</li>
+<li>[ ] Đã cung cấp đủ <strong>ngữ cảnh</strong> (sản phẩm, đối tượng, USP)?</li>
+<li>[ ] <strong>Nhiệm vụ</strong> đã rõ ràng, một mục tiêu chính?</li>
+<li>[ ] Đã đặt <strong>ràng buộc</strong> (độ dài, giọng, điều cấm)?</li>
+<li>[ ] Có cần <strong>ví dụ</strong> (few-shot) để đảm bảo nhất quán không?</li>
+<li>[ ] Đã chỉ định <strong>định dạng đầu ra</strong> chưa?</li>
+<li>[ ] Đã chọn <strong>đúng model/công cụ</strong> cho tác vụ này?</li>
+<li>[ ] Đã ghi rõ <strong>yêu cầu pháp lý/thương hiệu</strong>?</li>
+<li>[ ] Không dán <strong>dữ liệu nhạy cảm</strong> trái phép?</li>
+<li>[ ] Đã lên kế hoạch <strong>kiểm chứng</strong> đầu ra?</li>
+</ul>
+<p>Checklist sau khi nhận đầu ra:</p>
+<ul>
+<li>[ ] Có thông tin nào <strong>cần verify</strong> (số liệu, tên, ngày, dẫn chứng)?</li>
+<li>[ ] Giọng điệu có <strong>đúng brand voice</strong>?</li>
+<li>[ ] Có yếu tố <strong>sáo rỗng/lỗi văn dịch</strong> cần sửa?</li>
+<li>[ ] Đã thêm <strong>chất người</strong> và bối cảnh riêng?</li>
+<li>[ ] Đã <strong>lưu prompt tốt</strong> vào thư viện?</li>
+</ul>
+<h2>16. SOP</h2>
+<p><strong>SOP: Quy trình chuẩn tạo nội dung marketing bằng AI (áp dụng cấp phòng)</strong></p>
+<ol>
+<li><strong>Tiếp nhận yêu cầu:</strong> Ghi rõ loại nội dung, kênh, mục tiêu, deadline.</li>
+<li><strong>Chọn prompt mẫu</strong> từ Prompt Library của phòng (nếu chưa có, chuyển bước 3, sau đó bổ sung vào library).</li>
+<li><strong>Điền biến ngữ cảnh</strong> (sản phẩm, đối tượng, USP, chương trình).</li>
+<li><strong>Chọn model</strong> theo bảng phân công tác vụ.</li>
+<li><strong>Chạy prompt, đọc và đánh giá</strong> theo tiêu chí chuẩn (đúng ý/đúng giọng/không bịa/tuân thủ).</li>
+<li><strong>Tinh chỉnh tối đa 2–3 vòng.</strong> Nếu vẫn lệch, đổi cách tiếp cận hoặc model.</li>
+<li><strong>Kiểm chứng dữ kiện</strong> với nguồn đáng tin (không dựa vào AI để tự xác minh).</li>
+<li><strong>Biên tập bởi người</strong>, thêm bản sắc thương hiệu.</li>
+<li><strong>Phê duyệt</strong> theo phân cấp (người viết → trưởng nhóm → pháp lý nếu cần).</li>
+<li><strong>Xuất bản &amp; ghi log:</strong> Lưu lại prompt cuối, model, người duyệt để truy vết.</li>
+<li><strong>Cập nhật Prompt Library</strong> nếu tạo ra prompt tốt mới.</li>
+</ol>
+<h2>17. KPI</h2>
+<p>Đo lường hiệu quả prompt engineering ở cả cấp cá nhân và phòng ban:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nhóm KPI</th>
+<th>Chỉ số gợi ý</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Năng suất</strong></td>
+<td>Thời gian trung bình tạo 1 đơn vị nội dung; số nội dung/tuần</td>
+<td>AI có thực sự tăng tốc?</td>
+</tr>
+<tr>
+<td><strong>Chất lượng</strong></td>
+<td>Số vòng chỉnh sửa trung bình; tỷ lệ đầu ra dùng được sau lần chạy đầu</td>
+<td>Prompt có tốt lên không?</td>
+</tr>
+<tr>
+<td><strong>Độ chính xác</strong></td>
+<td>Số lỗi/bịa phát hiện khi kiểm chứng; số sự cố đăng nhầm</td>
+<td>Rủi ro hallucination được kiểm soát?</td>
+</tr>
+<tr>
+<td><strong>Hiệu quả marketing</strong></td>
+<td>So sánh chỉ số hiệu suất (tương tác, chuyển đổi) giữa nội dung hỗ trợ-AI và nội dung thường</td>
+<td>AI có tác động kết quả kinh doanh?</td>
+</tr>
+<tr>
+<td><strong>Tài sản tri thức</strong></td>
+<td>Số prompt trong library; tỷ lệ tái sử dụng</td>
+<td>Kiến thức có được tích lũy?</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lưu ý: KPI năng suất phải luôn đi cùng KPI chất lượng và độ chính xác — nhanh mà sai là phản tác dụng. Các con số ngưỡng cụ thể (VD "giảm 50% thời gian") tùy tổ chức tự thiết lập baseline, <em>không nên copy con số từ nơi khác</em>.</p>
+<h2>18. Biểu mẫu</h2>
+<p><strong>Biểu mẫu A — Thẻ Prompt trong Prompt Library:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Trường</th>
+<th>Nội dung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mã prompt</td>
+<td>VD: CONTENT-FB-001</td>
+</tr>
+<tr>
+<td>Tên</td>
+<td>Caption Facebook bán hàng</td>
+</tr>
+<tr>
+<td>Mục đích sử dụng</td>
+<td>Tạo caption FB cho chương trình khuyến mãi</td>
+</tr>
+<tr>
+<td>Model khuyến nghị</td>
+<td>(điền)</td>
+</tr>
+<tr>
+<td>Nội dung prompt</td>
+<td>(khung đầy đủ, có biến {…})</td>
+</tr>
+<tr>
+<td>Biến cần điền</td>
+<td>{sản phẩm}, {USP}, {đối tượng}, {CTA}</td>
+</tr>
+<tr>
+<td>Ví dụ đầu ra tốt</td>
+<td>(dán mẫu)</td>
+</tr>
+<tr>
+<td>Lưu ý/ràng buộc</td>
+<td>Không dùng từ cấm; tuân thủ quảng cáo</td>
+</tr>
+<tr>
+<td>Người tạo / cập nhật</td>
+<td>(tên, ngày)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Biểu mẫu B — Nhật ký kiểm chứng đầu ra:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Nội dung</th>
+<th>Thông tin cần verify</th>
+<th>Nguồn kiểm chứng</th>
+<th>Kết quả (Đúng/Sai/Sửa)</th>
+<th>Người kiểm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>19. Prompt AI (Meta-Prompt)</h2>
+<blockquote>
+<p><strong>Lưu ý:</strong> Mục này là các <strong>META-PROMPT</strong> — prompt dùng để <em>tạo ra prompt</em>. Bạn đưa meta-prompt vào AI, mô tả việc cần làm, AI sẽ soạn giúp bạn một prompt hoàn chỉnh. Đây là kỹ thuật "dùng AI để nâng cấp cách ra lệnh cho AI".</p>
+</blockquote>
+<p><strong>ChatGPT (OpenAI) — Meta-prompt tạo prompt marketing:</strong></p>
+<blockquote>
+<p>"Bạn là chuyên gia prompt engineering cho marketing. Tôi cần một prompt để {mô tả tác vụ, VD: viết email chăm sóc khách hàng cũ}. Hãy hỏi tôi tối đa 5 câu để làm rõ ngữ cảnh còn thiếu, sau đó soạn cho tôi một prompt hoàn chỉnh theo cấu trúc Vai trò – Ngữ cảnh – Nhiệm vụ – Ràng buộc – Ví dụ – Định dạng. Cuối cùng, giải thích ngắn gọn vì sao bạn thiết kế như vậy."</p>
+</blockquote>
+<p><strong>Claude (Anthropic) — Meta-prompt tinh chỉnh và phản biện prompt:</strong></p>
+<blockquote>
+<p>"Đây là prompt hiện tại của tôi: '{dán prompt}'. Với vai trò một reviewer khó tính, hãy: (1) chỉ ra các điểm mơ hồ hoặc thiếu ràng buộc có thể khiến đầu ra sai lệch; (2) viết lại prompt thành phiên bản rõ ràng, đầy đủ hơn; (3) đề xuất 2 biến thể — một thiên về an toàn/nhất quán, một thiên về sáng tạo. Suy nghĩ từng bước trước khi trả lời."</p>
+</blockquote>
+<p><strong>Gemini (Google) — Meta-prompt tạo bộ prompt đa kênh:</strong></p>
+<blockquote>
+<p>"Hãy đóng vai Content Strategist. Từ một chiến dịch marketing mà tôi mô tả dưới đây, hãy tạo cho tôi một BỘ prompt riêng cho từng kênh (Facebook, Instagram, TikTok, Email, Google Ads). Mỗi prompt phải đầy đủ vai trò, ngữ cảnh, ràng buộc và định dạng để tôi dùng lại độc lập. Chiến dịch: {mô tả}."</p>
+</blockquote>
+<p><strong>Perplexity — Meta-prompt cho prompt nghiên cứu có trích nguồn:</strong></p>
+<blockquote>
+<p>"Tôi cần nghiên cứu {chủ đề, VD: xu hướng tiêu dùng mỹ phẩm thuần chay tại Đông Nam Á}. Hãy soạn giúp tôi một prompt nghiên cứu tối ưu để dùng trên công cụ tìm kiếm AI: yêu cầu trả lời phải kèm nguồn trích dẫn, ưu tiên nguồn cập nhật, và tách rõ đâu là dữ kiện có nguồn đâu là suy luận. Sau đó thực thi luôn prompt đó và trả về kết quả kèm link nguồn."</p>
+</blockquote>
+<p><strong>NotebookLM — Meta-prompt làm việc trên tài liệu riêng:</strong></p>
+<blockquote>
+<p>"Tôi sẽ nạp vào đây các tài liệu nội bộ (brand guideline, báo cáo thị trường, phản hồi khách hàng). Hãy gợi ý cho tôi một danh sách 10 câu prompt hiệu quả để khai thác đúng các tài liệu NÀY phục vụ việc lập kế hoạch nội dung — mỗi prompt chỉ dựa trên nội dung tài liệu đã nạp, không bịa thông tin ngoài."</p>
+</blockquote>
+<p><strong>AI Agent — Meta-prompt cho tác vụ nhiều bước:</strong></p>
+<blockquote>
+<p>"Bạn là một AI agent marketing. Mục tiêu của tôi: {VD: chuẩn bị ra mắt sản phẩm mới}. Hãy (1) tự lập kế hoạch các bước cần làm (nghiên cứu đối thủ → xác định thông điệp → lên lịch nội dung → soạn nháp); (2) với mỗi bước, nêu rõ bạn cần dữ liệu/công cụ gì từ tôi; (3) thực hiện lần lượt, dừng lại xin xác nhận ở các điểm quyết định quan trọng thay vì tự ý làm hết. Không bịa dữ liệu — chỗ nào cần dữ kiện thật, hãy đánh dấu để tôi cung cấp."</p>
+</blockquote>
+<h2>20. Bài tập</h2>
+<ol>
+<li><strong>Nâng cấp prompt:</strong> Lấy một prompt mơ hồ của chính bạn ("viết bài giới thiệu sản phẩm") và viết lại theo đủ khung V–N–N–R–V–Đ. So sánh hai đầu ra.</li>
+<li><strong>Few-shot:</strong> Chọn 3 caption cũ đạt chuẩn brand voice, đưa làm ví dụ, yêu cầu AI viết 5 caption mới cùng phong cách. Đánh giá độ khớp.</li>
+<li><strong>Chain-of-thought:</strong> Đưa cho AI một bảng số liệu quảng cáo giả định và yêu cầu phân tích "từng bước" để đề xuất tối ưu ngân sách. Nhận xét chất lượng lập luận.</li>
+<li><strong>Meta-prompt:</strong> Dùng meta-prompt Claude ở Mục 19 để phản biện một prompt bạn đang dùng thật.</li>
+<li><strong>So sánh model:</strong> Chạy cùng một prompt nghiên cứu trên hai công cụ khác nhau (một công cụ có trích nguồn, một không). Ghi lại khác biệt về độ tin cậy.</li>
+<li><strong>Săn hallucination:</strong> Cố tình hỏi AI một số liệu thị trường cụ thể, rồi đi kiểm chứng. Ghi lại kết quả vào Biểu mẫu B.</li>
+<li><strong>Xây library:</strong> Tạo 5 thẻ prompt (Biểu mẫu A) cho 5 tác vụ bạn làm thường xuyên nhất.</li>
+</ol>
+<h2>21. Câu hỏi ôn tập</h2>
+<ol>
+<li>Sáu thành phần của một prompt tốt là gì? Cái nào có thể lược bỏ với việc đơn giản?</li>
+<li>Phân biệt zero-shot, few-shot và chain-of-thought. Mỗi kỹ thuật hợp với loại tác vụ nào?</li>
+<li>Vì sao AI có thể "bịa" số liệu một cách thuyết phục, và điều đó xuất phát từ nguyên lý hoạt động nào?</li>
+<li>Khi nào nên chọn công cụ tìm kiếm có trích nguồn thay vì một LLM hội thoại thông thường?</li>
+<li>Role prompting tác động thế nào đến đầu ra? Cho một ví dụ marketing.</li>
+<li>Kể ba lỗi phổ biến khi viết prompt và cách khắc phục.</li>
+<li>Vì sao bước "kiểm chứng và biên tập bởi người" không được bỏ, kể cả khi AI cho đầu ra mượt?</li>
+<li>Prompt Library mang lại giá trị gì cho một phòng marketing?</li>
+<li>Những rủi ro đạo đức và bản quyền nào cần lưu ý khi dùng AI tạo nội dung?</li>
+<li>Vì sao không nên dán dữ liệu khách hàng nhạy cảm vào công cụ AI công cộng?</li>
+</ol>
+<h2>22. Case Study</h2>
+<p><strong>Case thành công (mô hình hóa — minh họa phương pháp):</strong>
+Một SME mỹ phẩm Việt xây dựng Prompt Library gồm ~20 thẻ prompt chuẩn cho các tác vụ lặp lại (caption, email, kịch bản video, mô tả sản phẩm), kèm SOP kiểm chứng bắt buộc. Kết quả quan sát được: thời gian tạo nội dung giảm mạnh, nội dung nhất quán giọng thương hiệu hơn giữa các nhân viên, nhân sự mới hòa nhập nhanh vì "kế thừa" được cách ra lệnh của người giỏi. Yếu tố quyết định thành công: (1) chuẩn hóa prompt, không phụ thuộc cảm hứng cá nhân; (2) luôn có bước người biên tập; (3) đo lường và cải tiến prompt theo thời gian. <em>(Đây là mô hình điển hình để học phương pháp, không phải case định danh; các con số cụ thể cần tổ chức tự đo.)</em></p>
+<p><strong>Case thất bại (bài học cảnh báo):</strong>
+Nhiều tổ chức trên thế giới đã gặp sự cố khi dùng AI mà bỏ khâu kiểm chứng: chatbot hoặc nội dung tự động đưa ra thông tin sai (giá sai, chính sách sai, dẫn chứng bịa) và bị lan truyền, gây thiệt hại uy tín, thậm chí tranh chấp. Nguyên nhân gốc luôn giống nhau: <strong>tin AI như một nguồn sự thật, prompt thiếu ràng buộc, và không có người kiểm duyệt cuối.</strong> Bài học: AI càng nói mượt càng nguy hiểm nếu không verify; một prompt tốt phải kèm quy trình kiểm chứng, nếu không chính sự trôi chảy của AI sẽ trở thành rủi ro. <em>(Các sự cố dạng này có thật và được đưa tin rộng rãi giai đoạn 2023–2025; chi tiết từng vụ việc cần kiểm chứng nguồn trước khi trích dẫn đích danh.)</em></p>
+<h2>23. Tổng kết</h2>
+<p>Prompt Engineering không phải "mẹo bấm nút" mà là một kỹ năng tư duy: diễn đạt rõ ràng, cung cấp đúng ngữ cảnh, đặt ràng buộc hợp lý và kiểm soát đầu ra. Với marketer giai đoạn 2026–2035, đây là năng lực bản lề quyết định năng suất và chất lượng.</p>
+<p>Năm điều cần khắc cốt:
+1. <strong>Cấu trúc thắng ngẫu hứng</strong> — dùng khung V–N–N–R–V–Đ.
+2. <strong>Kỹ thuật đúng cho tác vụ</strong> — few-shot cho nhất quán, chain-of-thought cho lập luận, role prompting cho phong cách.
+3. <strong>Chọn đúng công cụ</strong> — mỗi model có thế mạnh riêng; việc cần nguồn thì dùng công cụ có trích dẫn.
+4. <strong>Người luôn ở khâu cuối</strong> — AI tạo nháp, con người chịu trách nhiệm, kiểm chứng và giữ đạo đức/bản quyền.
+5. <strong>Tích lũy tài sản</strong> — biến prompt tốt thành Library dùng chung cho cả phòng.</p>
+<p>AI là bộ khuếch đại. Ra lệnh giỏi, bạn khuếch đại chuyên môn. Ra lệnh cẩu thả, bạn khuếch đại rủi ro. Kỹ năng này, cuối cùng, là kỹ năng tư duy rõ ràng — thứ marketer giỏi vốn đã cần.</p>
+<h2>24. Nguồn tham khảo</h2>
+<blockquote>
+<p><strong>Lưu ý minh bạch:</strong> Phần này liệt kê loại nguồn nên tra cứu, KHÔNG bịa link cụ thể. Người học nên tự truy cập trang chính thức để lấy tài liệu mới nhất.</p>
+</blockquote>
+<ul>
+<li>Tài liệu hướng dẫn prompt chính thức từ nhà phát triển model: OpenAI, Anthropic (Claude), Google (Gemini) — trang tài liệu/help center chính thức.</li>
+<li>Bài báo nền tảng học thuật: "Attention Is All You Need" (2017); các nghiên cứu về few-shot learning và chain-of-thought prompting (2020–2022) — <em>tra cứu qua Google Scholar / arXiv, cần kiểm chứng bản gốc</em>.</li>
+<li>Tài liệu công cụ: trang chính thức của Perplexity, NotebookLM về cách đặt câu hỏi hiệu quả.</li>
+<li>Quy định quảng cáo tại Việt Nam: các văn bản pháp luật về quảng cáo, đặc biệt với ngành mỹ phẩm/thực phẩm chức năng — <em>tham chiếu nguồn pháp lý chính thống, không dựa vào AI</em>.</li>
+<li>Sách/khóa học về prompt engineering và AI marketing từ các nền tảng học tập uy tín — <em>đánh giá độ cập nhật trước khi dùng vì lĩnh vực thay đổi nhanh</em>.</li>
+</ul>
+<h2>Cần cập nhật trong tương lai</h2>
+<p>Lĩnh vực AI thay đổi theo tháng, không theo năm. Các nội dung sau cần rà soát định kỳ (đề xuất mỗi quý):</p>
+<ul>
+<li><strong>Tên và phiên bản model:</strong> ChatGPT/GPT, Claude, Gemini, Perplexity, NotebookLM liên tục ra bản mới với năng lực khác nhau. Bảng so sánh "khi nào dùng model nào" cần cập nhật theo phiên bản hiện hành.</li>
+<li><strong>Kích thước context window &amp; khả năng đa phương thức:</strong> Đang tăng nhanh (văn bản, hình ảnh, âm thanh, video); ảnh hưởng trực tiếp đến cách thiết kế prompt.</li>
+<li><strong>Dịch chuyển từ prompt sang AI Agent &amp; context engineering:</strong> Xu hướng AI tự lập kế hoạch/thực thi nhiều bước sẽ làm thay đổi trọng tâm kỹ năng — cần bổ sung chương/mục chuyên sâu.</li>
+<li><strong>Giá và giới hạn sử dụng (token, gói cước):</strong> Biến động thường xuyên; không nên chốt con số cứng trong giáo trình.</li>
+<li><strong>Khả năng kết nối dữ liệu thời gian thực &amp; công cụ:</strong> Việc model tự tra cứu web, gọi công cụ, dùng bộ nhớ dài hạn sẽ thay đổi cách kiểm soát hallucination.</li>
+<li><strong>Khung pháp lý về AI, bản quyền và dữ liệu:</strong> Quy định về nội dung do AI tạo, ghi nhãn AI, bản quyền và bảo vệ dữ liệu (trong nước và quốc tế) đang hình thành — cần theo dõi sát.</li>
+<li><strong>Tiêu chuẩn ghi nhãn nội dung AI:</strong> Yêu cầu công khai "nội dung có sự hỗ trợ của AI" có thể trở thành bắt buộc trên một số nền tảng/thị trường.</li>
+<li><strong>Số liệu và case study:</strong> Các con số hiệu suất, KPI tham chiếu và case study cần được thay bằng dữ liệu thực, có kiểm chứng, thay cho các minh họa mô hình hóa trong bản này.</li>
+</ul>
+<hr />
+<p><em>Kết thúc Tập 8 · Chương 2. Chương tiếp theo đề xuất: "AI Agent cho Marketing — Tự động hóa quy trình nhiều bước".</em></p></article><div class="nav"><a class="prev" href="tap-08-ai-marketing-01-ai-agent-mcp-automation.html"><span>← Trước</span>Tập 8 · Chương 1 — AI Marketing, AI Agent &amp; MCP</a><a class="next" href="tap-08-ai-marketing-03-san-xuat-noi-dung-ai.html"><span>Sau →</span>Tập 8 · Chương 3 — Sản xuất nội dung bằng AI</a></div>
+<footer>MARKETING THỰC CHIẾN 2026–2035 · v1.0 (2026) · 62 chương</footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>
