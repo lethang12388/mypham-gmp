@@ -7,6 +7,8 @@ FF = imageio_ffmpeg.get_ffmpeg_exe()
 W, H, FPS = 1080, 1920, 30
 SRC, OUT = f"{D}/joined.mov", f"{D}/out30_noaudio.mp4"
 import json
+_R = json.load(open(f"{D}/remap.json"))
+RM = lambda t: float(np.interp(t, _R["old"], _R["new"]))
 CUTS = json.load(open(f"{D}/cuts.json"))
 
 # ---------- Phụ đề: (bắt đầu, kết thúc, [dòng...]) ; *từ* = tô cyan ----------
@@ -65,6 +67,7 @@ def render_sub(lines):
     # làm mềm bóng một chút
     return arr
 
+SUBS = [(RM(a), RM(b), l) for a, b, l in SUBS]
 SUB_IMGS = [render_sub(s[2]) for s in SUBS]
 
 def overlay(dst, rgba, cx, cy, scale=1.0, alpha=1.0):
@@ -105,10 +108,22 @@ for c in CUTS:
 ZOOMS = [1.00, 1.09, 1.02, 1.12, 1.04, 1.10]
 FACE = (540, 640)  # tâm khuôn mặt trong khung gốc
 
+ZT = 0.15  # thời gian đẩy zoom sang mức mới
+
 def zoom_at(t):
     k = max(i for i, c in enumerate(ZCUTS) if c <= t)
+    z = zoom_level(k, t)
+    if k > 0 and t - ZCUTS[k] < ZT:
+        z0 = zoom_level(k - 1, ZCUTS[k])
+        z = z0 + (z - z0) * ease((t - ZCUTS[k]) / ZT)
+    return z
+
+def zoom_level(k, t):
     end = ZCUTS[k + 1] if k + 1 < len(ZCUTS) else 30.0
     return ZOOMS[k % len(ZOOMS)] + 0.025 * min(1, (t - ZCUTS[k]) / (end - ZCUTS[k]))  # trôi chậm vào
+
+def ease(x):
+    x = max(0.0, min(1.0, x)); return x * x * (3 - 2 * x)
 
 def apply_zoom(f, z):
     if z <= 1.0001:
@@ -122,7 +137,9 @@ def ease(x):
     x = max(0.0, min(1.0, x)); return x * x * (3 - 2 * x)
 
 # Hiệu ứng 1: thu khung thành thẻ bo góc (PiP) — "CỦA MÌNH"
-PIP = (2.08, 2.62)
+BLUR = RM(17.16)
+FLASHES = []
+PIP = (RM(2.08), RM(2.62))
 def pip(f, t):
     a, b = PIP
     k = min(ease((t - a) / 0.14), ease((b - t) / 0.14))
@@ -144,7 +161,7 @@ def pip(f, t):
     return bg
 
 # Hiệu ứng 2: nhòe mờ nhanh — mở ý "THẾ MÀ TẠI SAO" (như "THẾ THÌ" của mẫu)
-def blur_pulse(f, t, c=17.16, d=0.30):
+def blur_pulse(f, t, c, d=0.30):
     k = 1 - abs(t - c) / d
     if k <= 0:
         return f
@@ -189,9 +206,9 @@ while True:
     f = grade(f)
     f = apply_zoom(f, zoom_at(t))
     f = pip(f, t)
-    f = blur_pulse(f, t)
-    f = flash(f, t, 7.20)  # CHÍNH MÌNH (lần 1)
-    f = flash(f, t, 23.38)  # CHÍNH MÌNH (lần 2)
+    f = blur_pulse(f, t, BLUR)
+    f = flash(f, t, RM(7.20))  # CHÍNH MÌNH (lần 1)
+    f = flash(f, t, RM(23.38))  # CHÍNH MÌNH (lần 2)
     for (a, b, _), img in zip(SUBS, SUB_IMGS):
         if a <= t < b:
             p = ease((t - a) / 0.10)
@@ -199,4 +216,17 @@ while True:
     enc.stdin.write(f.tobytes())
     i += 1
 enc.stdin.close(); enc.wait(); dec.wait()
+
+# ---------- Âm thanh phụ tại các điểm chuyển ----------
+import re as _re
+flashes = [RM(float(x)) for x in _re.findall(r"flash\(f, t, RM\(([\d.]+)\)\)", open(__file__).read())]
+ev = [("whoosh", PIP[0] - 0.12), ("click", PIP[1] - 0.05), ("whoosh", BLUR - 0.18)] + [("bling", c - 0.04) for c in flashes]
+ev.append(("ding", SUBS[-1][0]))
+
+busy = [t for _, t in ev]
+for i, c in enumerate(ZCUTS[1:]):
+    if all(abs(c - b) > 0.4 for b in busy):
+        ev.append(("click" if i % 3 != 2 else "keys2", c - 0.02))
+json.dump(sorted(ev, key=lambda e: e[1]), open(f"{D}/events.json", "w"))
+print("events", sorted(ev, key=lambda e: e[1]))
 print("frames", i)
