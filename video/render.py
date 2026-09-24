@@ -5,18 +5,41 @@ from PIL import Image, ImageDraw, ImageFont
 D = __import__("os").environ.get("WORKDIR", ".")
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 W, H, FPS = 1080, 1920, 30
-SRC, OUT = f"{D}/src.mov", f"{D}/out_noaudio.mp4"
+SRC, OUT = f"{D}/joined.mov", f"{D}/out30_noaudio.mp4"
+import json
+CUTS = json.load(open(f"{D}/cuts.json"))
 
 # ---------- Phụ đề: (bắt đầu, kết thúc, [dòng...]) ; *từ* = tô cyan ----------
 SUBS = [
-    (0.50, 1.80, ["ĐỪNG *XIN*", "PHÉP NGƯỜI KHÁC"]),
-    (1.80, 2.98, ["ĐỂ ĐƯỢC", "*SỐNG* CUỘC ĐỜI"]),
-    (2.98, 3.36, ["CỦA *MÌNH*"]),
-    (3.36, 4.94, ["NHỎ THÌ", "BỐ *MẸ*"]),
-    (4.94, 6.28, ["LỚN LÊN THÌ", "BẠN *BÈ*"]),
-    (6.28, 7.48, ["NGƯỜI DUY", "*NHẤT* KHÔNG BAO"]),
-    (7.48, 8.78, ["GIỜ ĐƯỢC", "*HỎI* Ý KIẾN LÀ"]),
-    (8.78, 10.5, ["CHÍNH *MÌNH*"]),
+    (0.00, 1.12, ["ĐỪNG *XIN*", "PHÉP NGƯỜI KHÁC"]),
+    (1.12, 2.16, ["ĐỂ ĐƯỢC", "*SỐNG* CUỘC ĐỜI"]),
+    (2.16, 2.54, ["CỦA *MÌNH*"]),
+    (2.54, 3.78, ["NHỎ THÌ", "BỐ *MẸ*"]),
+    (3.78, 4.98, ["LỚN LÊN THÌ", "BẠN *BÈ*"]),
+    (4.98, 6.28, ["NGƯỜI DUY", "*NHẤT* KHÔNG BAO"]),
+    (6.28, 7.18, ["GIỜ ĐƯỢC", "*HỎI* Ý KIẾN LÀ"]),
+    (7.18, 7.52, ["CHÍNH *MÌNH*"]),
+    (7.52, 8.62, ["NGHE CHO", "RÕ *NÀY*"]),
+    (8.62, 9.86, ["NGƯỜI KHÁC CÓ", "THỂ *GÓP* *Ý*"]),
+    (9.86, 11.02, ["NHƯNG MÀ", "HỌ *KHÔNG* SỐNG"]),
+    (11.02, 11.36, ["THAY *BẠN*"]),
+    (11.36, 12.56, ["HỌ *KHÔNG*", "TRẢ HÓA ĐƠN"]),
+    (12.56, 13.10, ["HỘ *BẠN*"]),
+    (13.10, 14.62, ["HỌ KHÔNG CHỊU", "*HẬU* *QUẢ* THAY BẠN"]),
+    (14.62, 16.06, ["HỌ *CŨNG* KHÔNG", "THỨC TRẮNG ĐÊM"]),
+    (16.06, 17.16, ["VỀ NHỮNG", "*QUYẾT* *ĐỊNH* CỦA BẠN"]),
+    (17.16, 18.16, ["*THẾ* MÀ", "TẠI SAO"]),
+    (18.16, 18.96, ["BẠN LẠI", "TRAO *QUYỀN*"]),
+    (18.96, 20.12, ["QUYẾT ĐỊNH", "CUỘC ĐỜI CỦA *MÌNH*"]),
+    (20.12, 21.12, ["TỪ HÔM", "*NAY*"]),
+    (21.12, 22.26, ["LÀM ĐIỀU", "GÌ *CŨNG* ĐƯỢC"]),
+    (22.26, 23.36, ["MIỄN LÀ", "*ĐỪNG* PHẢN BỘI"]),
+    (23.36, 23.74, ["CHÍNH *MÌNH*"]),
+    (23.74, 24.88, ["MIỄN LÀ", "MÌNH TIN *TƯỞNG*"]),
+    (24.88, 26.10, ["ĐIỀU ĐÓ", "*ĐÚNG* *ĐẮN*"]),
+    (26.10, 27.66, ["ĐỪNG XIN", "PHÉP CẢ *THẾ* *GIỚI*"]),
+    (27.66, 29.26, ["ĐỂ ĐƯỢC", "*LÀM* NGƯỜI", "BẠN MUỐN"]),
+    (29.26, 30.10, ["TRỞ *THÀNH*"]),
 ]
 CYAN, WHITE = (72, 232, 238), (255, 255, 255)
 FONT = ImageFont.truetype(f"{D}/fonts/BeVietnamPro-ExtraBold.ttf", 76)
@@ -74,14 +97,18 @@ def grade(f):
     return np.clip(g * VIG, 0, 255).astype(np.uint8)
 
 # ---------- Zoom nhịp: đổi mức zoom mỗi cụm phụ đề (jump-zoom) ----------
-ZOOMS = [1.00, 1.10, 1.00, 1.12, 1.03, 1.14, 1.04, 1.12]
+# đổi mức zoom ngay tại vết cắt (che jump-cut), bỏ các vết cắt quá sát nhau
+ZCUTS = [0.0]
+for c in CUTS:
+    if c - ZCUTS[-1] >= 0.9:
+        ZCUTS.append(c)
+ZOOMS = [1.00, 1.09, 1.02, 1.12, 1.04, 1.10]
 FACE = (540, 640)  # tâm khuôn mặt trong khung gốc
 
 def zoom_at(t):
-    for (a, b, _), z in zip(SUBS, ZOOMS):
-        if t < b:
-            return z + 0.025 * max(0, min(1, (t - a) / (b - a)))  # trôi chậm vào trong cụm
-    return ZOOMS[-1] + 0.025
+    k = max(i for i, c in enumerate(ZCUTS) if c <= t)
+    end = ZCUTS[k + 1] if k + 1 < len(ZCUTS) else 30.0
+    return ZOOMS[k % len(ZOOMS)] + 0.025 * min(1, (t - ZCUTS[k]) / (end - ZCUTS[k]))  # trôi chậm vào
 
 def apply_zoom(f, z):
     if z <= 1.0001:
@@ -95,7 +122,7 @@ def ease(x):
     x = max(0.0, min(1.0, x)); return x * x * (3 - 2 * x)
 
 # Hiệu ứng 1: thu khung thành thẻ bo góc (PiP) — "CỦA MÌNH"
-PIP = (2.92, 3.50)
+PIP = (2.08, 2.62)
 def pip(f, t):
     a, b = PIP
     k = min(ease((t - a) / 0.14), ease((b - t) / 0.14))
@@ -116,15 +143,15 @@ def pip(f, t):
     overlay(bg, rgba, W / 2, cy)
     return bg
 
-# Hiệu ứng 2: nhòe mờ nhanh — mở ý "NGƯỜI DUY NHẤT"
-def blur_pulse(f, t, c=6.28, d=0.30):
+# Hiệu ứng 2: nhòe mờ nhanh — mở ý "THẾ MÀ TẠI SAO" (như "THẾ THÌ" của mẫu)
+def blur_pulse(f, t, c=17.16, d=0.30):
     k = 1 - abs(t - c) / d
     if k <= 0:
         return f
     return cv2.GaussianBlur(f, (0, 0), 1 + 14 * k)
 
 # Hiệu ứng 3: lóe sáng trắng — "CHÍNH MÌNH"
-def flash(f, t, c=8.80):
+def flash(f, t, c):
     if t < c - 0.08 or t > c + 0.9:
         return f
     k = ease((t - (c - 0.08)) / 0.08) if t < c else 1 - ease((t - c) / 0.9)
@@ -163,7 +190,8 @@ while True:
     f = apply_zoom(f, zoom_at(t))
     f = pip(f, t)
     f = blur_pulse(f, t)
-    f = flash(f, t)
+    f = flash(f, t, 7.20)  # CHÍNH MÌNH (lần 1)
+    f = flash(f, t, 23.38)  # CHÍNH MÌNH (lần 2)
     for (a, b, _), img in zip(SUBS, SUB_IMGS):
         if a <= t < b:
             p = ease((t - a) / 0.10)
